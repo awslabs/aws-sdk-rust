@@ -329,6 +329,8 @@ pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
 
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributesBuilder;
 
+pub use crate::types::_capacity_reservation_detail::CapacityReservationDetailBuilder;
+
 pub use crate::types::_cluster_restricted_instance_groups_config_output::ClusterRestrictedInstanceGroupsConfigOutputBuilder;
 
 pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutputBuilder;
@@ -825,6 +827,8 @@ pub use crate::types::_oidc_config_for_response::OidcConfigForResponseBuilder;
 
 pub use crate::types::_workforce_vpc_config_response::WorkforceVpcConfigResponseBuilder;
 
+pub use crate::types::_capacity_reservation_instance_usage::CapacityReservationInstanceUsageBuilder;
+
 pub use crate::types::_agent_version::AgentVersionBuilder;
 
 pub use crate::types::_edge_model_stat::EdgeModelStatBuilder;
@@ -852,6 +856,10 @@ pub use crate::types::_artifact_summary::ArtifactSummaryBuilder;
 pub use crate::types::_association_summary::AssociationSummaryBuilder;
 
 pub use crate::types::_auto_ml_job_summary::AutoMlJobSummaryBuilder;
+
+pub use crate::types::_capacity_reservation_filter::CapacityReservationFilterBuilder;
+
+pub use crate::types::_capacity_reservation_summary::CapacityReservationSummaryBuilder;
 
 pub use crate::types::_cluster_event_summary::ClusterEventSummaryBuilder;
 
@@ -1307,6 +1315,10 @@ pub use crate::types::_selected_step::SelectedStepBuilder;
 
 pub use crate::types::_cfn_template_provider_detail::CfnTemplateProviderDetailBuilder;
 
+pub use crate::types::_capacity_reservation_hyper_pod_clusters_association::CapacityReservationHyperPodClustersAssociationBuilder;
+
+pub use crate::types::_capacity_reservation_endpoints_association::CapacityReservationEndpointsAssociationBuilder;
+
 pub use crate::types::_recommendation_job_inference_benchmark::RecommendationJobInferenceBenchmarkBuilder;
 
 pub use crate::types::_label_counters_for_workteam::LabelCountersForWorkteamBuilder;
@@ -1538,6 +1550,8 @@ pub use crate::types::_instance_pool_summary::InstancePoolSummaryBuilder;
 pub use crate::types::_production_variant_status::ProductionVariantStatusBuilder;
 
 pub use crate::types::_cfn_stack_detail::CfnStackDetailBuilder;
+
+pub use crate::types::_capacity_reservation_resource_usage::CapacityReservationResourceUsageBuilder;
 
 pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrackingScalingPolicyConfigurationBuilder;
 

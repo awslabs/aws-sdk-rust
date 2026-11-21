@@ -12,6 +12,7 @@
 /// ```text
 /// # let governedaction = unimplemented!();
 /// match governedaction {
+///     GovernedAction::Publish => { /* ... */ },
 ///     GovernedAction::Share => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum GovernedAction {
     #[allow(missing_docs)] // documentation missing in model
+    Publish,
+    #[allow(missing_docs)] // documentation missing in model
     Share,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum GovernedAction {
 impl ::std::convert::From<&str> for GovernedAction {
     fn from(s: &str) -> Self {
         match s {
+            "PUBLISH" => GovernedAction::Publish,
             "SHARE" => GovernedAction::Share,
             other => GovernedAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl GovernedAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            GovernedAction::Publish => "PUBLISH",
             GovernedAction::Share => "SHARE",
             GovernedAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHARE"]
+        &["PUBLISH", "SHARE"]
     }
 }
 impl ::std::convert::AsRef<str> for GovernedAction {
@@ -95,6 +100,7 @@ impl GovernedAction {
 impl ::std::fmt::Display for GovernedAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            GovernedAction::Publish => write!(f, "PUBLISH"),
             GovernedAction::Share => write!(f, "SHARE"),
             GovernedAction::Unknown(value) => write!(f, "{value}"),
         }

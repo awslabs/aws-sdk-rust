@@ -635,6 +635,8 @@ mod describe_auto_ml_job;
 
 mod describe_auto_ml_job_v2;
 
+mod describe_capacity_reservation;
+
 mod describe_cluster;
 
 mod describe_cluster_event;
@@ -751,6 +753,8 @@ mod describe_project;
 
 mod describe_reserved_capacity;
 
+mod describe_resource_associations;
+
 mod describe_space;
 
 mod describe_studio_lifecycle_config;
@@ -786,6 +790,8 @@ mod disassociate_trial_component;
 mod enable_sagemaker_servicecatalog_portfolio;
 
 mod extend_training_plan;
+
+mod get_capacity_reservation_usage;
 
 mod get_device_fleet_report;
 
@@ -826,6 +832,8 @@ mod list_associations;
 mod list_auto_ml_jobs;
 
 mod list_candidates_for_auto_ml_job;
+
+mod list_capacity_reservations;
 
 mod list_cluster_events;
 

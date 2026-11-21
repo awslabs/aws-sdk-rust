@@ -496,6 +496,9 @@ pub mod describe_auto_ml_job;
 /// Types for the `DescribeAutoMLJobV2` operation.
 pub mod describe_auto_ml_job_v2;
 
+/// Types for the `DescribeCapacityReservation` operation.
+pub mod describe_capacity_reservation;
+
 /// Types for the `DescribeCluster` operation.
 pub mod describe_cluster;
 
@@ -670,6 +673,9 @@ pub mod describe_project;
 /// Types for the `DescribeReservedCapacity` operation.
 pub mod describe_reserved_capacity;
 
+/// Types for the `DescribeResourceAssociations` operation.
+pub mod describe_resource_associations;
+
 /// Types for the `DescribeSpace` operation.
 pub mod describe_space;
 
@@ -723,6 +729,9 @@ pub mod enable_sagemaker_servicecatalog_portfolio;
 
 /// Types for the `ExtendTrainingPlan` operation.
 pub mod extend_training_plan;
+
+/// Types for the `GetCapacityReservationUsage` operation.
+pub mod get_capacity_reservation_usage;
 
 /// Types for the `GetDeviceFleetReport` operation.
 pub mod get_device_fleet_report;
@@ -783,6 +792,9 @@ pub mod list_auto_ml_jobs;
 
 /// Types for the `ListCandidatesForAutoMLJob` operation.
 pub mod list_candidates_for_auto_ml_job;
+
+/// Types for the `ListCapacityReservations` operation.
+pub mod list_capacity_reservations;
 
 /// Types for the `ListClusterEvents` operation.
 pub mod list_cluster_events;

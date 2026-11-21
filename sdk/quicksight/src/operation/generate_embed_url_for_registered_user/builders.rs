@@ -22,7 +22,7 @@ impl crate::operation::generate_embed_url_for_registered_user::builders::Generat
 }
 /// Fluent builder constructing a request to `GenerateEmbedUrlForRegisteredUser`.
 ///
-/// <p>Generates an embed URL that you can use to embed an Amazon Quick experience in your website. This action can be used for any type of user registered in an Amazon Quick account. Before you use this action, make sure that you have configured the relevant Amazon Quick resource and permissions.</p>
+/// <p>Generates an embed URL that you can use to embed an Quick experience in your website. This action can be used for any type of user registered in an Quick account. Before you use this action, make sure that you have configured the relevant Quick resource and permissions.</p>
 /// <p>The following rules apply to the generated URL:</p>
 /// <ul>
 /// <li>
@@ -31,10 +31,10 @@ impl crate::operation::generate_embed_url_for_registered_user::builders::Generat
 /// <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p>
 /// <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p></li>
 /// <li>
-/// <p>You are charged only when the URL is used or there is interaction with Amazon Quick.</p></li>
+/// <p>You are charged only when the URL is used or there is interaction with Quick.</p></li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon Quick User Guide</i>.</p>
-/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon Quick Developer Portal</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Quick User Guide</i>.</p>
+/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick Developer Portal</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

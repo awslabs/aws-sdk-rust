@@ -650,6 +650,12 @@ pub struct Capabilities {
     pub share_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use Model Context Protocol actions.</p>
     pub use_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and use local Model Context Protocol (MCP) actions. This capability includes <code>CreateAndUpdateLocalMCPAction</code> and <code>UseLocalMCPAction</code>.</p>
+    pub local_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update local Model Context Protocol (MCP) server configurations. Denying this capability does not by itself deny use of previously configured local MCP servers.</p>
+    pub create_and_update_local_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to start local Model Context Protocol (MCP) servers and use their actions, including actions from previously configured local MCP servers.</p>
+    pub use_local_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
     pub open_api_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to create and update OpenAPI Specification actions.</p>
@@ -2449,6 +2455,18 @@ impl Capabilities {
     pub fn use_mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.use_mcp_action.as_ref()
     }
+    /// <p>The ability to create, update, and use local Model Context Protocol (MCP) actions. This capability includes <code>CreateAndUpdateLocalMCPAction</code> and <code>UseLocalMCPAction</code>.</p>
+    pub fn local_mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.local_mcp_action.as_ref()
+    }
+    /// <p>The ability to create and update local Model Context Protocol (MCP) server configurations. Denying this capability does not by itself deny use of previously configured local MCP servers.</p>
+    pub fn create_and_update_local_mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_local_mcp_action.as_ref()
+    }
+    /// <p>The ability to start local Model Context Protocol (MCP) servers and use their actions, including actions from previously configured local MCP servers.</p>
+    pub fn use_local_mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_local_mcp_action.as_ref()
+    }
     /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
     pub fn open_api_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.open_api_action.as_ref()
@@ -4171,6 +4189,9 @@ pub struct CapabilitiesBuilder {
     pub(crate) create_and_update_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) share_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) local_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_local_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_local_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) open_api_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_and_update_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) share_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
@@ -8064,6 +8085,48 @@ impl CapabilitiesBuilder {
     /// <p>The ability to use Model Context Protocol actions.</p>
     pub fn get_use_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.use_mcp_action
+    }
+    /// <p>The ability to create, update, and use local Model Context Protocol (MCP) actions. This capability includes <code>CreateAndUpdateLocalMCPAction</code> and <code>UseLocalMCPAction</code>.</p>
+    pub fn local_mcp_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.local_mcp_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and use local Model Context Protocol (MCP) actions. This capability includes <code>CreateAndUpdateLocalMCPAction</code> and <code>UseLocalMCPAction</code>.</p>
+    pub fn set_local_mcp_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.local_mcp_action = input;
+        self
+    }
+    /// <p>The ability to create, update, and use local Model Context Protocol (MCP) actions. This capability includes <code>CreateAndUpdateLocalMCPAction</code> and <code>UseLocalMCPAction</code>.</p>
+    pub fn get_local_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.local_mcp_action
+    }
+    /// <p>The ability to create and update local Model Context Protocol (MCP) server configurations. Denying this capability does not by itself deny use of previously configured local MCP servers.</p>
+    pub fn create_and_update_local_mcp_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_local_mcp_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update local Model Context Protocol (MCP) server configurations. Denying this capability does not by itself deny use of previously configured local MCP servers.</p>
+    pub fn set_create_and_update_local_mcp_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_local_mcp_action = input;
+        self
+    }
+    /// <p>The ability to create and update local Model Context Protocol (MCP) server configurations. Denying this capability does not by itself deny use of previously configured local MCP servers.</p>
+    pub fn get_create_and_update_local_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_local_mcp_action
+    }
+    /// <p>The ability to start local Model Context Protocol (MCP) servers and use their actions, including actions from previously configured local MCP servers.</p>
+    pub fn use_local_mcp_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_local_mcp_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to start local Model Context Protocol (MCP) servers and use their actions, including actions from previously configured local MCP servers.</p>
+    pub fn set_use_local_mcp_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_local_mcp_action = input;
+        self
+    }
+    /// <p>The ability to start local Model Context Protocol (MCP) servers and use their actions, including actions from previously configured local MCP servers.</p>
+    pub fn get_use_local_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_local_mcp_action
     }
     /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
     pub fn open_api_action(mut self, input: crate::types::CapabilityState) -> Self {
@@ -13560,6 +13623,9 @@ impl CapabilitiesBuilder {
             create_and_update_mcp_action: self.create_and_update_mcp_action,
             share_mcp_action: self.share_mcp_action,
             use_mcp_action: self.use_mcp_action,
+            local_mcp_action: self.local_mcp_action,
+            create_and_update_local_mcp_action: self.create_and_update_local_mcp_action,
+            use_local_mcp_action: self.use_local_mcp_action,
             open_api_action: self.open_api_action,
             create_and_update_open_api_action: self.create_and_update_open_api_action,
             share_open_api_action: self.share_open_api_action,

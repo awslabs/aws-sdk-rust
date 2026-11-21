@@ -13,6 +13,7 @@
 /// # let assettype = unimplemented!();
 /// match assettype {
 ///     AssetType::Agent => { /* ... */ },
+///     AssetType::Flow => { /* ... */ },
 ///     AssetType::KnowledgeBase => { /* ... */ },
 ///     AssetType::Space => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum AssetType {
     #[allow(missing_docs)] // documentation missing in model
     Agent,
     #[allow(missing_docs)] // documentation missing in model
+    Flow,
+    #[allow(missing_docs)] // documentation missing in model
     KnowledgeBase,
     #[allow(missing_docs)] // documentation missing in model
     Space,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for AssetType {
     fn from(s: &str) -> Self {
         match s {
             "AGENT" => AssetType::Agent,
+            "FLOW" => AssetType::Flow,
             "KNOWLEDGE_BASE" => AssetType::KnowledgeBase,
             "SPACE" => AssetType::Space,
             other => AssetType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl AssetType {
     pub fn as_str(&self) -> &str {
         match self {
             AssetType::Agent => "AGENT",
+            AssetType::Flow => "FLOW",
             AssetType::KnowledgeBase => "KNOWLEDGE_BASE",
             AssetType::Space => "SPACE",
             AssetType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl AssetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT", "KNOWLEDGE_BASE", "SPACE"]
+        &["AGENT", "FLOW", "KNOWLEDGE_BASE", "SPACE"]
     }
 }
 impl ::std::convert::AsRef<str> for AssetType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for AssetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssetType::Agent => write!(f, "AGENT"),
+            AssetType::Flow => write!(f, "FLOW"),
             AssetType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
             AssetType::Space => write!(f, "SPACE"),
             AssetType::Unknown(value) => write!(f, "{value}"),

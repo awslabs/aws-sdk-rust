@@ -10,6 +10,9 @@ pub struct RedshiftParameters {
     pub port: i32,
     /// <p>Database.</p>
     pub database: ::std::string::String,
+    /// <p>The federated database to use for table and schema discovery. Specify the exact database name returned by <code>SHOW DATABASES</code>, such as <code>producer_database@catalog_name</code>. This value must differ from <code>Database</code>, which specifies the database used for the connection.</p>
+    /// <p>For <code>UpdateDataSource</code>, omit this parameter to keep the current catalog, or specify an empty string to clear the configured catalog.</p>
+    pub federated_catalog: ::std::option::Option<::std::string::String>,
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that uses IAM authentication to grant Quick Sight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
@@ -31,6 +34,11 @@ impl RedshiftParameters {
     pub fn database(&self) -> &str {
         use std::ops::Deref;
         self.database.deref()
+    }
+    /// <p>The federated database to use for table and schema discovery. Specify the exact database name returned by <code>SHOW DATABASES</code>, such as <code>producer_database@catalog_name</code>. This value must differ from <code>Database</code>, which specifies the database used for the connection.</p>
+    /// <p>For <code>UpdateDataSource</code>, omit this parameter to keep the current catalog, or specify an empty string to clear the configured catalog.</p>
+    pub fn federated_catalog(&self) -> ::std::option::Option<&str> {
+        self.federated_catalog.as_deref()
     }
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
@@ -60,6 +68,7 @@ pub struct RedshiftParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) federated_catalog: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_parameters: ::std::option::Option<crate::types::RedshiftIamParameters>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
@@ -107,6 +116,23 @@ impl RedshiftParametersBuilder {
     /// <p>Database.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
         &self.database
+    }
+    /// <p>The federated database to use for table and schema discovery. Specify the exact database name returned by <code>SHOW DATABASES</code>, such as <code>producer_database@catalog_name</code>. This value must differ from <code>Database</code>, which specifies the database used for the connection.</p>
+    /// <p>For <code>UpdateDataSource</code>, omit this parameter to keep the current catalog, or specify an empty string to clear the configured catalog.</p>
+    pub fn federated_catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.federated_catalog = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The federated database to use for table and schema discovery. Specify the exact database name returned by <code>SHOW DATABASES</code>, such as <code>producer_database@catalog_name</code>. This value must differ from <code>Database</code>, which specifies the database used for the connection.</p>
+    /// <p>For <code>UpdateDataSource</code>, omit this parameter to keep the current catalog, or specify an empty string to clear the configured catalog.</p>
+    pub fn set_federated_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.federated_catalog = input;
+        self
+    }
+    /// <p>The federated database to use for table and schema discovery. Specify the exact database name returned by <code>SHOW DATABASES</code>, such as <code>producer_database@catalog_name</code>. This value must differ from <code>Database</code>, which specifies the database used for the connection.</p>
+    /// <p>For <code>UpdateDataSource</code>, omit this parameter to keep the current catalog, or specify an empty string to clear the configured catalog.</p>
+    pub fn get_federated_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.federated_catalog
     }
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,6 +192,7 @@ impl RedshiftParametersBuilder {
                     "database was not specified but it is required when building RedshiftParameters",
                 )
             })?,
+            federated_catalog: self.federated_catalog,
             cluster_id: self.cluster_id,
             iam_parameters: self.iam_parameters,
             identity_center_configuration: self.identity_center_configuration,

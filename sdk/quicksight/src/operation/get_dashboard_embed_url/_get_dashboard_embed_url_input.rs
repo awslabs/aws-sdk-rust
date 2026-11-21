@@ -17,7 +17,7 @@ pub struct GetDashboardEmbedUrlInput {
     pub reset_disabled: ::std::option::Option<bool>,
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon Quick Sight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon Quick Sight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     pub state_persistence_enabled: ::std::option::Option<bool>,
-    /// <p>The Amazon Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -62,7 +62,7 @@ impl GetDashboardEmbedUrlInput {
     pub fn state_persistence_enabled(&self) -> ::std::option::Option<bool> {
         self.state_persistence_enabled
     }
-    /// <p>The Amazon Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -210,7 +210,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     pub fn get_state_persistence_enabled(&self) -> &::std::option::Option<bool> {
         &self.state_persistence_enabled
     }
-    /// <p>The Amazon Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -224,7 +224,7 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -238,7 +238,7 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.user_arn = input;
         self
     }
-    /// <p>The Amazon Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Quick user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Quick users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>

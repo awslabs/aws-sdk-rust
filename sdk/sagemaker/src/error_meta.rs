@@ -4255,6 +4255,33 @@ impl From<crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_capacity_reservation::DescribeCapacityReservationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_capacity_reservation::DescribeCapacityReservationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_reservation::DescribeCapacityReservationError> for Error {
+    fn from(err: crate::operation::describe_capacity_reservation::DescribeCapacityReservationError) -> Self {
+        match err {
+            crate::operation::describe_capacity_reservation::DescribeCapacityReservationError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::describe_capacity_reservation::DescribeCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster::DescribeClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5736,6 +5763,37 @@ impl From<crate::operation::describe_reserved_capacity::DescribeReservedCapacity
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_associations::DescribeResourceAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_resource_associations::DescribeResourceAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_resource_associations::DescribeResourceAssociationsError> for Error {
+    fn from(err: crate::operation::describe_resource_associations::DescribeResourceAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_resource_associations::DescribeResourceAssociationsError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::describe_resource_associations::DescribeResourceAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_space::DescribeSpaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6192,6 +6250,37 @@ impl From<crate::operation::extend_training_plan::ExtendTrainingPlanError> for E
         match err {
             crate::operation::extend_training_plan::ExtendTrainingPlanError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::extend_training_plan::ExtendTrainingPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError> for Error {
+    fn from(err: crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError) -> Self {
+        match err {
+            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6672,6 +6761,30 @@ impl From<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAu
                 Error::ResourceNotFound(inner)
             }
             crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_reservations::ListCapacityReservationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_reservations::ListCapacityReservationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_capacity_reservations::ListCapacityReservationsError> for Error {
+    fn from(err: crate::operation::list_capacity_reservations::ListCapacityReservationsError) -> Self {
+        match err {
+            crate::operation::list_capacity_reservations::ListCapacityReservationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

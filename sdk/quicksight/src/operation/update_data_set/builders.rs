@@ -386,4 +386,26 @@ impl UpdateDataSetFluentBuilder {
     pub fn get_semantic_model_configuration(&self) -> &::std::option::Option<crate::types::SemanticModelConfiguration> {
         self.inner.get_semantic_model_configuration()
     }
+    ///
+    /// Appends an item to `UnmaterializedCalculatedColumns`.
+    ///
+    /// To override the contents of this collection use [`set_unmaterialized_calculated_columns`](Self::set_unmaterialized_calculated_columns).
+    ///
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    pub fn unmaterialized_calculated_columns(mut self, input: crate::types::UnmaterializedCalculatedColumn) -> Self {
+        self.inner = self.inner.unmaterialized_calculated_columns(input);
+        self
+    }
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    pub fn set_unmaterialized_calculated_columns(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UnmaterializedCalculatedColumn>>,
+    ) -> Self {
+        self.inner = self.inner.set_unmaterialized_calculated_columns(input);
+        self
+    }
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    pub fn get_unmaterialized_calculated_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnmaterializedCalculatedColumn>> {
+        self.inner.get_unmaterialized_calculated_columns()
+    }
 }

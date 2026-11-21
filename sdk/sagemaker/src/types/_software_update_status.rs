@@ -14,6 +14,7 @@
 /// match softwareupdatestatus {
 ///     SoftwareUpdateStatus::Failed => { /* ... */ },
 ///     SoftwareUpdateStatus::InProgress => { /* ... */ },
+///     SoftwareUpdateStatus::PartiallySucceeded => { /* ... */ },
 ///     SoftwareUpdateStatus::Pending => { /* ... */ },
 ///     SoftwareUpdateStatus::RollbackComplete => { /* ... */ },
 ///     SoftwareUpdateStatus::RollbackInProgress => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum SoftwareUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
+    PartiallySucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     RollbackComplete,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for SoftwareUpdateStatus {
         match s {
             "Failed" => SoftwareUpdateStatus::Failed,
             "InProgress" => SoftwareUpdateStatus::InProgress,
+            "PartiallySucceeded" => SoftwareUpdateStatus::PartiallySucceeded,
             "Pending" => SoftwareUpdateStatus::Pending,
             "RollbackComplete" => SoftwareUpdateStatus::RollbackComplete,
             "RollbackInProgress" => SoftwareUpdateStatus::RollbackInProgress,
@@ -88,6 +92,7 @@ impl SoftwareUpdateStatus {
         match self {
             SoftwareUpdateStatus::Failed => "Failed",
             SoftwareUpdateStatus::InProgress => "InProgress",
+            SoftwareUpdateStatus::PartiallySucceeded => "PartiallySucceeded",
             SoftwareUpdateStatus::Pending => "Pending",
             SoftwareUpdateStatus::RollbackComplete => "RollbackComplete",
             SoftwareUpdateStatus::RollbackInProgress => "RollbackInProgress",
@@ -97,7 +102,15 @@ impl SoftwareUpdateStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Pending", "RollbackComplete", "RollbackInProgress", "Succeeded"]
+        &[
+            "Failed",
+            "InProgress",
+            "PartiallySucceeded",
+            "Pending",
+            "RollbackComplete",
+            "RollbackInProgress",
+            "Succeeded",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SoftwareUpdateStatus {
@@ -122,6 +135,7 @@ impl ::std::fmt::Display for SoftwareUpdateStatus {
         match self {
             SoftwareUpdateStatus::Failed => write!(f, "Failed"),
             SoftwareUpdateStatus::InProgress => write!(f, "InProgress"),
+            SoftwareUpdateStatus::PartiallySucceeded => write!(f, "PartiallySucceeded"),
             SoftwareUpdateStatus::Pending => write!(f, "Pending"),
             SoftwareUpdateStatus::RollbackComplete => write!(f, "RollbackComplete"),
             SoftwareUpdateStatus::RollbackInProgress => write!(f, "RollbackInProgress"),

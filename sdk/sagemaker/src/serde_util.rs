@@ -737,6 +737,18 @@ pub(crate) fn describe_auto_ml_job_v2_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_capacity_reservation_output_output_correct_errors(
+    mut builder: crate::operation::describe_capacity_reservation::builders::DescribeCapacityReservationOutputBuilder,
+) -> crate::operation::describe_capacity_reservation::builders::DescribeCapacityReservationOutputBuilder {
+    if builder.capacity_reservation.is_none() {
+        builder.capacity_reservation = {
+            let builder = crate::types::builders::CapacityReservationDetailBuilder::default();
+            Some(crate::serde_util::capacity_reservation_detail_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_cluster_output_output_correct_errors(
     mut builder: crate::operation::describe_cluster::builders::DescribeClusterOutputBuilder,
 ) -> crate::operation::describe_cluster::builders::DescribeClusterOutputBuilder {
@@ -1871,6 +1883,21 @@ pub(crate) fn describe_reserved_capacity_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_resource_associations_output_output_correct_errors(
+    mut builder: crate::operation::describe_resource_associations::builders::DescribeResourceAssociationsOutputBuilder,
+) -> crate::operation::describe_resource_associations::builders::DescribeResourceAssociationsOutputBuilder {
+    if builder.sm_capacity_reservation_arn.is_none() {
+        builder.sm_capacity_reservation_arn = Some(Default::default())
+    }
+    if builder.sm_capacity_reservation_id.is_none() {
+        builder.sm_capacity_reservation_id = Some(Default::default())
+    }
+    if builder.resource_associations.is_none() {
+        builder.resource_associations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_subscribed_workteam_output_output_correct_errors(
     mut builder: crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder,
 ) -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder {
@@ -2042,6 +2069,27 @@ pub(crate) fn extend_training_plan_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_capacity_reservation_usage_output_output_correct_errors(
+    mut builder: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder,
+) -> crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder {
+    if builder.sm_capacity_reservation_id.is_none() {
+        builder.sm_capacity_reservation_id = Some(Default::default())
+    }
+    if builder.total_instance_count.is_none() {
+        builder.total_instance_count = Some(Default::default())
+    }
+    if builder.available_instance_count.is_none() {
+        builder.available_instance_count = Some(Default::default())
+    }
+    if builder.last_refresh_time.is_none() {
+        builder.last_refresh_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.instance_usage_set.is_none() {
+        builder.instance_usage_set = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_device_fleet_report_output_output_correct_errors(
     mut builder: crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportOutputBuilder,
 ) -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportOutputBuilder {
@@ -2125,6 +2173,15 @@ pub(crate) fn list_candidates_for_auto_ml_job_output_output_correct_errors(
 ) -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobOutputBuilder {
     if builder.candidates.is_none() {
         builder.candidates = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_capacity_reservations_output_output_correct_errors(
+    mut builder: crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder,
+) -> crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder {
+    if builder.capacity_reservation_summaries.is_none() {
+        builder.capacity_reservation_summaries = Some(Default::default())
     }
     builder
 }
@@ -2998,6 +3055,39 @@ pub(crate) fn auto_ml_output_data_config_correct_errors(
 ) -> crate::types::builders::AutoMlOutputDataConfigBuilder {
     if builder.s3_output_path.is_none() {
         builder.s3_output_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn capacity_reservation_detail_correct_errors(
+    mut builder: crate::types::builders::CapacityReservationDetailBuilder,
+) -> crate::types::builders::CapacityReservationDetailBuilder {
+    if builder.sm_capacity_reservation_arn.is_none() {
+        builder.sm_capacity_reservation_arn = Some(Default::default())
+    }
+    if builder.sm_capacity_reservation_id.is_none() {
+        builder.sm_capacity_reservation_id = Some(Default::default())
+    }
+    if builder.owner.is_none() {
+        builder.owner = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CapacityReservationStatus>().ok()
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = Some(Default::default())
+    }
+    if builder.availability_zone_id.is_none() {
+        builder.availability_zone_id = Some(Default::default())
+    }
+    if builder.total_instance_count.is_none() {
+        builder.total_instance_count = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

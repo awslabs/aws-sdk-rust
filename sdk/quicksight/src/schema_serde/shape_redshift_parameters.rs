@@ -29,6 +29,16 @@ static REDSHIFTPARAMETERS_MEMBER_DATABASE: ::aws_smithy_schema::Schema<'static> 
     "Database",
     2,
 );
+static REDSHIFTPARAMETERS_MEMBER_FEDERATED_CATALOG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.quicksight#RedshiftParameters$FederatedCatalog",
+        "com.amazonaws.quicksight",
+        "RedshiftParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FederatedCatalog",
+    3,
+);
 static REDSHIFTPARAMETERS_MEMBER_CLUSTER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.quicksight#RedshiftParameters$ClusterId",
@@ -37,7 +47,7 @@ static REDSHIFTPARAMETERS_MEMBER_CLUSTER_ID: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ClusterId",
-    3,
+    4,
 );
 static REDSHIFTPARAMETERS_MEMBER_IAM_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -47,7 +57,7 @@ static REDSHIFTPARAMETERS_MEMBER_IAM_PARAMETERS: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "IAMParameters",
-    4,
+    5,
 );
 static REDSHIFTPARAMETERS_MEMBER_IDENTITY_CENTER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -57,7 +67,7 @@ static REDSHIFTPARAMETERS_MEMBER_IDENTITY_CENTER_CONFIGURATION: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "IdentityCenterConfiguration",
-    5,
+    6,
 );
 static REDSHIFTPARAMETERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -70,6 +80,7 @@ static REDSHIFTPARAMETERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &REDSHIFTPARAMETERS_MEMBER_HOST,
         &REDSHIFTPARAMETERS_MEMBER_PORT,
         &REDSHIFTPARAMETERS_MEMBER_DATABASE,
+        &REDSHIFTPARAMETERS_MEMBER_FEDERATED_CATALOG,
         &REDSHIFTPARAMETERS_MEMBER_CLUSTER_ID,
         &REDSHIFTPARAMETERS_MEMBER_IAM_PARAMETERS,
         &REDSHIFTPARAMETERS_MEMBER_IDENTITY_CENTER_CONFIGURATION,
@@ -99,6 +110,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::RedshiftPa
         {
             let val = &self.database;
             ser.write_string(&REDSHIFTPARAMETERS_MEMBER_DATABASE, val)?;
+        }
+        if let Some(ref val) = self.federated_catalog {
+            ser.write_string(&REDSHIFTPARAMETERS_MEMBER_FEDERATED_CATALOG, val)?;
         }
         if let Some(ref val) = self.cluster_id {
             ser.write_string(&REDSHIFTPARAMETERS_MEMBER_CLUSTER_ID, val)?;
@@ -143,17 +157,24 @@ impl crate::types::builders::RedshiftParametersBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.cluster_id = Some(deser.read_string(member)?);
+                        self.federated_catalog = Some(deser.read_string(member)?);
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.iam_parameters = Some(crate::types::RedshiftIamParameters::deserialize(deser)?);
+                        self.cluster_id = Some(deser.read_string(member)?);
                     }
                 }
                 Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_parameters = Some(crate::types::RedshiftIamParameters::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

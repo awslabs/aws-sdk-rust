@@ -38,6 +38,8 @@ pub struct UpdateDataSetInput {
     pub data_prep_configuration: ::std::option::Option<crate::types::DataPrepConfiguration>,
     /// <p>The semantic model configuration for the dataset. This configuration defines how the prepared data is structured for an analysis, including table mappings and row-level security configurations. Required when using the new data preparation experience.</p>
     pub semantic_model_configuration: ::std::option::Option<crate::types::SemanticModelConfiguration>,
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    pub unmaterialized_calculated_columns: ::std::option::Option<::std::vec::Vec<crate::types::UnmaterializedCalculatedColumn>>,
 }
 impl UpdateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -113,6 +115,12 @@ impl UpdateDataSetInput {
     pub fn semantic_model_configuration(&self) -> ::std::option::Option<&crate::types::SemanticModelConfiguration> {
         self.semantic_model_configuration.as_ref()
     }
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unmaterialized_calculated_columns.is_none()`.
+    pub fn unmaterialized_calculated_columns(&self) -> &[crate::types::UnmaterializedCalculatedColumn] {
+        self.unmaterialized_calculated_columns.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateDataSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
@@ -141,6 +149,7 @@ pub struct UpdateDataSetInputBuilder {
     pub(crate) performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
     pub(crate) data_prep_configuration: ::std::option::Option<crate::types::DataPrepConfiguration>,
     pub(crate) semantic_model_configuration: ::std::option::Option<crate::types::SemanticModelConfiguration>,
+    pub(crate) unmaterialized_calculated_columns: ::std::option::Option<::std::vec::Vec<crate::types::UnmaterializedCalculatedColumn>>,
 }
 impl UpdateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -431,6 +440,29 @@ impl UpdateDataSetInputBuilder {
     pub fn get_semantic_model_configuration(&self) -> &::std::option::Option<crate::types::SemanticModelConfiguration> {
         &self.semantic_model_configuration
     }
+    /// Appends an item to `unmaterialized_calculated_columns`.
+    ///
+    /// To override the contents of this collection use [`set_unmaterialized_calculated_columns`](Self::set_unmaterialized_calculated_columns).
+    ///
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    pub fn unmaterialized_calculated_columns(mut self, input: crate::types::UnmaterializedCalculatedColumn) -> Self {
+        let mut v = self.unmaterialized_calculated_columns.unwrap_or_default();
+        v.push(input);
+        self.unmaterialized_calculated_columns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    pub fn set_unmaterialized_calculated_columns(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UnmaterializedCalculatedColumn>>,
+    ) -> Self {
+        self.unmaterialized_calculated_columns = input;
+        self
+    }
+    /// <p>A list of unmaterialized calculated columns for the dataset. These columns are computed at analysis time and are not stored in the prepared data. You can only use this with the new data preparation experience.</p>
+    pub fn get_unmaterialized_calculated_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnmaterializedCalculatedColumn>> {
+        &self.unmaterialized_calculated_columns
+    }
     /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
     pub fn build(
         self,
@@ -452,6 +484,7 @@ impl UpdateDataSetInputBuilder {
             performance_configuration: self.performance_configuration,
             data_prep_configuration: self.data_prep_configuration,
             semantic_model_configuration: self.semantic_model_configuration,
+            unmaterialized_calculated_columns: self.unmaterialized_calculated_columns,
         })
     }
 }

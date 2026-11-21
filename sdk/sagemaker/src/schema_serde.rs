@@ -297,6 +297,22 @@ pub(crate) mod shape_canvas_app_settings;
 
 pub(crate) mod shape_capacity_reservation;
 
+pub(crate) mod shape_capacity_reservation_detail;
+
+pub(crate) mod shape_capacity_reservation_endpoints_association;
+
+pub(crate) mod shape_capacity_reservation_filter;
+
+pub(crate) mod shape_capacity_reservation_hyper_pod_clusters_association;
+
+pub(crate) mod shape_capacity_reservation_instance_usage;
+
+pub(crate) mod shape_capacity_reservation_resource_association;
+
+pub(crate) mod shape_capacity_reservation_resource_usage;
+
+pub(crate) mod shape_capacity_reservation_summary;
+
 pub(crate) mod shape_capacity_size;
 
 pub(crate) mod shape_capacity_size_config;
@@ -1173,6 +1189,10 @@ pub(crate) mod shape_describe_auto_ml_job_v2_input_input;
 
 pub(crate) mod shape_describe_auto_ml_job_v2_output_output;
 
+pub(crate) mod shape_describe_capacity_reservation_input_input;
+
+pub(crate) mod shape_describe_capacity_reservation_output_output;
+
 pub(crate) mod shape_describe_cluster_event_input_input;
 
 pub(crate) mod shape_describe_cluster_event_output_output;
@@ -1404,6 +1424,10 @@ pub(crate) mod shape_describe_project_output_output;
 pub(crate) mod shape_describe_reserved_capacity_input_input;
 
 pub(crate) mod shape_describe_reserved_capacity_output_output;
+
+pub(crate) mod shape_describe_resource_associations_input_input;
+
+pub(crate) mod shape_describe_resource_associations_output_output;
 
 pub(crate) mod shape_describe_space_input_input;
 
@@ -1654,6 +1678,10 @@ pub(crate) mod shape_for_each_selector_result;
 pub(crate) mod shape_for_each_step_metadata;
 
 pub(crate) mod shape_generative_ai_settings;
+
+pub(crate) mod shape_get_capacity_reservation_usage_input_input;
+
+pub(crate) mod shape_get_capacity_reservation_usage_output_output;
 
 pub(crate) mod shape_get_device_fleet_report_input_input;
 
@@ -1982,6 +2010,10 @@ pub(crate) mod shape_list_auto_ml_jobs_output_output;
 pub(crate) mod shape_list_candidates_for_auto_ml_job_input_input;
 
 pub(crate) mod shape_list_candidates_for_auto_ml_job_output_output;
+
+pub(crate) mod shape_list_capacity_reservations_input_input;
+
+pub(crate) mod shape_list_capacity_reservations_output_output;
 
 pub(crate) mod shape_list_cluster_events_input_input;
 

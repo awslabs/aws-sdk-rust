@@ -181,11 +181,19 @@ mod batch_create_topic_reviewed_answer;
 
 mod batch_delete_knowledge_base;
 
+mod batch_delete_policy_assignment_by_policy;
+
 mod batch_delete_topic_reviewed_answer;
 
 mod batch_describe_user_limits;
 
+mod batch_put_policy_assignment_by_policy;
+
 mod cancel_ingestion;
+
+mod create_access_control_application;
+
+mod create_access_control_application_secret;
 
 mod create_account_customization;
 
@@ -223,9 +231,13 @@ mod create_group_membership;
 
 mod create_iam_policy_assignment;
 
+mod create_inbound_connector;
+
 mod create_ingestion;
 
 mod create_knowledge_base;
+
+mod create_knowledge_base_refresh_schedule;
 
 mod create_limits_profile;
 
@@ -282,6 +294,10 @@ mod create_vpc_connection;
 /// ```
 pub mod customize;
 
+mod delete_access_control_application;
+
+mod delete_access_control_application_secret;
+
 mod delete_account_custom_permission;
 
 mod delete_account_customization;
@@ -330,13 +346,19 @@ mod delete_iam_policy_assignment;
 
 mod delete_identity_propagation_config;
 
+mod delete_inbound_connector;
+
 mod delete_knowledge_base;
+
+mod delete_knowledge_base_refresh_schedule;
 
 mod delete_limits_profile;
 
 mod delete_namespace;
 
 mod delete_o_auth_client_application;
+
+mod delete_policy_assignment;
 
 mod delete_refresh_schedule;
 
@@ -367,6 +389,8 @@ mod delete_user_by_principal_id;
 mod delete_user_custom_permission;
 
 mod delete_vpc_connection;
+
+mod describe_access_control_application;
 
 mod describe_account_custom_permission;
 
@@ -450,6 +474,8 @@ mod describe_group_membership;
 
 mod describe_iam_policy_assignment;
 
+mod describe_inbound_connector;
+
 mod describe_ingestion;
 
 mod describe_ip_restriction;
@@ -459,6 +485,8 @@ mod describe_key_registration;
 mod describe_knowledge_base;
 
 mod describe_knowledge_base_permissions;
+
+mod describe_knowledge_base_refresh_schedule;
 
 mod describe_limits_profile;
 
@@ -526,7 +554,11 @@ mod get_flow_permissions;
 
 mod get_identity_context;
 
+mod get_policy_assignment;
+
 mod get_session_embed_url;
+
+mod list_access_control_applications;
 
 mod list_action_connectors;
 
@@ -574,7 +606,13 @@ mod list_iam_policy_assignments_for_user;
 
 mod list_identity_propagation_configs;
 
+mod list_inbound_connector_application_associations;
+
+mod list_inbound_connectors;
+
 mod list_ingestions;
+
+mod list_knowledge_base_refresh_schedules;
 
 mod list_knowledge_bases;
 
@@ -583,6 +621,8 @@ mod list_limits_profiles;
 mod list_namespaces;
 
 mod list_o_auth_client_applications;
+
+mod list_principals_for_policy;
 
 mod list_refresh_schedules;
 
@@ -627,6 +667,8 @@ mod list_vpc_connections;
 mod predict_qa_results;
 
 mod put_data_set_refresh_properties;
+
+mod put_policy_assignment;
 
 mod register_user;
 
@@ -673,6 +715,10 @@ mod start_dashboard_snapshot_job_schedule;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_access_control_application;
+
+mod update_access_control_application_secret;
 
 mod update_account_custom_permission;
 
@@ -742,6 +788,10 @@ mod update_iam_policy_assignment;
 
 mod update_identity_propagation_config;
 
+mod update_inbound_connector;
+
+mod update_inbound_connector_application_associations;
+
 mod update_ip_restriction;
 
 mod update_key_registration;
@@ -749,6 +799,8 @@ mod update_key_registration;
 mod update_knowledge_base;
 
 mod update_knowledge_base_permissions;
+
+mod update_knowledge_base_refresh_schedule;
 
 mod update_limits_profile;
 

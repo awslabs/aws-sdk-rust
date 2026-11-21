@@ -19,6 +19,16 @@ pub(crate) fn reflens_describe_folder_resolved_permissions_output_output_next_to
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_access_control_applications_output_output_next_token(
+    input: &crate::operation::list_access_control_applications::ListAccessControlApplicationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_action_connectors_output_output_next_token(
     input: &crate::operation::list_action_connectors::ListActionConnectorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -229,8 +239,38 @@ pub(crate) fn reflens_list_iam_policy_assignments_for_user_output_output_next_to
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_inbound_connector_application_associations_output_output_next_token(
+    input: &crate::operation::list_inbound_connector_application_associations::ListInboundConnectorApplicationAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_inbound_connectors_output_output_next_token(
+    input: &crate::operation::list_inbound_connectors::ListInboundConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_ingestions_output_output_next_token(
     input: &crate::operation::list_ingestions::ListIngestionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_knowledge_base_refresh_schedules_output_output_next_token(
+    input: &crate::operation::list_knowledge_base_refresh_schedules::ListKnowledgeBaseRefreshSchedulesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -271,6 +311,16 @@ pub(crate) fn reflens_list_namespaces_output_output_next_token(
 
 pub(crate) fn reflens_list_o_auth_client_applications_output_output_next_token(
     input: &crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_principals_for_policy_output_output_next_token(
+    input: &crate::operation::list_principals_for_policy::ListPrincipalsForPolicyOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -523,6 +573,13 @@ pub(crate) fn lens_describe_folder_resolved_permissions_output_output_permission
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_access_control_applications_output_output_access_control_applications(
+    input: crate::operation::list_access_control_applications::ListAccessControlApplicationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessControlApplicationSummary>> {
+    let input = input.access_control_applications;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_action_connectors_output_output_action_connector_summaries(
     input: crate::operation::list_action_connectors::ListActionConnectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionConnectorSummary>> {
@@ -670,10 +727,31 @@ pub(crate) fn lens_list_iam_policy_assignments_for_user_output_output_active_ass
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_inbound_connector_application_associations_output_output_application_associations(
+    input: crate::operation::list_inbound_connector_application_associations::ListInboundConnectorApplicationAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InboundConnectorApplicationAssociationSummary>> {
+    let input = input.application_associations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_inbound_connectors_output_output_inbound_connector_summaries(
+    input: crate::operation::list_inbound_connectors::ListInboundConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InboundConnectorSummary>> {
+    let input = input.inbound_connector_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_ingestions_output_output_ingestions(
     input: crate::operation::list_ingestions::ListIngestionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Ingestion>> {
     let input = input.ingestions?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_knowledge_base_refresh_schedules_output_output_schedule_summaries(
+    input: crate::operation::list_knowledge_base_refresh_schedules::ListKnowledgeBaseRefreshSchedulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRefreshScheduleSummary>> {
+    let input = input.schedule_summaries;
     ::std::option::Option::Some(input)
 }
 
@@ -702,6 +780,13 @@ pub(crate) fn lens_list_o_auth_client_applications_output_output_o_auth_client_a
     input: crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OAuthClientApplicationSummary>> {
     let input = input.o_auth_client_applications?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_principals_for_policy_output_output_principals(
+    input: crate::operation::list_principals_for_policy::ListPrincipalsForPolicyOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyPrincipal>> {
+    let input = input.principals;
     ::std::option::Option::Some(input)
 }
 

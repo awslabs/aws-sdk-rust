@@ -335,6 +335,28 @@ static CREATEDATASETINPUT_MEMBER_SEMANTIC_MODEL_CONFIGURATION: ::aws_smithy_sche
     "SemanticModelConfiguration",
     19,
 );
+static CREATEDATASETINPUT_MEMBER_UNMATERIALIZED_CALCULATED_COLUMNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.quicksight#UnmaterializedCalculatedColumnList$member",
+            "com.amazonaws.quicksight",
+            "UnmaterializedCalculatedColumnList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEDATASETINPUT_MEMBER_UNMATERIALIZED_CALCULATED_COLUMNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.quicksight.synthetic#CreateDataSetInput$UnmaterializedCalculatedColumns",
+        "com.amazonaws.quicksight.synthetic",
+        "CreateDataSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UnmaterializedCalculatedColumns",
+    20,
+)
+.with_list_member(&CREATEDATASETINPUT_MEMBER_UNMATERIALIZED_CALCULATED_COLUMNS_MEMBER);
 static CREATEDATASETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.quicksight.synthetic#CreateDataSetInput",
@@ -363,6 +385,7 @@ static CREATEDATASETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &CREATEDATASETINPUT_MEMBER_USE_AS,
         &CREATEDATASETINPUT_MEMBER_DATA_PREP_CONFIGURATION,
         &CREATEDATASETINPUT_MEMBER_SEMANTIC_MODEL_CONFIGURATION,
+        &CREATEDATASETINPUT_MEMBER_UNMATERIALIZED_CALCULATED_COLUMNS,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
@@ -520,6 +543,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.semantic_model_configuration {
             ser.write_struct(&CREATEDATASETINPUT_MEMBER_SEMANTIC_MODEL_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.unmaterialized_calculated_columns {
+            ser.write_list(
+                &CREATEDATASETINPUT_MEMBER_UNMATERIALIZED_CALCULATED_COLUMNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UnmaterializedCalculatedColumn::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -732,6 +766,20 @@ impl crate::operation::create_data_set::builders::CreateDataSetInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.semantic_model_configuration = Some(crate::types::SemanticModelConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unmaterialized_calculated_columns = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UnmaterializedCalculatedColumn::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

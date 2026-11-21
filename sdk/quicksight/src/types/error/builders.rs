@@ -15,6 +15,8 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBu
 
 pub use crate::types::error::_precondition_not_met_exception::PreconditionNotMetExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_resource_exists_exception::ResourceExistsExceptionBuilder;

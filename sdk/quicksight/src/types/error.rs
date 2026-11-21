@@ -15,6 +15,8 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_precondition_not_met_exception::PreconditionNotMetException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
 pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_resource_exists_exception::ResourceExistsException;
@@ -90,6 +92,8 @@ mod _throttling_exception;
 mod _unsupported_pricing_plan_exception;
 
 mod _unsupported_user_edition_exception;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

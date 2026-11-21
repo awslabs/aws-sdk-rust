@@ -1971,6 +1971,36 @@ static CAPABILITIES_MEMBER_USE_MCP_ACTION: ::aws_smithy_schema::Schema<'static> 
     "UseMCPAction",
     196,
 );
+static CAPABILITIES_MEMBER_LOCAL_MCP_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.quicksight#Capabilities$LocalMCPAction",
+        "com.amazonaws.quicksight",
+        "Capabilities",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocalMCPAction",
+    197,
+);
+static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_LOCAL_MCP_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.quicksight#Capabilities$CreateAndUpdateLocalMCPAction",
+        "com.amazonaws.quicksight",
+        "Capabilities",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreateAndUpdateLocalMCPAction",
+    198,
+);
+static CAPABILITIES_MEMBER_USE_LOCAL_MCP_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.quicksight#Capabilities$UseLocalMCPAction",
+        "com.amazonaws.quicksight",
+        "Capabilities",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UseLocalMCPAction",
+    199,
+);
 static CAPABILITIES_MEMBER_OPEN_API_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.quicksight#Capabilities$OpenAPIAction",
@@ -1979,7 +2009,7 @@ static CAPABILITIES_MEMBER_OPEN_API_ACTION: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "OpenAPIAction",
-    197,
+    200,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_OPEN_API_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -1989,7 +2019,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_OPEN_API_ACTION: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateOpenAPIAction",
-    198,
+    201,
 );
 static CAPABILITIES_MEMBER_SHARE_OPEN_API_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -1999,7 +2029,7 @@ static CAPABILITIES_MEMBER_SHARE_OPEN_API_ACTION: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareOpenAPIAction",
-    199,
+    202,
 );
 static CAPABILITIES_MEMBER_USE_OPEN_API_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2009,7 +2039,7 @@ static CAPABILITIES_MEMBER_USE_OPEN_API_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseOpenAPIAction",
-    200,
+    203,
 );
 static CAPABILITIES_MEMBER_SAND_PGMI_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2019,7 +2049,7 @@ static CAPABILITIES_MEMBER_SAND_PGMI_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SandPGMIAction",
-    201,
+    204,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SAND_PGMI_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2029,7 +2059,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SAND_PGMI_ACTION: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateSandPGMIAction",
-    202,
+    205,
 );
 static CAPABILITIES_MEMBER_SHARE_SAND_PGMI_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2039,7 +2069,7 @@ static CAPABILITIES_MEMBER_SHARE_SAND_PGMI_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSandPGMIAction",
-    203,
+    206,
 );
 static CAPABILITIES_MEMBER_USE_SAND_PGMI_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2049,7 +2079,7 @@ static CAPABILITIES_MEMBER_USE_SAND_PGMI_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseSandPGMIAction",
-    204,
+    207,
 );
 static CAPABILITIES_MEMBER_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2059,7 +2089,7 @@ static CAPABILITIES_MEMBER_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SandPGlobalEnergyAction",
-    205,
+    208,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -2070,7 +2100,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_
         ),
         ::aws_smithy_schema::ShapeType::String,
         "CreateAndUpdateSandPGlobalEnergyAction",
-        206,
+        209,
     );
 static CAPABILITIES_MEMBER_SHARE_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2080,7 +2110,7 @@ static CAPABILITIES_MEMBER_SHARE_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSandPGlobalEnergyAction",
-    207,
+    210,
 );
 static CAPABILITIES_MEMBER_USE_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2090,7 +2120,7 @@ static CAPABILITIES_MEMBER_USE_SAND_P_GLOBAL_ENERGY_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseSandPGlobalEnergyAction",
-    208,
+    211,
 );
 static CAPABILITIES_MEMBER_BAMBOO_HR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2100,7 +2130,7 @@ static CAPABILITIES_MEMBER_BAMBOO_HR_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "BambooHRAction",
-    209,
+    212,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_BAMBOO_HR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2110,7 +2140,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_BAMBOO_HR_ACTION: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateBambooHRAction",
-    210,
+    213,
 );
 static CAPABILITIES_MEMBER_SHARE_BAMBOO_HR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2120,7 +2150,7 @@ static CAPABILITIES_MEMBER_SHARE_BAMBOO_HR_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareBambooHRAction",
-    211,
+    214,
 );
 static CAPABILITIES_MEMBER_USE_BAMBOO_HR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2130,7 +2160,7 @@ static CAPABILITIES_MEMBER_USE_BAMBOO_HR_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseBambooHRAction",
-    212,
+    215,
 );
 static CAPABILITIES_MEMBER_BOX_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2140,7 +2170,7 @@ static CAPABILITIES_MEMBER_BOX_AGENT_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "BoxAgentAction",
-    213,
+    216,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_BOX_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2150,7 +2180,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_BOX_AGENT_ACTION: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateBoxAgentAction",
-    214,
+    217,
 );
 static CAPABILITIES_MEMBER_SHARE_BOX_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2160,7 +2190,7 @@ static CAPABILITIES_MEMBER_SHARE_BOX_AGENT_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareBoxAgentAction",
-    215,
+    218,
 );
 static CAPABILITIES_MEMBER_USE_BOX_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2170,7 +2200,7 @@ static CAPABILITIES_MEMBER_USE_BOX_AGENT_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseBoxAgentAction",
-    216,
+    219,
 );
 static CAPABILITIES_MEMBER_CANVA_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2180,7 +2210,7 @@ static CAPABILITIES_MEMBER_CANVA_AGENT_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CanvaAgentAction",
-    217,
+    220,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_CANVA_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2190,7 +2220,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_CANVA_AGENT_ACTION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateCanvaAgentAction",
-    218,
+    221,
 );
 static CAPABILITIES_MEMBER_SHARE_CANVA_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2200,7 +2230,7 @@ static CAPABILITIES_MEMBER_SHARE_CANVA_AGENT_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareCanvaAgentAction",
-    219,
+    222,
 );
 static CAPABILITIES_MEMBER_USE_CANVA_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2210,7 +2240,7 @@ static CAPABILITIES_MEMBER_USE_CANVA_AGENT_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseCanvaAgentAction",
-    220,
+    223,
 );
 static CAPABILITIES_MEMBER_GITHUB_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2220,7 +2250,7 @@ static CAPABILITIES_MEMBER_GITHUB_ACTION: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GithubAction",
-    221,
+    224,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GITHUB_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2230,7 +2260,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GITHUB_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGithubAction",
-    222,
+    225,
 );
 static CAPABILITIES_MEMBER_SHARE_GITHUB_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2240,7 +2270,7 @@ static CAPABILITIES_MEMBER_SHARE_GITHUB_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGithubAction",
-    223,
+    226,
 );
 static CAPABILITIES_MEMBER_USE_GITHUB_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2250,7 +2280,7 @@ static CAPABILITIES_MEMBER_USE_GITHUB_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGithubAction",
-    224,
+    227,
 );
 static CAPABILITIES_MEMBER_NOTION_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2260,7 +2290,7 @@ static CAPABILITIES_MEMBER_NOTION_ACTION: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "NotionAction",
-    225,
+    228,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_NOTION_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2270,7 +2300,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_NOTION_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateNotionAction",
-    226,
+    229,
 );
 static CAPABILITIES_MEMBER_SHARE_NOTION_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2280,7 +2310,7 @@ static CAPABILITIES_MEMBER_SHARE_NOTION_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareNotionAction",
-    227,
+    230,
 );
 static CAPABILITIES_MEMBER_USE_NOTION_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2290,7 +2320,7 @@ static CAPABILITIES_MEMBER_USE_NOTION_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseNotionAction",
-    228,
+    231,
 );
 static CAPABILITIES_MEMBER_LINEAR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2300,7 +2330,7 @@ static CAPABILITIES_MEMBER_LINEAR_ACTION: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "LinearAction",
-    229,
+    232,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_LINEAR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2310,7 +2340,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_LINEAR_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateLinearAction",
-    230,
+    233,
 );
 static CAPABILITIES_MEMBER_SHARE_LINEAR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2320,7 +2350,7 @@ static CAPABILITIES_MEMBER_SHARE_LINEAR_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareLinearAction",
-    231,
+    234,
 );
 static CAPABILITIES_MEMBER_USE_LINEAR_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2330,7 +2360,7 @@ static CAPABILITIES_MEMBER_USE_LINEAR_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseLinearAction",
-    232,
+    235,
 );
 static CAPABILITIES_MEMBER_HUGGING_FACE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2340,7 +2370,7 @@ static CAPABILITIES_MEMBER_HUGGING_FACE_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "HuggingFaceAction",
-    233,
+    236,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_HUGGING_FACE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2350,7 +2380,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_HUGGING_FACE_ACTION: ::aws_smithy_s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateHuggingFaceAction",
-    234,
+    237,
 );
 static CAPABILITIES_MEMBER_SHARE_HUGGING_FACE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2360,7 +2390,7 @@ static CAPABILITIES_MEMBER_SHARE_HUGGING_FACE_ACTION: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareHuggingFaceAction",
-    235,
+    238,
 );
 static CAPABILITIES_MEMBER_USE_HUGGING_FACE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2370,7 +2400,7 @@ static CAPABILITIES_MEMBER_USE_HUGGING_FACE_ACTION: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseHuggingFaceAction",
-    236,
+    239,
 );
 static CAPABILITIES_MEMBER_MONDAY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2380,7 +2410,7 @@ static CAPABILITIES_MEMBER_MONDAY_ACTION: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "MondayAction",
-    237,
+    240,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_MONDAY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2390,7 +2420,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_MONDAY_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateMondayAction",
-    238,
+    241,
 );
 static CAPABILITIES_MEMBER_SHARE_MONDAY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2400,7 +2430,7 @@ static CAPABILITIES_MEMBER_SHARE_MONDAY_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareMondayAction",
-    239,
+    242,
 );
 static CAPABILITIES_MEMBER_USE_MONDAY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2410,7 +2440,7 @@ static CAPABILITIES_MEMBER_USE_MONDAY_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseMondayAction",
-    240,
+    243,
 );
 static CAPABILITIES_MEMBER_HUBSPOT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2420,7 +2450,7 @@ static CAPABILITIES_MEMBER_HUBSPOT_ACTION: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "HubspotAction",
-    241,
+    244,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_HUBSPOT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2430,7 +2460,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_HUBSPOT_ACTION: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateHubspotAction",
-    242,
+    245,
 );
 static CAPABILITIES_MEMBER_SHARE_HUBSPOT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2440,7 +2470,7 @@ static CAPABILITIES_MEMBER_SHARE_HUBSPOT_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareHubspotAction",
-    243,
+    246,
 );
 static CAPABILITIES_MEMBER_USE_HUBSPOT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2450,7 +2480,7 @@ static CAPABILITIES_MEMBER_USE_HUBSPOT_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseHubspotAction",
-    244,
+    247,
 );
 static CAPABILITIES_MEMBER_INTERCOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2460,7 +2490,7 @@ static CAPABILITIES_MEMBER_INTERCOM_ACTION: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "IntercomAction",
-    245,
+    248,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_INTERCOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2470,7 +2500,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_INTERCOM_ACTION: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateIntercomAction",
-    246,
+    249,
 );
 static CAPABILITIES_MEMBER_SHARE_INTERCOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2480,7 +2510,7 @@ static CAPABILITIES_MEMBER_SHARE_INTERCOM_ACTION: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareIntercomAction",
-    247,
+    250,
 );
 static CAPABILITIES_MEMBER_USE_INTERCOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2490,7 +2520,7 @@ static CAPABILITIES_MEMBER_USE_INTERCOM_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseIntercomAction",
-    248,
+    251,
 );
 static CAPABILITIES_MEMBER_NEW_RELIC_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2500,7 +2530,7 @@ static CAPABILITIES_MEMBER_NEW_RELIC_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "NewRelicAction",
-    249,
+    252,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_NEW_RELIC_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2510,7 +2540,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_NEW_RELIC_ACTION: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateNewRelicAction",
-    250,
+    253,
 );
 static CAPABILITIES_MEMBER_SHARE_NEW_RELIC_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2520,7 +2550,7 @@ static CAPABILITIES_MEMBER_SHARE_NEW_RELIC_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareNewRelicAction",
-    251,
+    254,
 );
 static CAPABILITIES_MEMBER_USE_NEW_RELIC_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2530,7 +2560,7 @@ static CAPABILITIES_MEMBER_USE_NEW_RELIC_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseNewRelicAction",
-    252,
+    255,
 );
 static CAPABILITIES_MEMBER_PAGER_DUTY_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2540,7 +2570,7 @@ static CAPABILITIES_MEMBER_PAGER_DUTY_AGENT_ACTION: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "PagerDutyAgentAction",
-    253,
+    256,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_PAGER_DUTY_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2550,7 +2580,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_PAGER_DUTY_AGENT_ACTION: ::aws_smit
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdatePagerDutyAgentAction",
-    254,
+    257,
 );
 static CAPABILITIES_MEMBER_SHARE_PAGER_DUTY_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2560,7 +2590,7 @@ static CAPABILITIES_MEMBER_SHARE_PAGER_DUTY_AGENT_ACTION: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SharePagerDutyAgentAction",
-    255,
+    258,
 );
 static CAPABILITIES_MEMBER_USE_PAGER_DUTY_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2570,7 +2600,7 @@ static CAPABILITIES_MEMBER_USE_PAGER_DUTY_AGENT_ACTION: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UsePagerDutyAgentAction",
-    256,
+    259,
 );
 static CAPABILITIES_MEMBER_VISIER_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2580,7 +2610,7 @@ static CAPABILITIES_MEMBER_VISIER_AGENT_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "VisierAgentAction",
-    257,
+    260,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_VISIER_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2590,7 +2620,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_VISIER_AGENT_ACTION: ::aws_smithy_s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateVisierAgentAction",
-    258,
+    261,
 );
 static CAPABILITIES_MEMBER_SHARE_VISIER_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2600,7 +2630,7 @@ static CAPABILITIES_MEMBER_SHARE_VISIER_AGENT_ACTION: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareVisierAgentAction",
-    259,
+    262,
 );
 static CAPABILITIES_MEMBER_USE_VISIER_AGENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2610,7 +2640,7 @@ static CAPABILITIES_MEMBER_USE_VISIER_AGENT_ACTION: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseVisierAgentAction",
-    260,
+    263,
 );
 static CAPABILITIES_MEMBER_ZOOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2620,7 +2650,7 @@ static CAPABILITIES_MEMBER_ZOOM_ACTION: ::aws_smithy_schema::Schema<'static> = :
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ZoomAction",
-    261,
+    264,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ZOOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2630,7 +2660,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ZOOM_ACTION: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateZoomAction",
-    262,
+    265,
 );
 static CAPABILITIES_MEMBER_SHARE_ZOOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2640,7 +2670,7 @@ static CAPABILITIES_MEMBER_SHARE_ZOOM_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareZoomAction",
-    263,
+    266,
 );
 static CAPABILITIES_MEMBER_USE_ZOOM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2650,7 +2680,7 @@ static CAPABILITIES_MEMBER_USE_ZOOM_ACTION: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseZoomAction",
-    264,
+    267,
 );
 static CAPABILITIES_MEMBER_SNOW_FLAKE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2660,7 +2690,7 @@ static CAPABILITIES_MEMBER_SNOW_FLAKE_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SnowFlakeAction",
-    265,
+    268,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SNOW_FLAKE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2670,7 +2700,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SNOW_FLAKE_ACTION: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateSnowFlakeAction",
-    266,
+    269,
 );
 static CAPABILITIES_MEMBER_SHARE_SNOW_FLAKE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2680,7 +2710,7 @@ static CAPABILITIES_MEMBER_SHARE_SNOW_FLAKE_ACTION: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSnowFlakeAction",
-    267,
+    270,
 );
 static CAPABILITIES_MEMBER_USE_SNOW_FLAKE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2690,7 +2720,7 @@ static CAPABILITIES_MEMBER_USE_SNOW_FLAKE_ACTION: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseSnowFlakeAction",
-    268,
+    271,
 );
 static CAPABILITIES_MEMBER_ZAPIER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2700,7 +2730,7 @@ static CAPABILITIES_MEMBER_ZAPIER_ACTION: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ZapierAction",
-    269,
+    272,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ZAPIER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2710,7 +2740,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ZAPIER_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateZapierAction",
-    270,
+    273,
 );
 static CAPABILITIES_MEMBER_SHARE_ZAPIER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2720,7 +2750,7 @@ static CAPABILITIES_MEMBER_SHARE_ZAPIER_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareZapierAction",
-    271,
+    274,
 );
 static CAPABILITIES_MEMBER_USE_ZAPIER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2730,7 +2760,7 @@ static CAPABILITIES_MEMBER_USE_ZAPIER_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseZapierAction",
-    272,
+    275,
 );
 static CAPABILITIES_MEMBER_AIRTABLE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2740,7 +2770,7 @@ static CAPABILITIES_MEMBER_AIRTABLE_ACTION: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AirtableAction",
-    273,
+    276,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_AIRTABLE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2750,7 +2780,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_AIRTABLE_ACTION: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateAirtableAction",
-    274,
+    277,
 );
 static CAPABILITIES_MEMBER_SHARE_AIRTABLE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2760,7 +2790,7 @@ static CAPABILITIES_MEMBER_SHARE_AIRTABLE_ACTION: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareAirtableAction",
-    275,
+    278,
 );
 static CAPABILITIES_MEMBER_USE_AIRTABLE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2770,7 +2800,7 @@ static CAPABILITIES_MEMBER_USE_AIRTABLE_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseAirtableAction",
-    276,
+    279,
 );
 static CAPABILITIES_MEMBER_DROPBOX_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2780,7 +2810,7 @@ static CAPABILITIES_MEMBER_DROPBOX_ACTION: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DropboxAction",
-    277,
+    280,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_DROPBOX_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2790,7 +2820,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_DROPBOX_ACTION: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateDropboxAction",
-    278,
+    281,
 );
 static CAPABILITIES_MEMBER_SHARE_DROPBOX_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2800,7 +2830,7 @@ static CAPABILITIES_MEMBER_SHARE_DROPBOX_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDropboxAction",
-    279,
+    282,
 );
 static CAPABILITIES_MEMBER_USE_DROPBOX_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2810,7 +2840,7 @@ static CAPABILITIES_MEMBER_USE_DROPBOX_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseDropboxAction",
-    280,
+    283,
 );
 static CAPABILITIES_MEMBER_GMAIL_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2820,7 +2850,7 @@ static CAPABILITIES_MEMBER_GMAIL_ACTION: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GmailAction",
-    281,
+    284,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GMAIL_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2830,7 +2860,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GMAIL_ACTION: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGmailAction",
-    282,
+    285,
 );
 static CAPABILITIES_MEMBER_SHARE_GMAIL_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2840,7 +2870,7 @@ static CAPABILITIES_MEMBER_SHARE_GMAIL_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGmailAction",
-    283,
+    286,
 );
 static CAPABILITIES_MEMBER_USE_GMAIL_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2850,7 +2880,7 @@ static CAPABILITIES_MEMBER_USE_GMAIL_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGmailAction",
-    284,
+    287,
 );
 static CAPABILITIES_MEMBER_GOOGLE_ANALYTICS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2860,7 +2890,7 @@ static CAPABILITIES_MEMBER_GOOGLE_ANALYTICS_ACTION: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleAnalyticsAction",
-    285,
+    288,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_ANALYTICS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2870,7 +2900,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_ANALYTICS_ACTION: ::aws_smit
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGoogleAnalyticsAction",
-    286,
+    289,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_ANALYTICS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2880,7 +2910,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_ANALYTICS_ACTION: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleAnalyticsAction",
-    287,
+    290,
 );
 static CAPABILITIES_MEMBER_USE_GOOGLE_ANALYTICS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2890,7 +2920,7 @@ static CAPABILITIES_MEMBER_USE_GOOGLE_ANALYTICS_ACTION: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGoogleAnalyticsAction",
-    288,
+    291,
 );
 static CAPABILITIES_MEMBER_GOOGLE_DOCS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2900,7 +2930,7 @@ static CAPABILITIES_MEMBER_GOOGLE_DOCS_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleDocsAction",
-    289,
+    292,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_DOCS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2910,7 +2940,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_DOCS_ACTION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGoogleDocsAction",
-    290,
+    293,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_DOCS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2920,7 +2950,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_DOCS_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleDocsAction",
-    291,
+    294,
 );
 static CAPABILITIES_MEMBER_USE_GOOGLE_DOCS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2930,7 +2960,7 @@ static CAPABILITIES_MEMBER_USE_GOOGLE_DOCS_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGoogleDocsAction",
-    292,
+    295,
 );
 static CAPABILITIES_MEMBER_GOOGLE_DRIVE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2940,7 +2970,7 @@ static CAPABILITIES_MEMBER_GOOGLE_DRIVE_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleDriveAction",
-    293,
+    296,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_DRIVE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2950,7 +2980,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_DRIVE_ACTION: ::aws_smithy_s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGoogleDriveAction",
-    294,
+    297,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_DRIVE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2960,7 +2990,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_DRIVE_ACTION: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleDriveAction",
-    295,
+    298,
 );
 static CAPABILITIES_MEMBER_USE_GOOGLE_DRIVE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2970,7 +3000,7 @@ static CAPABILITIES_MEMBER_USE_GOOGLE_DRIVE_ACTION: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGoogleDriveAction",
-    296,
+    299,
 );
 static CAPABILITIES_MEMBER_GOOGLE_MEET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2980,7 +3010,7 @@ static CAPABILITIES_MEMBER_GOOGLE_MEET_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleMeetAction",
-    297,
+    300,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_MEET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -2990,7 +3020,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_MEET_ACTION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGoogleMeetAction",
-    298,
+    301,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_MEET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3000,7 +3030,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_MEET_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleMeetAction",
-    299,
+    302,
 );
 static CAPABILITIES_MEMBER_USE_GOOGLE_MEET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3010,7 +3040,7 @@ static CAPABILITIES_MEMBER_USE_GOOGLE_MEET_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGoogleMeetAction",
-    300,
+    303,
 );
 static CAPABILITIES_MEMBER_GOOGLE_SHEETS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3020,7 +3050,7 @@ static CAPABILITIES_MEMBER_GOOGLE_SHEETS_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleSheetsAction",
-    301,
+    304,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_SHEETS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3030,7 +3060,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_SHEETS_ACTION: ::aws_smithy_
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGoogleSheetsAction",
-    302,
+    305,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_SHEETS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3040,7 +3070,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_SHEETS_ACTION: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleSheetsAction",
-    303,
+    306,
 );
 static CAPABILITIES_MEMBER_USE_GOOGLE_SHEETS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3050,7 +3080,7 @@ static CAPABILITIES_MEMBER_USE_GOOGLE_SHEETS_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGoogleSheetsAction",
-    304,
+    307,
 );
 static CAPABILITIES_MEMBER_GOOGLE_SLIDES_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3060,7 +3090,7 @@ static CAPABILITIES_MEMBER_GOOGLE_SLIDES_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleSlidesAction",
-    305,
+    308,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_SLIDES_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3070,7 +3100,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_SLIDES_ACTION: ::aws_smithy_
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGoogleSlidesAction",
-    306,
+    309,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_SLIDES_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3080,7 +3110,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_SLIDES_ACTION: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleSlidesAction",
-    307,
+    310,
 );
 static CAPABILITIES_MEMBER_USE_GOOGLE_SLIDES_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3090,7 +3120,7 @@ static CAPABILITIES_MEMBER_USE_GOOGLE_SLIDES_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGoogleSlidesAction",
-    308,
+    311,
 );
 static CAPABILITIES_MEMBER_QUICK_BOOKS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3100,7 +3130,7 @@ static CAPABILITIES_MEMBER_QUICK_BOOKS_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "QuickBooksAction",
-    309,
+    312,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_QUICK_BOOKS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3110,7 +3140,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_QUICK_BOOKS_ACTION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateQuickBooksAction",
-    310,
+    313,
 );
 static CAPABILITIES_MEMBER_SHARE_QUICK_BOOKS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3120,7 +3150,7 @@ static CAPABILITIES_MEMBER_SHARE_QUICK_BOOKS_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareQuickBooksAction",
-    311,
+    314,
 );
 static CAPABILITIES_MEMBER_USE_QUICK_BOOKS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3130,7 +3160,7 @@ static CAPABILITIES_MEMBER_USE_QUICK_BOOKS_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseQuickBooksAction",
-    312,
+    315,
 );
 static CAPABILITIES_MEMBER_FIGMA_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3140,7 +3170,7 @@ static CAPABILITIES_MEMBER_FIGMA_ACTION: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "FigmaAction",
-    313,
+    316,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_FIGMA_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3150,7 +3180,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_FIGMA_ACTION: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateFigmaAction",
-    314,
+    317,
 );
 static CAPABILITIES_MEMBER_SHARE_FIGMA_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3160,7 +3190,7 @@ static CAPABILITIES_MEMBER_SHARE_FIGMA_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareFigmaAction",
-    315,
+    318,
 );
 static CAPABILITIES_MEMBER_USE_FIGMA_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3170,7 +3200,7 @@ static CAPABILITIES_MEMBER_USE_FIGMA_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseFigmaAction",
-    316,
+    319,
 );
 static CAPABILITIES_MEMBER_WHATS_APP_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3180,7 +3210,7 @@ static CAPABILITIES_MEMBER_WHATS_APP_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "WhatsAppAction",
-    317,
+    320,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_WHATS_APP_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3190,7 +3220,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_WHATS_APP_ACTION: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateWhatsAppAction",
-    318,
+    321,
 );
 static CAPABILITIES_MEMBER_SHARE_WHATS_APP_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3200,7 +3230,7 @@ static CAPABILITIES_MEMBER_SHARE_WHATS_APP_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareWhatsAppAction",
-    319,
+    322,
 );
 static CAPABILITIES_MEMBER_USE_WHATS_APP_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3210,7 +3240,7 @@ static CAPABILITIES_MEMBER_USE_WHATS_APP_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseWhatsAppAction",
-    320,
+    323,
 );
 static CAPABILITIES_MEMBER_GOOGLE_CHAT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3220,7 +3250,7 @@ static CAPABILITIES_MEMBER_GOOGLE_CHAT_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleChatAction",
-    321,
+    324,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_CHAT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3230,7 +3260,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GOOGLE_CHAT_ACTION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGoogleChatAction",
-    322,
+    325,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_CHAT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3240,7 +3270,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_CHAT_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleChatAction",
-    323,
+    326,
 );
 static CAPABILITIES_MEMBER_USE_GOOGLE_CHAT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3250,7 +3280,7 @@ static CAPABILITIES_MEMBER_USE_GOOGLE_CHAT_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGoogleChatAction",
-    324,
+    327,
 );
 static CAPABILITIES_MEMBER_ONE_NOTE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3260,7 +3290,7 @@ static CAPABILITIES_MEMBER_ONE_NOTE_ACTION: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "OneNoteAction",
-    325,
+    328,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ONE_NOTE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3270,7 +3300,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ONE_NOTE_ACTION: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateOneNoteAction",
-    326,
+    329,
 );
 static CAPABILITIES_MEMBER_SHARE_ONE_NOTE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3280,7 +3310,7 @@ static CAPABILITIES_MEMBER_SHARE_ONE_NOTE_ACTION: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareOneNoteAction",
-    327,
+    330,
 );
 static CAPABILITIES_MEMBER_USE_ONE_NOTE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3290,7 +3320,7 @@ static CAPABILITIES_MEMBER_USE_ONE_NOTE_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseOneNoteAction",
-    328,
+    331,
 );
 static CAPABILITIES_MEMBER_SHOPIFY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3300,7 +3330,7 @@ static CAPABILITIES_MEMBER_SHOPIFY_ACTION: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShopifyAction",
-    329,
+    332,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SHOPIFY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3310,7 +3340,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_SHOPIFY_ACTION: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateShopifyAction",
-    330,
+    333,
 );
 static CAPABILITIES_MEMBER_SHARE_SHOPIFY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3320,7 +3350,7 @@ static CAPABILITIES_MEMBER_SHARE_SHOPIFY_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareShopifyAction",
-    331,
+    334,
 );
 static CAPABILITIES_MEMBER_USE_SHOPIFY_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3330,7 +3360,7 @@ static CAPABILITIES_MEMBER_USE_SHOPIFY_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseShopifyAction",
-    332,
+    335,
 );
 static CAPABILITIES_MEMBER_ADOBE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3340,7 +3370,7 @@ static CAPABILITIES_MEMBER_ADOBE_ACTION: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AdobeAction",
-    333,
+    336,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ADOBE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3350,7 +3380,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ADOBE_ACTION: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateAdobeAction",
-    334,
+    337,
 );
 static CAPABILITIES_MEMBER_SHARE_ADOBE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3360,7 +3390,7 @@ static CAPABILITIES_MEMBER_SHARE_ADOBE_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareAdobeAction",
-    335,
+    338,
 );
 static CAPABILITIES_MEMBER_USE_ADOBE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3370,7 +3400,7 @@ static CAPABILITIES_MEMBER_USE_ADOBE_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseAdobeAction",
-    336,
+    339,
 );
 static CAPABILITIES_MEMBER_CISCO_WEBEX_VIDCAST_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3380,7 +3410,7 @@ static CAPABILITIES_MEMBER_CISCO_WEBEX_VIDCAST_ACTION: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CiscoWebexVidcastAction",
-    337,
+    340,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_CISCO_WEBEX_VIDCAST_ACTION: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -3391,7 +3421,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_CISCO_WEBEX_VIDCAST_ACTION: ::aws_s
         ),
         ::aws_smithy_schema::ShapeType::String,
         "CreateAndUpdateCiscoWebexVidcastAction",
-        338,
+        341,
     );
 static CAPABILITIES_MEMBER_SHARE_CISCO_WEBEX_VIDCAST_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3401,7 +3431,7 @@ static CAPABILITIES_MEMBER_SHARE_CISCO_WEBEX_VIDCAST_ACTION: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareCiscoWebexVidcastAction",
-    339,
+    342,
 );
 static CAPABILITIES_MEMBER_USE_CISCO_WEBEX_VIDCAST_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3411,7 +3441,7 @@ static CAPABILITIES_MEMBER_USE_CISCO_WEBEX_VIDCAST_ACTION: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseCiscoWebexVidcastAction",
-    340,
+    343,
 );
 static CAPABILITIES_MEMBER_CISCO_WEBEX_MEETINGS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3421,7 +3451,7 @@ static CAPABILITIES_MEMBER_CISCO_WEBEX_MEETINGS_ACTION: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CiscoWebexMeetingsAction",
-    341,
+    344,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_CISCO_WEBEX_MEETINGS_ACTION: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -3432,7 +3462,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_CISCO_WEBEX_MEETINGS_ACTION: ::aws_
         ),
         ::aws_smithy_schema::ShapeType::String,
         "CreateAndUpdateCiscoWebexMeetingsAction",
-        342,
+        345,
     );
 static CAPABILITIES_MEMBER_SHARE_CISCO_WEBEX_MEETINGS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3442,7 +3472,7 @@ static CAPABILITIES_MEMBER_SHARE_CISCO_WEBEX_MEETINGS_ACTION: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareCiscoWebexMeetingsAction",
-    343,
+    346,
 );
 static CAPABILITIES_MEMBER_USE_CISCO_WEBEX_MEETINGS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3452,7 +3482,7 @@ static CAPABILITIES_MEMBER_USE_CISCO_WEBEX_MEETINGS_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseCiscoWebexMeetingsAction",
-    344,
+    347,
 );
 static CAPABILITIES_MEMBER_DUN_AND_BRADSTREET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3462,7 +3492,7 @@ static CAPABILITIES_MEMBER_DUN_AND_BRADSTREET_ACTION: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DunAndBradstreetAction",
-    345,
+    348,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_DUN_AND_BRADSTREET_ACTION: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -3473,7 +3503,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_DUN_AND_BRADSTREET_ACTION: ::aws_sm
         ),
         ::aws_smithy_schema::ShapeType::String,
         "CreateAndUpdateDunAndBradstreetAction",
-        346,
+        349,
     );
 static CAPABILITIES_MEMBER_SHARE_DUN_AND_BRADSTREET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3483,7 +3513,7 @@ static CAPABILITIES_MEMBER_SHARE_DUN_AND_BRADSTREET_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDunAndBradstreetAction",
-    347,
+    350,
 );
 static CAPABILITIES_MEMBER_USE_DUN_AND_BRADSTREET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3493,7 +3523,7 @@ static CAPABILITIES_MEMBER_USE_DUN_AND_BRADSTREET_ACTION: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseDunAndBradstreetAction",
-    348,
+    351,
 );
 static CAPABILITIES_MEMBER_HG_INSIGHTS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3503,7 +3533,7 @@ static CAPABILITIES_MEMBER_HG_INSIGHTS_ACTION: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "HGInsightsAction",
-    349,
+    352,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_HG_INSIGHTS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3513,7 +3543,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_HG_INSIGHTS_ACTION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateHGInsightsAction",
-    350,
+    353,
 );
 static CAPABILITIES_MEMBER_SHARE_HG_INSIGHTS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3523,7 +3553,7 @@ static CAPABILITIES_MEMBER_SHARE_HG_INSIGHTS_ACTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareHGInsightsAction",
-    351,
+    354,
 );
 static CAPABILITIES_MEMBER_USE_HG_INSIGHTS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3533,7 +3563,7 @@ static CAPABILITIES_MEMBER_USE_HG_INSIGHTS_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseHGInsightsAction",
-    352,
+    355,
 );
 static CAPABILITIES_MEMBER_ZOOM_INFO_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3543,7 +3573,7 @@ static CAPABILITIES_MEMBER_ZOOM_INFO_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ZoomInfoAction",
-    353,
+    356,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ZOOM_INFO_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3553,7 +3583,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_ZOOM_INFO_ACTION: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateZoomInfoAction",
-    354,
+    357,
 );
 static CAPABILITIES_MEMBER_SHARE_ZOOM_INFO_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3563,7 +3593,7 @@ static CAPABILITIES_MEMBER_SHARE_ZOOM_INFO_ACTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareZoomInfoAction",
-    355,
+    358,
 );
 static CAPABILITIES_MEMBER_USE_ZOOM_INFO_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3573,7 +3603,7 @@ static CAPABILITIES_MEMBER_USE_ZOOM_INFO_ACTION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseZoomInfoAction",
-    356,
+    359,
 );
 static CAPABILITIES_MEMBER_MOODYS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3583,7 +3613,7 @@ static CAPABILITIES_MEMBER_MOODYS_ACTION: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "MoodysAction",
-    357,
+    360,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_MOODYS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3593,7 +3623,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_MOODYS_ACTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateMoodysAction",
-    358,
+    361,
 );
 static CAPABILITIES_MEMBER_SHARE_MOODYS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3603,7 +3633,7 @@ static CAPABILITIES_MEMBER_SHARE_MOODYS_ACTION: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareMoodysAction",
-    359,
+    362,
 );
 static CAPABILITIES_MEMBER_USE_MOODYS_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3613,7 +3643,7 @@ static CAPABILITIES_MEMBER_USE_MOODYS_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseMoodysAction",
-    360,
+    363,
 );
 static CAPABILITIES_MEMBER_BEE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3623,7 +3653,7 @@ static CAPABILITIES_MEMBER_BEE_ACTION: ::aws_smithy_schema::Schema<'static> = ::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "BeeAction",
-    361,
+    364,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_BEE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3633,7 +3663,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_BEE_ACTION: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateBeeAction",
-    362,
+    365,
 );
 static CAPABILITIES_MEMBER_SHARE_BEE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3643,7 +3673,7 @@ static CAPABILITIES_MEMBER_SHARE_BEE_ACTION: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareBeeAction",
-    363,
+    366,
 );
 static CAPABILITIES_MEMBER_USE_BEE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3653,7 +3683,7 @@ static CAPABILITIES_MEMBER_USE_BEE_ACTION: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseBeeAction",
-    364,
+    367,
 );
 static CAPABILITIES_MEMBER_GONG_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3663,7 +3693,7 @@ static CAPABILITIES_MEMBER_GONG_ACTION: ::aws_smithy_schema::Schema<'static> = :
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GongAction",
-    365,
+    368,
 );
 static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GONG_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3673,7 +3703,7 @@ static CAPABILITIES_MEMBER_CREATE_AND_UPDATE_GONG_ACTION: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAndUpdateGongAction",
-    366,
+    369,
 );
 static CAPABILITIES_MEMBER_SHARE_GONG_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3683,7 +3713,7 @@ static CAPABILITIES_MEMBER_SHARE_GONG_ACTION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGongAction",
-    367,
+    370,
 );
 static CAPABILITIES_MEMBER_USE_GONG_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3693,13 +3723,13 @@ static CAPABILITIES_MEMBER_USE_GONG_ACTION: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseGongAction",
-    368,
+    371,
 );
 static CAPABILITIES_MEMBER_TOPIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.quicksight#Capabilities$Topic", "com.amazonaws.quicksight", "Capabilities"),
     ::aws_smithy_schema::ShapeType::String,
     "Topic",
-    369,
+    372,
 );
 static CAPABILITIES_MEMBER_EDIT_VISUAL_WITH_Q: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3709,7 +3739,7 @@ static CAPABILITIES_MEMBER_EDIT_VISUAL_WITH_Q: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "EditVisualWithQ",
-    370,
+    373,
 );
 static CAPABILITIES_MEMBER_BUILD_CALCULATED_FIELD_WITH_Q: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3719,7 +3749,7 @@ static CAPABILITIES_MEMBER_BUILD_CALCULATED_FIELD_WITH_Q: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "BuildCalculatedFieldWithQ",
-    371,
+    374,
 );
 static CAPABILITIES_MEMBER_CREATE_DASHBOARD_EXECUTIVE_SUMMARY_WITH_Q: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3729,13 +3759,13 @@ static CAPABILITIES_MEMBER_CREATE_DASHBOARD_EXECUTIVE_SUMMARY_WITH_Q: ::aws_smit
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateDashboardExecutiveSummaryWithQ",
-    372,
+    375,
 );
 static CAPABILITIES_MEMBER_SPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.quicksight#Capabilities$Space", "com.amazonaws.quicksight", "Capabilities"),
     ::aws_smithy_schema::ShapeType::String,
     "Space",
-    373,
+    376,
 );
 static CAPABILITIES_MEMBER_CREATE_SPACES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3745,7 +3775,7 @@ static CAPABILITIES_MEMBER_CREATE_SPACES: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateSpaces",
-    374,
+    377,
 );
 static CAPABILITIES_MEMBER_SHARE_SPACES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3755,7 +3785,7 @@ static CAPABILITIES_MEMBER_SHARE_SPACES: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSpaces",
-    375,
+    378,
 );
 static CAPABILITIES_MEMBER_CHAT_AGENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3765,7 +3795,7 @@ static CAPABILITIES_MEMBER_CHAT_AGENT: ::aws_smithy_schema::Schema<'static> = ::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ChatAgent",
-    376,
+    379,
 );
 static CAPABILITIES_MEMBER_CREATE_CHAT_AGENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3775,7 +3805,7 @@ static CAPABILITIES_MEMBER_CREATE_CHAT_AGENTS: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateChatAgents",
-    377,
+    380,
 );
 static CAPABILITIES_MEMBER_SHARE_CHAT_AGENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3785,7 +3815,7 @@ static CAPABILITIES_MEMBER_SHARE_CHAT_AGENTS: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareChatAgents",
-    378,
+    381,
 );
 static CAPABILITIES_MEMBER_RESEARCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3795,7 +3825,7 @@ static CAPABILITIES_MEMBER_RESEARCH: ::aws_smithy_schema::Schema<'static> = ::aw
     ),
     ::aws_smithy_schema::ShapeType::String,
     "Research",
-    379,
+    382,
 );
 static CAPABILITIES_MEMBER_SELF_UPGRADE_USER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3805,7 +3835,7 @@ static CAPABILITIES_MEMBER_SELF_UPGRADE_USER_ROLE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SelfUpgradeUserRole",
-    380,
+    383,
 );
 static CAPABILITIES_MEMBER_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3815,7 +3845,7 @@ static CAPABILITIES_MEMBER_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::a
     ),
     ::aws_smithy_schema::ShapeType::String,
     "Extension",
-    381,
+    384,
 );
 static CAPABILITIES_MEMBER_USE_BROWSER_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3825,7 +3855,7 @@ static CAPABILITIES_MEMBER_USE_BROWSER_EXTENSION: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseBrowserExtension",
-    382,
+    385,
 );
 static CAPABILITIES_MEMBER_USE_WORD_ADD_IN_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3835,7 +3865,7 @@ static CAPABILITIES_MEMBER_USE_WORD_ADD_IN_EXTENSION: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseWordAddInExtension",
-    383,
+    386,
 );
 static CAPABILITIES_MEMBER_USE_OUTLOOK_ADD_IN_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3845,7 +3875,7 @@ static CAPABILITIES_MEMBER_USE_OUTLOOK_ADD_IN_EXTENSION: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseOutlookAddInExtension",
-    384,
+    387,
 );
 static CAPABILITIES_MEMBER_USE_EXCEL_ADD_IN_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3855,7 +3885,7 @@ static CAPABILITIES_MEMBER_USE_EXCEL_ADD_IN_EXTENSION: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseExcelAddInExtension",
-    385,
+    388,
 );
 static CAPABILITIES_MEMBER_USE_POWERPOINT_ADD_IN_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3865,7 +3895,7 @@ static CAPABILITIES_MEMBER_USE_POWERPOINT_ADD_IN_EXTENSION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UsePowerpointAddInExtension",
-    386,
+    389,
 );
 static CAPABILITIES_MEMBER_MANAGE_SHARED_FOLDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3875,7 +3905,7 @@ static CAPABILITIES_MEMBER_MANAGE_SHARED_FOLDERS: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ManageSharedFolders",
-    387,
+    390,
 );
 static CAPABILITIES_MEMBER_GENERATE_ANALYSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3885,13 +3915,13 @@ static CAPABILITIES_MEMBER_GENERATE_ANALYSES: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GenerateAnalyses",
-    388,
+    391,
 );
 static CAPABILITIES_MEMBER_STORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.quicksight#Capabilities$Story", "com.amazonaws.quicksight", "Capabilities"),
     ::aws_smithy_schema::ShapeType::String,
     "Story",
-    389,
+    392,
 );
 static CAPABILITIES_MEMBER_SCENARIO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3901,7 +3931,7 @@ static CAPABILITIES_MEMBER_SCENARIO: ::aws_smithy_schema::Schema<'static> = ::aw
     ),
     ::aws_smithy_schema::ShapeType::String,
     "Scenario",
-    390,
+    393,
 );
 static CAPABILITIES_MEMBER_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3911,7 +3941,7 @@ static CAPABILITIES_MEMBER_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws
     ),
     ::aws_smithy_schema::ShapeType::String,
     "Trigger",
-    391,
+    394,
 );
 static CAPABILITIES_MEMBER_SCHEDULE_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3921,7 +3951,7 @@ static CAPABILITIES_MEMBER_SCHEDULE_TRIGGER: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ScheduleTrigger",
-    392,
+    395,
 );
 static CAPABILITIES_MEMBER_INBOUND_EMAIL_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3931,7 +3961,7 @@ static CAPABILITIES_MEMBER_INBOUND_EMAIL_TRIGGER: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "InboundEmailTrigger",
-    393,
+    396,
 );
 static CAPABILITIES_MEMBER_QUICK_EVENT_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3941,7 +3971,7 @@ static CAPABILITIES_MEMBER_QUICK_EVENT_TRIGGER: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "QuickEventTrigger",
-    394,
+    397,
 );
 static CAPABILITIES_MEMBER_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3951,7 +3981,7 @@ static CAPABILITIES_MEMBER_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "FileDataSource",
-    395,
+    398,
 );
 static CAPABILITIES_MEMBER_CREATE_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3961,7 +3991,7 @@ static CAPABILITIES_MEMBER_CREATE_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateFileDataSource",
-    396,
+    399,
 );
 static CAPABILITIES_MEMBER_UPDATE_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3971,7 +4001,7 @@ static CAPABILITIES_MEMBER_UPDATE_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateFileDataSource",
-    397,
+    400,
 );
 static CAPABILITIES_MEMBER_SHARE_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3981,7 +4011,7 @@ static CAPABILITIES_MEMBER_SHARE_FILE_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareFileDataSource",
-    398,
+    401,
 );
 static CAPABILITIES_MEMBER_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -3991,7 +4021,7 @@ static CAPABILITIES_MEMBER_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "S3DataSource",
-    399,
+    402,
 );
 static CAPABILITIES_MEMBER_CREATE_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4001,7 +4031,7 @@ static CAPABILITIES_MEMBER_CREATE_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateS3DataSource",
-    400,
+    403,
 );
 static CAPABILITIES_MEMBER_UPDATE_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4011,7 +4041,7 @@ static CAPABILITIES_MEMBER_UPDATE_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateS3DataSource",
-    401,
+    404,
 );
 static CAPABILITIES_MEMBER_SHARE_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4021,7 +4051,7 @@ static CAPABILITIES_MEMBER_SHARE_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareS3DataSource",
-    402,
+    405,
 );
 static CAPABILITIES_MEMBER_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4031,7 +4061,7 @@ static CAPABILITIES_MEMBER_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "S3AnalyticsDataSource",
-    403,
+    406,
 );
 static CAPABILITIES_MEMBER_CREATE_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4041,7 +4071,7 @@ static CAPABILITIES_MEMBER_CREATE_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateS3AnalyticsDataSource",
-    404,
+    407,
 );
 static CAPABILITIES_MEMBER_UPDATE_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4051,7 +4081,7 @@ static CAPABILITIES_MEMBER_UPDATE_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateS3AnalyticsDataSource",
-    405,
+    408,
 );
 static CAPABILITIES_MEMBER_SHARE_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4061,7 +4091,7 @@ static CAPABILITIES_MEMBER_SHARE_S3_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareS3AnalyticsDataSource",
-    406,
+    409,
 );
 static CAPABILITIES_MEMBER_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4071,7 +4101,7 @@ static CAPABILITIES_MEMBER_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "S3TablesDataSource",
-    407,
+    410,
 );
 static CAPABILITIES_MEMBER_CREATE_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4081,7 +4111,7 @@ static CAPABILITIES_MEMBER_CREATE_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateS3TablesDataSource",
-    408,
+    411,
 );
 static CAPABILITIES_MEMBER_UPDATE_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4091,7 +4121,7 @@ static CAPABILITIES_MEMBER_UPDATE_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateS3TablesDataSource",
-    409,
+    412,
 );
 static CAPABILITIES_MEMBER_SHARE_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4101,7 +4131,7 @@ static CAPABILITIES_MEMBER_SHARE_S3_TABLES_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareS3TablesDataSource",
-    410,
+    413,
 );
 static CAPABILITIES_MEMBER_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4111,7 +4141,7 @@ static CAPABILITIES_MEMBER_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AthenaDataSource",
-    411,
+    414,
 );
 static CAPABILITIES_MEMBER_CREATE_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4121,7 +4151,7 @@ static CAPABILITIES_MEMBER_CREATE_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAthenaDataSource",
-    412,
+    415,
 );
 static CAPABILITIES_MEMBER_UPDATE_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4131,7 +4161,7 @@ static CAPABILITIES_MEMBER_UPDATE_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateAthenaDataSource",
-    413,
+    416,
 );
 static CAPABILITIES_MEMBER_SHARE_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4141,7 +4171,7 @@ static CAPABILITIES_MEMBER_SHARE_ATHENA_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareAthenaDataSource",
-    414,
+    417,
 );
 static CAPABILITIES_MEMBER_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4151,7 +4181,7 @@ static CAPABILITIES_MEMBER_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "RdsDataSource",
-    415,
+    418,
 );
 static CAPABILITIES_MEMBER_CREATE_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4161,7 +4191,7 @@ static CAPABILITIES_MEMBER_CREATE_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateRdsDataSource",
-    416,
+    419,
 );
 static CAPABILITIES_MEMBER_UPDATE_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4171,7 +4201,7 @@ static CAPABILITIES_MEMBER_UPDATE_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateRdsDataSource",
-    417,
+    420,
 );
 static CAPABILITIES_MEMBER_SHARE_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4181,7 +4211,7 @@ static CAPABILITIES_MEMBER_SHARE_RDS_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareRdsDataSource",
-    418,
+    421,
 );
 static CAPABILITIES_MEMBER_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4191,7 +4221,7 @@ static CAPABILITIES_MEMBER_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "RedshiftAutoDiscoveredDataSource",
-    419,
+    422,
 );
 static CAPABILITIES_MEMBER_CREATE_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -4202,7 +4232,7 @@ static CAPABILITIES_MEMBER_CREATE_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_sm
         ),
         ::aws_smithy_schema::ShapeType::String,
         "CreateRedshiftAutoDiscoveredDataSource",
-        420,
+        423,
     );
 static CAPABILITIES_MEMBER_UPDATE_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -4213,7 +4243,7 @@ static CAPABILITIES_MEMBER_UPDATE_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_sm
         ),
         ::aws_smithy_schema::ShapeType::String,
         "UpdateRedshiftAutoDiscoveredDataSource",
-        421,
+        424,
     );
 static CAPABILITIES_MEMBER_SHARE_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4223,7 +4253,7 @@ static CAPABILITIES_MEMBER_SHARE_REDSHIFT_AUTO_DISCOVERED_DATA_SOURCE: ::aws_smi
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareRedshiftAutoDiscoveredDataSource",
-    422,
+    425,
 );
 static CAPABILITIES_MEMBER_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4233,7 +4263,7 @@ static CAPABILITIES_MEMBER_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "RedshiftManualDataSource",
-    423,
+    426,
 );
 static CAPABILITIES_MEMBER_CREATE_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4243,7 +4273,7 @@ static CAPABILITIES_MEMBER_CREATE_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateRedshiftManualDataSource",
-    424,
+    427,
 );
 static CAPABILITIES_MEMBER_UPDATE_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4253,7 +4283,7 @@ static CAPABILITIES_MEMBER_UPDATE_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateRedshiftManualDataSource",
-    425,
+    428,
 );
 static CAPABILITIES_MEMBER_SHARE_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4263,7 +4293,7 @@ static CAPABILITIES_MEMBER_SHARE_REDSHIFT_MANUAL_DATA_SOURCE: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareRedshiftManualDataSource",
-    426,
+    429,
 );
 static CAPABILITIES_MEMBER_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4273,7 +4303,7 @@ static CAPABILITIES_MEMBER_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "OpenSearchDataSource",
-    427,
+    430,
 );
 static CAPABILITIES_MEMBER_CREATE_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4283,7 +4313,7 @@ static CAPABILITIES_MEMBER_CREATE_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateOpenSearchDataSource",
-    428,
+    431,
 );
 static CAPABILITIES_MEMBER_UPDATE_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4293,7 +4323,7 @@ static CAPABILITIES_MEMBER_UPDATE_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateOpenSearchDataSource",
-    429,
+    432,
 );
 static CAPABILITIES_MEMBER_SHARE_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4303,7 +4333,7 @@ static CAPABILITIES_MEMBER_SHARE_OPEN_SEARCH_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareOpenSearchDataSource",
-    430,
+    433,
 );
 static CAPABILITIES_MEMBER_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4313,7 +4343,7 @@ static CAPABILITIES_MEMBER_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TimestreamDataSource",
-    431,
+    434,
 );
 static CAPABILITIES_MEMBER_CREATE_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4323,7 +4353,7 @@ static CAPABILITIES_MEMBER_CREATE_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateTimestreamDataSource",
-    432,
+    435,
 );
 static CAPABILITIES_MEMBER_UPDATE_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4333,7 +4363,7 @@ static CAPABILITIES_MEMBER_UPDATE_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateTimestreamDataSource",
-    433,
+    436,
 );
 static CAPABILITIES_MEMBER_SHARE_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4343,7 +4373,7 @@ static CAPABILITIES_MEMBER_SHARE_TIMESTREAM_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareTimestreamDataSource",
-    434,
+    437,
 );
 static CAPABILITIES_MEMBER_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4353,7 +4383,7 @@ static CAPABILITIES_MEMBER_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AuroraDataSource",
-    435,
+    438,
 );
 static CAPABILITIES_MEMBER_CREATE_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4363,7 +4393,7 @@ static CAPABILITIES_MEMBER_CREATE_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAuroraDataSource",
-    436,
+    439,
 );
 static CAPABILITIES_MEMBER_UPDATE_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4373,7 +4403,7 @@ static CAPABILITIES_MEMBER_UPDATE_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateAuroraDataSource",
-    437,
+    440,
 );
 static CAPABILITIES_MEMBER_SHARE_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4383,7 +4413,7 @@ static CAPABILITIES_MEMBER_SHARE_AURORA_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareAuroraDataSource",
-    438,
+    441,
 );
 static CAPABILITIES_MEMBER_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4393,7 +4423,7 @@ static CAPABILITIES_MEMBER_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "MySqlDataSource",
-    439,
+    442,
 );
 static CAPABILITIES_MEMBER_CREATE_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4403,7 +4433,7 @@ static CAPABILITIES_MEMBER_CREATE_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateMySqlDataSource",
-    440,
+    443,
 );
 static CAPABILITIES_MEMBER_UPDATE_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4413,7 +4443,7 @@ static CAPABILITIES_MEMBER_UPDATE_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateMySqlDataSource",
-    441,
+    444,
 );
 static CAPABILITIES_MEMBER_SHARE_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4423,7 +4453,7 @@ static CAPABILITIES_MEMBER_SHARE_MY_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareMySqlDataSource",
-    442,
+    445,
 );
 static CAPABILITIES_MEMBER_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4433,7 +4463,7 @@ static CAPABILITIES_MEMBER_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "PostgreSqlDataSource",
-    443,
+    446,
 );
 static CAPABILITIES_MEMBER_CREATE_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4443,7 +4473,7 @@ static CAPABILITIES_MEMBER_CREATE_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreatePostgreSqlDataSource",
-    444,
+    447,
 );
 static CAPABILITIES_MEMBER_UPDATE_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4453,7 +4483,7 @@ static CAPABILITIES_MEMBER_UPDATE_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdatePostgreSqlDataSource",
-    445,
+    448,
 );
 static CAPABILITIES_MEMBER_SHARE_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4463,7 +4493,7 @@ static CAPABILITIES_MEMBER_SHARE_POSTGRE_SQL_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SharePostgreSqlDataSource",
-    446,
+    449,
 );
 static CAPABILITIES_MEMBER_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4473,7 +4503,7 @@ static CAPABILITIES_MEMBER_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "OracleDataSource",
-    447,
+    450,
 );
 static CAPABILITIES_MEMBER_CREATE_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4483,7 +4513,7 @@ static CAPABILITIES_MEMBER_CREATE_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateOracleDataSource",
-    448,
+    451,
 );
 static CAPABILITIES_MEMBER_UPDATE_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4493,7 +4523,7 @@ static CAPABILITIES_MEMBER_UPDATE_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateOracleDataSource",
-    449,
+    452,
 );
 static CAPABILITIES_MEMBER_SHARE_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4503,7 +4533,7 @@ static CAPABILITIES_MEMBER_SHARE_ORACLE_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareOracleDataSource",
-    450,
+    453,
 );
 static CAPABILITIES_MEMBER_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4513,7 +4543,7 @@ static CAPABILITIES_MEMBER_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SqlServerDataSource",
-    451,
+    454,
 );
 static CAPABILITIES_MEMBER_CREATE_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4523,7 +4553,7 @@ static CAPABILITIES_MEMBER_CREATE_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateSqlServerDataSource",
-    452,
+    455,
 );
 static CAPABILITIES_MEMBER_UPDATE_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4533,7 +4563,7 @@ static CAPABILITIES_MEMBER_UPDATE_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateSqlServerDataSource",
-    453,
+    456,
 );
 static CAPABILITIES_MEMBER_SHARE_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4543,7 +4573,7 @@ static CAPABILITIES_MEMBER_SHARE_SQL_SERVER_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSqlServerDataSource",
-    454,
+    457,
 );
 static CAPABILITIES_MEMBER_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4553,7 +4583,7 @@ static CAPABILITIES_MEMBER_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "MariaDbDataSource",
-    455,
+    458,
 );
 static CAPABILITIES_MEMBER_CREATE_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4563,7 +4593,7 @@ static CAPABILITIES_MEMBER_CREATE_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateMariaDbDataSource",
-    456,
+    459,
 );
 static CAPABILITIES_MEMBER_UPDATE_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4573,7 +4603,7 @@ static CAPABILITIES_MEMBER_UPDATE_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateMariaDbDataSource",
-    457,
+    460,
 );
 static CAPABILITIES_MEMBER_SHARE_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4583,7 +4613,7 @@ static CAPABILITIES_MEMBER_SHARE_MARIA_DB_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareMariaDbDataSource",
-    458,
+    461,
 );
 static CAPABILITIES_MEMBER_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4593,7 +4623,7 @@ static CAPABILITIES_MEMBER_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SnowflakeDataSource",
-    459,
+    462,
 );
 static CAPABILITIES_MEMBER_CREATE_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4603,7 +4633,7 @@ static CAPABILITIES_MEMBER_CREATE_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateSnowflakeDataSource",
-    460,
+    463,
 );
 static CAPABILITIES_MEMBER_UPDATE_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4613,7 +4643,7 @@ static CAPABILITIES_MEMBER_UPDATE_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateSnowflakeDataSource",
-    461,
+    464,
 );
 static CAPABILITIES_MEMBER_SHARE_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4623,7 +4653,7 @@ static CAPABILITIES_MEMBER_SHARE_SNOWFLAKE_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSnowflakeDataSource",
-    462,
+    465,
 );
 static CAPABILITIES_MEMBER_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4633,7 +4663,7 @@ static CAPABILITIES_MEMBER_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleBigQueryDataSource",
-    463,
+    466,
 );
 static CAPABILITIES_MEMBER_CREATE_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4643,7 +4673,7 @@ static CAPABILITIES_MEMBER_CREATE_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateGoogleBigQueryDataSource",
-    464,
+    467,
 );
 static CAPABILITIES_MEMBER_UPDATE_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4653,7 +4683,7 @@ static CAPABILITIES_MEMBER_UPDATE_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateGoogleBigQueryDataSource",
-    465,
+    468,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4663,7 +4693,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_BIG_QUERY_DATA_SOURCE: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleBigQueryDataSource",
-    466,
+    469,
 );
 static CAPABILITIES_MEMBER_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4673,7 +4703,7 @@ static CAPABILITIES_MEMBER_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DatabricksDataSource",
-    467,
+    470,
 );
 static CAPABILITIES_MEMBER_CREATE_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4683,7 +4713,7 @@ static CAPABILITIES_MEMBER_CREATE_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateDatabricksDataSource",
-    468,
+    471,
 );
 static CAPABILITIES_MEMBER_UPDATE_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4693,7 +4723,7 @@ static CAPABILITIES_MEMBER_UPDATE_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateDatabricksDataSource",
-    469,
+    472,
 );
 static CAPABILITIES_MEMBER_SHARE_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4703,7 +4733,7 @@ static CAPABILITIES_MEMBER_SHARE_DATABRICKS_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDatabricksDataSource",
-    470,
+    473,
 );
 static CAPABILITIES_MEMBER_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4713,7 +4743,7 @@ static CAPABILITIES_MEMBER_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "StarburstDataSource",
-    471,
+    474,
 );
 static CAPABILITIES_MEMBER_CREATE_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4723,7 +4753,7 @@ static CAPABILITIES_MEMBER_CREATE_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateStarburstDataSource",
-    472,
+    475,
 );
 static CAPABILITIES_MEMBER_UPDATE_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4733,7 +4763,7 @@ static CAPABILITIES_MEMBER_UPDATE_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateStarburstDataSource",
-    473,
+    476,
 );
 static CAPABILITIES_MEMBER_SHARE_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4743,7 +4773,7 @@ static CAPABILITIES_MEMBER_SHARE_STARBURST_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareStarburstDataSource",
-    474,
+    477,
 );
 static CAPABILITIES_MEMBER_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4753,7 +4783,7 @@ static CAPABILITIES_MEMBER_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TrinoDataSource",
-    475,
+    478,
 );
 static CAPABILITIES_MEMBER_CREATE_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4763,7 +4793,7 @@ static CAPABILITIES_MEMBER_CREATE_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateTrinoDataSource",
-    476,
+    479,
 );
 static CAPABILITIES_MEMBER_UPDATE_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4773,7 +4803,7 @@ static CAPABILITIES_MEMBER_UPDATE_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateTrinoDataSource",
-    477,
+    480,
 );
 static CAPABILITIES_MEMBER_SHARE_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4783,7 +4813,7 @@ static CAPABILITIES_MEMBER_SHARE_TRINO_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareTrinoDataSource",
-    478,
+    481,
 );
 static CAPABILITIES_MEMBER_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4793,7 +4823,7 @@ static CAPABILITIES_MEMBER_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ImpalaDataSource",
-    479,
+    482,
 );
 static CAPABILITIES_MEMBER_CREATE_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4803,7 +4833,7 @@ static CAPABILITIES_MEMBER_CREATE_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateImpalaDataSource",
-    480,
+    483,
 );
 static CAPABILITIES_MEMBER_UPDATE_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4813,7 +4843,7 @@ static CAPABILITIES_MEMBER_UPDATE_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateImpalaDataSource",
-    481,
+    484,
 );
 static CAPABILITIES_MEMBER_SHARE_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4823,7 +4853,7 @@ static CAPABILITIES_MEMBER_SHARE_IMPALA_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareImpalaDataSource",
-    482,
+    485,
 );
 static CAPABILITIES_MEMBER_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4833,7 +4863,7 @@ static CAPABILITIES_MEMBER_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TeradataDataSource",
-    483,
+    486,
 );
 static CAPABILITIES_MEMBER_CREATE_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4843,7 +4873,7 @@ static CAPABILITIES_MEMBER_CREATE_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateTeradataDataSource",
-    484,
+    487,
 );
 static CAPABILITIES_MEMBER_UPDATE_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4853,7 +4883,7 @@ static CAPABILITIES_MEMBER_UPDATE_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateTeradataDataSource",
-    485,
+    488,
 );
 static CAPABILITIES_MEMBER_SHARE_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4863,7 +4893,7 @@ static CAPABILITIES_MEMBER_SHARE_TERADATA_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareTeradataDataSource",
-    486,
+    489,
 );
 static CAPABILITIES_MEMBER_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4873,7 +4903,7 @@ static CAPABILITIES_MEMBER_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "PrestoDataSource",
-    487,
+    490,
 );
 static CAPABILITIES_MEMBER_CREATE_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4883,7 +4913,7 @@ static CAPABILITIES_MEMBER_CREATE_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreatePrestoDataSource",
-    488,
+    491,
 );
 static CAPABILITIES_MEMBER_UPDATE_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4893,7 +4923,7 @@ static CAPABILITIES_MEMBER_UPDATE_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdatePrestoDataSource",
-    489,
+    492,
 );
 static CAPABILITIES_MEMBER_SHARE_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4903,7 +4933,7 @@ static CAPABILITIES_MEMBER_SHARE_PRESTO_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SharePrestoDataSource",
-    490,
+    493,
 );
 static CAPABILITIES_MEMBER_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4913,7 +4943,7 @@ static CAPABILITIES_MEMBER_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SparkDataSource",
-    491,
+    494,
 );
 static CAPABILITIES_MEMBER_CREATE_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4923,7 +4953,7 @@ static CAPABILITIES_MEMBER_CREATE_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateSparkDataSource",
-    492,
+    495,
 );
 static CAPABILITIES_MEMBER_UPDATE_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4933,7 +4963,7 @@ static CAPABILITIES_MEMBER_UPDATE_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateSparkDataSource",
-    493,
+    496,
 );
 static CAPABILITIES_MEMBER_SHARE_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4943,7 +4973,7 @@ static CAPABILITIES_MEMBER_SHARE_SPARK_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSparkDataSource",
-    494,
+    497,
 );
 static CAPABILITIES_MEMBER_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4953,7 +4983,7 @@ static CAPABILITIES_MEMBER_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ExasolDataSource",
-    495,
+    498,
 );
 static CAPABILITIES_MEMBER_CREATE_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4963,7 +4993,7 @@ static CAPABILITIES_MEMBER_CREATE_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateExasolDataSource",
-    496,
+    499,
 );
 static CAPABILITIES_MEMBER_UPDATE_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4973,7 +5003,7 @@ static CAPABILITIES_MEMBER_UPDATE_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateExasolDataSource",
-    497,
+    500,
 );
 static CAPABILITIES_MEMBER_SHARE_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4983,7 +5013,7 @@ static CAPABILITIES_MEMBER_SHARE_EXASOL_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareExasolDataSource",
-    498,
+    501,
 );
 static CAPABILITIES_MEMBER_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -4993,7 +5023,7 @@ static CAPABILITIES_MEMBER_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "Db2DataSource",
-    499,
+    502,
 );
 static CAPABILITIES_MEMBER_CREATE_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5003,7 +5033,7 @@ static CAPABILITIES_MEMBER_CREATE_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateDb2DataSource",
-    500,
+    503,
 );
 static CAPABILITIES_MEMBER_UPDATE_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5013,7 +5043,7 @@ static CAPABILITIES_MEMBER_UPDATE_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateDb2DataSource",
-    501,
+    504,
 );
 static CAPABILITIES_MEMBER_SHARE_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5023,7 +5053,7 @@ static CAPABILITIES_MEMBER_SHARE_DB2_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDb2DataSource",
-    502,
+    505,
 );
 static CAPABILITIES_MEMBER_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5033,7 +5063,7 @@ static CAPABILITIES_MEMBER_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SapHanaDataSource",
-    503,
+    506,
 );
 static CAPABILITIES_MEMBER_CREATE_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5043,7 +5073,7 @@ static CAPABILITIES_MEMBER_CREATE_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateSapHanaDataSource",
-    504,
+    507,
 );
 static CAPABILITIES_MEMBER_UPDATE_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5053,7 +5083,7 @@ static CAPABILITIES_MEMBER_UPDATE_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateSapHanaDataSource",
-    505,
+    508,
 );
 static CAPABILITIES_MEMBER_SHARE_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5063,7 +5093,7 @@ static CAPABILITIES_MEMBER_SHARE_SAP_HANA_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSapHanaDataSource",
-    506,
+    509,
 );
 static CAPABILITIES_MEMBER_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5073,7 +5103,7 @@ static CAPABILITIES_MEMBER_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DenodoDataSource",
-    507,
+    510,
 );
 static CAPABILITIES_MEMBER_CREATE_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5083,7 +5113,7 @@ static CAPABILITIES_MEMBER_CREATE_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateDenodoDataSource",
-    508,
+    511,
 );
 static CAPABILITIES_MEMBER_UPDATE_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5093,7 +5123,7 @@ static CAPABILITIES_MEMBER_UPDATE_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateDenodoDataSource",
-    509,
+    512,
 );
 static CAPABILITIES_MEMBER_SHARE_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5103,7 +5133,7 @@ static CAPABILITIES_MEMBER_SHARE_DENODO_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDenodoDataSource",
-    510,
+    513,
 );
 static CAPABILITIES_MEMBER_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5113,7 +5143,7 @@ static CAPABILITIES_MEMBER_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DremioDataSource",
-    511,
+    514,
 );
 static CAPABILITIES_MEMBER_CREATE_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5123,7 +5153,7 @@ static CAPABILITIES_MEMBER_CREATE_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateDremioDataSource",
-    512,
+    515,
 );
 static CAPABILITIES_MEMBER_UPDATE_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5133,7 +5163,7 @@ static CAPABILITIES_MEMBER_UPDATE_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateDremioDataSource",
-    513,
+    516,
 );
 static CAPABILITIES_MEMBER_SHARE_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5143,7 +5173,7 @@ static CAPABILITIES_MEMBER_SHARE_DREMIO_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDremioDataSource",
-    514,
+    517,
 );
 static CAPABILITIES_MEMBER_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5153,7 +5183,7 @@ static CAPABILITIES_MEMBER_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SalesforceDataSource",
-    515,
+    518,
 );
 static CAPABILITIES_MEMBER_CREATE_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5163,7 +5193,7 @@ static CAPABILITIES_MEMBER_CREATE_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateSalesforceDataSource",
-    516,
+    519,
 );
 static CAPABILITIES_MEMBER_UPDATE_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5173,7 +5203,7 @@ static CAPABILITIES_MEMBER_UPDATE_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateSalesforceDataSource",
-    517,
+    520,
 );
 static CAPABILITIES_MEMBER_SHARE_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5183,7 +5213,7 @@ static CAPABILITIES_MEMBER_SHARE_SALESFORCE_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSalesforceDataSource",
-    518,
+    521,
 );
 static CAPABILITIES_MEMBER_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5193,7 +5223,7 @@ static CAPABILITIES_MEMBER_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "RadiantDataSource",
-    519,
+    522,
 );
 static CAPABILITIES_MEMBER_CREATE_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5203,7 +5233,7 @@ static CAPABILITIES_MEMBER_CREATE_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateRadiantDataSource",
-    520,
+    523,
 );
 static CAPABILITIES_MEMBER_UPDATE_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5213,7 +5243,7 @@ static CAPABILITIES_MEMBER_UPDATE_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateRadiantDataSource",
-    521,
+    524,
 );
 static CAPABILITIES_MEMBER_SHARE_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5223,7 +5253,7 @@ static CAPABILITIES_MEMBER_SHARE_RADIANT_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareRadiantDataSource",
-    522,
+    525,
 );
 static CAPABILITIES_MEMBER_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5233,7 +5263,7 @@ static CAPABILITIES_MEMBER_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "PayPalDataSource",
-    523,
+    526,
 );
 static CAPABILITIES_MEMBER_CREATE_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5243,7 +5273,7 @@ static CAPABILITIES_MEMBER_CREATE_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreatePayPalDataSource",
-    524,
+    527,
 );
 static CAPABILITIES_MEMBER_UPDATE_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5253,7 +5283,7 @@ static CAPABILITIES_MEMBER_UPDATE_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdatePayPalDataSource",
-    525,
+    528,
 );
 static CAPABILITIES_MEMBER_SHARE_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5263,7 +5293,7 @@ static CAPABILITIES_MEMBER_SHARE_PAY_PAL_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SharePayPalDataSource",
-    526,
+    529,
 );
 static CAPABILITIES_MEMBER_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5273,7 +5303,7 @@ static CAPABILITIES_MEMBER_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SquareDataSource",
-    527,
+    530,
 );
 static CAPABILITIES_MEMBER_CREATE_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5283,7 +5313,7 @@ static CAPABILITIES_MEMBER_CREATE_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateSquareDataSource",
-    528,
+    531,
 );
 static CAPABILITIES_MEMBER_UPDATE_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5293,7 +5323,7 @@ static CAPABILITIES_MEMBER_UPDATE_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateSquareDataSource",
-    529,
+    532,
 );
 static CAPABILITIES_MEMBER_SHARE_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5303,7 +5333,7 @@ static CAPABILITIES_MEMBER_SHARE_SQUARE_DATA_SOURCE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareSquareDataSource",
-    530,
+    533,
 );
 static CAPABILITIES_MEMBER_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5313,7 +5343,7 @@ static CAPABILITIES_MEMBER_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GitHubDataSource",
-    531,
+    534,
 );
 static CAPABILITIES_MEMBER_CREATE_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5323,7 +5353,7 @@ static CAPABILITIES_MEMBER_CREATE_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateGitHubDataSource",
-    532,
+    535,
 );
 static CAPABILITIES_MEMBER_UPDATE_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5333,7 +5363,7 @@ static CAPABILITIES_MEMBER_UPDATE_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateGitHubDataSource",
-    533,
+    536,
 );
 static CAPABILITIES_MEMBER_SHARE_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5343,7 +5373,7 @@ static CAPABILITIES_MEMBER_SHARE_GIT_HUB_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGitHubDataSource",
-    534,
+    537,
 );
 static CAPABILITIES_MEMBER_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5353,7 +5383,7 @@ static CAPABILITIES_MEMBER_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TwitterDataSource",
-    535,
+    538,
 );
 static CAPABILITIES_MEMBER_CREATE_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5363,7 +5393,7 @@ static CAPABILITIES_MEMBER_CREATE_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateTwitterDataSource",
-    536,
+    539,
 );
 static CAPABILITIES_MEMBER_UPDATE_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5373,7 +5403,7 @@ static CAPABILITIES_MEMBER_UPDATE_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateTwitterDataSource",
-    537,
+    540,
 );
 static CAPABILITIES_MEMBER_SHARE_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5383,7 +5413,7 @@ static CAPABILITIES_MEMBER_SHARE_TWITTER_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareTwitterDataSource",
-    538,
+    541,
 );
 static CAPABILITIES_MEMBER_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5393,7 +5423,7 @@ static CAPABILITIES_MEMBER_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "JiraDataSource",
-    539,
+    542,
 );
 static CAPABILITIES_MEMBER_CREATE_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5403,7 +5433,7 @@ static CAPABILITIES_MEMBER_CREATE_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateJiraDataSource",
-    540,
+    543,
 );
 static CAPABILITIES_MEMBER_UPDATE_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5413,7 +5443,7 @@ static CAPABILITIES_MEMBER_UPDATE_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateJiraDataSource",
-    541,
+    544,
 );
 static CAPABILITIES_MEMBER_SHARE_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5423,7 +5453,7 @@ static CAPABILITIES_MEMBER_SHARE_JIRA_DATA_SOURCE: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareJiraDataSource",
-    542,
+    545,
 );
 static CAPABILITIES_MEMBER_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5433,7 +5463,7 @@ static CAPABILITIES_MEMBER_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ServiceNowDataSource",
-    543,
+    546,
 );
 static CAPABILITIES_MEMBER_CREATE_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5443,7 +5473,7 @@ static CAPABILITIES_MEMBER_CREATE_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateServiceNowDataSource",
-    544,
+    547,
 );
 static CAPABILITIES_MEMBER_UPDATE_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5453,7 +5483,7 @@ static CAPABILITIES_MEMBER_UPDATE_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateServiceNowDataSource",
-    545,
+    548,
 );
 static CAPABILITIES_MEMBER_SHARE_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5463,7 +5493,7 @@ static CAPABILITIES_MEMBER_SHARE_SERVICE_NOW_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareServiceNowDataSource",
-    546,
+    549,
 );
 static CAPABILITIES_MEMBER_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5473,7 +5503,7 @@ static CAPABILITIES_MEMBER_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AdobeAnalyticsDataSource",
-    547,
+    550,
 );
 static CAPABILITIES_MEMBER_CREATE_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5483,7 +5513,7 @@ static CAPABILITIES_MEMBER_CREATE_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateAdobeAnalyticsDataSource",
-    548,
+    551,
 );
 static CAPABILITIES_MEMBER_UPDATE_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5493,7 +5523,7 @@ static CAPABILITIES_MEMBER_UPDATE_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateAdobeAnalyticsDataSource",
-    549,
+    552,
 );
 static CAPABILITIES_MEMBER_SHARE_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5503,7 +5533,7 @@ static CAPABILITIES_MEMBER_SHARE_ADOBE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareAdobeAnalyticsDataSource",
-    550,
+    553,
 );
 static CAPABILITIES_MEMBER_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5513,7 +5543,7 @@ static CAPABILITIES_MEMBER_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleAnalyticsDataSource",
-    551,
+    554,
 );
 static CAPABILITIES_MEMBER_CREATE_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5523,7 +5553,7 @@ static CAPABILITIES_MEMBER_CREATE_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateGoogleAnalyticsDataSource",
-    552,
+    555,
 );
 static CAPABILITIES_MEMBER_UPDATE_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5533,7 +5563,7 @@ static CAPABILITIES_MEMBER_UPDATE_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateGoogleAnalyticsDataSource",
-    553,
+    556,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5543,7 +5573,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_ANALYTICS_DATA_SOURCE: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleAnalyticsDataSource",
-    554,
+    557,
 );
 static CAPABILITIES_MEMBER_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5553,7 +5583,7 @@ static CAPABILITIES_MEMBER_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "GoogleSheetsDataSource",
-    555,
+    558,
 );
 static CAPABILITIES_MEMBER_CREATE_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5563,7 +5593,7 @@ static CAPABILITIES_MEMBER_CREATE_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateGoogleSheetsDataSource",
-    556,
+    559,
 );
 static CAPABILITIES_MEMBER_UPDATE_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5573,7 +5603,7 @@ static CAPABILITIES_MEMBER_UPDATE_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateGoogleSheetsDataSource",
-    557,
+    560,
 );
 static CAPABILITIES_MEMBER_SHARE_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5583,7 +5613,7 @@ static CAPABILITIES_MEMBER_SHARE_GOOGLE_SHEETS_DATA_SOURCE: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareGoogleSheetsDataSource",
-    558,
+    561,
 );
 static CAPABILITIES_MEMBER_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5593,7 +5623,7 @@ static CAPABILITIES_MEMBER_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DocumentDbDataSource",
-    559,
+    562,
 );
 static CAPABILITIES_MEMBER_CREATE_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5603,7 +5633,7 @@ static CAPABILITIES_MEMBER_CREATE_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateDocumentDbDataSource",
-    560,
+    563,
 );
 static CAPABILITIES_MEMBER_UPDATE_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5613,7 +5643,7 @@ static CAPABILITIES_MEMBER_UPDATE_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateDocumentDbDataSource",
-    561,
+    564,
 );
 static CAPABILITIES_MEMBER_SHARE_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5623,7 +5653,7 @@ static CAPABILITIES_MEMBER_SHARE_DOCUMENT_DB_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDocumentDbDataSource",
-    562,
+    565,
 );
 static CAPABILITIES_MEMBER_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5633,7 +5663,7 @@ static CAPABILITIES_MEMBER_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "MongoDbDataSource",
-    563,
+    566,
 );
 static CAPABILITIES_MEMBER_CREATE_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5643,7 +5673,7 @@ static CAPABILITIES_MEMBER_CREATE_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateMongoDbDataSource",
-    564,
+    567,
 );
 static CAPABILITIES_MEMBER_UPDATE_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5653,7 +5683,7 @@ static CAPABILITIES_MEMBER_UPDATE_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateMongoDbDataSource",
-    565,
+    568,
 );
 static CAPABILITIES_MEMBER_SHARE_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5663,7 +5693,7 @@ static CAPABILITIES_MEMBER_SHARE_MONGO_DB_DATA_SOURCE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareMongoDbDataSource",
-    566,
+    569,
 );
 static CAPABILITIES_MEMBER_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5673,7 +5703,7 @@ static CAPABILITIES_MEMBER_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "MongoAtlasDataSource",
-    567,
+    570,
 );
 static CAPABILITIES_MEMBER_CREATE_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5683,7 +5713,7 @@ static CAPABILITIES_MEMBER_CREATE_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateMongoAtlasDataSource",
-    568,
+    571,
 );
 static CAPABILITIES_MEMBER_UPDATE_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5693,7 +5723,7 @@ static CAPABILITIES_MEMBER_UPDATE_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateMongoAtlasDataSource",
-    569,
+    572,
 );
 static CAPABILITIES_MEMBER_SHARE_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5703,7 +5733,7 @@ static CAPABILITIES_MEMBER_SHARE_MONGO_ATLAS_DATA_SOURCE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareMongoAtlasDataSource",
-    570,
+    573,
 );
 static CAPABILITIES_MEMBER_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5713,7 +5743,7 @@ static CAPABILITIES_MEMBER_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DynamoDbDataSource",
-    571,
+    574,
 );
 static CAPABILITIES_MEMBER_CREATE_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5723,7 +5753,7 @@ static CAPABILITIES_MEMBER_CREATE_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreateDynamoDbDataSource",
-    572,
+    575,
 );
 static CAPABILITIES_MEMBER_UPDATE_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5733,7 +5763,7 @@ static CAPABILITIES_MEMBER_UPDATE_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UpdateDynamoDbDataSource",
-    573,
+    576,
 );
 static CAPABILITIES_MEMBER_SHARE_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -5743,7 +5773,7 @@ static CAPABILITIES_MEMBER_SHARE_DYNAMO_DB_DATA_SOURCE: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ShareDynamoDbDataSource",
-    574,
+    577,
 );
 static CAPABILITIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.quicksight#Capabilities", "com.amazonaws.quicksight", "Capabilities"),
@@ -5946,6 +5976,9 @@ static CAPABILITIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_
         &CAPABILITIES_MEMBER_CREATE_AND_UPDATE_MCP_ACTION,
         &CAPABILITIES_MEMBER_SHARE_MCP_ACTION,
         &CAPABILITIES_MEMBER_USE_MCP_ACTION,
+        &CAPABILITIES_MEMBER_LOCAL_MCP_ACTION,
+        &CAPABILITIES_MEMBER_CREATE_AND_UPDATE_LOCAL_MCP_ACTION,
+        &CAPABILITIES_MEMBER_USE_LOCAL_MCP_ACTION,
         &CAPABILITIES_MEMBER_OPEN_API_ACTION,
         &CAPABILITIES_MEMBER_CREATE_AND_UPDATE_OPEN_API_ACTION,
         &CAPABILITIES_MEMBER_SHARE_OPEN_API_ACTION,
@@ -6930,6 +6963,15 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Capabiliti
         }
         if let Some(ref val) = self.use_mcp_action {
             ser.write_string(&CAPABILITIES_MEMBER_USE_MCP_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.local_mcp_action {
+            ser.write_string(&CAPABILITIES_MEMBER_LOCAL_MCP_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.create_and_update_local_mcp_action {
+            ser.write_string(&CAPABILITIES_MEMBER_CREATE_AND_UPDATE_LOCAL_MCP_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.use_local_mcp_action {
+            ser.write_string(&CAPABILITIES_MEMBER_USE_LOCAL_MCP_ACTION, val.as_str())?;
         }
         if let Some(ref val) = self.open_api_action {
             ser.write_string(&CAPABILITIES_MEMBER_OPEN_API_ACTION, val.as_str())?;
@@ -9485,66 +9527,87 @@ impl crate::types::builders::CapabilitiesBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.local_mcp_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(198) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.create_and_update_open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.create_and_update_local_mcp_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(199) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.share_open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.use_local_mcp_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(200) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.use_open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(201) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.create_and_update_open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(202) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.create_and_update_sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.share_open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(203) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.share_sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.use_open_api_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(204) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.use_sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(205) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.sand_p_global_energy_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                        self.create_and_update_sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(206) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.share_sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(207) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.use_sand_pgmi_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(208) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sand_p_global_energy_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(209) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -9552,336 +9615,336 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(207) => {
+                Some(210) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_sand_p_global_energy_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(208) => {
+                Some(211) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_sand_p_global_energy_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(209) => {
+                Some(212) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.bamboo_hr_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(210) => {
+                Some(213) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_bamboo_hr_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(211) => {
+                Some(214) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_bamboo_hr_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(212) => {
+                Some(215) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_bamboo_hr_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(213) => {
+                Some(216) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.box_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(214) => {
+                Some(217) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_box_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(215) => {
+                Some(218) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_box_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(216) => {
+                Some(219) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_box_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(217) => {
+                Some(220) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.canva_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(218) => {
+                Some(221) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_canva_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(219) => {
+                Some(222) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_canva_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(220) => {
+                Some(223) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_canva_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(221) => {
+                Some(224) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.github_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(222) => {
+                Some(225) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_github_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(223) => {
+                Some(226) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_github_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(224) => {
+                Some(227) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_github_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(225) => {
+                Some(228) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.notion_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(226) => {
+                Some(229) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_notion_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(227) => {
+                Some(230) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_notion_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(228) => {
+                Some(231) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_notion_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(229) => {
+                Some(232) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.linear_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(230) => {
+                Some(233) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_linear_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(231) => {
+                Some(234) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_linear_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(232) => {
+                Some(235) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_linear_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(233) => {
+                Some(236) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.hugging_face_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(234) => {
+                Some(237) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_hugging_face_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(235) => {
+                Some(238) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_hugging_face_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(236) => {
+                Some(239) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_hugging_face_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(237) => {
+                Some(240) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.monday_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(238) => {
+                Some(241) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_monday_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(239) => {
+                Some(242) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_monday_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(240) => {
+                Some(243) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_monday_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(241) => {
+                Some(244) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.hubspot_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(242) => {
+                Some(245) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_hubspot_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(243) => {
+                Some(246) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_hubspot_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(244) => {
+                Some(247) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_hubspot_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(245) => {
+                Some(248) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.intercom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(246) => {
+                Some(249) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_intercom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(247) => {
+                Some(250) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_intercom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(248) => {
+                Some(251) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_intercom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(249) => {
+                Some(252) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.new_relic_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(250) => {
+                Some(253) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_new_relic_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(251) => {
+                Some(254) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_new_relic_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(252) => {
+                Some(255) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_new_relic_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(253) => {
+                Some(256) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.pager_duty_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(254) => {
+                Some(257) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -9889,224 +9952,224 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(255) => {
+                Some(258) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_pager_duty_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(256) => {
+                Some(259) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_pager_duty_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(257) => {
+                Some(260) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.visier_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(258) => {
+                Some(261) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_visier_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(259) => {
+                Some(262) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_visier_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(260) => {
+                Some(263) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_visier_agent_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(261) => {
+                Some(264) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.zoom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(262) => {
+                Some(265) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_zoom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(263) => {
+                Some(266) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_zoom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(264) => {
+                Some(267) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_zoom_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(265) => {
+                Some(268) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.snow_flake_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(266) => {
+                Some(269) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_snow_flake_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(267) => {
+                Some(270) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_snow_flake_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(268) => {
+                Some(271) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_snow_flake_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(269) => {
+                Some(272) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.zapier_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(270) => {
+                Some(273) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_zapier_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(271) => {
+                Some(274) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_zapier_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(272) => {
+                Some(275) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_zapier_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(273) => {
+                Some(276) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.airtable_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(274) => {
+                Some(277) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_airtable_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(275) => {
+                Some(278) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_airtable_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(276) => {
+                Some(279) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_airtable_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(277) => {
+                Some(280) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.dropbox_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(278) => {
+                Some(281) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_dropbox_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(279) => {
+                Some(282) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_dropbox_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(280) => {
+                Some(283) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_dropbox_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(281) => {
+                Some(284) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.gmail_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(282) => {
+                Some(285) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_gmail_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(283) => {
+                Some(286) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_gmail_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(284) => {
+                Some(287) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_gmail_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(285) => {
+                Some(288) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_analytics_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(286) => {
+                Some(289) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -10114,364 +10177,364 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(287) => {
+                Some(290) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_analytics_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(288) => {
+                Some(291) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_google_analytics_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(289) => {
+                Some(292) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_docs_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(290) => {
+                Some(293) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_google_docs_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(291) => {
+                Some(294) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_docs_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(292) => {
+                Some(295) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_google_docs_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(293) => {
+                Some(296) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_drive_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(294) => {
+                Some(297) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_google_drive_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(295) => {
+                Some(298) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_drive_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(296) => {
+                Some(299) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_google_drive_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(297) => {
+                Some(300) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_meet_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(298) => {
+                Some(301) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_google_meet_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(299) => {
+                Some(302) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_meet_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(300) => {
+                Some(303) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_google_meet_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(301) => {
+                Some(304) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_sheets_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(302) => {
+                Some(305) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_google_sheets_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(303) => {
+                Some(306) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_sheets_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(304) => {
+                Some(307) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_google_sheets_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(305) => {
+                Some(308) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_slides_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(306) => {
+                Some(309) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_google_slides_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(307) => {
+                Some(310) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_slides_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(308) => {
+                Some(311) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_google_slides_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(309) => {
+                Some(312) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.quick_books_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(310) => {
+                Some(313) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_quick_books_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(311) => {
+                Some(314) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_quick_books_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(312) => {
+                Some(315) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_quick_books_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(313) => {
+                Some(316) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.figma_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(314) => {
+                Some(317) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_figma_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(315) => {
+                Some(318) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_figma_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(316) => {
+                Some(319) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_figma_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(317) => {
+                Some(320) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.whats_app_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(318) => {
+                Some(321) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_whats_app_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(319) => {
+                Some(322) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_whats_app_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(320) => {
+                Some(323) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_whats_app_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(321) => {
+                Some(324) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_chat_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(322) => {
+                Some(325) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_google_chat_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(323) => {
+                Some(326) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_chat_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(324) => {
+                Some(327) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_google_chat_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(325) => {
+                Some(328) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.one_note_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(326) => {
+                Some(329) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_one_note_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(327) => {
+                Some(330) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_one_note_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(328) => {
+                Some(331) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_one_note_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(329) => {
+                Some(332) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.shopify_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(330) => {
+                Some(333) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_shopify_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(331) => {
+                Some(334) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_shopify_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(332) => {
+                Some(335) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_shopify_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(333) => {
+                Some(336) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.adobe_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(334) => {
+                Some(337) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_adobe_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(335) => {
+                Some(338) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_adobe_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(336) => {
+                Some(339) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_adobe_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(337) => {
+                Some(340) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.cisco_webex_vidcast_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(338) => {
+                Some(341) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -10479,28 +10542,28 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(339) => {
+                Some(342) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_cisco_webex_vidcast_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(340) => {
+                Some(343) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_cisco_webex_vidcast_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(341) => {
+                Some(344) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.cisco_webex_meetings_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(342) => {
+                Some(345) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -10508,28 +10571,28 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(343) => {
+                Some(346) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_cisco_webex_meetings_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(344) => {
+                Some(347) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_cisco_webex_meetings_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(345) => {
+                Some(348) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.dun_and_bradstreet_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(346) => {
+                Some(349) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -10537,182 +10600,182 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(347) => {
+                Some(350) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_dun_and_bradstreet_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(348) => {
+                Some(351) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_dun_and_bradstreet_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(349) => {
+                Some(352) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.hg_insights_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(350) => {
+                Some(353) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_hg_insights_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(351) => {
+                Some(354) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_hg_insights_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(352) => {
+                Some(355) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_hg_insights_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(353) => {
+                Some(356) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.zoom_info_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(354) => {
+                Some(357) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_zoom_info_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(355) => {
+                Some(358) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_zoom_info_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(356) => {
+                Some(359) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_zoom_info_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(357) => {
+                Some(360) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.moodys_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(358) => {
+                Some(361) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_moodys_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(359) => {
+                Some(362) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_moodys_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(360) => {
+                Some(363) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_moodys_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(361) => {
+                Some(364) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.bee_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(362) => {
+                Some(365) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_bee_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(363) => {
+                Some(366) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_bee_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(364) => {
+                Some(367) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_bee_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(365) => {
+                Some(368) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.gong_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(366) => {
+                Some(369) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_and_update_gong_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(367) => {
+                Some(370) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_gong_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(368) => {
+                Some(371) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_gong_action = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(369) => {
+                Some(372) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.topic = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(370) => {
+                Some(373) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.edit_visual_with_q = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(371) => {
+                Some(374) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.build_calculated_field_with_q = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(372) => {
+                Some(375) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -10720,336 +10783,336 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(373) => {
+                Some(376) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.space = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(374) => {
+                Some(377) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_spaces = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(375) => {
+                Some(378) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_spaces = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(376) => {
+                Some(379) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.chat_agent = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(377) => {
+                Some(380) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_chat_agents = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(378) => {
+                Some(381) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_chat_agents = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(379) => {
+                Some(382) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.research = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(380) => {
+                Some(383) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.self_upgrade_user_role = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(381) => {
+                Some(384) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.extension = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(382) => {
+                Some(385) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_browser_extension = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(383) => {
+                Some(386) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_word_add_in_extension = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(384) => {
+                Some(387) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_outlook_add_in_extension = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(385) => {
+                Some(388) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_excel_add_in_extension = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(386) => {
+                Some(389) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_powerpoint_add_in_extension = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(387) => {
+                Some(390) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.manage_shared_folders = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(388) => {
+                Some(391) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.generate_analyses = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(389) => {
+                Some(392) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.story = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(390) => {
+                Some(393) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.scenario = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(391) => {
+                Some(394) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.trigger = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(392) => {
+                Some(395) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.schedule_trigger = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(393) => {
+                Some(396) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.inbound_email_trigger = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(394) => {
+                Some(397) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.quick_event_trigger = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(395) => {
+                Some(398) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.file_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(396) => {
+                Some(399) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_file_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(397) => {
+                Some(400) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_file_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(398) => {
+                Some(401) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_file_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(399) => {
+                Some(402) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.s3_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(400) => {
+                Some(403) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_s3_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(401) => {
+                Some(404) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_s3_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(402) => {
+                Some(405) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_s3_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(403) => {
+                Some(406) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.s3_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(404) => {
+                Some(407) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_s3_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(405) => {
+                Some(408) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_s3_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(406) => {
+                Some(409) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_s3_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(407) => {
+                Some(410) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.s3_tables_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(408) => {
+                Some(411) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_s3_tables_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(409) => {
+                Some(412) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_s3_tables_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(410) => {
+                Some(413) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_s3_tables_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(411) => {
+                Some(414) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.athena_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(412) => {
+                Some(415) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_athena_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(413) => {
+                Some(416) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_athena_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(414) => {
+                Some(417) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_athena_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(415) => {
+                Some(418) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.rds_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(416) => {
+                Some(419) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_rds_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(417) => {
+                Some(420) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_rds_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(418) => {
+                Some(421) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_rds_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(419) => {
+                Some(422) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.redshift_auto_discovered_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(420) => {
+                Some(423) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -11057,7 +11120,7 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(421) => {
+                Some(424) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -11065,7 +11128,7 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(422) => {
+                Some(425) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -11073,1064 +11136,1064 @@ impl crate::types::builders::CapabilitiesBuilder {
                             Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(423) => {
+                Some(426) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.redshift_manual_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(424) => {
+                Some(427) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_redshift_manual_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(425) => {
+                Some(428) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_redshift_manual_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(426) => {
+                Some(429) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_redshift_manual_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(427) => {
+                Some(430) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.open_search_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(428) => {
+                Some(431) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_open_search_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(429) => {
+                Some(432) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_open_search_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(430) => {
+                Some(433) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_open_search_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(431) => {
+                Some(434) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.timestream_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(432) => {
+                Some(435) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_timestream_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(433) => {
+                Some(436) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_timestream_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(434) => {
+                Some(437) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_timestream_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(435) => {
+                Some(438) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.aurora_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(436) => {
+                Some(439) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_aurora_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(437) => {
+                Some(440) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_aurora_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(438) => {
+                Some(441) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_aurora_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(439) => {
+                Some(442) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.my_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(440) => {
+                Some(443) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_my_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(441) => {
+                Some(444) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_my_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(442) => {
+                Some(445) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_my_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(443) => {
+                Some(446) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.postgre_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(444) => {
+                Some(447) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_postgre_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(445) => {
+                Some(448) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_postgre_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(446) => {
+                Some(449) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_postgre_sql_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(447) => {
+                Some(450) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.oracle_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(448) => {
+                Some(451) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_oracle_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(449) => {
+                Some(452) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_oracle_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(450) => {
+                Some(453) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_oracle_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(451) => {
+                Some(454) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.sql_server_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(452) => {
+                Some(455) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_sql_server_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(453) => {
+                Some(456) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_sql_server_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(454) => {
+                Some(457) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_sql_server_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(455) => {
+                Some(458) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.maria_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(456) => {
+                Some(459) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_maria_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(457) => {
+                Some(460) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_maria_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(458) => {
+                Some(461) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_maria_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(459) => {
+                Some(462) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.snowflake_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(460) => {
+                Some(463) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_snowflake_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(461) => {
+                Some(464) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_snowflake_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(462) => {
+                Some(465) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_snowflake_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(463) => {
+                Some(466) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_big_query_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(464) => {
+                Some(467) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_google_big_query_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(465) => {
+                Some(468) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_google_big_query_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(466) => {
+                Some(469) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_big_query_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(467) => {
+                Some(470) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.databricks_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(468) => {
+                Some(471) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_databricks_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(469) => {
+                Some(472) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_databricks_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(470) => {
+                Some(473) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_databricks_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(471) => {
+                Some(474) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.starburst_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(472) => {
+                Some(475) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_starburst_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(473) => {
+                Some(476) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_starburst_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(474) => {
+                Some(477) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_starburst_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(475) => {
+                Some(478) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.trino_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(476) => {
+                Some(479) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_trino_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(477) => {
+                Some(480) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_trino_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(478) => {
+                Some(481) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_trino_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(479) => {
+                Some(482) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.impala_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(480) => {
+                Some(483) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_impala_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(481) => {
+                Some(484) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_impala_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(482) => {
+                Some(485) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_impala_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(483) => {
+                Some(486) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.teradata_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(484) => {
+                Some(487) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_teradata_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(485) => {
+                Some(488) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_teradata_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(486) => {
+                Some(489) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_teradata_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(487) => {
+                Some(490) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.presto_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(488) => {
+                Some(491) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_presto_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(489) => {
+                Some(492) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_presto_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(490) => {
+                Some(493) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_presto_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(491) => {
+                Some(494) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.spark_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(492) => {
+                Some(495) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_spark_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(493) => {
+                Some(496) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_spark_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(494) => {
+                Some(497) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_spark_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(495) => {
+                Some(498) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.exasol_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(496) => {
+                Some(499) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_exasol_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(497) => {
+                Some(500) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_exasol_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(498) => {
+                Some(501) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_exasol_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(499) => {
+                Some(502) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.db2_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(500) => {
+                Some(503) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_db2_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(501) => {
+                Some(504) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_db2_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(502) => {
+                Some(505) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_db2_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(503) => {
+                Some(506) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.sap_hana_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(504) => {
+                Some(507) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_sap_hana_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(505) => {
+                Some(508) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_sap_hana_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(506) => {
+                Some(509) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_sap_hana_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(507) => {
+                Some(510) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.denodo_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(508) => {
+                Some(511) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_denodo_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(509) => {
+                Some(512) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_denodo_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(510) => {
+                Some(513) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_denodo_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(511) => {
+                Some(514) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.dremio_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(512) => {
+                Some(515) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_dremio_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(513) => {
+                Some(516) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_dremio_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(514) => {
+                Some(517) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_dremio_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(515) => {
+                Some(518) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.salesforce_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(516) => {
+                Some(519) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_salesforce_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(517) => {
+                Some(520) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_salesforce_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(518) => {
+                Some(521) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_salesforce_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(519) => {
+                Some(522) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.radiant_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(520) => {
+                Some(523) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_radiant_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(521) => {
+                Some(524) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_radiant_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(522) => {
+                Some(525) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_radiant_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(523) => {
+                Some(526) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.pay_pal_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(524) => {
+                Some(527) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_pay_pal_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(525) => {
+                Some(528) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_pay_pal_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(526) => {
+                Some(529) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_pay_pal_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(527) => {
+                Some(530) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.square_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(528) => {
+                Some(531) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_square_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(529) => {
+                Some(532) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_square_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(530) => {
+                Some(533) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_square_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(531) => {
+                Some(534) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.git_hub_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(532) => {
+                Some(535) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_git_hub_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(533) => {
+                Some(536) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_git_hub_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(534) => {
+                Some(537) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_git_hub_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(535) => {
+                Some(538) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.twitter_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(536) => {
+                Some(539) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_twitter_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(537) => {
+                Some(540) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_twitter_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(538) => {
+                Some(541) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_twitter_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(539) => {
+                Some(542) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.jira_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(540) => {
+                Some(543) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_jira_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(541) => {
+                Some(544) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_jira_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(542) => {
+                Some(545) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_jira_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(543) => {
+                Some(546) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.service_now_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(544) => {
+                Some(547) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_service_now_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(545) => {
+                Some(548) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_service_now_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(546) => {
+                Some(549) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_service_now_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(547) => {
+                Some(550) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.adobe_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(548) => {
+                Some(551) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_adobe_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(549) => {
+                Some(552) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_adobe_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(550) => {
+                Some(553) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_adobe_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(551) => {
+                Some(554) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(552) => {
+                Some(555) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_google_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(553) => {
+                Some(556) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_google_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(554) => {
+                Some(557) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_analytics_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(555) => {
+                Some(558) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.google_sheets_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(556) => {
+                Some(559) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_google_sheets_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(557) => {
+                Some(560) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_google_sheets_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(558) => {
+                Some(561) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_google_sheets_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(559) => {
+                Some(562) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.document_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(560) => {
+                Some(563) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_document_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(561) => {
+                Some(564) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_document_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(562) => {
+                Some(565) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_document_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(563) => {
+                Some(566) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.mongo_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(564) => {
+                Some(567) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_mongo_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(565) => {
+                Some(568) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_mongo_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(566) => {
+                Some(569) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_mongo_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(567) => {
+                Some(570) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.mongo_atlas_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(568) => {
+                Some(571) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_mongo_atlas_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(569) => {
+                Some(572) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_mongo_atlas_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(570) => {
+                Some(573) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.share_mongo_atlas_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(571) => {
+                Some(574) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.dynamo_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(572) => {
+                Some(575) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.create_dynamo_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(573) => {
+                Some(576) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.update_dynamo_db_data_source = Some(crate::types::CapabilityState::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(574) => {
+                Some(577) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

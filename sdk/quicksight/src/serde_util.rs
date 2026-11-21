@@ -11,6 +11,30 @@ pub(crate) fn batch_delete_knowledge_base_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn validation_exception_correct_errors(
+    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
+) -> crate::types::error::builders::ValidationExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_delete_policy_assignment_by_policy_output_output_correct_errors(
+    mut builder: crate::operation::batch_delete_policy_assignment_by_policy::builders::BatchDeletePolicyAssignmentByPolicyOutputBuilder,
+) -> crate::operation::batch_delete_policy_assignment_by_policy::builders::BatchDeletePolicyAssignmentByPolicyOutputBuilder {
+    if builder.policy_arn.is_none() {
+        builder.policy_arn = Some(Default::default())
+    }
+    if builder.success.is_none() {
+        builder.success = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_describe_user_limits_output_output_correct_errors(
     mut builder: crate::operation::batch_describe_user_limits::builders::BatchDescribeUserLimitsOutputBuilder,
 ) -> crate::operation::batch_describe_user_limits::builders::BatchDescribeUserLimitsOutputBuilder {
@@ -19,6 +43,66 @@ pub(crate) fn batch_describe_user_limits_output_output_correct_errors(
     }
     if builder.errors.is_none() {
         builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_put_policy_assignment_by_policy_output_output_correct_errors(
+    mut builder: crate::operation::batch_put_policy_assignment_by_policy::builders::BatchPutPolicyAssignmentByPolicyOutputBuilder,
+) -> crate::operation::batch_put_policy_assignment_by_policy::builders::BatchPutPolicyAssignmentByPolicyOutputBuilder {
+    if builder.policy_arn.is_none() {
+        builder.policy_arn = Some(Default::default())
+    }
+    if builder.success.is_none() {
+        builder.success = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_access_control_application_output_output_correct_errors(
+    mut builder: crate::operation::create_access_control_application::builders::CreateAccessControlApplicationOutputBuilder,
+) -> crate::operation::create_access_control_application::builders::CreateAccessControlApplicationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.access_control_application_status.is_none() {
+        builder.access_control_application_status = "no value was set".parse::<crate::types::AccessControlApplicationStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.tenant_url.is_none() {
+        builder.tenant_url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_access_control_application_secret_output_output_correct_errors(
+    mut builder: crate::operation::create_access_control_application_secret::builders::CreateAccessControlApplicationSecretOutputBuilder,
+) -> crate::operation::create_access_control_application_secret::builders::CreateAccessControlApplicationSecretOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.client_secret_id.is_none() {
+        builder.client_secret_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -86,6 +170,33 @@ pub(crate) fn create_flow_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_inbound_connector_output_output_correct_errors(
+    mut builder: crate::operation::create_inbound_connector::builders::CreateInboundConnectorOutputBuilder,
+) -> crate::operation::create_inbound_connector::builders::CreateInboundConnectorOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.inbound_connector_id.is_none() {
+        builder.inbound_connector_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.tenant_url.is_none() {
+        builder.tenant_url = Some(Default::default())
+    }
+    if builder.inbound_connector_status.is_none() {
+        builder.inbound_connector_status = "no value was set".parse::<crate::types::InboundConnectorStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_knowledge_base_output_output_correct_errors(
     mut builder: crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseOutputBuilder,
 ) -> crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseOutputBuilder {
@@ -97,6 +208,18 @@ pub(crate) fn create_knowledge_base_output_output_correct_errors(
     }
     if builder.creation_status.is_none() {
         builder.creation_status = "no value was set".parse::<crate::types::DataSetStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_knowledge_base_refresh_schedule_output_output_correct_errors(
+    mut builder: crate::operation::create_knowledge_base_refresh_schedule::builders::CreateKnowledgeBaseRefreshScheduleOutputBuilder,
+) -> crate::operation::create_knowledge_base_refresh_schedule::builders::CreateKnowledgeBaseRefreshScheduleOutputBuilder {
+    if builder.schedule_id.is_none() {
+        builder.schedule_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
     }
     builder
 }
@@ -122,6 +245,30 @@ pub(crate) fn create_space_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_access_control_application_output_output_correct_errors(
+    mut builder: crate::operation::delete_access_control_application::builders::DeleteAccessControlApplicationOutputBuilder,
+) -> crate::operation::delete_access_control_application::builders::DeleteAccessControlApplicationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_access_control_application_secret_output_output_correct_errors(
+    mut builder: crate::operation::delete_access_control_application_secret::builders::DeleteAccessControlApplicationSecretOutputBuilder,
+) -> crate::operation::delete_access_control_application_secret::builders::DeleteAccessControlApplicationSecretOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_dlp_setting_output_output_correct_errors(
     mut builder: crate::operation::delete_dlp_setting::builders::DeleteDlpSettingOutputBuilder,
 ) -> crate::operation::delete_dlp_setting::builders::DeleteDlpSettingOutputBuilder {
@@ -134,6 +281,21 @@ pub(crate) fn delete_dlp_setting_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_inbound_connector_output_output_correct_errors(
+    mut builder: crate::operation::delete_inbound_connector::builders::DeleteInboundConnectorOutputBuilder,
+) -> crate::operation::delete_inbound_connector::builders::DeleteInboundConnectorOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.inbound_connector_id.is_none() {
+        builder.inbound_connector_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_knowledge_base_output_output_correct_errors(
     mut builder: crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder,
 ) -> crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder {
@@ -142,6 +304,18 @@ pub(crate) fn delete_knowledge_base_output_output_correct_errors(
     }
     if builder.knowledge_base_id.is_none() {
         builder.knowledge_base_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_knowledge_base_refresh_schedule_output_output_correct_errors(
+    mut builder: crate::operation::delete_knowledge_base_refresh_schedule::builders::DeleteKnowledgeBaseRefreshScheduleOutputBuilder,
+) -> crate::operation::delete_knowledge_base_refresh_schedule::builders::DeleteKnowledgeBaseRefreshScheduleOutputBuilder {
+    if builder.schedule_id.is_none() {
+        builder.schedule_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
     }
     builder
 }
@@ -160,6 +334,24 @@ pub(crate) fn delete_space_output_output_correct_errors(
 ) -> crate::operation::delete_space::builders::DeleteSpaceOutputBuilder {
     if builder.space_id.is_none() {
         builder.space_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_access_control_application_output_output_correct_errors(
+    mut builder: crate::operation::describe_access_control_application::builders::DescribeAccessControlApplicationOutputBuilder,
+) -> crate::operation::describe_access_control_application::builders::DescribeAccessControlApplicationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.access_control_application.is_none() {
+        builder.access_control_application = {
+            let builder = crate::types::builders::AccessControlApplicationBuilder::default();
+            crate::serde_util::access_control_application_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -254,6 +446,24 @@ pub(crate) fn describe_flow_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_inbound_connector_output_output_correct_errors(
+    mut builder: crate::operation::describe_inbound_connector::builders::DescribeInboundConnectorOutputBuilder,
+) -> crate::operation::describe_inbound_connector::builders::DescribeInboundConnectorOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.inbound_connector.is_none() {
+        builder.inbound_connector = {
+            let builder = crate::types::builders::InboundConnectorBuilder::default();
+            crate::serde_util::inbound_connector_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_knowledge_base_output_output_correct_errors(
     mut builder: crate::operation::describe_knowledge_base::builders::DescribeKnowledgeBaseOutputBuilder,
 ) -> crate::operation::describe_knowledge_base::builders::DescribeKnowledgeBaseOutputBuilder {
@@ -274,6 +484,23 @@ pub(crate) fn describe_knowledge_base_permissions_output_output_correct_errors(
     }
     if builder.knowledge_base_id.is_none() {
         builder.knowledge_base_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_knowledge_base_refresh_schedule_output_output_correct_errors(
+    mut builder: crate::operation::describe_knowledge_base_refresh_schedule::builders::DescribeKnowledgeBaseRefreshScheduleOutputBuilder,
+) -> crate::operation::describe_knowledge_base_refresh_schedule::builders::DescribeKnowledgeBaseRefreshScheduleOutputBuilder {
+    if builder.schedule.is_none() {
+        builder.schedule = {
+            let builder = crate::types::builders::KnowledgeBaseRefreshScheduleSummaryBuilder::default();
+            crate::serde_util::knowledge_base_refresh_schedule_summary_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
     }
     builder
 }
@@ -407,6 +634,21 @@ pub(crate) fn get_identity_context_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_access_control_applications_output_output_correct_errors(
+    mut builder: crate::operation::list_access_control_applications::builders::ListAccessControlApplicationsOutputBuilder,
+) -> crate::operation::list_access_control_applications::builders::ListAccessControlApplicationsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.access_control_applications.is_none() {
+        builder.access_control_applications = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_action_connectors_output_output_correct_errors(
     mut builder: crate::operation::list_action_connectors::builders::ListActionConnectorsOutputBuilder,
 ) -> crate::operation::list_action_connectors::builders::ListActionConnectorsOutputBuilder {
@@ -452,6 +694,48 @@ pub(crate) fn list_dlp_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_inbound_connector_application_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_inbound_connector_application_associations::builders::ListInboundConnectorApplicationAssociationsOutputBuilder,
+) -> crate::operation::list_inbound_connector_application_associations::builders::ListInboundConnectorApplicationAssociationsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.application_associations.is_none() {
+        builder.application_associations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_inbound_connectors_output_output_correct_errors(
+    mut builder: crate::operation::list_inbound_connectors::builders::ListInboundConnectorsOutputBuilder,
+) -> crate::operation::list_inbound_connectors::builders::ListInboundConnectorsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.inbound_connector_summaries.is_none() {
+        builder.inbound_connector_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_knowledge_base_refresh_schedules_output_output_correct_errors(
+    mut builder: crate::operation::list_knowledge_base_refresh_schedules::builders::ListKnowledgeBaseRefreshSchedulesOutputBuilder,
+) -> crate::operation::list_knowledge_base_refresh_schedules::builders::ListKnowledgeBaseRefreshSchedulesOutputBuilder {
+    if builder.schedule_summaries.is_none() {
+        builder.schedule_summaries = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_knowledge_bases_output_output_correct_errors(
     mut builder: crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder,
 ) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder {
@@ -466,6 +750,15 @@ pub(crate) fn list_limits_profiles_output_output_correct_errors(
 ) -> crate::operation::list_limits_profiles::builders::ListLimitsProfilesOutputBuilder {
     if builder.profiles.is_none() {
         builder.profiles = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_principals_for_policy_output_output_correct_errors(
+    mut builder: crate::operation::list_principals_for_policy::builders::ListPrincipalsForPolicyOutputBuilder,
+) -> crate::operation::list_principals_for_policy::builders::ListPrincipalsForPolicyOutputBuilder {
+    if builder.principals.is_none() {
+        builder.principals = Some(Default::default())
     }
     builder
 }
@@ -490,6 +783,18 @@ pub(crate) fn list_spaces_output_output_correct_errors(
     }
     if builder.space_summaries.is_none() {
         builder.space_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_policy_assignment_output_output_correct_errors(
+    mut builder: crate::operation::put_policy_assignment::builders::PutPolicyAssignmentOutputBuilder,
+) -> crate::operation::put_policy_assignment::builders::PutPolicyAssignmentOutputBuilder {
+    if builder.policy_arn.is_none() {
+        builder.policy_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
     }
     builder
 }
@@ -541,6 +846,51 @@ pub(crate) fn start_automation_job_output_output_correct_errors(
     }
     if builder.job_id.is_none() {
         builder.job_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_access_control_application_output_output_correct_errors(
+    mut builder: crate::operation::update_access_control_application::builders::UpdateAccessControlApplicationOutputBuilder,
+) -> crate::operation::update_access_control_application::builders::UpdateAccessControlApplicationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.access_control_application_status.is_none() {
+        builder.access_control_application_status = "no value was set".parse::<crate::types::AccessControlApplicationStatus>().ok()
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_access_control_application_secret_output_output_correct_errors(
+    mut builder: crate::operation::update_access_control_application_secret::builders::UpdateAccessControlApplicationSecretOutputBuilder,
+) -> crate::operation::update_access_control_application_secret::builders::UpdateAccessControlApplicationSecretOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.client_secret_id.is_none() {
+        builder.client_secret_id = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.regional_secret_manager_arns.is_none() {
+        builder.regional_secret_manager_arns = Some(Default::default())
     }
     builder
 }
@@ -626,6 +976,42 @@ pub(crate) fn update_flow_permissions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_inbound_connector_output_output_correct_errors(
+    mut builder: crate::operation::update_inbound_connector::builders::UpdateInboundConnectorOutputBuilder,
+) -> crate::operation::update_inbound_connector::builders::UpdateInboundConnectorOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.inbound_connector_id.is_none() {
+        builder.inbound_connector_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.inbound_connector_status.is_none() {
+        builder.inbound_connector_status = "no value was set".parse::<crate::types::InboundConnectorStatus>().ok()
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_inbound_connector_application_associations_output_output_correct_errors(
+    mut builder: crate::operation::update_inbound_connector_application_associations::builders::UpdateInboundConnectorApplicationAssociationsOutputBuilder,
+) -> crate::operation::update_inbound_connector_application_associations::builders::UpdateInboundConnectorApplicationAssociationsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_knowledge_base_output_output_correct_errors(
     mut builder: crate::operation::update_knowledge_base::builders::UpdateKnowledgeBaseOutputBuilder,
 ) -> crate::operation::update_knowledge_base::builders::UpdateKnowledgeBaseOutputBuilder {
@@ -646,6 +1032,18 @@ pub(crate) fn update_knowledge_base_permissions_output_output_correct_errors(
     }
     if builder.knowledge_base_id.is_none() {
         builder.knowledge_base_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_knowledge_base_refresh_schedule_output_output_correct_errors(
+    mut builder: crate::operation::update_knowledge_base_refresh_schedule::builders::UpdateKnowledgeBaseRefreshScheduleOutputBuilder,
+) -> crate::operation::update_knowledge_base_refresh_schedule::builders::UpdateKnowledgeBaseRefreshScheduleOutputBuilder {
+    if builder.schedule_id.is_none() {
+        builder.schedule_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
     }
     builder
 }
@@ -718,6 +1116,41 @@ pub(crate) fn approval_policy_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn access_control_application_correct_errors(
+    mut builder: crate::types::builders::AccessControlApplicationBuilder,
+) -> crate::types::builders::AccessControlApplicationBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.namespace.is_none() {
+        builder.namespace = Some(Default::default())
+    }
+    if builder.authentication_type.is_none() {
+        builder.authentication_type = "no value was set"
+            .parse::<crate::types::AccessControlApplicationAuthenticationType>()
+            .ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AccessControlApplicationStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.tenant_url.is_none() {
+        builder.tenant_url = Some(Default::default())
     }
     builder
 }
@@ -805,6 +1238,39 @@ pub(crate) fn flow_detail_correct_errors(mut builder: crate::types::builders::Fl
     builder
 }
 
+pub(crate) fn inbound_connector_correct_errors(
+    mut builder: crate::types::builders::InboundConnectorBuilder,
+) -> crate::types::builders::InboundConnectorBuilder {
+    if builder.inbound_connector_id.is_none() {
+        builder.inbound_connector_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InboundConnectorStatus>().ok()
+    }
+    if builder.tenant_url.is_none() {
+        builder.tenant_url = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.inbound_connector_configuration.is_none() {
+        builder.inbound_connector_configuration = {
+            let builder = crate::types::builders::InboundConnectorConfigBuilder::default();
+            crate::serde_util::inbound_connector_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn knowledge_base_correct_errors(
     mut builder: crate::types::builders::KnowledgeBaseBuilder,
 ) -> crate::types::builders::KnowledgeBaseBuilder {
@@ -827,6 +1293,21 @@ pub(crate) fn knowledge_base_correct_errors(
         builder.knowledge_base_configuration = {
             let builder = crate::types::builders::KnowledgeBaseConfigurationBuilder::default();
             Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn knowledge_base_refresh_schedule_summary_correct_errors(
+    mut builder: crate::types::builders::KnowledgeBaseRefreshScheduleSummaryBuilder,
+) -> crate::types::builders::KnowledgeBaseRefreshScheduleSummaryBuilder {
+    if builder.schedule_id.is_none() {
+        builder.schedule_id = Some(Default::default())
+    }
+    if builder.schedule_frequency.is_none() {
+        builder.schedule_frequency = {
+            let builder = crate::types::builders::KnowledgeBaseRefreshFrequencyBuilder::default();
+            crate::serde_util::knowledge_base_refresh_frequency_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -862,6 +1343,24 @@ pub(crate) fn limits_profile_correct_errors(
 pub(crate) fn applicable_to_correct_errors(mut builder: crate::types::builders::ApplicableToBuilder) -> crate::types::builders::ApplicableToBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ApplicableToType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn inbound_connector_config_correct_errors(
+    mut builder: crate::types::builders::InboundConnectorConfigBuilder,
+) -> crate::types::builders::InboundConnectorConfigBuilder {
+    if builder.inbound_connector_type.is_none() {
+        builder.inbound_connector_type = "no value was set".parse::<crate::types::InboundConnectorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn knowledge_base_refresh_frequency_correct_errors(
+    mut builder: crate::types::builders::KnowledgeBaseRefreshFrequencyBuilder,
+) -> crate::types::builders::KnowledgeBaseRefreshFrequencyBuilder {
+    if builder.interval.is_none() {
+        builder.interval = "no value was set".parse::<crate::types::KbRefreshInterval>().ok()
     }
     builder
 }

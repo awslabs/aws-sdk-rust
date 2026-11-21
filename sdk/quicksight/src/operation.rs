@@ -7,14 +7,26 @@ pub mod batch_create_topic_reviewed_answer;
 /// Types for the `BatchDeleteKnowledgeBase` operation.
 pub mod batch_delete_knowledge_base;
 
+/// Types for the `BatchDeletePolicyAssignmentByPolicy` operation.
+pub mod batch_delete_policy_assignment_by_policy;
+
 /// Types for the `BatchDeleteTopicReviewedAnswer` operation.
 pub mod batch_delete_topic_reviewed_answer;
 
 /// Types for the `BatchDescribeUserLimits` operation.
 pub mod batch_describe_user_limits;
 
+/// Types for the `BatchPutPolicyAssignmentByPolicy` operation.
+pub mod batch_put_policy_assignment_by_policy;
+
 /// Types for the `CancelIngestion` operation.
 pub mod cancel_ingestion;
+
+/// Types for the `CreateAccessControlApplication` operation.
+pub mod create_access_control_application;
+
+/// Types for the `CreateAccessControlApplicationSecret` operation.
+pub mod create_access_control_application_secret;
 
 /// Types for the `CreateAccountCustomization` operation.
 pub mod create_account_customization;
@@ -70,11 +82,17 @@ pub mod create_group_membership;
 /// Types for the `CreateIAMPolicyAssignment` operation.
 pub mod create_iam_policy_assignment;
 
+/// Types for the `CreateInboundConnector` operation.
+pub mod create_inbound_connector;
+
 /// Types for the `CreateIngestion` operation.
 pub mod create_ingestion;
 
 /// Types for the `CreateKnowledgeBase` operation.
 pub mod create_knowledge_base;
+
+/// Types for the `CreateKnowledgeBaseRefreshSchedule` operation.
+pub mod create_knowledge_base_refresh_schedule;
 
 /// Types for the `CreateLimitsProfile` operation.
 pub mod create_limits_profile;
@@ -117,6 +135,12 @@ pub mod create_topic_v2;
 
 /// Types for the `CreateVPCConnection` operation.
 pub mod create_vpc_connection;
+
+/// Types for the `DeleteAccessControlApplication` operation.
+pub mod delete_access_control_application;
+
+/// Types for the `DeleteAccessControlApplicationSecret` operation.
+pub mod delete_access_control_application_secret;
 
 /// Types for the `DeleteAccountCustomPermission` operation.
 pub mod delete_account_custom_permission;
@@ -190,8 +214,14 @@ pub mod delete_iam_policy_assignment;
 /// Types for the `DeleteIdentityPropagationConfig` operation.
 pub mod delete_identity_propagation_config;
 
+/// Types for the `DeleteInboundConnector` operation.
+pub mod delete_inbound_connector;
+
 /// Types for the `DeleteKnowledgeBase` operation.
 pub mod delete_knowledge_base;
+
+/// Types for the `DeleteKnowledgeBaseRefreshSchedule` operation.
+pub mod delete_knowledge_base_refresh_schedule;
 
 /// Types for the `DeleteLimitsProfile` operation.
 pub mod delete_limits_profile;
@@ -201,6 +231,9 @@ pub mod delete_namespace;
 
 /// Types for the `DeleteOAuthClientApplication` operation.
 pub mod delete_o_auth_client_application;
+
+/// Types for the `DeletePolicyAssignment` operation.
+pub mod delete_policy_assignment;
 
 /// Types for the `DeleteRefreshSchedule` operation.
 pub mod delete_refresh_schedule;
@@ -246,6 +279,9 @@ pub mod delete_user_custom_permission;
 
 /// Types for the `DeleteVPCConnection` operation.
 pub mod delete_vpc_connection;
+
+/// Types for the `DescribeAccessControlApplication` operation.
+pub mod describe_access_control_application;
 
 /// Types for the `DescribeAccountCustomPermission` operation.
 pub mod describe_account_custom_permission;
@@ -370,6 +406,9 @@ pub mod describe_group_membership;
 /// Types for the `DescribeIAMPolicyAssignment` operation.
 pub mod describe_iam_policy_assignment;
 
+/// Types for the `DescribeInboundConnector` operation.
+pub mod describe_inbound_connector;
+
 /// Types for the `DescribeIngestion` operation.
 pub mod describe_ingestion;
 
@@ -384,6 +423,9 @@ pub mod describe_knowledge_base;
 
 /// Types for the `DescribeKnowledgeBasePermissions` operation.
 pub mod describe_knowledge_base_permissions;
+
+/// Types for the `DescribeKnowledgeBaseRefreshSchedule` operation.
+pub mod describe_knowledge_base_refresh_schedule;
 
 /// Types for the `DescribeLimitsProfile` operation.
 pub mod describe_limits_profile;
@@ -484,8 +526,14 @@ pub mod get_flow_permissions;
 /// Types for the `GetIdentityContext` operation.
 pub mod get_identity_context;
 
+/// Types for the `GetPolicyAssignment` operation.
+pub mod get_policy_assignment;
+
 /// Types for the `GetSessionEmbedUrl` operation.
 pub mod get_session_embed_url;
+
+/// Types for the `ListAccessControlApplications` operation.
+pub mod list_access_control_applications;
 
 /// Types for the `ListActionConnectors` operation.
 pub mod list_action_connectors;
@@ -556,8 +604,17 @@ pub mod list_iam_policy_assignments_for_user;
 /// Types for the `ListIdentityPropagationConfigs` operation.
 pub mod list_identity_propagation_configs;
 
+/// Types for the `ListInboundConnectorApplicationAssociations` operation.
+pub mod list_inbound_connector_application_associations;
+
+/// Types for the `ListInboundConnectors` operation.
+pub mod list_inbound_connectors;
+
 /// Types for the `ListIngestions` operation.
 pub mod list_ingestions;
+
+/// Types for the `ListKnowledgeBaseRefreshSchedules` operation.
+pub mod list_knowledge_base_refresh_schedules;
 
 /// Types for the `ListKnowledgeBases` operation.
 pub mod list_knowledge_bases;
@@ -570,6 +627,9 @@ pub mod list_namespaces;
 
 /// Types for the `ListOAuthClientApplications` operation.
 pub mod list_o_auth_client_applications;
+
+/// Types for the `ListPrincipalsForPolicy` operation.
+pub mod list_principals_for_policy;
 
 /// Types for the `ListRefreshSchedules` operation.
 pub mod list_refresh_schedules;
@@ -636,6 +696,9 @@ pub mod predict_qa_results;
 
 /// Types for the `PutDataSetRefreshProperties` operation.
 pub mod put_data_set_refresh_properties;
+
+/// Types for the `PutPolicyAssignment` operation.
+pub mod put_policy_assignment;
 
 /// Types for the `RegisterUser` operation.
 pub mod register_user;
@@ -705,6 +768,12 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAccessControlApplication` operation.
+pub mod update_access_control_application;
+
+/// Types for the `UpdateAccessControlApplicationSecret` operation.
+pub mod update_access_control_application_secret;
 
 /// Types for the `UpdateAccountCustomPermission` operation.
 pub mod update_account_custom_permission;
@@ -808,6 +877,12 @@ pub mod update_iam_policy_assignment;
 /// Types for the `UpdateIdentityPropagationConfig` operation.
 pub mod update_identity_propagation_config;
 
+/// Types for the `UpdateInboundConnector` operation.
+pub mod update_inbound_connector;
+
+/// Types for the `UpdateInboundConnectorApplicationAssociations` operation.
+pub mod update_inbound_connector_application_associations;
+
 /// Types for the `UpdateIpRestriction` operation.
 pub mod update_ip_restriction;
 
@@ -819,6 +894,9 @@ pub mod update_knowledge_base;
 
 /// Types for the `UpdateKnowledgeBasePermissions` operation.
 pub mod update_knowledge_base_permissions;
+
+/// Types for the `UpdateKnowledgeBaseRefreshSchedule` operation.
+pub mod update_knowledge_base_refresh_schedule;
 
 /// Types for the `UpdateLimitsProfile` operation.
 pub mod update_limits_profile;

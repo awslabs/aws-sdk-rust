@@ -435,6 +435,8 @@ pub use crate::types::_auto_ml_problem_type_config_name::AutoMlProblemTypeConfig
 
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributes;
 
+pub use crate::types::_capacity_reservation_detail::CapacityReservationDetail;
+
 pub use crate::types::_cluster_status::ClusterStatus;
 
 pub use crate::types::_cluster_restricted_instance_groups_config_output::ClusterRestrictedInstanceGroupsConfigOutput;
@@ -1257,6 +1259,8 @@ pub use crate::types::_candidate_properties::CandidateProperties;
 
 pub use crate::types::_auto_ml_problem_type_resolved_attributes::AutoMlProblemTypeResolvedAttributes;
 
+pub use crate::types::_capacity_reservation_status::CapacityReservationStatus;
+
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
 pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetails;
@@ -1331,6 +1335,8 @@ pub use crate::types::_recommendation_status::RecommendationStatus;
 
 pub use crate::types::_template_provider_detail::TemplateProviderDetail;
 
+pub use crate::types::_capacity_reservation_resource_association::CapacityReservationResourceAssociation;
+
 pub use crate::types::_secondary_status_transition::SecondaryStatusTransition;
 
 pub use crate::types::_metric_data::MetricData;
@@ -1354,6 +1360,8 @@ pub use crate::types::_oidc_config_for_response::OidcConfigForResponse;
 pub use crate::types::_workforce_vpc_config_response::WorkforceVpcConfigResponse;
 
 pub use crate::types::_workforce_status::WorkforceStatus;
+
+pub use crate::types::_capacity_reservation_instance_usage::CapacityReservationInstanceUsage;
 
 pub use crate::types::_agent_version::AgentVersion;
 
@@ -1382,6 +1390,10 @@ pub use crate::types::_artifact_summary::ArtifactSummary;
 pub use crate::types::_association_summary::AssociationSummary;
 
 pub use crate::types::_auto_ml_job_summary::AutoMlJobSummary;
+
+pub use crate::types::_capacity_reservation_filter::CapacityReservationFilter;
+
+pub use crate::types::_capacity_reservation_summary::CapacityReservationSummary;
 
 pub use crate::types::_cluster_event_summary::ClusterEventSummary;
 
@@ -1937,9 +1949,15 @@ pub use crate::types::_selected_step::SelectedStep;
 
 pub use crate::types::_cfn_template_provider_detail::CfnTemplateProviderDetail;
 
+pub use crate::types::_capacity_reservation_hyper_pod_clusters_association::CapacityReservationHyperPodClustersAssociation;
+
+pub use crate::types::_capacity_reservation_endpoints_association::CapacityReservationEndpointsAssociation;
+
 pub use crate::types::_rule_evaluation_status::RuleEvaluationStatus;
 
 pub use crate::types::_scaling_policy::ScalingPolicy;
+
+pub use crate::types::_capacity_reservation_filter_name::CapacityReservationFilterName;
 
 pub use crate::types::_global_inference_gateway_filter_name::GlobalInferenceGatewayFilterName;
 
@@ -2261,6 +2279,14 @@ pub use crate::types::_detailed_model_package_status::DetailedModelPackageStatus
 
 pub use crate::types::_cfn_stack_detail::CfnStackDetail;
 
+pub use crate::types::_capacity_reservation_opt_in_status::CapacityReservationOptInStatus;
+
+pub use crate::types::_capacity_reservation_match_criteria::CapacityReservationMatchCriteria;
+
+pub use crate::types::_capacity_reservation_endpoint_sharing::CapacityReservationEndpointSharing;
+
+pub use crate::types::_capacity_reservation_resource_usage::CapacityReservationResourceUsage;
+
 pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrackingScalingPolicyConfiguration;
 
 pub use crate::types::_edge_model_summary::EdgeModelSummary;
@@ -2430,6 +2456,8 @@ pub use crate::types::_ec2_capacity_reservation::Ec2CapacityReservation;
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
 pub use crate::types::_cfn_stack_parameter::CfnStackParameter;
+
+pub use crate::types::_capacity_reservation_resource_type::CapacityReservationResourceType;
 
 pub use crate::types::_metric_specification::MetricSpecification;
 
@@ -2839,7 +2867,35 @@ mod _canvas_app_settings;
 
 mod _capacity_reservation;
 
+mod _capacity_reservation_detail;
+
+mod _capacity_reservation_endpoint_sharing;
+
+mod _capacity_reservation_endpoints_association;
+
+mod _capacity_reservation_filter;
+
+mod _capacity_reservation_filter_name;
+
+mod _capacity_reservation_hyper_pod_clusters_association;
+
+mod _capacity_reservation_instance_usage;
+
+mod _capacity_reservation_match_criteria;
+
+mod _capacity_reservation_opt_in_status;
+
 mod _capacity_reservation_preference;
+
+mod _capacity_reservation_resource_association;
+
+mod _capacity_reservation_resource_type;
+
+mod _capacity_reservation_resource_usage;
+
+mod _capacity_reservation_status;
+
+mod _capacity_reservation_summary;
 
 mod _capacity_reservation_type;
 
