@@ -19,6 +19,10 @@ pub use crate::types::_create_and_attach_s3_access_point_s3_configuration::Creat
 
 pub use crate::types::_s3_access_point_attachment::S3AccessPointAttachment;
 
+pub use crate::types::_allowed_svm_mode::AllowedSvmMode;
+
+pub use crate::types::_cluster_peer::ClusterPeer;
+
 pub use crate::types::_s3_data_repository_configuration::S3DataRepositoryConfiguration;
 
 pub use crate::types::_data_repository_association::DataRepositoryAssociation;
@@ -55,13 +59,29 @@ pub use crate::types::_file_system::FileSystem;
 
 pub use crate::types::_active_directory_error_type::ActiveDirectoryErrorType;
 
+pub use crate::types::_snapmirror_policy_snapshot_copy_mode::SnapmirrorPolicySnapshotCopyMode;
+
+pub use crate::types::_snapmirror_policy::SnapmirrorPolicy;
+
+pub use crate::types::_create_snapmirror_source::CreateSnapmirrorSource;
+
+pub use crate::types::_create_snapmirror_destination::CreateSnapmirrorDestination;
+
+pub use crate::types::_snapmirror_relationship::SnapmirrorRelationship;
+
+pub use crate::types::_create_ontap_snapshot_configuration::CreateOntapSnapshotConfiguration;
+
 pub use crate::types::_snapshot::Snapshot;
+
+pub use crate::types::_snapshot_policy::SnapshotPolicy;
 
 pub use crate::types::_create_svm_active_directory_configuration::CreateSvmActiveDirectoryConfiguration;
 
 pub use crate::types::_storage_virtual_machine_root_volume_security_style::StorageVirtualMachineRootVolumeSecurityStyle;
 
 pub use crate::types::_storage_virtual_machine::StorageVirtualMachine;
+
+pub use crate::types::_storage_virtual_machine_peer::StorageVirtualMachinePeer;
 
 pub use crate::types::_volume_type::VolumeType;
 
@@ -72,6 +92,8 @@ pub use crate::types::_create_open_zfs_volume_configuration::CreateOpenZfsVolume
 pub use crate::types::_volume::Volume;
 
 pub use crate::types::_backup_lifecycle::BackupLifecycle;
+
+pub use crate::types::_cluster_peer_lifecycle::ClusterPeerLifecycle;
 
 pub use crate::types::_data_repository_lifecycle::DataRepositoryLifecycle;
 
@@ -91,9 +113,17 @@ pub use crate::types::_delete_file_system_lustre_response::DeleteFileSystemLustr
 
 pub use crate::types::_delete_file_system_open_zfs_response::DeleteFileSystemOpenZfsResponse;
 
+pub use crate::types::_snapmirror_policy_lifecycle::SnapmirrorPolicyLifecycle;
+
+pub use crate::types::_snapmirror_relationship_lifecycle::SnapmirrorRelationshipLifecycle;
+
 pub use crate::types::_snapshot_lifecycle::SnapshotLifecycle;
 
+pub use crate::types::_snapshot_policy_lifecycle::SnapshotPolicyLifecycle;
+
 pub use crate::types::_storage_virtual_machine_lifecycle::StorageVirtualMachineLifecycle;
+
+pub use crate::types::_storage_virtual_machine_peer_lifecycle::StorageVirtualMachinePeerLifecycle;
 
 pub use crate::types::_delete_volume_ontap_configuration::DeleteVolumeOntapConfiguration;
 
@@ -115,7 +145,13 @@ pub use crate::types::_update_file_system_ontap_configuration::UpdateFileSystemO
 
 pub use crate::types::_update_file_system_open_zfs_configuration::UpdateFileSystemOpenZfsConfiguration;
 
+pub use crate::types::_updatable_snapmirror_relationship_state::UpdatableSnapmirrorRelationshipState;
+
+pub use crate::types::_update_ontap_snapshot_configuration::UpdateOntapSnapshotConfiguration;
+
 pub use crate::types::_update_svm_active_directory_configuration::UpdateSvmActiveDirectoryConfiguration;
+
+pub use crate::types::_storage_virtual_machine_peer_update_state::StorageVirtualMachinePeerUpdateState;
 
 pub use crate::types::_update_ontap_volume_configuration::UpdateOntapVolumeConfiguration;
 
@@ -150,6 +186,8 @@ pub use crate::types::_s3_access_point_open_zfs_configuration::S3AccessPointOpen
 pub use crate::types::_s3_access_point_ontap_configuration::S3AccessPointOntapConfiguration;
 
 pub use crate::types::_s3_access_point::S3AccessPoint;
+
+pub use crate::types::_cluster_peer_authentication_status::ClusterPeerAuthenticationStatus;
 
 pub use crate::types::_auto_import_policy::AutoImportPolicy;
 
@@ -223,11 +261,39 @@ pub use crate::types::_ontap_file_system_configuration::OntapFileSystemConfigura
 
 pub use crate::types::_open_zfs_file_system_configuration::OpenZfsFileSystemConfiguration;
 
+pub use crate::types::_snapmirror_policy_retention_rule::SnapmirrorPolicyRetentionRule;
+
+pub use crate::types::_snapmirror_policy_scope::SnapmirrorPolicyScope;
+
+pub use crate::types::_snapmirror_source::SnapmirrorSource;
+
+pub use crate::types::_snapmirror_destination::SnapmirrorDestination;
+
+pub use crate::types::_snapmirror_relationship_policy::SnapmirrorRelationshipPolicy;
+
+pub use crate::types::_snapmirror_relationship_state::SnapmirrorRelationshipState;
+
+pub use crate::types::_snapmirror_exported_snapshot::SnapmirrorExportedSnapshot;
+
+pub use crate::types::_snapmirror_transfer_state::SnapmirrorTransferState;
+
+pub use crate::types::_snapshot_type::SnapshotType;
+
+pub use crate::types::_ontap_snapshot_configuration::OntapSnapshotConfiguration;
+
+pub use crate::types::_snapshot_policy_schedule::SnapshotPolicySchedule;
+
+pub use crate::types::_snapshot_policy_scope::SnapshotPolicyScope;
+
 pub use crate::types::_svm_active_directory_configuration::SvmActiveDirectoryConfiguration;
 
 pub use crate::types::_svm_endpoints::SvmEndpoints;
 
 pub use crate::types::_storage_virtual_machine_subtype::StorageVirtualMachineSubtype;
+
+pub use crate::types::_storage_virtual_machine_peer_application::StorageVirtualMachinePeerApplication;
+
+pub use crate::types::_storage_virtual_machine_peer_state::StorageVirtualMachinePeerState;
 
 pub use crate::types::_security_style::SecurityStyle;
 
@@ -241,6 +307,8 @@ pub use crate::types::_volume_style::VolumeStyle;
 
 pub use crate::types::_create_aggregate_configuration::CreateAggregateConfiguration;
 
+pub use crate::types::_create_clone_configuration::CreateCloneConfiguration;
+
 pub use crate::types::_open_zfs_data_compression_type::OpenZfsDataCompressionType;
 
 pub use crate::types::_create_open_zfs_origin_snapshot_configuration::CreateOpenZfsOriginSnapshotConfiguration;
@@ -251,11 +319,21 @@ pub use crate::types::_open_zfs_volume_configuration::OpenZfsVolumeConfiguration
 
 pub use crate::types::_filter::Filter;
 
+pub use crate::types::_cluster_peer_filter::ClusterPeerFilter;
+
 pub use crate::types::_data_repository_task_filter::DataRepositoryTaskFilter;
 
 pub use crate::types::_s3_access_point_attachments_filter::S3AccessPointAttachmentsFilter;
 
+pub use crate::types::_snapmirror_policy_filter::SnapmirrorPolicyFilter;
+
+pub use crate::types::_snapmirror_relationship_filter::SnapmirrorRelationshipFilter;
+
+pub use crate::types::_snapshot_policy_filter::SnapshotPolicyFilter;
+
 pub use crate::types::_snapshot_filter::SnapshotFilter;
+
+pub use crate::types::_storage_virtual_machine_peer_filter::StorageVirtualMachinePeerFilter;
 
 pub use crate::types::_storage_virtual_machine_filter::StorageVirtualMachineFilter;
 
@@ -268,6 +346,8 @@ pub use crate::types::_self_managed_active_directory_configuration_updates::Self
 pub use crate::types::_update_file_system_lustre_metadata_configuration::UpdateFileSystemLustreMetadataConfiguration;
 
 pub use crate::types::_update_snaplock_configuration::UpdateSnaplockConfiguration;
+
+pub use crate::types::_update_clone_configuration::UpdateCloneConfiguration;
 
 pub use crate::types::_alias_lifecycle::AliasLifecycle;
 
@@ -286,6 +366,8 @@ pub use crate::types::_ontap_file_system_user_type::OntapFileSystemUserType;
 pub use crate::types::_ontap_unix_file_system_user::OntapUnixFileSystemUser;
 
 pub use crate::types::_ontap_windows_file_system_user::OntapWindowsFileSystemUser;
+
+pub use crate::types::_ontap_error::OntapError;
 
 pub use crate::types::_nfs_version::NfsVersion;
 
@@ -317,6 +399,8 @@ pub use crate::types::_file_system_lustre_metadata_configuration::FileSystemLust
 
 pub use crate::types::_file_system_endpoints::FileSystemEndpoints;
 
+pub use crate::types::_snapshot_policy_retention_period::SnapshotPolicyRetentionPeriod;
+
 pub use crate::types::_svm_endpoint::SvmEndpoint;
 
 pub use crate::types::_tiering_policy_name::TieringPolicyName;
@@ -341,6 +425,8 @@ pub use crate::types::_snaplock_configuration::SnaplockConfiguration;
 
 pub use crate::types::_aggregate_configuration::AggregateConfiguration;
 
+pub use crate::types::_clone_configuration::CloneConfiguration;
+
 pub use crate::types::_open_zfs_origin_snapshot_configuration::OpenZfsOriginSnapshotConfiguration;
 
 pub use crate::types::_delete_file_system_open_zfs_option::DeleteFileSystemOpenZfsOption;
@@ -349,21 +435,35 @@ pub use crate::types::_delete_open_zfs_volume_option::DeleteOpenZfsVolumeOption;
 
 pub use crate::types::_filter_name::FilterName;
 
+pub use crate::types::_cluster_peer_filter_name::ClusterPeerFilterName;
+
 pub use crate::types::_data_repository_task_filter_name::DataRepositoryTaskFilterName;
 
 pub use crate::types::_s3_access_point_attachments_filter_name::S3AccessPointAttachmentsFilterName;
 
+pub use crate::types::_snapmirror_policy_filter_name::SnapmirrorPolicyFilterName;
+
+pub use crate::types::_snapmirror_relationship_filter_name::SnapmirrorRelationshipFilterName;
+
+pub use crate::types::_snapshot_policy_filter_name::SnapshotPolicyFilterName;
+
 pub use crate::types::_snapshot_filter_name::SnapshotFilterName;
+
+pub use crate::types::_storage_virtual_machine_peer_filter_name::StorageVirtualMachinePeerFilterName;
 
 pub use crate::types::_storage_virtual_machine_filter_name::StorageVirtualMachineFilterName;
 
 pub use crate::types::_volume_filter_name::VolumeFilterName;
+
+pub use crate::types::_clone_split_action::CloneSplitAction;
 
 pub use crate::types::_event_type::EventType;
 
 pub use crate::types::_file_system_maintenance_operation::FileSystemMaintenanceOperation;
 
 pub use crate::types::_file_system_endpoint::FileSystemEndpoint;
+
+pub use crate::types::_snapshot_policy_retention_period_type::SnapshotPolicyRetentionPeriodType;
 
 pub use crate::types::_autocommit_period_type::AutocommitPeriodType;
 
@@ -391,6 +491,8 @@ mod _alias;
 
 mod _alias_lifecycle;
 
+mod _allowed_svm_mode;
+
 mod _auto_export_policy;
 
 mod _auto_import_policy;
@@ -409,6 +511,20 @@ mod _backup_lifecycle;
 
 mod _backup_type;
 
+mod _clone_configuration;
+
+mod _clone_split_action;
+
+mod _cluster_peer;
+
+mod _cluster_peer_authentication_status;
+
+mod _cluster_peer_filter;
+
+mod _cluster_peer_filter_name;
+
+mod _cluster_peer_lifecycle;
+
 mod _completion_report;
 
 mod _create_aggregate_configuration;
@@ -418,6 +534,8 @@ mod _create_and_attach_s3_access_point_ontap_configuration;
 mod _create_and_attach_s3_access_point_open_zfs_configuration;
 
 mod _create_and_attach_s3_access_point_s3_configuration;
+
+mod _create_clone_configuration;
 
 mod _create_file_cache_lustre_configuration;
 
@@ -431,6 +549,8 @@ mod _create_file_system_open_zfs_configuration;
 
 mod _create_file_system_windows_configuration;
 
+mod _create_ontap_snapshot_configuration;
+
 mod _create_ontap_volume_configuration;
 
 mod _create_open_zfs_origin_snapshot_configuration;
@@ -438,6 +558,10 @@ mod _create_open_zfs_origin_snapshot_configuration;
 mod _create_open_zfs_volume_configuration;
 
 mod _create_snaplock_configuration;
+
+mod _create_snapmirror_destination;
+
+mod _create_snapmirror_source;
 
 mod _create_svm_active_directory_configuration;
 
@@ -569,11 +693,15 @@ mod _nfs_version;
 
 mod _ontap_deployment_type;
 
+mod _ontap_error;
+
 mod _ontap_file_system_configuration;
 
 mod _ontap_file_system_identity;
 
 mod _ontap_file_system_user_type;
+
+mod _ontap_snapshot_configuration;
 
 mod _ontap_unix_file_system_user;
 
@@ -667,6 +795,40 @@ mod _snaplock_retention_period;
 
 mod _snaplock_type;
 
+mod _snapmirror_destination;
+
+mod _snapmirror_exported_snapshot;
+
+mod _snapmirror_policy;
+
+mod _snapmirror_policy_filter;
+
+mod _snapmirror_policy_filter_name;
+
+mod _snapmirror_policy_lifecycle;
+
+mod _snapmirror_policy_retention_rule;
+
+mod _snapmirror_policy_scope;
+
+mod _snapmirror_policy_snapshot_copy_mode;
+
+mod _snapmirror_relationship;
+
+mod _snapmirror_relationship_filter;
+
+mod _snapmirror_relationship_filter_name;
+
+mod _snapmirror_relationship_lifecycle;
+
+mod _snapmirror_relationship_policy;
+
+mod _snapmirror_relationship_state;
+
+mod _snapmirror_source;
+
+mod _snapmirror_transfer_state;
+
 mod _snapshot;
 
 mod _snapshot_filter;
@@ -674,6 +836,24 @@ mod _snapshot_filter;
 mod _snapshot_filter_name;
 
 mod _snapshot_lifecycle;
+
+mod _snapshot_policy;
+
+mod _snapshot_policy_filter;
+
+mod _snapshot_policy_filter_name;
+
+mod _snapshot_policy_lifecycle;
+
+mod _snapshot_policy_retention_period;
+
+mod _snapshot_policy_retention_period_type;
+
+mod _snapshot_policy_schedule;
+
+mod _snapshot_policy_scope;
+
+mod _snapshot_type;
 
 mod _status;
 
@@ -686,6 +866,20 @@ mod _storage_virtual_machine_filter;
 mod _storage_virtual_machine_filter_name;
 
 mod _storage_virtual_machine_lifecycle;
+
+mod _storage_virtual_machine_peer;
+
+mod _storage_virtual_machine_peer_application;
+
+mod _storage_virtual_machine_peer_filter;
+
+mod _storage_virtual_machine_peer_filter_name;
+
+mod _storage_virtual_machine_peer_lifecycle;
+
+mod _storage_virtual_machine_peer_state;
+
+mod _storage_virtual_machine_peer_update_state;
 
 mod _storage_virtual_machine_root_volume_security_style;
 
@@ -705,6 +899,10 @@ mod _tiering_policy_name;
 
 mod _unit;
 
+mod _updatable_snapmirror_relationship_state;
+
+mod _update_clone_configuration;
+
 mod _update_file_cache_lustre_configuration;
 
 mod _update_file_system_lustre_configuration;
@@ -716,6 +914,8 @@ mod _update_file_system_ontap_configuration;
 mod _update_file_system_open_zfs_configuration;
 
 mod _update_file_system_windows_configuration;
+
+mod _update_ontap_snapshot_configuration;
 
 mod _update_ontap_volume_configuration;
 

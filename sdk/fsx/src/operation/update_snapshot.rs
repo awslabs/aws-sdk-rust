@@ -116,6 +116,15 @@ pub(crate) mod error_registry {
                         },
                     )
 .insert_error_shape(
+                        crate::types::error::IncompatibleParameterError::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::IncompatibleParameterError::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::IncompatibleParameterError::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
                         crate::types::error::InternalServerError::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InternalServerError::deserialize(d)?))
@@ -314,6 +323,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateSna
                     let tmp = tmp.meta(generic);
                     tmp.build()
                 }),
+                "IncompatibleParameterError" => crate::operation::update_snapshot::UpdateSnapshotError::IncompatibleParameterError({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::IncompatibleParameterErrorBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::incompatible_parameter_error_correct_errors(tmp).build()
+                }),
                 "InternalServerError" => crate::operation::update_snapshot::UpdateSnapshotError::InternalServerError({
                     let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
                         ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
@@ -475,6 +502,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateSnapsho
 pub enum UpdateSnapshotError {
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::types::error::BadRequest),
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
+    IncompatibleParameterError(crate::types::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
@@ -513,6 +542,7 @@ impl UpdateSnapshotError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequest(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IncompatibleParameterError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapshotNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -521,6 +551,10 @@ impl UpdateSnapshotError {
     /// Returns `true` if the error kind is `UpdateSnapshotError::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(self, Self::BadRequest(_))
+    }
+    /// Returns `true` if the error kind is `UpdateSnapshotError::IncompatibleParameterError`.
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(self, Self::IncompatibleParameterError(_))
     }
     /// Returns `true` if the error kind is `UpdateSnapshotError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -535,6 +569,7 @@ impl ::std::error::Error for UpdateSnapshotError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BadRequest(_inner) => ::std::option::Option::Some(_inner),
+            Self::IncompatibleParameterError(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -545,6 +580,7 @@ impl ::std::fmt::Display for UpdateSnapshotError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BadRequest(_inner) => _inner.fmt(f),
+            Self::IncompatibleParameterError(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::SnapshotNotFound(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -569,6 +605,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateSnapsho
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequest(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::IncompatibleParameterError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

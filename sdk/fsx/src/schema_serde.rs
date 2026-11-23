@@ -41,6 +41,16 @@ pub(crate) mod shape_cancel_data_repository_task_input_input;
 
 pub(crate) mod shape_cancel_data_repository_task_output_output;
 
+pub(crate) mod shape_clone_configuration;
+
+pub(crate) mod shape_cluster_peer;
+
+pub(crate) mod shape_cluster_peer_authentication_status;
+
+pub(crate) mod shape_cluster_peer_filter;
+
+pub(crate) mod shape_cluster_peer_not_found;
+
 pub(crate) mod shape_completion_report;
 
 pub(crate) mod shape_copy_backup_input_input;
@@ -66,6 +76,12 @@ pub(crate) mod shape_create_and_attach_s3_access_point_s3_configuration;
 pub(crate) mod shape_create_backup_input_input;
 
 pub(crate) mod shape_create_backup_output_output;
+
+pub(crate) mod shape_create_clone_configuration;
+
+pub(crate) mod shape_create_cluster_peer_input_input;
+
+pub(crate) mod shape_create_cluster_peer_output_output;
 
 pub(crate) mod shape_create_data_repository_association_input_input;
 
@@ -99,6 +115,8 @@ pub(crate) mod shape_create_file_system_output_output;
 
 pub(crate) mod shape_create_file_system_windows_configuration;
 
+pub(crate) mod shape_create_ontap_snapshot_configuration;
+
 pub(crate) mod shape_create_ontap_volume_configuration;
 
 pub(crate) mod shape_create_open_zfs_origin_snapshot_configuration;
@@ -107,13 +125,33 @@ pub(crate) mod shape_create_open_zfs_volume_configuration;
 
 pub(crate) mod shape_create_snaplock_configuration;
 
+pub(crate) mod shape_create_snapmirror_destination;
+
+pub(crate) mod shape_create_snapmirror_policy_input_input;
+
+pub(crate) mod shape_create_snapmirror_policy_output_output;
+
+pub(crate) mod shape_create_snapmirror_relationship_input_input;
+
+pub(crate) mod shape_create_snapmirror_relationship_output_output;
+
+pub(crate) mod shape_create_snapmirror_source;
+
 pub(crate) mod shape_create_snapshot_input_input;
 
 pub(crate) mod shape_create_snapshot_output_output;
 
+pub(crate) mod shape_create_snapshot_policy_input_input;
+
+pub(crate) mod shape_create_snapshot_policy_output_output;
+
 pub(crate) mod shape_create_storage_virtual_machine_input_input;
 
 pub(crate) mod shape_create_storage_virtual_machine_output_output;
+
+pub(crate) mod shape_create_storage_virtual_machine_peer_input_input;
+
+pub(crate) mod shape_create_storage_virtual_machine_peer_output_output;
 
 pub(crate) mod shape_create_svm_active_directory_configuration;
 
@@ -151,6 +189,10 @@ pub(crate) mod shape_delete_backup_input_input;
 
 pub(crate) mod shape_delete_backup_output_output;
 
+pub(crate) mod shape_delete_cluster_peer_input_input;
+
+pub(crate) mod shape_delete_cluster_peer_output_output;
+
 pub(crate) mod shape_delete_data_repository_association_input_input;
 
 pub(crate) mod shape_delete_data_repository_association_output_output;
@@ -175,13 +217,29 @@ pub(crate) mod shape_delete_file_system_windows_configuration;
 
 pub(crate) mod shape_delete_file_system_windows_response;
 
+pub(crate) mod shape_delete_snapmirror_policy_input_input;
+
+pub(crate) mod shape_delete_snapmirror_policy_output_output;
+
+pub(crate) mod shape_delete_snapmirror_relationship_input_input;
+
+pub(crate) mod shape_delete_snapmirror_relationship_output_output;
+
 pub(crate) mod shape_delete_snapshot_input_input;
 
 pub(crate) mod shape_delete_snapshot_output_output;
 
+pub(crate) mod shape_delete_snapshot_policy_input_input;
+
+pub(crate) mod shape_delete_snapshot_policy_output_output;
+
 pub(crate) mod shape_delete_storage_virtual_machine_input_input;
 
 pub(crate) mod shape_delete_storage_virtual_machine_output_output;
+
+pub(crate) mod shape_delete_storage_virtual_machine_peer_input_input;
+
+pub(crate) mod shape_delete_storage_virtual_machine_peer_output_output;
 
 pub(crate) mod shape_delete_volume_input_input;
 
@@ -196,6 +254,10 @@ pub(crate) mod shape_delete_volume_output_output;
 pub(crate) mod shape_describe_backups_input_input;
 
 pub(crate) mod shape_describe_backups_output_output;
+
+pub(crate) mod shape_describe_cluster_peers_input_input;
+
+pub(crate) mod shape_describe_cluster_peers_output_output;
 
 pub(crate) mod shape_describe_data_repository_associations_input_input;
 
@@ -225,9 +287,25 @@ pub(crate) mod shape_describe_shared_vpc_configuration_input_input;
 
 pub(crate) mod shape_describe_shared_vpc_configuration_output_output;
 
+pub(crate) mod shape_describe_snapmirror_policies_input_input;
+
+pub(crate) mod shape_describe_snapmirror_policies_output_output;
+
+pub(crate) mod shape_describe_snapmirror_relationships_input_input;
+
+pub(crate) mod shape_describe_snapmirror_relationships_output_output;
+
+pub(crate) mod shape_describe_snapshot_policies_input_input;
+
+pub(crate) mod shape_describe_snapshot_policies_output_output;
+
 pub(crate) mod shape_describe_snapshots_input_input;
 
 pub(crate) mod shape_describe_snapshots_output_output;
+
+pub(crate) mod shape_describe_storage_virtual_machine_peers_input_input;
+
+pub(crate) mod shape_describe_storage_virtual_machine_peers_output_output;
 
 pub(crate) mod shape_describe_storage_virtual_machines_input_input;
 
@@ -331,9 +409,13 @@ pub(crate) mod shape_nfs_data_repository_configuration;
 
 pub(crate) mod shape_not_service_resource_error;
 
+pub(crate) mod shape_ontap_error;
+
 pub(crate) mod shape_ontap_file_system_configuration;
 
 pub(crate) mod shape_ontap_file_system_identity;
+
+pub(crate) mod shape_ontap_snapshot_configuration;
 
 pub(crate) mod shape_ontap_unix_file_system_user;
 
@@ -405,11 +487,45 @@ pub(crate) mod shape_snaplock_configuration;
 
 pub(crate) mod shape_snaplock_retention_period;
 
+pub(crate) mod shape_snapmirror_destination;
+
+pub(crate) mod shape_snapmirror_exported_snapshot;
+
+pub(crate) mod shape_snapmirror_policy;
+
+pub(crate) mod shape_snapmirror_policy_filter;
+
+pub(crate) mod shape_snapmirror_policy_not_found;
+
+pub(crate) mod shape_snapmirror_policy_retention_rule;
+
+pub(crate) mod shape_snapmirror_relationship;
+
+pub(crate) mod shape_snapmirror_relationship_filter;
+
+pub(crate) mod shape_snapmirror_relationship_not_found;
+
+pub(crate) mod shape_snapmirror_relationship_policy;
+
+pub(crate) mod shape_snapmirror_source;
+
+pub(crate) mod shape_snapmirror_transfer_state;
+
 pub(crate) mod shape_snapshot;
 
 pub(crate) mod shape_snapshot_filter;
 
 pub(crate) mod shape_snapshot_not_found;
+
+pub(crate) mod shape_snapshot_policy;
+
+pub(crate) mod shape_snapshot_policy_filter;
+
+pub(crate) mod shape_snapshot_policy_not_found;
+
+pub(crate) mod shape_snapshot_policy_retention_period;
+
+pub(crate) mod shape_snapshot_policy_schedule;
 
 pub(crate) mod shape_source_backup_unavailable;
 
@@ -422,6 +538,12 @@ pub(crate) mod shape_storage_virtual_machine;
 pub(crate) mod shape_storage_virtual_machine_filter;
 
 pub(crate) mod shape_storage_virtual_machine_not_found;
+
+pub(crate) mod shape_storage_virtual_machine_peer;
+
+pub(crate) mod shape_storage_virtual_machine_peer_filter;
+
+pub(crate) mod shape_storage_virtual_machine_peer_not_found;
 
 pub(crate) mod shape_svm_active_directory_configuration;
 
@@ -444,6 +566,12 @@ pub(crate) mod shape_unsupported_operation;
 pub(crate) mod shape_untag_resource_input_input;
 
 pub(crate) mod shape_untag_resource_output_output;
+
+pub(crate) mod shape_update_clone_configuration;
+
+pub(crate) mod shape_update_cluster_peer_input_input;
+
+pub(crate) mod shape_update_cluster_peer_output_output;
 
 pub(crate) mod shape_update_data_repository_association_input_input;
 
@@ -469,6 +597,8 @@ pub(crate) mod shape_update_file_system_output_output;
 
 pub(crate) mod shape_update_file_system_windows_configuration;
 
+pub(crate) mod shape_update_ontap_snapshot_configuration;
+
 pub(crate) mod shape_update_ontap_volume_configuration;
 
 pub(crate) mod shape_update_open_zfs_volume_configuration;
@@ -479,13 +609,29 @@ pub(crate) mod shape_update_shared_vpc_configuration_output_output;
 
 pub(crate) mod shape_update_snaplock_configuration;
 
+pub(crate) mod shape_update_snapmirror_policy_input_input;
+
+pub(crate) mod shape_update_snapmirror_policy_output_output;
+
+pub(crate) mod shape_update_snapmirror_relationship_input_input;
+
+pub(crate) mod shape_update_snapmirror_relationship_output_output;
+
 pub(crate) mod shape_update_snapshot_input_input;
 
 pub(crate) mod shape_update_snapshot_output_output;
 
+pub(crate) mod shape_update_snapshot_policy_input_input;
+
+pub(crate) mod shape_update_snapshot_policy_output_output;
+
 pub(crate) mod shape_update_storage_virtual_machine_input_input;
 
 pub(crate) mod shape_update_storage_virtual_machine_output_output;
+
+pub(crate) mod shape_update_storage_virtual_machine_peer_input_input;
+
+pub(crate) mod shape_update_storage_virtual_machine_peer_output_output;
 
 pub(crate) mod shape_update_svm_active_directory_configuration;
 

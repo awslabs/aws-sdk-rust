@@ -9,6 +9,16 @@ static LIFECYCLETRANSITIONREASON_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'st
     "Message",
     0,
 );
+static LIFECYCLETRANSITIONREASON_MEMBER_ONTAP_ERROR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#LifecycleTransitionReason$OntapError",
+        "com.amazonaws.fsx",
+        "LifecycleTransitionReason",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapError",
+    1,
+);
 static LIFECYCLETRANSITIONREASON_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.fsx#LifecycleTransitionReason",
@@ -16,7 +26,7 @@ static LIFECYCLETRANSITIONREASON_SCHEMA: ::aws_smithy_schema::Schema<'static> = 
         "LifecycleTransitionReason",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&LIFECYCLETRANSITIONREASON_MEMBER_MESSAGE],
+    &[&LIFECYCLETRANSITIONREASON_MEMBER_MESSAGE, &LIFECYCLETRANSITIONREASON_MEMBER_ONTAP_ERROR],
 );
 impl crate::types::LifecycleTransitionReason {
     /// The schema for this shape.
@@ -34,6 +44,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::LifecycleT
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.message {
             ser.write_string(&LIFECYCLETRANSITIONREASON_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.ontap_error {
+            ser.write_struct(&LIFECYCLETRANSITIONREASON_MEMBER_ONTAP_ERROR, val)?;
         }
         Ok(())
     }
@@ -57,6 +70,13 @@ impl crate::types::builders::LifecycleTransitionReasonBuilder {
                         deser.read_null()?;
                     } else {
                         self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_error = Some(crate::types::OntapError::deserialize(deser)?);
                     }
                 }
                 _ => {}

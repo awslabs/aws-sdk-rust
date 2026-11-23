@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyInput {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub kvs_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key to delete.</p>
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyInput {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn kvs_arn(&self) -> ::std::option::Option<&str> {
         self.kvs_arn.as_deref()
     }
@@ -19,7 +19,7 @@ impl DeleteKeyInput {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct DeleteKeyInputBuilder {
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     /// This field is required.
     pub fn kvs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kvs_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kvs_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kvs_arn
     }
@@ -70,18 +70,18 @@ impl DeleteKeyInputBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }

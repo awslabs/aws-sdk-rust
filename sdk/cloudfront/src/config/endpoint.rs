@@ -735,27 +735,24 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        8 => {
-                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            ::std::result::Result::Ok(
-                                ::aws_smithy_types::endpoint::Endpoint::builder()
-                                    .url({
-                                        let mut out = String::new();
-                                        out.push_str("https://cloudfront-fips.");
-                                        #[allow(clippy::needless_borrow)]
-                                        out.push_str(&partition_result.dual_stack_dns_suffix());
-                                        out
-                                    })
-                                    .auth_scheme(
-                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
-                                            .put("signingRegion", partition_result.implicit_global_region()),
-                                    )
-                                    .build(),
-                            )
-                        }
-                        9 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            "FIPS and DualStack are enabled, but this partition does not support one or both".to_string(),
-                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        8 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://cloudfront.amazonaws.eu".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eusc-de-east-1"),
+                                )
+                                .build(),
+                        ),
+                        9 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://cloudfront.global.api.amazonwebservices.eu".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eusc-de-east-1"),
+                                )
+                                .build(),
+                        ),
                         10 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
@@ -764,7 +761,7 @@ impl DefaultResolver {
                                         let mut out = String::new();
                                         out.push_str("https://cloudfront-fips.");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&partition_result.dns_suffix());
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
                                     })
                                     .auth_scheme(
@@ -775,9 +772,30 @@ impl DefaultResolver {
                             )
                         }
                         11 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            "FIPS is enabled but this partition does not support FIPS".to_string(),
+                            "FIPS and DualStack are enabled, but this partition does not support one or both".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         12 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://cloudfront-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                            .put("signingRegion", partition_result.implicit_global_region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        13 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "FIPS is enabled but this partition does not support FIPS".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        14 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -795,10 +813,10 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        13 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        15 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "DualStack is enabled but this partition does not support DualStack".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        14 => {
+                        16 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -816,7 +834,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        15 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        17 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid Configuration: Missing Region".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -870,16 +888,25 @@ impl DefaultResolver {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
-                                inner.supports_dual_stack()
+                                inner.name()
                             } else {
                                 return false;
-                            }) == (true)
+                            }) == ("aws-eusc")
                         })(&mut _diagnostic_collector),
                         8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
                                 inner.supports_fips()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        9 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_dual_stack()
                             } else {
                                 return false;
                             }) == (true)
@@ -910,7 +937,7 @@ impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
         ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
 }
-const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 17] = [
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 19] = [
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: -1,
         high_ref: 1,
@@ -918,78 +945,88 @@ const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 17] = [
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 0,
-        high_ref: 16,
+        high_ref: 18,
         low_ref: 3,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 1,
         high_ref: 4,
-        low_ref: 100000015,
+        low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 2,
         high_ref: 5,
-        low_ref: 100000015,
+        low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 3,
-        high_ref: 10,
+        high_ref: 12,
         low_ref: 6,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 4,
-        high_ref: 8,
+        high_ref: 9,
         low_ref: 7,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 6,
         high_ref: 100000006,
-        low_ref: 100000014,
+        low_ref: 8,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 100000008,
+        low_ref: 100000016,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 5,
         high_ref: 100000004,
-        low_ref: 9,
+        low_ref: 10,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 7,
-        high_ref: 100000012,
-        low_ref: 100000013,
+        high_ref: 100000009,
+        low_ref: 11,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 100000014,
+        low_ref: 100000015,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 4,
-        high_ref: 13,
-        low_ref: 11,
+        high_ref: 15,
+        low_ref: 13,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 6,
         high_ref: 100000007,
-        low_ref: 12,
+        low_ref: 14,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 8,
-        high_ref: 100000010,
-        low_ref: 100000011,
+        high_ref: 100000012,
+        low_ref: 100000013,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 5,
         high_ref: 100000005,
-        low_ref: 14,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 7,
-        high_ref: 15,
-        low_ref: 100000009,
+        low_ref: 16,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 8,
-        high_ref: 100000008,
-        low_ref: 100000009,
+        high_ref: 17,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 100000010,
+        low_ref: 100000011,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 3,
         high_ref: 100000001,
-        low_ref: 17,
+        low_ref: 19,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 4,

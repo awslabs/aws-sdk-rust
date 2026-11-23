@@ -23,6 +23,7 @@
 ///     AdministrativeActionType::StorageOptimization => { /* ... */ },
 ///     AdministrativeActionType::StorageTypeOptimization => { /* ... */ },
 ///     AdministrativeActionType::ThroughputOptimization => { /* ... */ },
+///     AdministrativeActionType::VolumeCloneSplit => { /* ... */ },
 ///     AdministrativeActionType::VolumeInitializeWithSnapshot => { /* ... */ },
 ///     AdministrativeActionType::VolumeRestore => { /* ... */ },
 ///     AdministrativeActionType::VolumeUpdate => { /* ... */ },
@@ -180,6 +181,14 @@
 /// (<code>CopySnapshotAndUpdateVolume</code>), or CLI
 /// (<code>copy-snapshot-and-update-volume</code>).</p>
 /// </li>
+/// <li>
+/// <p>
+/// <code>VOLUME_CLONE_SPLIT</code> - An FSx for ONTAP volume clone is
+/// being split from its parent volume. You can initiate this from the
+/// Amazon FSx console, Amazon FSx API (<code>UpdateVolume</code>)
+/// or CLI (<code>update-volume</code>) by setting <code>SplitAction</code> to
+/// <code>START</code> in the volume's <code>CloneConfiguration</code>.</p>
+/// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(
@@ -209,6 +218,8 @@ pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
     ThroughputOptimization,
     #[allow(missing_docs)] // documentation missing in model
+    VolumeCloneSplit,
+    #[allow(missing_docs)] // documentation missing in model
     VolumeInitializeWithSnapshot,
     #[allow(missing_docs)] // documentation missing in model
     VolumeRestore,
@@ -234,6 +245,7 @@ impl ::std::convert::From<&str> for AdministrativeActionType {
             "STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
             "STORAGE_TYPE_OPTIMIZATION" => AdministrativeActionType::StorageTypeOptimization,
             "THROUGHPUT_OPTIMIZATION" => AdministrativeActionType::ThroughputOptimization,
+            "VOLUME_CLONE_SPLIT" => AdministrativeActionType::VolumeCloneSplit,
             "VOLUME_INITIALIZE_WITH_SNAPSHOT" => AdministrativeActionType::VolumeInitializeWithSnapshot,
             "VOLUME_RESTORE" => AdministrativeActionType::VolumeRestore,
             "VOLUME_UPDATE" => AdministrativeActionType::VolumeUpdate,
@@ -264,6 +276,7 @@ impl AdministrativeActionType {
             AdministrativeActionType::StorageOptimization => "STORAGE_OPTIMIZATION",
             AdministrativeActionType::StorageTypeOptimization => "STORAGE_TYPE_OPTIMIZATION",
             AdministrativeActionType::ThroughputOptimization => "THROUGHPUT_OPTIMIZATION",
+            AdministrativeActionType::VolumeCloneSplit => "VOLUME_CLONE_SPLIT",
             AdministrativeActionType::VolumeInitializeWithSnapshot => "VOLUME_INITIALIZE_WITH_SNAPSHOT",
             AdministrativeActionType::VolumeRestore => "VOLUME_RESTORE",
             AdministrativeActionType::VolumeUpdate => "VOLUME_UPDATE",
@@ -285,6 +298,7 @@ impl AdministrativeActionType {
             "STORAGE_OPTIMIZATION",
             "STORAGE_TYPE_OPTIMIZATION",
             "THROUGHPUT_OPTIMIZATION",
+            "VOLUME_CLONE_SPLIT",
             "VOLUME_INITIALIZE_WITH_SNAPSHOT",
             "VOLUME_RESTORE",
             "VOLUME_UPDATE",
@@ -323,6 +337,7 @@ impl ::std::fmt::Display for AdministrativeActionType {
             AdministrativeActionType::StorageOptimization => write!(f, "STORAGE_OPTIMIZATION"),
             AdministrativeActionType::StorageTypeOptimization => write!(f, "STORAGE_TYPE_OPTIMIZATION"),
             AdministrativeActionType::ThroughputOptimization => write!(f, "THROUGHPUT_OPTIMIZATION"),
+            AdministrativeActionType::VolumeCloneSplit => write!(f, "VOLUME_CLONE_SPLIT"),
             AdministrativeActionType::VolumeInitializeWithSnapshot => write!(f, "VOLUME_INITIALIZE_WITH_SNAPSHOT"),
             AdministrativeActionType::VolumeRestore => write!(f, "VOLUME_RESTORE"),
             AdministrativeActionType::VolumeUpdate => write!(f, "VOLUME_UPDATE"),

@@ -32,6 +32,8 @@ pub struct UpdateOntapVolumeConfiguration {
     pub snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
     /// <p>The configured size of the volume, in bytes.</p>
     pub size_in_bytes: ::std::option::Option<i64>,
+    /// <p>Specifies the clone configuration changes to make to the volume. Use this property to split a clone from its parent volume.</p>
+    pub clone_configuration: ::std::option::Option<crate::types::UpdateCloneConfiguration>,
 }
 impl UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -80,6 +82,10 @@ impl UpdateOntapVolumeConfiguration {
     pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.size_in_bytes
     }
+    /// <p>Specifies the clone configuration changes to make to the volume. Use this property to split a clone from its parent volume.</p>
+    pub fn clone_configuration(&self) -> ::std::option::Option<&crate::types::UpdateCloneConfiguration> {
+        self.clone_configuration.as_ref()
+    }
 }
 impl UpdateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
@@ -101,6 +107,7 @@ pub struct UpdateOntapVolumeConfigurationBuilder {
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
     pub(crate) snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
     pub(crate) size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) clone_configuration: ::std::option::Option<crate::types::UpdateCloneConfiguration>,
 }
 impl UpdateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -259,6 +266,20 @@ impl UpdateOntapVolumeConfigurationBuilder {
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.size_in_bytes
     }
+    /// <p>Specifies the clone configuration changes to make to the volume. Use this property to split a clone from its parent volume.</p>
+    pub fn clone_configuration(mut self, input: crate::types::UpdateCloneConfiguration) -> Self {
+        self.clone_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the clone configuration changes to make to the volume. Use this property to split a clone from its parent volume.</p>
+    pub fn set_clone_configuration(mut self, input: ::std::option::Option<crate::types::UpdateCloneConfiguration>) -> Self {
+        self.clone_configuration = input;
+        self
+    }
+    /// <p>Specifies the clone configuration changes to make to the volume. Use this property to split a clone from its parent volume.</p>
+    pub fn get_clone_configuration(&self) -> &::std::option::Option<crate::types::UpdateCloneConfiguration> {
+        &self.clone_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::UpdateOntapVolumeConfiguration {
         crate::types::UpdateOntapVolumeConfiguration {
@@ -271,6 +292,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
             copy_tags_to_backups: self.copy_tags_to_backups,
             snaplock_configuration: self.snaplock_configuration,
             size_in_bytes: self.size_in_bytes,
+            clone_configuration: self.clone_configuration,
         }
     }
 }

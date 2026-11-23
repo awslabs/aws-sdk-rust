@@ -22,7 +22,7 @@ impl crate::operation::update_keys::builders::UpdateKeysInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateKeys`.
 ///
-/// <p>Puts or Deletes multiple key value pairs in a single, all-or-nothing operation.</p>
+/// <p>Puts or deletes multiple key-value pairs in a single, all-or-nothing operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateKeysFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn kvs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kvs_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kvs_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kvs_arn()
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }
@@ -141,17 +141,17 @@ impl UpdateKeysFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_puts`](Self::set_puts).
     ///
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     pub fn puts(mut self, input: crate::types::PutKeyRequestListItem) -> Self {
         self.inner = self.inner.puts(input);
         self
     }
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     pub fn set_puts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutKeyRequestListItem>>) -> Self {
         self.inner = self.inner.set_puts(input);
         self
     }
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     pub fn get_puts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutKeyRequestListItem>> {
         self.inner.get_puts()
     }

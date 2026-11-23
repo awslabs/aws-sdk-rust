@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInput {
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>,
@@ -15,7 +15,7 @@ pub struct DescribeSnapshotsInput {
     pub include_shared: ::std::option::Option<bool>,
 }
 impl DescribeSnapshotsInput {
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
     pub fn snapshot_ids(&self) -> &[::std::string::String] {
@@ -62,19 +62,19 @@ impl DescribeSnapshotsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
     ///
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_ids.unwrap_or_default();
         v.push(input.into());
         self.snapshot_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.snapshot_ids = input;
         self
     }
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.snapshot_ids
     }

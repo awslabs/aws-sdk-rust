@@ -4,12 +4,12 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_keys::builders::ListKeysFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`kvs_arn(impl Into<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::kvs_arn) / [`set_kvs_arn(Option<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::set_kvs_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Key Value Store.</p><br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::set_next_token):<br>required: **false**<br><p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p><br>
+    ///   - [`kvs_arn(impl Into<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::kvs_arn) / [`set_kvs_arn(Option<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::set_kvs_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the key value store.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::set_next_token):<br>required: **false**<br><p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_keys::builders::ListKeysFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.</p><br>
     /// - On success, responds with [`ListKeysOutput`](crate::operation::list_keys::ListKeysOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::operation::list_keys::ListKeysOutput::next_token): <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
-    ///   - [`items(Option<Vec::<ListKeysResponseListItem>>)`](crate::operation::list_keys::ListKeysOutput::items): <p>Key value pairs</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_keys::ListKeysOutput::next_token): <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    ///   - [`items(Option<Vec::<ListKeysResponseListItem>>)`](crate::operation::list_keys::ListKeysOutput::items): <p>The key-value pairs.</p>
     /// - On failure, responds with [`SdkError<ListKeysError>`](crate::operation::list_keys::ListKeysError)
     pub fn list_keys(&self) -> crate::operation::list_keys::builders::ListKeysFluentBuilder {
         crate::operation::list_keys::builders::ListKeysFluentBuilder::new(self.handle.clone())

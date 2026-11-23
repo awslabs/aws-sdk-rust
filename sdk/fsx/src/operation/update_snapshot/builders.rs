@@ -22,7 +22,8 @@ impl crate::operation::update_snapshot::builders::UpdateSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSnapshot`.
 ///
-/// <p>Updates the name of an Amazon FSx for OpenZFS snapshot.</p>
+/// <p>Updates an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP snapshot.</p>
+/// <p>For Amazon FSx for OpenZFS snapshots, you can update only the name. For Amazon FSx for NetApp ONTAP snapshots, you can update the name and the properties in <code>OntapConfiguration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,5 +150,19 @@ impl UpdateSnapshotFluentBuilder {
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_id()
+    }
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub fn ontap_configuration(mut self, input: crate::types::UpdateOntapSnapshotConfiguration) -> Self {
+        self.inner = self.inner.ontap_configuration(input);
+        self
+    }
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::UpdateOntapSnapshotConfiguration>) -> Self {
+        self.inner = self.inner.set_ontap_configuration(input);
+        self
+    }
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::UpdateOntapSnapshotConfiguration> {
+        self.inner.get_ontap_configuration()
     }
 }

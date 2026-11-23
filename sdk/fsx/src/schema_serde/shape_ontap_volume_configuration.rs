@@ -159,6 +159,16 @@ static ONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES: ::aws_smithy_schema::Schem
     "SizeInBytes",
     15,
 );
+static ONTAPVOLUMECONFIGURATION_MEMBER_CLONE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapVolumeConfiguration$CloneConfiguration",
+        "com.amazonaws.fsx",
+        "OntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CloneConfiguration",
+    16,
+);
 static ONTAPVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.fsx#OntapVolumeConfiguration",
@@ -183,6 +193,7 @@ static ONTAPVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = :
         &ONTAPVOLUMECONFIGURATION_MEMBER_VOLUME_STYLE,
         &ONTAPVOLUMECONFIGURATION_MEMBER_AGGREGATE_CONFIGURATION,
         &ONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES,
+        &ONTAPVOLUMECONFIGURATION_MEMBER_CLONE_CONFIGURATION,
     ],
 );
 impl crate::types::OntapVolumeConfiguration {
@@ -246,6 +257,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::OntapVolum
         }
         if let Some(ref val) = self.size_in_bytes {
             ser.write_long(&ONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.clone_configuration {
+            ser.write_struct(&ONTAPVOLUMECONFIGURATION_MEMBER_CLONE_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -374,6 +388,13 @@ impl crate::types::builders::OntapVolumeConfigurationBuilder {
                         deser.read_null()?;
                     } else {
                         self.size_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.clone_configuration = Some(crate::types::CloneConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

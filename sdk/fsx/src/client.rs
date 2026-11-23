@@ -189,6 +189,8 @@ mod create_and_attach_s3_access_point;
 
 mod create_backup;
 
+mod create_cluster_peer;
+
 mod create_data_repository_association;
 
 mod create_data_repository_task;
@@ -199,9 +201,17 @@ mod create_file_system;
 
 mod create_file_system_from_backup;
 
+mod create_snapmirror_policy;
+
+mod create_snapmirror_relationship;
+
 mod create_snapshot;
 
+mod create_snapshot_policy;
+
 mod create_storage_virtual_machine;
+
+mod create_storage_virtual_machine_peer;
 
 mod create_volume;
 
@@ -236,19 +246,31 @@ pub mod customize;
 
 mod delete_backup;
 
+mod delete_cluster_peer;
+
 mod delete_data_repository_association;
 
 mod delete_file_cache;
 
 mod delete_file_system;
 
+mod delete_snapmirror_policy;
+
+mod delete_snapmirror_relationship;
+
 mod delete_snapshot;
 
+mod delete_snapshot_policy;
+
 mod delete_storage_virtual_machine;
+
+mod delete_storage_virtual_machine_peer;
 
 mod delete_volume;
 
 mod describe_backups;
+
+mod describe_cluster_peers;
 
 mod describe_data_repository_associations;
 
@@ -264,7 +286,15 @@ mod describe_s3_access_point_attachments;
 
 mod describe_shared_vpc_configuration;
 
+mod describe_snapmirror_policies;
+
+mod describe_snapmirror_relationships;
+
+mod describe_snapshot_policies;
+
 mod describe_snapshots;
+
+mod describe_storage_virtual_machine_peers;
 
 mod describe_storage_virtual_machines;
 
@@ -286,6 +316,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_cluster_peer;
+
 mod update_data_repository_association;
 
 mod update_file_cache;
@@ -294,8 +326,16 @@ mod update_file_system;
 
 mod update_shared_vpc_configuration;
 
+mod update_snapmirror_policy;
+
+mod update_snapmirror_relationship;
+
 mod update_snapshot;
 
+mod update_snapshot_policy;
+
 mod update_storage_virtual_machine;
+
+mod update_storage_virtual_machine_peer;
 
 mod update_volume;

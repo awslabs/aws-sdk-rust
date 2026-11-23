@@ -116,6 +116,15 @@ pub(crate) mod error_registry {
                         },
                     )
 .insert_error_shape(
+                        crate::types::error::IncompatibleParameterError::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::IncompatibleParameterError::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::IncompatibleParameterError::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
                         crate::types::error::InternalServerError::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InternalServerError::deserialize(d)?))
@@ -323,6 +332,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateSna
                     let tmp = tmp.meta(generic);
                     tmp.build()
                 }),
+                "IncompatibleParameterError" => crate::operation::create_snapshot::CreateSnapshotError::IncompatibleParameterError({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::IncompatibleParameterErrorBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::incompatible_parameter_error_correct_errors(tmp).build()
+                }),
                 "InternalServerError" => crate::operation::create_snapshot::CreateSnapshotError::InternalServerError({
                     let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
                         ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
@@ -502,6 +529,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateSnapsho
 pub enum CreateSnapshotError {
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::types::error::BadRequest),
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
+    IncompatibleParameterError(crate::types::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
@@ -542,6 +571,7 @@ impl CreateSnapshotError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequest(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IncompatibleParameterError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::VolumeNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -551,6 +581,10 @@ impl CreateSnapshotError {
     /// Returns `true` if the error kind is `CreateSnapshotError::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(self, Self::BadRequest(_))
+    }
+    /// Returns `true` if the error kind is `CreateSnapshotError::IncompatibleParameterError`.
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(self, Self::IncompatibleParameterError(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -569,6 +603,7 @@ impl ::std::error::Error for CreateSnapshotError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BadRequest(_inner) => ::std::option::Option::Some(_inner),
+            Self::IncompatibleParameterError(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::VolumeNotFound(_inner) => ::std::option::Option::Some(_inner),
@@ -580,6 +615,7 @@ impl ::std::fmt::Display for CreateSnapshotError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BadRequest(_inner) => _inner.fmt(f),
+            Self::IncompatibleParameterError(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::ServiceLimitExceeded(_inner) => _inner.fmt(f),
             Self::VolumeNotFound(_inner) => _inner.fmt(f),
@@ -605,6 +641,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateSnapsho
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequest(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::IncompatibleParameterError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::VolumeNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

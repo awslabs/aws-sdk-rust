@@ -46,6 +46,16 @@ static CREATESNAPSHOTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = :
     3,
 )
 .with_list_member(&CREATESNAPSHOTINPUT_MEMBER_TAGS_MEMBER);
+static CREATESNAPSHOTINPUT_MEMBER_ONTAP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateSnapshotInput$OntapConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "CreateSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapConfiguration",
+    4,
+);
 static CREATESNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.fsx.synthetic#CreateSnapshotInput",
@@ -58,6 +68,7 @@ static CREATESNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &CREATESNAPSHOTINPUT_MEMBER_NAME,
         &CREATESNAPSHOTINPUT_MEMBER_VOLUME_ID,
         &CREATESNAPSHOTINPUT_MEMBER_TAGS,
+        &CREATESNAPSHOTINPUT_MEMBER_ONTAP_CONFIGURATION,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -95,6 +106,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.ontap_configuration {
+            ser.write_struct(&CREATESNAPSHOTINPUT_MEMBER_ONTAP_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -146,6 +160,13 @@ impl crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_configuration = Some(crate::types::CreateOntapSnapshotConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

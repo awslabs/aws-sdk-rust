@@ -17,6 +17,8 @@ pub enum Error {
     BackupRestoring(crate::types::error::BackupRestoring),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::types::error::BadRequest),
+    /// <p>No Amazon FSx cluster peers were found based on the supplied parameters.</p>
+    ClusterPeerNotFound(crate::types::error::ClusterPeerNotFound),
     /// <p>No data repository associations were found based upon the supplied parameters.</p>
     DataRepositoryAssociationNotFound(crate::types::error::DataRepositoryAssociationNotFound),
     /// <p>The data repository task could not be canceled because the task has already ended.</p>
@@ -71,12 +73,20 @@ pub enum Error {
     S3AccessPointAttachmentNotFound(crate::types::error::S3AccessPointAttachmentNotFound),
     /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::types::error::ServiceLimitExceeded),
+    /// <p>No Amazon FSx SnapMirror policies were found based on the supplied parameters.</p>
+    SnapmirrorPolicyNotFound(crate::types::error::SnapmirrorPolicyNotFound),
+    /// <p>No Amazon FSx SnapMirror relationships were found based on the supplied parameters.</p>
+    SnapmirrorRelationshipNotFound(crate::types::error::SnapmirrorRelationshipNotFound),
     /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
     SnapshotNotFound(crate::types::error::SnapshotNotFound),
+    /// <p>No Amazon FSx snapshot policies were found based on the supplied parameters.</p>
+    SnapshotPolicyNotFound(crate::types::error::SnapshotPolicyNotFound),
     /// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
     SourceBackupUnavailable(crate::types::error::SourceBackupUnavailable),
     /// <p>No FSx for ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::types::error::StorageVirtualMachineNotFound),
+    /// <p>No Amazon FSx storage virtual machine (SVM) peers were found based on the supplied parameters.</p>
+    StorageVirtualMachinePeerNotFound(crate::types::error::StorageVirtualMachinePeerNotFound),
     /// <p>You have reached the maximum number of S3 access points attachments allowed for your account in this Amazon Web Services Region, or for the file system. For more information, or to request an increase, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/limits.html">Service quotas on FSx resources</a> in the FSx for OpenZFS User Guide.</p>
     TooManyAccessPoints(crate::types::error::TooManyAccessPoints),
     /// <p>The requested operation is not supported for this resource or API.</p>
@@ -102,6 +112,7 @@ impl ::std::fmt::Display for Error {
             Error::BackupNotFound(inner) => inner.fmt(f),
             Error::BackupRestoring(inner) => inner.fmt(f),
             Error::BadRequest(inner) => inner.fmt(f),
+            Error::ClusterPeerNotFound(inner) => inner.fmt(f),
             Error::DataRepositoryAssociationNotFound(inner) => inner.fmt(f),
             Error::DataRepositoryTaskEnded(inner) => inner.fmt(f),
             Error::DataRepositoryTaskExecuting(inner) => inner.fmt(f),
@@ -129,9 +140,13 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFound(inner) => inner.fmt(f),
             Error::S3AccessPointAttachmentNotFound(inner) => inner.fmt(f),
             Error::ServiceLimitExceeded(inner) => inner.fmt(f),
+            Error::SnapmirrorPolicyNotFound(inner) => inner.fmt(f),
+            Error::SnapmirrorRelationshipNotFound(inner) => inner.fmt(f),
             Error::SnapshotNotFound(inner) => inner.fmt(f),
+            Error::SnapshotPolicyNotFound(inner) => inner.fmt(f),
             Error::SourceBackupUnavailable(inner) => inner.fmt(f),
             Error::StorageVirtualMachineNotFound(inner) => inner.fmt(f),
+            Error::StorageVirtualMachinePeerNotFound(inner) => inner.fmt(f),
             Error::TooManyAccessPoints(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
             Error::VolumeNotFound(inner) => inner.fmt(f),
@@ -163,6 +178,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::BackupNotFound(inner) => inner.meta(),
             Self::BackupRestoring(inner) => inner.meta(),
             Self::BadRequest(inner) => inner.meta(),
+            Self::ClusterPeerNotFound(inner) => inner.meta(),
             Self::DataRepositoryAssociationNotFound(inner) => inner.meta(),
             Self::DataRepositoryTaskEnded(inner) => inner.meta(),
             Self::DataRepositoryTaskExecuting(inner) => inner.meta(),
@@ -190,9 +206,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotFound(inner) => inner.meta(),
             Self::S3AccessPointAttachmentNotFound(inner) => inner.meta(),
             Self::ServiceLimitExceeded(inner) => inner.meta(),
+            Self::SnapmirrorPolicyNotFound(inner) => inner.meta(),
+            Self::SnapmirrorRelationshipNotFound(inner) => inner.meta(),
             Self::SnapshotNotFound(inner) => inner.meta(),
+            Self::SnapshotPolicyNotFound(inner) => inner.meta(),
             Self::SourceBackupUnavailable(inner) => inner.meta(),
             Self::StorageVirtualMachineNotFound(inner) => inner.meta(),
+            Self::StorageVirtualMachinePeerNotFound(inner) => inner.meta(),
             Self::TooManyAccessPoints(inner) => inner.meta(),
             Self::UnsupportedOperation(inner) => inner.meta(),
             Self::VolumeNotFound(inner) => inner.meta(),
@@ -421,6 +441,35 @@ impl From<crate::operation::create_backup::CreateBackupError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster_peer::CreateClusterPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster_peer::CreateClusterPeerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cluster_peer::CreateClusterPeerError> for Error {
+    fn from(err: crate::operation::create_cluster_peer::CreateClusterPeerError) -> Self {
+        match err {
+            crate::operation::create_cluster_peer::CreateClusterPeerError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::create_cluster_peer::CreateClusterPeerError::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+            crate::operation::create_cluster_peer::CreateClusterPeerError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::create_cluster_peer::CreateClusterPeerError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_cluster_peer::CreateClusterPeerError::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
+            crate::operation::create_cluster_peer::CreateClusterPeerError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::create_cluster_peer::CreateClusterPeerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -628,6 +677,85 @@ impl From<crate::operation::create_file_system_from_backup::CreateFileSystemFrom
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError> for Error {
+    fn from(err: crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError) -> Self {
+        match err {
+            crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+            crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError::ServiceLimitExceeded(inner) => {
+                Error::ServiceLimitExceeded(inner)
+            }
+            crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError::StorageVirtualMachineNotFound(inner) => {
+                Error::StorageVirtualMachineNotFound(inner)
+            }
+            crate::operation::create_snapmirror_policy::CreateSnapmirrorPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError> for Error {
+    fn from(err: crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError) -> Self {
+        match err {
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError::ServiceLimitExceeded(inner) => {
+                Error::ServiceLimitExceeded(inner)
+            }
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError::VolumeNotFound(inner) => {
+                Error::VolumeNotFound(inner)
+            }
+            crate::operation::create_snapmirror_relationship::CreateSnapmirrorRelationshipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapshot::CreateSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -646,10 +774,42 @@ impl From<crate::operation::create_snapshot::CreateSnapshotError> for Error {
     fn from(err: crate::operation::create_snapshot::CreateSnapshotError) -> Self {
         match err {
             crate::operation::create_snapshot::CreateSnapshotError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
             crate::operation::create_snapshot::CreateSnapshotError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::create_snapshot::CreateSnapshotError::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
             crate::operation::create_snapshot::CreateSnapshotError::VolumeNotFound(inner) => Error::VolumeNotFound(inner),
             crate::operation::create_snapshot::CreateSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapshot_policy::CreateSnapshotPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapshot_policy::CreateSnapshotPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_snapshot_policy::CreateSnapshotPolicyError> for Error {
+    fn from(err: crate::operation::create_snapshot_policy::CreateSnapshotPolicyError) -> Self {
+        match err {
+            crate::operation::create_snapshot_policy::CreateSnapshotPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::create_snapshot_policy::CreateSnapshotPolicyError::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+            crate::operation::create_snapshot_policy::CreateSnapshotPolicyError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::create_snapshot_policy::CreateSnapshotPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_snapshot_policy::CreateSnapshotPolicyError::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
+            crate::operation::create_snapshot_policy::CreateSnapshotPolicyError::StorageVirtualMachineNotFound(inner) => {
+                Error::StorageVirtualMachineNotFound(inner)
+            }
+            crate::operation::create_snapshot_policy::CreateSnapshotPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -700,6 +860,56 @@ impl From<crate::operation::create_storage_virtual_machine::CreateStorageVirtual
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError> for Error {
+    fn from(err: crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError) -> Self {
+        match err {
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError::BadRequest(inner) => {
+                Error::BadRequest(inner)
+            }
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError::ServiceLimitExceeded(inner) => {
+                Error::ServiceLimitExceeded(inner)
+            }
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError::StorageVirtualMachineNotFound(inner) => {
+                Error::StorageVirtualMachineNotFound(inner)
+            }
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::create_storage_virtual_machine_peer::CreateStorageVirtualMachinePeerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_volume::CreateVolumeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -725,6 +935,7 @@ impl From<crate::operation::create_volume::CreateVolumeError> for Error {
             crate::operation::create_volume::CreateVolumeError::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
             crate::operation::create_volume::CreateVolumeError::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
             crate::operation::create_volume::CreateVolumeError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::create_volume::CreateVolumeError::VolumeNotFound(inner) => Error::VolumeNotFound(inner),
             crate::operation::create_volume::CreateVolumeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -794,6 +1005,33 @@ impl From<crate::operation::delete_backup::DeleteBackupError> for Error {
             crate::operation::delete_backup::DeleteBackupError::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
             crate::operation::delete_backup::DeleteBackupError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::delete_backup::DeleteBackupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster_peer::DeleteClusterPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster_peer::DeleteClusterPeerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_peer::DeleteClusterPeerError> for Error {
+    fn from(err: crate::operation::delete_cluster_peer::DeleteClusterPeerError) -> Self {
+        match err {
+            crate::operation::delete_cluster_peer::DeleteClusterPeerError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::delete_cluster_peer::DeleteClusterPeerError::ClusterPeerNotFound(inner) => Error::ClusterPeerNotFound(inner),
+            crate::operation::delete_cluster_peer::DeleteClusterPeerError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::delete_cluster_peer::DeleteClusterPeerError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_cluster_peer::DeleteClusterPeerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -896,6 +1134,75 @@ impl From<crate::operation::delete_file_system::DeleteFileSystemError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError> for Error {
+    fn from(err: crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError) -> Self {
+        match err {
+            crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError::SnapmirrorPolicyNotFound(inner) => {
+                Error::SnapmirrorPolicyNotFound(inner)
+            }
+            crate::operation::delete_snapmirror_policy::DeleteSnapmirrorPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError> for Error {
+    fn from(err: crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError) -> Self {
+        match err {
+            crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError::SnapmirrorRelationshipNotFound(inner) => {
+                Error::SnapmirrorRelationshipNotFound(inner)
+            }
+            crate::operation::delete_snapmirror_relationship::DeleteSnapmirrorRelationshipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapshot::DeleteSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -914,9 +1221,39 @@ impl From<crate::operation::delete_snapshot::DeleteSnapshotError> for Error {
     fn from(err: crate::operation::delete_snapshot::DeleteSnapshotError) -> Self {
         match err {
             crate::operation::delete_snapshot::DeleteSnapshotError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
             crate::operation::delete_snapshot::DeleteSnapshotError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::delete_snapshot::DeleteSnapshotError::SnapshotNotFound(inner) => Error::SnapshotNotFound(inner),
             crate::operation::delete_snapshot::DeleteSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError> for Error {
+    fn from(err: crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError) -> Self {
+        match err {
+            crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError::SnapshotPolicyNotFound(inner) => {
+                Error::SnapshotPolicyNotFound(inner)
+            }
+            crate::operation::delete_snapshot_policy::DeleteSnapshotPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -955,6 +1292,50 @@ impl From<crate::operation::delete_storage_virtual_machine::DeleteStorageVirtual
                 Error::StorageVirtualMachineNotFound(inner)
             }
             crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError> for Error {
+    fn from(err: crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError) -> Self {
+        match err {
+            crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError::BadRequest(inner) => {
+                Error::BadRequest(inner)
+            }
+            crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError::StorageVirtualMachinePeerNotFound(inner) => {
+                Error::StorageVirtualMachinePeerNotFound(inner)
+            }
+            crate::operation::delete_storage_virtual_machine_peer::DeleteStorageVirtualMachinePeerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1007,6 +1388,31 @@ impl From<crate::operation::describe_backups::DescribeBackupsError> for Error {
             crate::operation::describe_backups::DescribeBackupsError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_backups::DescribeBackupsError::VolumeNotFound(inner) => Error::VolumeNotFound(inner),
             crate::operation::describe_backups::DescribeBackupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_peers::DescribeClusterPeersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_peers::DescribeClusterPeersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_peers::DescribeClusterPeersError> for Error {
+    fn from(err: crate::operation::describe_cluster_peers::DescribeClusterPeersError) -> Self {
+        match err {
+            crate::operation::describe_cluster_peers::DescribeClusterPeersError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::describe_cluster_peers::DescribeClusterPeersError::ClusterPeerNotFound(inner) => Error::ClusterPeerNotFound(inner),
+            crate::operation::describe_cluster_peers::DescribeClusterPeersError::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+            crate::operation::describe_cluster_peers::DescribeClusterPeersError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_cluster_peers::DescribeClusterPeersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1258,6 +1664,110 @@ impl From<crate::operation::describe_shared_vpc_configuration::DescribeSharedVpc
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError> for Error {
+    fn from(err: crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError) -> Self {
+        match err {
+            crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError::SnapmirrorPolicyNotFound(inner) => {
+                Error::SnapmirrorPolicyNotFound(inner)
+            }
+            crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError> for Error {
+    fn from(err: crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError) -> Self {
+        match err {
+            crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError::SnapmirrorRelationshipNotFound(inner) => {
+                Error::SnapmirrorRelationshipNotFound(inner)
+            }
+            crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError::VolumeNotFound(inner) => {
+                Error::VolumeNotFound(inner)
+            }
+            crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError> for Error {
+    fn from(err: crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError) -> Self {
+        match err {
+            crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError::SnapshotPolicyNotFound(inner) => {
+                Error::SnapshotPolicyNotFound(inner)
+            }
+            crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1279,6 +1789,55 @@ impl From<crate::operation::describe_snapshots::DescribeSnapshotsError> for Erro
             crate::operation::describe_snapshots::DescribeSnapshotsError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_snapshots::DescribeSnapshotsError::SnapshotNotFound(inner) => Error::SnapshotNotFound(inner),
             crate::operation::describe_snapshots::DescribeSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError> for Error {
+    fn from(err: crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError) -> Self {
+        match err {
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError::BadRequest(inner) => {
+                Error::BadRequest(inner)
+            }
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError::FileSystemNotFound(inner) => {
+                Error::FileSystemNotFound(inner)
+            }
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError::StorageVirtualMachineNotFound(
+                inner,
+            ) => Error::StorageVirtualMachineNotFound(inner),
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError::StorageVirtualMachinePeerNotFound(
+                inner,
+            ) => Error::StorageVirtualMachinePeerNotFound(inner),
+            crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1614,6 +2173,33 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster_peer::UpdateClusterPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster_peer::UpdateClusterPeerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cluster_peer::UpdateClusterPeerError> for Error {
+    fn from(err: crate::operation::update_cluster_peer::UpdateClusterPeerError) -> Self {
+        match err {
+            crate::operation::update_cluster_peer::UpdateClusterPeerError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::update_cluster_peer::UpdateClusterPeerError::ClusterPeerNotFound(inner) => Error::ClusterPeerNotFound(inner),
+            crate::operation::update_cluster_peer::UpdateClusterPeerError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::update_cluster_peer::UpdateClusterPeerError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_cluster_peer::UpdateClusterPeerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1757,6 +2343,75 @@ impl From<crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConf
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError> for Error {
+    fn from(err: crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError) -> Self {
+        match err {
+            crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError::SnapmirrorPolicyNotFound(inner) => {
+                Error::SnapmirrorPolicyNotFound(inner)
+            }
+            crate::operation::update_snapmirror_policy::UpdateSnapmirrorPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError> for Error {
+    fn from(err: crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError) -> Self {
+        match err {
+            crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError::SnapmirrorRelationshipNotFound(inner) => {
+                Error::SnapmirrorRelationshipNotFound(inner)
+            }
+            crate::operation::update_snapmirror_relationship::UpdateSnapmirrorRelationshipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_snapshot::UpdateSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1775,9 +2430,39 @@ impl From<crate::operation::update_snapshot::UpdateSnapshotError> for Error {
     fn from(err: crate::operation::update_snapshot::UpdateSnapshotError) -> Self {
         match err {
             crate::operation::update_snapshot::UpdateSnapshotError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::update_snapshot::UpdateSnapshotError::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
             crate::operation::update_snapshot::UpdateSnapshotError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::update_snapshot::UpdateSnapshotError::SnapshotNotFound(inner) => Error::SnapshotNotFound(inner),
             crate::operation::update_snapshot::UpdateSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError> for Error {
+    fn from(err: crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError) -> Self {
+        match err {
+            crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError::SnapshotPolicyNotFound(inner) => {
+                Error::SnapshotPolicyNotFound(inner)
+            }
+            crate::operation::update_snapshot_policy::UpdateSnapshotPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1822,6 +2507,50 @@ impl From<crate::operation::update_storage_virtual_machine::UpdateStorageVirtual
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError> for Error {
+    fn from(err: crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError) -> Self {
+        match err {
+            crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError::BadRequest(inner) => {
+                Error::BadRequest(inner)
+            }
+            crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError::StorageVirtualMachinePeerNotFound(inner) => {
+                Error::StorageVirtualMachinePeerNotFound(inner)
+            }
+            crate::operation::update_storage_virtual_machine_peer::UpdateStorageVirtualMachinePeerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_volume::UpdateVolumeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1858,6 +2587,7 @@ impl ::std::error::Error for Error {
             Error::BackupNotFound(inner) => inner.source(),
             Error::BackupRestoring(inner) => inner.source(),
             Error::BadRequest(inner) => inner.source(),
+            Error::ClusterPeerNotFound(inner) => inner.source(),
             Error::DataRepositoryAssociationNotFound(inner) => inner.source(),
             Error::DataRepositoryTaskEnded(inner) => inner.source(),
             Error::DataRepositoryTaskExecuting(inner) => inner.source(),
@@ -1885,9 +2615,13 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFound(inner) => inner.source(),
             Error::S3AccessPointAttachmentNotFound(inner) => inner.source(),
             Error::ServiceLimitExceeded(inner) => inner.source(),
+            Error::SnapmirrorPolicyNotFound(inner) => inner.source(),
+            Error::SnapmirrorRelationshipNotFound(inner) => inner.source(),
             Error::SnapshotNotFound(inner) => inner.source(),
+            Error::SnapshotPolicyNotFound(inner) => inner.source(),
             Error::SourceBackupUnavailable(inner) => inner.source(),
             Error::StorageVirtualMachineNotFound(inner) => inner.source(),
+            Error::StorageVirtualMachinePeerNotFound(inner) => inner.source(),
             Error::TooManyAccessPoints(inner) => inner.source(),
             Error::UnsupportedOperation(inner) => inner.source(),
             Error::VolumeNotFound(inner) => inner.source(),
@@ -1905,6 +2639,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::BackupNotFound(e) => e.request_id(),
             Self::BackupRestoring(e) => e.request_id(),
             Self::BadRequest(e) => e.request_id(),
+            Self::ClusterPeerNotFound(e) => e.request_id(),
             Self::DataRepositoryAssociationNotFound(e) => e.request_id(),
             Self::DataRepositoryTaskEnded(e) => e.request_id(),
             Self::DataRepositoryTaskExecuting(e) => e.request_id(),
@@ -1932,9 +2667,13 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotFound(e) => e.request_id(),
             Self::S3AccessPointAttachmentNotFound(e) => e.request_id(),
             Self::ServiceLimitExceeded(e) => e.request_id(),
+            Self::SnapmirrorPolicyNotFound(e) => e.request_id(),
+            Self::SnapmirrorRelationshipNotFound(e) => e.request_id(),
             Self::SnapshotNotFound(e) => e.request_id(),
+            Self::SnapshotPolicyNotFound(e) => e.request_id(),
             Self::SourceBackupUnavailable(e) => e.request_id(),
             Self::StorageVirtualMachineNotFound(e) => e.request_id(),
+            Self::StorageVirtualMachinePeerNotFound(e) => e.request_id(),
             Self::TooManyAccessPoints(e) => e.request_id(),
             Self::UnsupportedOperation(e) => e.request_id(),
             Self::VolumeNotFound(e) => e.request_id(),

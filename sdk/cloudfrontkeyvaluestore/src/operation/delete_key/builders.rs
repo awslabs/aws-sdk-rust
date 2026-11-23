@@ -22,7 +22,7 @@ impl crate::operation::delete_key::builders::DeleteKeyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKey`.
 ///
-/// <p>Deletes the key value pair specified by the key.</p>
+/// <p>Deletes the key-value pair specified by the key.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,17 +102,17 @@ impl DeleteKeyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn kvs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kvs_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kvs_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kvs_arn()
     }
@@ -130,17 +130,17 @@ impl DeleteKeyFluentBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key()
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are deleting keys from, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }

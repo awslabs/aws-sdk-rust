@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKeysInput {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub kvs_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     pub puts: ::std::option::Option<::std::vec::Vec<crate::types::PutKeyRequestListItem>>,
     /// <p>List of keys to delete.</p>
     pub deletes: ::std::option::Option<::std::vec::Vec<crate::types::DeleteKeyRequestListItem>>,
 }
 impl UpdateKeysInput {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn kvs_arn(&self) -> ::std::option::Option<&str> {
         self.kvs_arn.as_deref()
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
     }
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.puts.is_none()`.
     pub fn puts(&self) -> &[crate::types::PutKeyRequestListItem] {
@@ -51,33 +51,33 @@ pub struct UpdateKeysInputBuilder {
     pub(crate) deletes: ::std::option::Option<::std::vec::Vec<crate::types::DeleteKeyRequestListItem>>,
 }
 impl UpdateKeysInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     /// This field is required.
     pub fn kvs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kvs_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kvs_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kvs_arn
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
     }
-    /// <p>The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.</p>
+    /// <p>The current version (<code>ETag</code>) of the key value store that you are updating keys of, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
@@ -85,19 +85,19 @@ impl UpdateKeysInputBuilder {
     ///
     /// To override the contents of this collection use [`set_puts`](Self::set_puts).
     ///
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     pub fn puts(mut self, input: crate::types::PutKeyRequestListItem) -> Self {
         let mut v = self.puts.unwrap_or_default();
         v.push(input);
         self.puts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     pub fn set_puts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutKeyRequestListItem>>) -> Self {
         self.puts = input;
         self
     }
-    /// <p>List of key value pairs to put.</p>
+    /// <p>List of key-value pairs to put.</p>
     pub fn get_puts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutKeyRequestListItem>> {
         &self.puts
     }

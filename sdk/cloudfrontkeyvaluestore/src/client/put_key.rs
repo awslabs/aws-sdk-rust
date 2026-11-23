@@ -5,12 +5,12 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`key(impl Into<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::key) / [`set_key(Option<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::set_key):<br>required: **true**<br><p>The key to put.</p><br>
     ///   - [`value(impl Into<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::value) / [`set_value(Option<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::set_value):<br>required: **true**<br><p>The value to put.</p><br>
-    ///   - [`kvs_arn(impl Into<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::kvs_arn) / [`set_kvs_arn(Option<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::set_kvs_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Key Value Store.</p><br>
-    ///   - [`if_match(impl Into<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::set_if_match):<br>required: **true**<br><p>The current version (ETag) of the Key Value Store that you are putting keys into, which you can get using DescribeKeyValueStore.</p><br>
+    ///   - [`kvs_arn(impl Into<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::kvs_arn) / [`set_kvs_arn(Option<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::set_kvs_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the key value store.</p><br>
+    ///   - [`if_match(impl Into<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::put_key::builders::PutKeyFluentBuilder::set_if_match):<br>required: **true**<br><p>The current version (<code>ETag</code>) of the key value store that you are putting keys into, which you can get by using the <code>DescribeKeyValueStore</code> API operation.</p><br>
     /// - On success, responds with [`PutKeyOutput`](crate::operation::put_key::PutKeyOutput) with field(s):
-    ///   - [`item_count(i32)`](crate::operation::put_key::PutKeyOutput::item_count): <p>Number of key value pairs in the Key Value Store after the successful put.</p>
-    ///   - [`total_size_in_bytes(i64)`](crate::operation::put_key::PutKeyOutput::total_size_in_bytes): <p>Total size of the Key Value Store after the successful put, in bytes.</p>
-    ///   - [`e_tag(String)`](crate::operation::put_key::PutKeyOutput::e_tag): <p>The current version identifier of the Key Value Store after the successful put.</p>
+    ///   - [`item_count(i32)`](crate::operation::put_key::PutKeyOutput::item_count): <p>Number of key-value pairs in the key value store after the successful put.</p>
+    ///   - [`total_size_in_bytes(i64)`](crate::operation::put_key::PutKeyOutput::total_size_in_bytes): <p>Total size of the key value store after the successful put, in bytes.</p>
+    ///   - [`e_tag(String)`](crate::operation::put_key::PutKeyOutput::e_tag): <p>The current version identifier of the key value store after the successful put.</p>
     /// - On failure, responds with [`SdkError<PutKeyError>`](crate::operation::put_key::PutKeyError)
     pub fn put_key(&self) -> crate::operation::put_key::builders::PutKeyFluentBuilder {
         crate::operation::put_key::builders::PutKeyFluentBuilder::new(self.handle.clone())

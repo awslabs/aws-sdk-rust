@@ -12,6 +12,7 @@
 /// ```text
 /// # let integrationtype = unimplemented!();
 /// match integrationtype {
+///     IntegrationType::AwsConfigAzureSlrec => { /* ... */ },
 ///     IntegrationType::AwsConfigSlrec => { /* ... */ },
 ///     IntegrationType::AwsIntegration => { /* ... */ },
 ///     IntegrationType::ExternalAgent => { /* ... */ },
@@ -46,6 +47,8 @@
 )]
 pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsConfigAzureSlrec,
+    #[allow(missing_docs)] // documentation missing in model
     AwsConfigSlrec,
     #[allow(missing_docs)] // documentation missing in model
     AwsIntegration,
@@ -60,6 +63,7 @@ pub enum IntegrationType {
 impl ::std::convert::From<&str> for IntegrationType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS_CONFIG_AZURE_SLREC" => IntegrationType::AwsConfigAzureSlrec,
             "AWS_CONFIG_SLREC" => IntegrationType::AwsConfigSlrec,
             "AWS_INTEGRATION" => IntegrationType::AwsIntegration,
             "EXTERNAL_AGENT" => IntegrationType::ExternalAgent,
@@ -79,6 +83,7 @@ impl IntegrationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IntegrationType::AwsConfigAzureSlrec => "AWS_CONFIG_AZURE_SLREC",
             IntegrationType::AwsConfigSlrec => "AWS_CONFIG_SLREC",
             IntegrationType::AwsIntegration => "AWS_INTEGRATION",
             IntegrationType::ExternalAgent => "EXTERNAL_AGENT",
@@ -88,7 +93,7 @@ impl IntegrationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_CONFIG_SLREC", "AWS_INTEGRATION", "EXTERNAL_AGENT", "SLACK"]
+        &["AWS_CONFIG_AZURE_SLREC", "AWS_CONFIG_SLREC", "AWS_INTEGRATION", "EXTERNAL_AGENT", "SLACK"]
     }
 }
 impl ::std::convert::AsRef<str> for IntegrationType {
@@ -111,6 +116,7 @@ impl IntegrationType {
 impl ::std::fmt::Display for IntegrationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IntegrationType::AwsConfigAzureSlrec => write!(f, "AWS_CONFIG_AZURE_SLREC"),
             IntegrationType::AwsConfigSlrec => write!(f, "AWS_CONFIG_SLREC"),
             IntegrationType::AwsIntegration => write!(f, "AWS_INTEGRATION"),
             IntegrationType::ExternalAgent => write!(f, "EXTERNAL_AGENT"),

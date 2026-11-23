@@ -6,11 +6,17 @@
 pub struct LifecycleTransitionReason {
     /// <p>A detailed error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The error returned by ONTAP when an operation on the resource fails. Returned only for certain FSx for ONTAP resources.</p>
+    pub ontap_error: ::std::option::Option<crate::types::OntapError>,
 }
 impl LifecycleTransitionReason {
     /// <p>A detailed error message.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
+    }
+    /// <p>The error returned by ONTAP when an operation on the resource fails. Returned only for certain FSx for ONTAP resources.</p>
+    pub fn ontap_error(&self) -> ::std::option::Option<&crate::types::OntapError> {
+        self.ontap_error.as_ref()
     }
 }
 impl LifecycleTransitionReason {
@@ -25,6 +31,7 @@ impl LifecycleTransitionReason {
 #[non_exhaustive]
 pub struct LifecycleTransitionReasonBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) ontap_error: ::std::option::Option<crate::types::OntapError>,
 }
 impl LifecycleTransitionReasonBuilder {
     /// <p>A detailed error message.</p>
@@ -41,8 +48,25 @@ impl LifecycleTransitionReasonBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The error returned by ONTAP when an operation on the resource fails. Returned only for certain FSx for ONTAP resources.</p>
+    pub fn ontap_error(mut self, input: crate::types::OntapError) -> Self {
+        self.ontap_error = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The error returned by ONTAP when an operation on the resource fails. Returned only for certain FSx for ONTAP resources.</p>
+    pub fn set_ontap_error(mut self, input: ::std::option::Option<crate::types::OntapError>) -> Self {
+        self.ontap_error = input;
+        self
+    }
+    /// <p>The error returned by ONTAP when an operation on the resource fails. Returned only for certain FSx for ONTAP resources.</p>
+    pub fn get_ontap_error(&self) -> &::std::option::Option<crate::types::OntapError> {
+        &self.ontap_error
+    }
     /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::types::LifecycleTransitionReason).
     pub fn build(self) -> crate::types::LifecycleTransitionReason {
-        crate::types::LifecycleTransitionReason { message: self.message }
+        crate::types::LifecycleTransitionReason {
+            message: self.message,
+            ontap_error: self.ontap_error,
+        }
     }
 }

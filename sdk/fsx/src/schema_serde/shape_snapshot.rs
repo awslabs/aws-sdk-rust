@@ -35,11 +35,17 @@ static SNAPSHOT_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_s
     "Lifecycle",
     5,
 );
+static SNAPSHOT_MEMBER_SNAPSHOT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Snapshot$SnapshotType", "com.amazonaws.fsx", "Snapshot"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotType",
+    6,
+);
 static SNAPSHOT_MEMBER_LIFECYCLE_TRANSITION_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Snapshot$LifecycleTransitionReason", "com.amazonaws.fsx", "Snapshot"),
     ::aws_smithy_schema::ShapeType::Structure,
     "LifecycleTransitionReason",
-    6,
+    7,
 );
 static SNAPSHOT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
@@ -51,7 +57,7 @@ static SNAPSHOT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Snapshot$Tags", "com.amazonaws.fsx", "Snapshot"),
     ::aws_smithy_schema::ShapeType::List,
     "Tags",
-    7,
+    8,
 )
 .with_list_member(&SNAPSHOT_MEMBER_TAGS_MEMBER);
 static SNAPSHOT_MEMBER_ADMINISTRATIVE_ACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -68,9 +74,15 @@ static SNAPSHOT_MEMBER_ADMINISTRATIVE_ACTIONS: ::aws_smithy_schema::Schema<'stat
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Snapshot$AdministrativeActions", "com.amazonaws.fsx", "Snapshot"),
     ::aws_smithy_schema::ShapeType::List,
     "AdministrativeActions",
-    8,
+    9,
 )
 .with_list_member(&SNAPSHOT_MEMBER_ADMINISTRATIVE_ACTIONS_MEMBER);
+static SNAPSHOT_MEMBER_ONTAP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Snapshot$OntapConfiguration", "com.amazonaws.fsx", "Snapshot"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapConfiguration",
+    10,
+);
 static SNAPSHOT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Snapshot", "com.amazonaws.fsx", "Snapshot"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -81,9 +93,11 @@ static SNAPSHOT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sche
         &SNAPSHOT_MEMBER_VOLUME_ID,
         &SNAPSHOT_MEMBER_CREATION_TIME,
         &SNAPSHOT_MEMBER_LIFECYCLE,
+        &SNAPSHOT_MEMBER_SNAPSHOT_TYPE,
         &SNAPSHOT_MEMBER_LIFECYCLE_TRANSITION_REASON,
         &SNAPSHOT_MEMBER_TAGS,
         &SNAPSHOT_MEMBER_ADMINISTRATIVE_ACTIONS,
+        &SNAPSHOT_MEMBER_ONTAP_CONFIGURATION,
     ],
 );
 impl crate::types::Snapshot {
@@ -118,6 +132,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Snapshot {
         if let Some(ref val) = self.lifecycle {
             ser.write_string(&SNAPSHOT_MEMBER_LIFECYCLE, val.as_str())?;
         }
+        if let Some(ref val) = self.snapshot_type {
+            ser.write_string(&SNAPSHOT_MEMBER_SNAPSHOT_TYPE, val.as_str())?;
+        }
         if let Some(ref val) = self.lifecycle_transition_reason {
             ser.write_struct(&SNAPSHOT_MEMBER_LIFECYCLE_TRANSITION_REASON, val)?;
         }
@@ -139,6 +156,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Snapshot {
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.ontap_configuration {
+            ser.write_struct(&SNAPSHOT_MEMBER_ONTAP_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -203,10 +223,17 @@ impl crate::types::builders::SnapshotBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.lifecycle_transition_reason = Some(crate::types::LifecycleTransitionReason::deserialize(deser)?);
+                        self.snapshot_type = Some(crate::types::SnapshotType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_transition_reason = Some(crate::types::LifecycleTransitionReason::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -220,7 +247,7 @@ impl crate::types::builders::SnapshotBuilder {
                         });
                     }
                 }
-                Some(8) => {
+                Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -232,6 +259,13 @@ impl crate::types::builders::SnapshotBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_configuration = Some(crate::types::OntapSnapshotConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

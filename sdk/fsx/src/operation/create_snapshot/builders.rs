@@ -22,11 +22,11 @@ impl crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSnapshot`.
 ///
-/// <p>Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you can easily undo file changes and compare file versions by restoring the volume to a previous version.</p>
+/// <p>Creates a snapshot of an existing Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP volume. With snapshots, you can easily undo file changes and compare file versions by restoring the volume to a previous version.</p>
 /// <p>If a snapshot with the specified client request token exists, and the parameters match, this operation returns the description of the existing snapshot. If a snapshot with the specified client request token exists, and the parameters don't match, this operation returns <code>IncompatibleParameterError</code>. If a snapshot with the specified client request token doesn't exist, <code>CreateSnapshot</code> does the following:</p>
 /// <ul>
 /// <li>
-/// <p>Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p></li>
+/// <p>Creates a new snapshot with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p></li>
 /// <li>
 /// <p>Returns the description of the snapshot.</p></li>
 /// </ul>
@@ -177,5 +177,19 @@ impl CreateSnapshotFluentBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub fn ontap_configuration(mut self, input: crate::types::CreateOntapSnapshotConfiguration) -> Self {
+        self.inner = self.inner.ontap_configuration(input);
+        self
+    }
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::CreateOntapSnapshotConfiguration>) -> Self {
+        self.inner = self.inner.set_ontap_configuration(input);
+        self
+    }
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateOntapSnapshotConfiguration> {
+        self.inner.get_ontap_configuration()
     }
 }

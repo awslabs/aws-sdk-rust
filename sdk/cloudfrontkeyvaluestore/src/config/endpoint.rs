@@ -29,7 +29,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EndpointOverr
 #[cfg(test)]
 mod test {
 
-    /// FIPS should error
+    /// FIPS without a KVS ARN, should error on the missing ARN
     #[test]
     fn test_1() {
         let params = crate::config::endpoint::Params::builder()
@@ -38,12 +38,9 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error =
-            endpoint.expect_err("expected error: Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore. [FIPS should error]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."
-        )
+        let error = endpoint
+            .expect_err("expected error: KVS ARN must be provided to use this service [FIPS without a KVS ARN, should error on the missing ARN]");
+        assert_eq!(format!("{}", error), "KVS ARN must be provided to use this service")
     }
 
     /// KVS ARN must be provided to use this service
@@ -209,7 +206,7 @@ mod test {
         assert_eq!(format!("{}", error), "Client was configured for partition `aws-cn` but Kvs ARN has `aws`")
     }
 
-    /// Valid account based endpoint with FIPS, should error
+    /// Valid account based endpoint with FIPS resolves to the same endpoint
     #[test]
     fn test_12() {
         let params = crate::config::endpoint::Params::builder()
@@ -220,16 +217,92 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore. [Valid account based endpoint with FIPS, should error]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.cloudfront-kvs.global.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.cloudfront-kvs.global.api.aws")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
+                )
+                .build()
+        );
+    }
+
+    /// Valid account based endpoint with FIPS, without SDK region
+    #[test]
+    fn test_13() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .use_fips(true)
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.cloudfront-kvs.global.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.cloudfront-kvs.global.api.aws")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
+                )
+                .build()
+        );
+    }
+
+    /// FIPS with a custom sdk endpoint override, should error
+    #[test]
+    fn test_14() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("us-east-1".to_string())
+            .endpoint("https://my-override.example.com".to_string())
+            .use_fips(true)
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [FIPS with a custom sdk endpoint override, should error]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
+    }
+
+    /// FIPS with a custom sdk endpoint override, without SDK region, should error
+    #[test]
+    fn test_15() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .endpoint("https://my-override.example.com".to_string())
+            .use_fips(true)
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [FIPS with a custom sdk endpoint override, without SDK region, should error]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
+    }
+
+    /// FIPS in an unsupported partition reports the partition, not FIPS
+    #[test]
+    fn test_16() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-cn:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .use_fips(true)
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: CloudFront-KeyValueStore is not supported in partition `aws-cn` [FIPS in an unsupported partition reports the partition, not FIPS]");
+        assert_eq!(format!("{}", error), "CloudFront-KeyValueStore is not supported in partition `aws-cn`")
     }
 
     /// Custom sdk endpoint override
     #[test]
-    fn test_13() {
+    fn test_17() {
         let params = crate::config::endpoint::Params::builder()
             .kvs_arn("arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
             .region("us-east-1".to_string())
@@ -254,7 +327,7 @@ mod test {
 
     /// Custom sdk endpoint override with path and http
     #[test]
-    fn test_14() {
+    fn test_18() {
         let params = crate::config::endpoint::Params::builder()
             .kvs_arn("arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
             .endpoint("http://my-override.example.com/custom-path".to_string())
@@ -278,7 +351,7 @@ mod test {
 
     /// Custom override with different partition should error
     #[test]
-    fn test_15() {
+    fn test_19() {
         let params = crate::config::endpoint::Params::builder()
             .kvs_arn("arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
             .region("us-gov-east-1".to_string())
@@ -291,6 +364,213 @@ mod test {
         assert_eq!(
             format!("{}", error),
             "Client was configured for partition `aws-us-gov` but Kvs ARN has `aws`"
+        )
+    }
+
+    /// Valid aws ARN, aws-eusc SDK region, should error
+    #[test]
+    fn test_20() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("eusc-de-east-1".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: Client was configured for partition `aws-eusc` but Kvs ARN has `aws` [Valid aws ARN, aws-eusc SDK region, should error]",
+        );
+        assert_eq!(
+            format!("{}", error),
+            "Client was configured for partition `aws-eusc` but Kvs ARN has `aws`"
+        )
+    }
+
+    /// Empty ARN resource type should error
+    #[test]
+    fn test_21() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws:cloudfront::123456789012:/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: No resource type found in the KVS ARN. Resource type must be `key-value-store`. [Empty ARN resource type should error]",
+        );
+        assert_eq!(
+            format!("{}", error),
+            "No resource type found in the KVS ARN. Resource type must be `key-value-store`."
+        )
+    }
+
+    /// Valid account based endpoint in aws-eusc
+    #[test]
+    fn test_22() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.cloudfront-kvs.global.api.amazonwebservices.eu");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.cloudfront-kvs.global.api.amazonwebservices.eu")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
+                )
+                .build()
+        );
+    }
+
+    /// Valid account based endpoint in aws-eusc, with SDK region
+    #[test]
+    fn test_23() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("eusc-de-east-1".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.cloudfront-kvs.global.api.amazonwebservices.eu");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.cloudfront-kvs.global.api.amazonwebservices.eu")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
+                )
+                .build()
+        );
+    }
+
+    /// Valid aws-eusc ARN, aws SDK region, should error
+    #[test]
+    fn test_24() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("us-east-1".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: Client was configured for partition `aws` but Kvs ARN has `aws-eusc` [Valid aws-eusc ARN, aws SDK region, should error]",
+        );
+        assert_eq!(
+            format!("{}", error),
+            "Client was configured for partition `aws` but Kvs ARN has `aws-eusc`"
+        )
+    }
+
+    /// Valid account based endpoint in aws-eusc with FIPS, should error
+    #[test]
+    fn test_25() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("eusc-de-east-1".to_string())
+            .use_fips(true)
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore. [Valid account based endpoint in aws-eusc with FIPS, should error]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."
+        )
+    }
+
+    /// aws-eusc with FIPS and a custom endpoint override reports the partition-level FIPS error
+    #[test]
+    fn test_26() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("eusc-de-east-1".to_string())
+            .endpoint("https://my-override.example.com".to_string())
+            .use_fips(true)
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore. [aws-eusc with FIPS and a custom endpoint override reports the partition-level FIPS error]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."
+        )
+    }
+
+    /// Custom sdk endpoint override in aws-eusc
+    #[test]
+    fn test_27() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("eusc-de-east-1".to_string())
+            .endpoint("https://my-override.example.com".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.my-override.example.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.my-override.example.com")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
+                )
+                .build()
+        );
+    }
+
+    /// Custom sdk endpoint override with path and http in aws-eusc
+    #[test]
+    fn test_28() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .endpoint("http://my-override.example.com/custom-path".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: http://123456789012.my-override.example.com/custom-path");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("http://123456789012.my-override.example.com/custom-path")
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
+                )
+                .build()
+        );
+    }
+
+    /// Custom override in aws-eusc with different partition should error
+    #[test]
+    fn test_29() {
+        let params = crate::config::endpoint::Params::builder()
+            .kvs_arn("arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba".to_string())
+            .region("us-east-1".to_string())
+            .endpoint("https://my-override.example.com".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Client was configured for partition `aws` but Kvs ARN has `aws-eusc` [Custom override in aws-eusc with different partition should error]");
+        assert_eq!(
+            format!("{}", error),
+            "Client was configured for partition `aws` but Kvs ARN has `aws-eusc`"
         )
     }
 }
@@ -416,7 +696,10 @@ impl DefaultResolver {
                         2 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Provided endpoint is not a valid URL".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        3 => {
+                        3 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        4 => {
                             let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -436,7 +719,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        4 => {
+                        5 => {
                             let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
@@ -451,7 +734,33 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        5 => {
+                        6 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "A valid partition could not be determined".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        7 => {
+                            let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&parsed_arn.account_id());
+                                        out.push_str(".cloudfront-kvs.global.api.amazonwebservices.eu");
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a".to_string(), 2)
+                                            .put("signingName", "cloudfront-keyvaluestore")
+                                            .put("signingRegionSet", vec![::aws_smithy_types::Document::from("*".to_string())]),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        8 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        9 => {
                             let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
@@ -462,7 +771,7 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        6 => {
+                        10 => {
                             let arn_type = context.arn_type.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
@@ -473,10 +782,10 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        7 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        11 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "No resource type found in the KVS ARN. Resource type must be `key-value-store`.".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        8 => {
+                        12 => {
                             let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
@@ -487,7 +796,7 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        9 => {
+                        13 => {
                             let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
@@ -498,14 +807,11 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        10 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        14 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "KVS ARN must be a valid ARN".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        11 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        15 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "KVS ARN must be provided to use this service".to_string(),
-                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        12 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            "Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore.".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "No endpoint rule matched",
@@ -522,9 +828,8 @@ impl DefaultResolver {
                     let is_complement = ref_val < 0;
                     let node = &NODES[(ref_val.unsigned_abs() as usize) - 1];
                     let condition_result = match node.condition_index {
-                        0 => (use_fips) == (&true),
-                        1 => kvs_arn.is_some(),
-                        2 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        0 => kvs_arn.is_some(),
+                        1 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let parsed_arn = &mut context.parsed_arn;
                             let partition_resolver = &self.partition_resolver;
                             {
@@ -536,17 +841,17 @@ impl DefaultResolver {
                                 parsed_arn.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        2 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let parsed_arn = &context.parsed_arn;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = parsed_arn { inner.service() } else { return false }) == ("cloudfront")
                         })(&mut _diagnostic_collector),
-                        4 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let parsed_arn = &context.parsed_arn;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = parsed_arn { inner.region() } else { return false }) == ("")
                         })(&mut _diagnostic_collector),
-                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        4 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let parsed_arn = &context.parsed_arn;
                             let arn_type = &mut context.arn_type;
                             let partition_resolver = &self.partition_resolver;
@@ -560,23 +865,29 @@ impl DefaultResolver {
                                 arn_type.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_type = &context.arn_type;
                             let partition_resolver = &self.partition_resolver;
                             (arn_type) == &mut Some(("".to_string().into()))
                         })(&mut _diagnostic_collector),
-                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_type = &context.arn_type;
                             let partition_resolver = &self.partition_resolver;
                             (arn_type) == &mut Some(("key-value-store".to_string().into()))
                         })(&mut _diagnostic_collector),
-                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let parsed_arn = &context.parsed_arn;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = parsed_arn { inner.partition() } else { return false }) == ("aws")
                         })(&mut _diagnostic_collector),
-                        9 => region.is_some(),
-                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn = &context.parsed_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = parsed_arn { inner.partition() } else { return false }) == ("aws-eusc")
+                        })(&mut _diagnostic_collector),
+                        9 => (use_fips) == (&true),
+                        10 => region.is_some(),
+                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &mut context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             {
@@ -586,7 +897,7 @@ impl DefaultResolver {
                                 partition_result.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        12 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let parsed_arn = &context.parsed_arn;
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
@@ -597,8 +908,8 @@ impl DefaultResolver {
                                     return false;
                                 })
                         })(&mut _diagnostic_collector),
-                        12 => endpoint.is_some(),
-                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        13 => endpoint.is_some(),
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let url = &mut context.url;
                             let partition_resolver = &self.partition_resolver;
                             {
@@ -636,7 +947,7 @@ impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
         ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
 }
-const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 15] = [
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 25] = [
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: -1,
         high_ref: 1,
@@ -644,73 +955,123 @@ const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 15] = [
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 0,
-        high_ref: 100000012,
-        low_ref: 3,
+        high_ref: 3,
+        low_ref: 100000015,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 1,
         high_ref: 4,
-        low_ref: 100000011,
+        low_ref: 100000014,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 2,
         high_ref: 5,
-        low_ref: 100000010,
+        low_ref: 100000013,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 3,
         high_ref: 6,
-        low_ref: 100000009,
+        low_ref: 100000012,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 4,
         high_ref: 7,
-        low_ref: 100000008,
+        low_ref: 100000011,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 5,
-        high_ref: 8,
-        low_ref: 100000007,
+        high_ref: 100000011,
+        low_ref: 8,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 6,
-        high_ref: 100000007,
-        low_ref: 9,
+        high_ref: 9,
+        low_ref: 100000010,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 7,
-        high_ref: 10,
-        low_ref: 100000006,
+        high_ref: 16,
+        low_ref: 10,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 8,
         high_ref: 11,
-        low_ref: 100000005,
+        low_ref: 100000009,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 9,
-        high_ref: 12,
-        low_ref: 14,
+        high_ref: 100000008,
+        low_ref: 12,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 10,
         high_ref: 13,
-        low_ref: 14,
+        low_ref: 15,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 11,
         high_ref: 14,
-        low_ref: 100000004,
+        low_ref: 100000006,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 12,
         high_ref: 15,
-        low_ref: 100000003,
+        low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 13,
+        high_ref: 21,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 22,
+        low_ref: 17,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 18,
+        low_ref: 20,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 19,
+        low_ref: 100000006,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 20,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 21,
+        low_ref: 100000004,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
         high_ref: 100000001,
         low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 23,
+        low_ref: 25,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 24,
+        low_ref: 100000006,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 25,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000003,
+        low_ref: 100000004,
     },
 ];
 // These are all optional since they are set by conditions and will

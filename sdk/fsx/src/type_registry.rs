@@ -104,6 +104,36 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::CloneConfiguration::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CloneConfiguration::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::ClusterPeer::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::ClusterPeer::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::ClusterPeerAuthenticationStatus::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::ClusterPeerAuthenticationStatus::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::ClusterPeerFilter::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::ClusterPeerFilter::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::error::ClusterPeerNotFound::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ClusterPeerNotFound::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::CompletionReport::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CompletionReport::deserialize(d)?))
@@ -131,6 +161,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         crate::types::CreateAndAttachS3AccessPointS3Configuration::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CreateAndAttachS3AccessPointS3Configuration::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::CreateCloneConfiguration::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CreateCloneConfiguration::deserialize(d)?))
                         },
                     )
 .insert_shape(
@@ -170,6 +206,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::CreateOntapSnapshotConfiguration::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CreateOntapSnapshotConfiguration::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::CreateOntapVolumeConfiguration::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CreateOntapVolumeConfiguration::deserialize(d)?))
@@ -191,6 +233,18 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         crate::types::CreateSnaplockConfiguration::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CreateSnaplockConfiguration::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::CreateSnapmirrorDestination::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CreateSnapmirrorDestination::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::CreateSnapmirrorSource::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::CreateSnapmirrorSource::deserialize(d)?))
                         },
                     )
 .insert_shape(
@@ -566,6 +620,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::OntapError::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::OntapError::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::OntapFileSystemConfiguration::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::OntapFileSystemConfiguration::deserialize(d)?))
@@ -575,6 +635,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         crate::types::OntapFileSystemIdentity::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::OntapFileSystemIdentity::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::OntapSnapshotConfiguration::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::OntapSnapshotConfiguration::deserialize(d)?))
                         },
                     )
 .insert_shape(
@@ -764,6 +830,78 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::SnapmirrorDestination::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorDestination::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorExportedSnapshot::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorExportedSnapshot::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorPolicy::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorPolicy::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorPolicyFilter::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorPolicyFilter::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::error::SnapmirrorPolicyNotFound::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::SnapmirrorPolicyNotFound::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorPolicyRetentionRule::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorPolicyRetentionRule::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorRelationship::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorRelationship::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorRelationshipFilter::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorRelationshipFilter::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::error::SnapmirrorRelationshipNotFound::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::SnapmirrorRelationshipNotFound::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorRelationshipPolicy::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorRelationshipPolicy::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorSource::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorSource::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapmirrorTransferState::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapmirrorTransferState::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::Snapshot::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::Snapshot::deserialize(d)?))
@@ -779,6 +917,36 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         crate::types::error::SnapshotNotFound::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::SnapshotNotFound::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapshotPolicy::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapshotPolicy::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapshotPolicyFilter::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapshotPolicyFilter::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::error::SnapshotPolicyNotFound::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::SnapshotPolicyNotFound::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapshotPolicyRetentionPeriod::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapshotPolicyRetentionPeriod::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::SnapshotPolicySchedule::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::SnapshotPolicySchedule::deserialize(d)?))
                         },
                     )
 .insert_shape(
@@ -803,6 +971,24 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         crate::types::error::StorageVirtualMachineNotFound::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::StorageVirtualMachineNotFound::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::StorageVirtualMachinePeer::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::StorageVirtualMachinePeer::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::StorageVirtualMachinePeerFilter::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::StorageVirtualMachinePeerFilter::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::error::StorageVirtualMachinePeerNotFound::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::StorageVirtualMachinePeerNotFound::deserialize(d)?))
                         },
                     )
 .insert_shape(
@@ -848,6 +1034,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::UpdateCloneConfiguration::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::UpdateCloneConfiguration::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::UpdateFileCacheLustreConfiguration::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::UpdateFileCacheLustreConfiguration::deserialize(d)?))
@@ -881,6 +1073,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         crate::types::UpdateFileSystemWindowsConfiguration::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::UpdateFileSystemWindowsConfiguration::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::UpdateOntapSnapshotConfiguration::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::UpdateOntapSnapshotConfiguration::deserialize(d)?))
                         },
                     )
 .insert_shape(

@@ -63,6 +63,8 @@ pub struct OntapVolumeConfiguration {
     pub aggregate_configuration: ::std::option::Option<crate::types::AggregateConfiguration>,
     /// <p>The configured size of the volume, in bytes.</p>
     pub size_in_bytes: ::std::option::Option<i64>,
+    /// <p>The clone configuration of the volume, if the volume is a clone. This property doesn't appear for a volume that isn't a clone, or for a clone that has been split from its parent volume.</p>
+    pub clone_configuration: ::std::option::Option<crate::types::CloneConfiguration>,
 }
 impl OntapVolumeConfiguration {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -156,6 +158,10 @@ impl OntapVolumeConfiguration {
     pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.size_in_bytes
     }
+    /// <p>The clone configuration of the volume, if the volume is a clone. This property doesn't appear for a volume that isn't a clone, or for a clone that has been split from its parent volume.</p>
+    pub fn clone_configuration(&self) -> ::std::option::Option<&crate::types::CloneConfiguration> {
+        self.clone_configuration.as_ref()
+    }
 }
 impl OntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
@@ -184,6 +190,7 @@ pub struct OntapVolumeConfigurationBuilder {
     pub(crate) volume_style: ::std::option::Option<crate::types::VolumeStyle>,
     pub(crate) aggregate_configuration: ::std::option::Option<crate::types::AggregateConfiguration>,
     pub(crate) size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) clone_configuration: ::std::option::Option<crate::types::CloneConfiguration>,
 }
 impl OntapVolumeConfigurationBuilder {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -491,6 +498,20 @@ impl OntapVolumeConfigurationBuilder {
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.size_in_bytes
     }
+    /// <p>The clone configuration of the volume, if the volume is a clone. This property doesn't appear for a volume that isn't a clone, or for a clone that has been split from its parent volume.</p>
+    pub fn clone_configuration(mut self, input: crate::types::CloneConfiguration) -> Self {
+        self.clone_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The clone configuration of the volume, if the volume is a clone. This property doesn't appear for a volume that isn't a clone, or for a clone that has been split from its parent volume.</p>
+    pub fn set_clone_configuration(mut self, input: ::std::option::Option<crate::types::CloneConfiguration>) -> Self {
+        self.clone_configuration = input;
+        self
+    }
+    /// <p>The clone configuration of the volume, if the volume is a clone. This property doesn't appear for a volume that isn't a clone, or for a clone that has been split from its parent volume.</p>
+    pub fn get_clone_configuration(&self) -> &::std::option::Option<crate::types::CloneConfiguration> {
+        &self.clone_configuration
+    }
     /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
     pub fn build(self) -> crate::types::OntapVolumeConfiguration {
         crate::types::OntapVolumeConfiguration {
@@ -510,6 +531,7 @@ impl OntapVolumeConfigurationBuilder {
             volume_style: self.volume_style,
             aggregate_configuration: self.aggregate_configuration,
             size_in_bytes: self.size_in_bytes,
+            clone_configuration: self.clone_configuration,
         }
     }
 }

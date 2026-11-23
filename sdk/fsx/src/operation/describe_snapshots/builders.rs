@@ -22,7 +22,7 @@ impl crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuild
 }
 /// Fluent builder constructing a request to `DescribeSnapshots`.
 ///
-/// <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code> value is provided. Otherwise, this operation returns all snapshots owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+/// <p>Returns the description of specific Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP snapshots, if a <code>SnapshotIds</code> value is provided. Otherwise, this operation returns all snapshots owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
 /// <p>When retrieving all snapshots, you can optionally specify the <code>MaxResults</code> parameter to limit the number of snapshots in a response. If more snapshots remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
 /// <p>Use this operation in an iterative process to retrieve a list of your snapshots. <code>DescribeSnapshots</code> is called first without a <code>NextToken</code> value. Then the operation continues to be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code> value.</p>
 /// <p>When using this operation, keep the following in mind:</p>
@@ -128,17 +128,17 @@ impl DescribeSnapshotsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
     ///
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_ids(input.into());
         self
     }
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_ids(input);
         self
     }
-    /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    /// <p>The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you also specify <code>Filters</code>, only snapshots that match both the IDs and the filters are returned. If any IDs aren't found, or if a filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
     pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_snapshot_ids()
     }

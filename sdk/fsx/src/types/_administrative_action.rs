@@ -44,9 +44,11 @@ pub struct AdministrativeAction {
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
+    /// <li>
+    /// <p><code>VOLUME_CLONE_SPLIT</code> - An FSx for ONTAP volume clone is being split from its parent volume. You can initiate this from the Amazon FSx console, Amazon FSx API (<code>UpdateVolume</code>) or CLI (<code>update-volume</code>) by setting <code>SplitAction</code> to <code>START</code> in the volume's <code>CloneConfiguration</code>.</p></li>
     /// </ul>
     pub administrative_action_type: ::std::option::Option<crate::types::AdministrativeActionType>,
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>, <code>DOWNLOAD_DATA_FROM_BACKUP</code>, or <code>VOLUME_CLONE_SPLIT</code> administrative action. Does not apply to any other administrative action type.</p>
     pub progress_percent: ::std::option::Option<i32>,
     /// <p>The time that the administrative action request was received.</p>
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -75,7 +77,7 @@ pub struct AdministrativeAction {
     pub failure_details: ::std::option::Option<crate::types::AdministrativeActionFailureDetails>,
     /// <p>Describes an Amazon FSx volume.</p>
     pub target_volume_values: ::std::option::Option<crate::types::Volume>,
-    /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
+    /// <p>A snapshot of an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP volume.</p>
     pub target_snapshot_values: ::std::option::Option<crate::types::Snapshot>,
     /// <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.</p>
     pub total_transfer_bytes: ::std::option::Option<i64>,
@@ -125,11 +127,13 @@ impl AdministrativeAction {
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
+    /// <li>
+    /// <p><code>VOLUME_CLONE_SPLIT</code> - An FSx for ONTAP volume clone is being split from its parent volume. You can initiate this from the Amazon FSx console, Amazon FSx API (<code>UpdateVolume</code>) or CLI (<code>update-volume</code>) by setting <code>SplitAction</code> to <code>START</code> in the volume's <code>CloneConfiguration</code>.</p></li>
     /// </ul>
     pub fn administrative_action_type(&self) -> ::std::option::Option<&crate::types::AdministrativeActionType> {
         self.administrative_action_type.as_ref()
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>, <code>DOWNLOAD_DATA_FROM_BACKUP</code>, or <code>VOLUME_CLONE_SPLIT</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn progress_percent(&self) -> ::std::option::Option<i32> {
         self.progress_percent
     }
@@ -170,7 +174,7 @@ impl AdministrativeAction {
     pub fn target_volume_values(&self) -> ::std::option::Option<&crate::types::Volume> {
         self.target_volume_values.as_ref()
     }
-    /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
+    /// <p>A snapshot of an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP volume.</p>
     pub fn target_snapshot_values(&self) -> ::std::option::Option<&crate::types::Snapshot> {
         self.target_snapshot_values.as_ref()
     }
@@ -251,6 +255,8 @@ impl AdministrativeActionBuilder {
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
+    /// <li>
+    /// <p><code>VOLUME_CLONE_SPLIT</code> - An FSx for ONTAP volume clone is being split from its parent volume. You can initiate this from the Amazon FSx console, Amazon FSx API (<code>UpdateVolume</code>) or CLI (<code>update-volume</code>) by setting <code>SplitAction</code> to <code>START</code> in the volume's <code>CloneConfiguration</code>.</p></li>
     /// </ul>
     pub fn administrative_action_type(mut self, input: crate::types::AdministrativeActionType) -> Self {
         self.administrative_action_type = ::std::option::Option::Some(input);
@@ -296,6 +302,8 @@ impl AdministrativeActionBuilder {
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
+    /// <li>
+    /// <p><code>VOLUME_CLONE_SPLIT</code> - An FSx for ONTAP volume clone is being split from its parent volume. You can initiate this from the Amazon FSx console, Amazon FSx API (<code>UpdateVolume</code>) or CLI (<code>update-volume</code>) by setting <code>SplitAction</code> to <code>START</code> in the volume's <code>CloneConfiguration</code>.</p></li>
     /// </ul>
     pub fn set_administrative_action_type(mut self, input: ::std::option::Option<crate::types::AdministrativeActionType>) -> Self {
         self.administrative_action_type = input;
@@ -341,21 +349,23 @@ impl AdministrativeActionBuilder {
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
+    /// <li>
+    /// <p><code>VOLUME_CLONE_SPLIT</code> - An FSx for ONTAP volume clone is being split from its parent volume. You can initiate this from the Amazon FSx console, Amazon FSx API (<code>UpdateVolume</code>) or CLI (<code>update-volume</code>) by setting <code>SplitAction</code> to <code>START</code> in the volume's <code>CloneConfiguration</code>.</p></li>
     /// </ul>
     pub fn get_administrative_action_type(&self) -> &::std::option::Option<crate::types::AdministrativeActionType> {
         &self.administrative_action_type
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>, <code>DOWNLOAD_DATA_FROM_BACKUP</code>, or <code>VOLUME_CLONE_SPLIT</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>, <code>DOWNLOAD_DATA_FROM_BACKUP</code>, or <code>VOLUME_CLONE_SPLIT</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self
     }
-    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to any other administrative action type.</p>
+    /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>, <code>DOWNLOAD_DATA_FROM_BACKUP</code>, or <code>VOLUME_CLONE_SPLIT</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
         &self.progress_percent
     }
@@ -480,17 +490,17 @@ impl AdministrativeActionBuilder {
     pub fn get_target_volume_values(&self) -> &::std::option::Option<crate::types::Volume> {
         &self.target_volume_values
     }
-    /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
+    /// <p>A snapshot of an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP volume.</p>
     pub fn target_snapshot_values(mut self, input: crate::types::Snapshot) -> Self {
         self.target_snapshot_values = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
+    /// <p>A snapshot of an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP volume.</p>
     pub fn set_target_snapshot_values(mut self, input: ::std::option::Option<crate::types::Snapshot>) -> Self {
         self.target_snapshot_values = input;
         self
     }
-    /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
+    /// <p>A snapshot of an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP volume.</p>
     pub fn get_target_snapshot_values(&self) -> &::std::option::Option<crate::types::Snapshot> {
         &self.target_snapshot_values
     }

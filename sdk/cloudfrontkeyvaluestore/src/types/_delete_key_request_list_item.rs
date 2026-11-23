@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyRequestListItem {
-    /// <p>The key of the key value pair to be deleted.</p>
+    /// <p>The key of the key-value pair to be deleted.</p>
     pub key: ::std::string::String,
 }
 impl DeleteKeyRequestListItem {
-    /// <p>The key of the key value pair to be deleted.</p>
+    /// <p>The key of the key-value pair to be deleted.</p>
     pub fn key(&self) -> &str {
         use std::ops::Deref;
         self.key.deref()
@@ -28,18 +28,18 @@ pub struct DeleteKeyRequestListItemBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyRequestListItemBuilder {
-    /// <p>The key of the key value pair to be deleted.</p>
+    /// <p>The key of the key-value pair to be deleted.</p>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key of the key value pair to be deleted.</p>
+    /// <p>The key of the key-value pair to be deleted.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The key of the key value pair to be deleted.</p>
+    /// <p>The key of the key-value pair to be deleted.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

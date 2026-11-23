@@ -178,6 +178,15 @@ pub(crate) mod error_registry {
                             ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::UnsupportedOperation::deserialize(d)?))
                         },
                     )
+.insert_error_shape(
+                        crate::types::error::VolumeNotFound::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::VolumeNotFound::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::VolumeNotFound::deserialize(d)?))
+                        },
+                    )
                             .build()
     });
 }
@@ -478,6 +487,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateVol
                     let tmp = tmp.meta(generic);
                     tmp.build()
                 }),
+                "VolumeNotFound" => crate::operation::create_volume::CreateVolumeError::VolumeNotFound({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::VolumeNotFoundBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                }),
                 _ => {
                     // Registry-backed, operation-scoped reification of an error whose
                     // code this operation does not model directly: the operation's own
@@ -615,6 +642,8 @@ pub enum CreateVolumeError {
     StorageVirtualMachineNotFound(crate::types::error::StorageVirtualMachineNotFound),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
+    /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
+    VolumeNotFound(crate::types::error::VolumeNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -656,6 +685,7 @@ impl CreateVolumeError {
             Self::ServiceLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageVirtualMachineNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::VolumeNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -691,6 +721,10 @@ impl CreateVolumeError {
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(self, Self::UnsupportedOperation(_))
     }
+    /// Returns `true` if the error kind is `CreateVolumeError::VolumeNotFound`.
+    pub fn is_volume_not_found(&self) -> bool {
+        matches!(self, Self::VolumeNotFound(_))
+    }
 }
 impl ::std::error::Error for CreateVolumeError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -703,6 +737,7 @@ impl ::std::error::Error for CreateVolumeError {
             Self::ServiceLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageVirtualMachineNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
+            Self::VolumeNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -718,6 +753,7 @@ impl ::std::fmt::Display for CreateVolumeError {
             Self::ServiceLimitExceeded(_inner) => _inner.fmt(f),
             Self::StorageVirtualMachineNotFound(_inner) => _inner.fmt(f),
             Self::UnsupportedOperation(_inner) => _inner.fmt(f),
+            Self::VolumeNotFound(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -747,6 +783,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateVolumeE
             Self::ServiceLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageVirtualMachineNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::VolumeNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

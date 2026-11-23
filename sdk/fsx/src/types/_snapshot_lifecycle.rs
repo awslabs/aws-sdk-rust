@@ -15,6 +15,7 @@
 ///     SnapshotLifecycle::Available => { /* ... */ },
 ///     SnapshotLifecycle::Creating => { /* ... */ },
 ///     SnapshotLifecycle::Deleting => { /* ... */ },
+///     SnapshotLifecycle::Failed => { /* ... */ },
 ///     SnapshotLifecycle::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum SnapshotLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for SnapshotLifecycle {
             "AVAILABLE" => SnapshotLifecycle::Available,
             "CREATING" => SnapshotLifecycle::Creating,
             "DELETING" => SnapshotLifecycle::Deleting,
+            "FAILED" => SnapshotLifecycle::Failed,
             "PENDING" => SnapshotLifecycle::Pending,
             other => SnapshotLifecycle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,14 @@ impl SnapshotLifecycle {
             SnapshotLifecycle::Available => "AVAILABLE",
             SnapshotLifecycle::Creating => "CREATING",
             SnapshotLifecycle::Deleting => "DELETING",
+            SnapshotLifecycle::Failed => "FAILED",
             SnapshotLifecycle::Pending => "PENDING",
             SnapshotLifecycle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "CREATING", "DELETING", "PENDING"]
+        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for SnapshotLifecycle {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for SnapshotLifecycle {
             SnapshotLifecycle::Available => write!(f, "AVAILABLE"),
             SnapshotLifecycle::Creating => write!(f, "CREATING"),
             SnapshotLifecycle::Deleting => write!(f, "DELETING"),
+            SnapshotLifecycle::Failed => write!(f, "FAILED"),
             SnapshotLifecycle::Pending => write!(f, "PENDING"),
             SnapshotLifecycle::Unknown(value) => write!(f, "{value}"),
         }

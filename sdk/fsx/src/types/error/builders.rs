@@ -55,19 +55,29 @@ pub use crate::types::error::_invalid_import_path::InvalidImportPathBuilder;
 
 pub use crate::types::error::_missing_file_system_configuration::MissingFileSystemConfigurationBuilder;
 
-pub use crate::types::error::_missing_volume_configuration::MissingVolumeConfigurationBuilder;
-
 pub use crate::types::error::_storage_virtual_machine_not_found::StorageVirtualMachineNotFoundBuilder;
+
+pub use crate::types::error::_missing_volume_configuration::MissingVolumeConfigurationBuilder;
 
 pub use crate::types::error::_backup_being_copied::BackupBeingCopiedBuilder;
 
 pub use crate::types::error::_backup_restoring::BackupRestoringBuilder;
 
+pub use crate::types::error::_cluster_peer_not_found::ClusterPeerNotFoundBuilder;
+
 pub use crate::types::error::_data_repository_association_not_found::DataRepositoryAssociationNotFoundBuilder;
 
 pub use crate::types::error::_file_cache_not_found::FileCacheNotFoundBuilder;
 
+pub use crate::types::error::_snapmirror_policy_not_found::SnapmirrorPolicyNotFoundBuilder;
+
+pub use crate::types::error::_snapmirror_relationship_not_found::SnapmirrorRelationshipNotFoundBuilder;
+
 pub use crate::types::error::_snapshot_not_found::SnapshotNotFoundBuilder;
+
+pub use crate::types::error::_snapshot_policy_not_found::SnapshotPolicyNotFoundBuilder;
+
+pub use crate::types::error::_storage_virtual_machine_peer_not_found::StorageVirtualMachinePeerNotFoundBuilder;
 
 pub use crate::types::error::_invalid_data_repository_type::InvalidDataRepositoryTypeBuilder;
 

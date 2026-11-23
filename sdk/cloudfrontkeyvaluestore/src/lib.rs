@@ -21,7 +21,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource
+//! You can use Amazon CloudFront KeyValueStore to view and update data in a key value store resource. For more information, see [Using CloudFront KeyValueStore](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html) in the _Amazon CloudFront Developer Guide_.
 //!
 //! ## Getting Started
 //!
@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudfrontkeyvaluestore = "1.121.0"
+//! aws-sdk-cloudfrontkeyvaluestore = "1.122.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

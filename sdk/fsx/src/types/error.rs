@@ -55,19 +55,29 @@ pub use crate::types::error::_invalid_import_path::InvalidImportPath;
 
 pub use crate::types::error::_missing_file_system_configuration::MissingFileSystemConfiguration;
 
-pub use crate::types::error::_missing_volume_configuration::MissingVolumeConfiguration;
-
 pub use crate::types::error::_storage_virtual_machine_not_found::StorageVirtualMachineNotFound;
+
+pub use crate::types::error::_missing_volume_configuration::MissingVolumeConfiguration;
 
 pub use crate::types::error::_backup_being_copied::BackupBeingCopied;
 
 pub use crate::types::error::_backup_restoring::BackupRestoring;
 
+pub use crate::types::error::_cluster_peer_not_found::ClusterPeerNotFound;
+
 pub use crate::types::error::_data_repository_association_not_found::DataRepositoryAssociationNotFound;
 
 pub use crate::types::error::_file_cache_not_found::FileCacheNotFound;
 
+pub use crate::types::error::_snapmirror_policy_not_found::SnapmirrorPolicyNotFound;
+
+pub use crate::types::error::_snapmirror_relationship_not_found::SnapmirrorRelationshipNotFound;
+
 pub use crate::types::error::_snapshot_not_found::SnapshotNotFound;
+
+pub use crate::types::error::_snapshot_policy_not_found::SnapshotPolicyNotFound;
+
+pub use crate::types::error::_storage_virtual_machine_peer_not_found::StorageVirtualMachinePeerNotFound;
 
 pub use crate::types::error::_invalid_data_repository_type::InvalidDataRepositoryType;
 
@@ -92,6 +102,8 @@ mod _backup_not_found;
 mod _backup_restoring;
 
 mod _bad_request;
+
+mod _cluster_peer_not_found;
 
 mod _data_repository_association_not_found;
 
@@ -147,11 +159,19 @@ mod _s3_access_point_attachment_not_found;
 
 mod _service_limit_exceeded;
 
+mod _snapmirror_policy_not_found;
+
+mod _snapmirror_relationship_not_found;
+
 mod _snapshot_not_found;
+
+mod _snapshot_policy_not_found;
 
 mod _source_backup_unavailable;
 
 mod _storage_virtual_machine_not_found;
+
+mod _storage_virtual_machine_peer_not_found;
 
 mod _too_many_access_points;
 

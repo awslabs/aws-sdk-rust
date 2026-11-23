@@ -75,6 +75,8 @@ pub struct CreateOntapVolumeConfiguration {
     pub aggregate_configuration: ::std::option::Option<crate::types::CreateAggregateConfiguration>,
     /// <p>Specifies the configured size of the volume, in bytes.</p>
     pub size_in_bytes: ::std::option::Option<i64>,
+    /// <p>Specifies the configuration to use when creating the volume as a clone of another FSx for ONTAP volume. A clone is a writable, point-in-time copy of its parent volume.</p>
+    pub clone_configuration: ::std::option::Option<crate::types::CreateCloneConfiguration>,
 }
 impl CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -174,6 +176,10 @@ impl CreateOntapVolumeConfiguration {
     pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.size_in_bytes
     }
+    /// <p>Specifies the configuration to use when creating the volume as a clone of another FSx for ONTAP volume. A clone is a writable, point-in-time copy of its parent volume.</p>
+    pub fn clone_configuration(&self) -> ::std::option::Option<&crate::types::CreateCloneConfiguration> {
+        self.clone_configuration.as_ref()
+    }
 }
 impl CreateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).
@@ -199,6 +205,7 @@ pub struct CreateOntapVolumeConfigurationBuilder {
     pub(crate) volume_style: ::std::option::Option<crate::types::VolumeStyle>,
     pub(crate) aggregate_configuration: ::std::option::Option<crate::types::CreateAggregateConfiguration>,
     pub(crate) size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) clone_configuration: ::std::option::Option<crate::types::CreateCloneConfiguration>,
 }
 impl CreateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -519,6 +526,20 @@ impl CreateOntapVolumeConfigurationBuilder {
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.size_in_bytes
     }
+    /// <p>Specifies the configuration to use when creating the volume as a clone of another FSx for ONTAP volume. A clone is a writable, point-in-time copy of its parent volume.</p>
+    pub fn clone_configuration(mut self, input: crate::types::CreateCloneConfiguration) -> Self {
+        self.clone_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration to use when creating the volume as a clone of another FSx for ONTAP volume. A clone is a writable, point-in-time copy of its parent volume.</p>
+    pub fn set_clone_configuration(mut self, input: ::std::option::Option<crate::types::CreateCloneConfiguration>) -> Self {
+        self.clone_configuration = input;
+        self
+    }
+    /// <p>Specifies the configuration to use when creating the volume as a clone of another FSx for ONTAP volume. A clone is a writable, point-in-time copy of its parent volume.</p>
+    pub fn get_clone_configuration(&self) -> &::std::option::Option<crate::types::CreateCloneConfiguration> {
+        &self.clone_configuration
+    }
     /// Consumes the builder and constructs a [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::CreateOntapVolumeConfiguration {
         crate::types::CreateOntapVolumeConfiguration {
@@ -535,6 +556,7 @@ impl CreateOntapVolumeConfigurationBuilder {
             volume_style: self.volume_style,
             aggregate_configuration: self.aggregate_configuration,
             size_in_bytes: self.size_in_bytes,
+            clone_configuration: self.clone_configuration,
         }
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::list_keys::builders::ListKeysInputBuilder {
 }
 /// Fluent builder constructing a request to `ListKeys`.
 ///
-/// <p>Returns a list of key value pairs.</p>
+/// <p>Returns a list of key-value pairs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -105,31 +105,31 @@ impl ListKeysFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_keys::paginator::ListKeysPaginator {
         crate::operation::list_keys::paginator::ListKeysPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn kvs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kvs_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kvs_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kvs_arn()
     }
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

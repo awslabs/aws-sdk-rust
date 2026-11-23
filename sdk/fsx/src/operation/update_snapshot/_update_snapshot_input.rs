@@ -9,6 +9,8 @@ pub struct UpdateSnapshotInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub ontap_configuration: ::std::option::Option<crate::types::UpdateOntapSnapshotConfiguration>,
 }
 impl UpdateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -22,6 +24,10 @@ impl UpdateSnapshotInput {
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
+    }
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::UpdateOntapSnapshotConfiguration> {
+        self.ontap_configuration.as_ref()
     }
 }
 impl UpdateSnapshotInput {
@@ -38,6 +44,7 @@ pub struct UpdateSnapshotInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ontap_configuration: ::std::option::Option<crate::types::UpdateOntapSnapshotConfiguration>,
 }
 impl UpdateSnapshotInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -55,7 +62,6 @@ impl UpdateSnapshotInputBuilder {
         &self.client_request_token
     }
     /// <p>The name of the snapshot to update.</p>
-    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,20 @@ impl UpdateSnapshotInputBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub fn ontap_configuration(mut self, input: crate::types::UpdateOntapSnapshotConfiguration) -> Self {
+        self.ontap_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::UpdateOntapSnapshotConfiguration>) -> Self {
+        self.ontap_configuration = input;
+        self
+    }
+    /// <p>The configuration of the ONTAP snapshot that you are updating.</p>
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::UpdateOntapSnapshotConfiguration> {
+        &self.ontap_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
     pub fn build(
         self,
@@ -92,6 +112,7 @@ impl UpdateSnapshotInputBuilder {
             client_request_token: self.client_request_token,
             name: self.name,
             snapshot_id: self.snapshot_id,
+            ontap_configuration: self.ontap_configuration,
         })
     }
 }

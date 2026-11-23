@@ -22,7 +22,7 @@ impl crate::operation::get_key::builders::GetKeyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetKey`.
 ///
-/// <p>Returns a key value pair.</p>
+/// <p>Returns a key-value pair.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -98,17 +98,17 @@ impl GetKeyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn kvs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kvs_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kvs_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kvs_arn()
     }

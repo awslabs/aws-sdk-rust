@@ -9,6 +9,16 @@ pub(crate) fn reflens_describe_backups_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_cluster_peers_output_output_next_token(
+    input: &crate::operation::describe_cluster_peers::DescribeClusterPeersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_data_repository_associations_output_output_next_token(
     input: &crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -59,8 +69,48 @@ pub(crate) fn reflens_describe_s3_access_point_attachments_output_output_next_to
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_snapmirror_policies_output_output_next_token(
+    input: &crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_snapmirror_relationships_output_output_next_token(
+    input: &crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_snapshot_policies_output_output_next_token(
+    input: &crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_snapshots_output_output_next_token(
     input: &crate::operation::describe_snapshots::DescribeSnapshotsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_storage_virtual_machine_peers_output_output_next_token(
+    input: &crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -99,6 +149,13 @@ pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_cluster_peers_output_output_cluster_peers(
+    input: crate::operation::describe_cluster_peers::DescribeClusterPeersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterPeer>> {
+    let input = input.cluster_peers?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_s3_access_point_attachments_output_output_s3_access_point_attachments(
     input: crate::operation::describe_s3_access_point_attachments::DescribeS3AccessPointAttachmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::S3AccessPointAttachment>> {
@@ -106,10 +163,38 @@ pub(crate) fn lens_describe_s3_access_point_attachments_output_output_s3_access_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_snapmirror_policies_output_output_snapmirror_policies(
+    input: crate::operation::describe_snapmirror_policies::DescribeSnapmirrorPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SnapmirrorPolicy>> {
+    let input = input.snapmirror_policies?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_snapmirror_relationships_output_output_snapmirror_relationships(
+    input: crate::operation::describe_snapmirror_relationships::DescribeSnapmirrorRelationshipsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SnapmirrorRelationship>> {
+    let input = input.snapmirror_relationships?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_snapshot_policies_output_output_snapshot_policies(
+    input: crate::operation::describe_snapshot_policies::DescribeSnapshotPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SnapshotPolicy>> {
+    let input = input.snapshot_policies?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_snapshots_output_output_snapshots(
     input: crate::operation::describe_snapshots::DescribeSnapshotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
     let input = input.snapshots?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_storage_virtual_machine_peers_output_output_storage_virtual_machine_peers(
+    input: crate::operation::describe_storage_virtual_machine_peers::DescribeStorageVirtualMachinePeersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachinePeer>> {
+    let input = input.storage_virtual_machine_peers?;
     ::std::option::Option::Some(input)
 }
 

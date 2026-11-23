@@ -11,6 +11,8 @@ pub struct CreateSnapshotInput {
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub ontap_configuration: ::std::option::Option<crate::types::CreateOntapSnapshotConfiguration>,
 }
 impl CreateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -31,6 +33,10 @@ impl CreateSnapshotInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::CreateOntapSnapshotConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
 }
 impl CreateSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
@@ -47,6 +53,7 @@ pub struct CreateSnapshotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) ontap_configuration: ::std::option::Option<crate::types::CreateOntapSnapshotConfiguration>,
 }
 impl CreateSnapshotInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -113,6 +120,20 @@ impl CreateSnapshotInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub fn ontap_configuration(mut self, input: crate::types::CreateOntapSnapshotConfiguration) -> Self {
+        self.ontap_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::CreateOntapSnapshotConfiguration>) -> Self {
+        self.ontap_configuration = input;
+        self
+    }
+    /// <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateOntapSnapshotConfiguration> {
+        &self.ontap_configuration
+    }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(
         self,
@@ -122,6 +143,7 @@ impl CreateSnapshotInputBuilder {
             name: self.name,
             volume_id: self.volume_id,
             tags: self.tags,
+            ontap_configuration: self.ontap_configuration,
         })
     }
 }

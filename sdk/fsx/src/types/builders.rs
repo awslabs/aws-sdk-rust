@@ -9,6 +9,8 @@ pub use crate::types::_create_and_attach_s3_access_point_s3_configuration::Creat
 
 pub use crate::types::_s3_access_point_attachment::S3AccessPointAttachmentBuilder;
 
+pub use crate::types::_cluster_peer::ClusterPeerBuilder;
+
 pub use crate::types::_s3_data_repository_configuration::S3DataRepositoryConfigurationBuilder;
 
 pub use crate::types::_data_repository_association::DataRepositoryAssociationBuilder;
@@ -33,11 +35,25 @@ pub use crate::types::_create_file_system_open_zfs_configuration::CreateFileSyst
 
 pub use crate::types::_file_system::FileSystemBuilder;
 
+pub use crate::types::_snapmirror_policy::SnapmirrorPolicyBuilder;
+
+pub use crate::types::_create_snapmirror_source::CreateSnapmirrorSourceBuilder;
+
+pub use crate::types::_create_snapmirror_destination::CreateSnapmirrorDestinationBuilder;
+
+pub use crate::types::_snapmirror_relationship::SnapmirrorRelationshipBuilder;
+
+pub use crate::types::_create_ontap_snapshot_configuration::CreateOntapSnapshotConfigurationBuilder;
+
 pub use crate::types::_snapshot::SnapshotBuilder;
+
+pub use crate::types::_snapshot_policy::SnapshotPolicyBuilder;
 
 pub use crate::types::_create_svm_active_directory_configuration::CreateSvmActiveDirectoryConfigurationBuilder;
 
 pub use crate::types::_storage_virtual_machine::StorageVirtualMachineBuilder;
+
+pub use crate::types::_storage_virtual_machine_peer::StorageVirtualMachinePeerBuilder;
 
 pub use crate::types::_create_ontap_volume_configuration::CreateOntapVolumeConfigurationBuilder;
 
@@ -75,6 +91,8 @@ pub use crate::types::_update_file_system_ontap_configuration::UpdateFileSystemO
 
 pub use crate::types::_update_file_system_open_zfs_configuration::UpdateFileSystemOpenZfsConfigurationBuilder;
 
+pub use crate::types::_update_ontap_snapshot_configuration::UpdateOntapSnapshotConfigurationBuilder;
+
 pub use crate::types::_update_svm_active_directory_configuration::UpdateSvmActiveDirectoryConfigurationBuilder;
 
 pub use crate::types::_update_ontap_volume_configuration::UpdateOntapVolumeConfigurationBuilder;
@@ -104,6 +122,8 @@ pub use crate::types::_s3_access_point_open_zfs_configuration::S3AccessPointOpen
 pub use crate::types::_s3_access_point_ontap_configuration::S3AccessPointOntapConfigurationBuilder;
 
 pub use crate::types::_s3_access_point::S3AccessPointBuilder;
+
+pub use crate::types::_cluster_peer_authentication_status::ClusterPeerAuthenticationStatusBuilder;
 
 pub use crate::types::_auto_import_policy::AutoImportPolicyBuilder;
 
@@ -157,6 +177,22 @@ pub use crate::types::_ontap_file_system_configuration::OntapFileSystemConfigura
 
 pub use crate::types::_open_zfs_file_system_configuration::OpenZfsFileSystemConfigurationBuilder;
 
+pub use crate::types::_snapmirror_policy_retention_rule::SnapmirrorPolicyRetentionRuleBuilder;
+
+pub use crate::types::_snapmirror_source::SnapmirrorSourceBuilder;
+
+pub use crate::types::_snapmirror_destination::SnapmirrorDestinationBuilder;
+
+pub use crate::types::_snapmirror_relationship_policy::SnapmirrorRelationshipPolicyBuilder;
+
+pub use crate::types::_snapmirror_exported_snapshot::SnapmirrorExportedSnapshotBuilder;
+
+pub use crate::types::_snapmirror_transfer_state::SnapmirrorTransferStateBuilder;
+
+pub use crate::types::_ontap_snapshot_configuration::OntapSnapshotConfigurationBuilder;
+
+pub use crate::types::_snapshot_policy_schedule::SnapshotPolicyScheduleBuilder;
+
 pub use crate::types::_svm_active_directory_configuration::SvmActiveDirectoryConfigurationBuilder;
 
 pub use crate::types::_svm_endpoints::SvmEndpointsBuilder;
@@ -167,6 +203,8 @@ pub use crate::types::_create_snaplock_configuration::CreateSnaplockConfiguratio
 
 pub use crate::types::_create_aggregate_configuration::CreateAggregateConfigurationBuilder;
 
+pub use crate::types::_create_clone_configuration::CreateCloneConfigurationBuilder;
+
 pub use crate::types::_create_open_zfs_origin_snapshot_configuration::CreateOpenZfsOriginSnapshotConfigurationBuilder;
 
 pub use crate::types::_ontap_volume_configuration::OntapVolumeConfigurationBuilder;
@@ -175,11 +213,21 @@ pub use crate::types::_open_zfs_volume_configuration::OpenZfsVolumeConfiguration
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_cluster_peer_filter::ClusterPeerFilterBuilder;
+
 pub use crate::types::_data_repository_task_filter::DataRepositoryTaskFilterBuilder;
 
 pub use crate::types::_s3_access_point_attachments_filter::S3AccessPointAttachmentsFilterBuilder;
 
+pub use crate::types::_snapmirror_policy_filter::SnapmirrorPolicyFilterBuilder;
+
+pub use crate::types::_snapmirror_relationship_filter::SnapmirrorRelationshipFilterBuilder;
+
+pub use crate::types::_snapshot_policy_filter::SnapshotPolicyFilterBuilder;
+
 pub use crate::types::_snapshot_filter::SnapshotFilterBuilder;
+
+pub use crate::types::_storage_virtual_machine_peer_filter::StorageVirtualMachinePeerFilterBuilder;
 
 pub use crate::types::_storage_virtual_machine_filter::StorageVirtualMachineFilterBuilder;
 
@@ -191,6 +239,8 @@ pub use crate::types::_update_file_system_lustre_metadata_configuration::UpdateF
 
 pub use crate::types::_update_snaplock_configuration::UpdateSnaplockConfigurationBuilder;
 
+pub use crate::types::_update_clone_configuration::UpdateCloneConfigurationBuilder;
+
 pub use crate::types::_administrative_action_failure_details::AdministrativeActionFailureDetailsBuilder;
 
 pub use crate::types::_open_zfs_posix_file_system_user::OpenZfsPosixFileSystemUserBuilder;
@@ -198,6 +248,8 @@ pub use crate::types::_open_zfs_posix_file_system_user::OpenZfsPosixFileSystemUs
 pub use crate::types::_ontap_unix_file_system_user::OntapUnixFileSystemUserBuilder;
 
 pub use crate::types::_ontap_windows_file_system_user::OntapWindowsFileSystemUserBuilder;
+
+pub use crate::types::_ontap_error::OntapErrorBuilder;
 
 pub use crate::types::_file_cache_nfs_configuration::FileCacheNfsConfigurationBuilder;
 
@@ -213,6 +265,8 @@ pub use crate::types::_file_system_lustre_metadata_configuration::FileSystemLust
 
 pub use crate::types::_file_system_endpoints::FileSystemEndpointsBuilder;
 
+pub use crate::types::_snapshot_policy_retention_period::SnapshotPolicyRetentionPeriodBuilder;
+
 pub use crate::types::_svm_endpoint::SvmEndpointBuilder;
 
 pub use crate::types::_autocommit_period::AutocommitPeriodBuilder;
@@ -226,6 +280,8 @@ pub use crate::types::_open_zfs_user_or_group_quota::OpenZfsUserOrGroupQuotaBuil
 pub use crate::types::_snaplock_configuration::SnaplockConfigurationBuilder;
 
 pub use crate::types::_aggregate_configuration::AggregateConfigurationBuilder;
+
+pub use crate::types::_clone_configuration::CloneConfigurationBuilder;
 
 pub use crate::types::_open_zfs_origin_snapshot_configuration::OpenZfsOriginSnapshotConfigurationBuilder;
 

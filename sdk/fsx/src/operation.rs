@@ -19,6 +19,9 @@ pub mod create_and_attach_s3_access_point;
 /// Types for the `CreateBackup` operation.
 pub mod create_backup;
 
+/// Types for the `CreateClusterPeer` operation.
+pub mod create_cluster_peer;
+
 /// Types for the `CreateDataRepositoryAssociation` operation.
 pub mod create_data_repository_association;
 
@@ -34,11 +37,23 @@ pub mod create_file_system;
 /// Types for the `CreateFileSystemFromBackup` operation.
 pub mod create_file_system_from_backup;
 
+/// Types for the `CreateSnapmirrorPolicy` operation.
+pub mod create_snapmirror_policy;
+
+/// Types for the `CreateSnapmirrorRelationship` operation.
+pub mod create_snapmirror_relationship;
+
 /// Types for the `CreateSnapshot` operation.
 pub mod create_snapshot;
 
+/// Types for the `CreateSnapshotPolicy` operation.
+pub mod create_snapshot_policy;
+
 /// Types for the `CreateStorageVirtualMachine` operation.
 pub mod create_storage_virtual_machine;
+
+/// Types for the `CreateStorageVirtualMachinePeer` operation.
+pub mod create_storage_virtual_machine_peer;
 
 /// Types for the `CreateVolume` operation.
 pub mod create_volume;
@@ -49,6 +64,9 @@ pub mod create_volume_from_backup;
 /// Types for the `DeleteBackup` operation.
 pub mod delete_backup;
 
+/// Types for the `DeleteClusterPeer` operation.
+pub mod delete_cluster_peer;
+
 /// Types for the `DeleteDataRepositoryAssociation` operation.
 pub mod delete_data_repository_association;
 
@@ -58,17 +76,32 @@ pub mod delete_file_cache;
 /// Types for the `DeleteFileSystem` operation.
 pub mod delete_file_system;
 
+/// Types for the `DeleteSnapmirrorPolicy` operation.
+pub mod delete_snapmirror_policy;
+
+/// Types for the `DeleteSnapmirrorRelationship` operation.
+pub mod delete_snapmirror_relationship;
+
 /// Types for the `DeleteSnapshot` operation.
 pub mod delete_snapshot;
 
+/// Types for the `DeleteSnapshotPolicy` operation.
+pub mod delete_snapshot_policy;
+
 /// Types for the `DeleteStorageVirtualMachine` operation.
 pub mod delete_storage_virtual_machine;
+
+/// Types for the `DeleteStorageVirtualMachinePeer` operation.
+pub mod delete_storage_virtual_machine_peer;
 
 /// Types for the `DeleteVolume` operation.
 pub mod delete_volume;
 
 /// Types for the `DescribeBackups` operation.
 pub mod describe_backups;
+
+/// Types for the `DescribeClusterPeers` operation.
+pub mod describe_cluster_peers;
 
 /// Types for the `DescribeDataRepositoryAssociations` operation.
 pub mod describe_data_repository_associations;
@@ -91,8 +124,20 @@ pub mod describe_s3_access_point_attachments;
 /// Types for the `DescribeSharedVpcConfiguration` operation.
 pub mod describe_shared_vpc_configuration;
 
+/// Types for the `DescribeSnapmirrorPolicies` operation.
+pub mod describe_snapmirror_policies;
+
+/// Types for the `DescribeSnapmirrorRelationships` operation.
+pub mod describe_snapmirror_relationships;
+
+/// Types for the `DescribeSnapshotPolicies` operation.
+pub mod describe_snapshot_policies;
+
 /// Types for the `DescribeSnapshots` operation.
 pub mod describe_snapshots;
+
+/// Types for the `DescribeStorageVirtualMachinePeers` operation.
+pub mod describe_storage_virtual_machine_peers;
 
 /// Types for the `DescribeStorageVirtualMachines` operation.
 pub mod describe_storage_virtual_machines;
@@ -124,6 +169,9 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateClusterPeer` operation.
+pub mod update_cluster_peer;
+
 /// Types for the `UpdateDataRepositoryAssociation` operation.
 pub mod update_data_repository_association;
 
@@ -136,11 +184,23 @@ pub mod update_file_system;
 /// Types for the `UpdateSharedVpcConfiguration` operation.
 pub mod update_shared_vpc_configuration;
 
+/// Types for the `UpdateSnapmirrorPolicy` operation.
+pub mod update_snapmirror_policy;
+
+/// Types for the `UpdateSnapmirrorRelationship` operation.
+pub mod update_snapmirror_relationship;
+
 /// Types for the `UpdateSnapshot` operation.
 pub mod update_snapshot;
 
+/// Types for the `UpdateSnapshotPolicy` operation.
+pub mod update_snapshot_policy;
+
 /// Types for the `UpdateStorageVirtualMachine` operation.
 pub mod update_storage_virtual_machine;
+
+/// Types for the `UpdateStorageVirtualMachinePeer` operation.
+pub mod update_storage_virtual_machine_peer;
 
 /// Types for the `UpdateVolume` operation.
 pub mod update_volume;

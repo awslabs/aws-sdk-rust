@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeysInput {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub kvs_arn: ::std::option::Option<::std::string::String>,
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListKeysInput {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn kvs_arn(&self) -> ::std::option::Option<&str> {
         self.kvs_arn.as_deref()
     }
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,32 +40,32 @@ pub struct ListKeysInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListKeysInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     /// This field is required.
     pub fn kvs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kvs_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kvs_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the key value store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kvs_arn
     }
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
+    /// <p>If <code>nextToken</code> is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

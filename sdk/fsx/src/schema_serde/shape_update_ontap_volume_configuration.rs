@@ -90,6 +90,16 @@ static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES: ::aws_smithy_schema:
     "SizeInBytes",
     8,
 );
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_CLONE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$CloneConfiguration",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CloneConfiguration",
+    9,
+);
 static UPDATEONTAPVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.fsx#UpdateOntapVolumeConfiguration",
@@ -107,6 +117,7 @@ static UPDATEONTAPVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'stati
         &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS,
         &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SNAPLOCK_CONFIGURATION,
         &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_CLONE_CONFIGURATION,
     ],
 );
 impl crate::types::UpdateOntapVolumeConfiguration {
@@ -149,6 +160,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UpdateOnta
         }
         if let Some(ref val) = self.size_in_bytes {
             ser.write_long(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.clone_configuration {
+            ser.write_struct(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_CLONE_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -228,6 +242,13 @@ impl crate::types::builders::UpdateOntapVolumeConfigurationBuilder {
                         deser.read_null()?;
                     } else {
                         self.size_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.clone_configuration = Some(crate::types::UpdateCloneConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

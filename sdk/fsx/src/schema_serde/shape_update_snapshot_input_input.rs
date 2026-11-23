@@ -29,6 +29,16 @@ static UPDATESNAPSHOTINPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'stat
     "SnapshotId",
     2,
 );
+static UPDATESNAPSHOTINPUT_MEMBER_ONTAP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateSnapshotInput$OntapConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapConfiguration",
+    3,
+);
 static UPDATESNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.fsx.synthetic#UpdateSnapshotInput",
@@ -40,6 +50,7 @@ static UPDATESNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &UPDATESNAPSHOTINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
         &UPDATESNAPSHOTINPUT_MEMBER_NAME,
         &UPDATESNAPSHOTINPUT_MEMBER_SNAPSHOT_ID,
+        &UPDATESNAPSHOTINPUT_MEMBER_ONTAP_CONFIGURATION,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -66,6 +77,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.snapshot_id {
             ser.write_string(&UPDATESNAPSHOTINPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.ontap_configuration {
+            ser.write_struct(&UPDATESNAPSHOTINPUT_MEMBER_ONTAP_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -105,6 +119,13 @@ impl crate::operation::update_snapshot::builders::UpdateSnapshotInputBuilder {
                         self.snapshot_id = Some(deser.read_string(member)?);
                     }
                 }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_configuration = Some(crate::types::UpdateOntapSnapshotConfiguration::deserialize(deser)?);
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -119,7 +140,6 @@ impl crate::operation::update_snapshot::UpdateSnapshotInput {
     ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
         let mut builder = Self::builder();
         builder.deserialize_members(deserializer)?;
-        builder.name = builder.name.or(Some(String::new()));
         builder.snapshot_id = builder.snapshot_id.or(Some(String::new()));
         builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
     }
