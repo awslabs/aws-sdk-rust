@@ -586,7 +586,7 @@ pub enum AddCustomRoutingEndpointsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>You can't use both of those options.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The endpoint that you specified doesn't exist.</p>
+    /// <p>The endpoint that you specified already exists.</p>
     EndpointAlreadyExistsException(crate::types::error::EndpointAlreadyExistsException),
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::types::error::EndpointGroupNotFoundException),

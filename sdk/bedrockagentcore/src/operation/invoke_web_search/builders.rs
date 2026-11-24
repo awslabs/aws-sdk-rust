@@ -166,4 +166,21 @@ impl InvokeWebSearchFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::WebSearchFilters> {
         self.inner.get_filters()
     }
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub fn user_location(mut self, input: crate::types::WebSearchUserLocation) -> Self {
+        self.inner = self.inner.user_location(input);
+        self
+    }
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub fn set_user_location(mut self, input: ::std::option::Option<crate::types::WebSearchUserLocation>) -> Self {
+        self.inner = self.inner.set_user_location(input);
+        self
+    }
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub fn get_user_location(&self) -> &::std::option::Option<crate::types::WebSearchUserLocation> {
+        self.inner.get_user_location()
+    }
 }

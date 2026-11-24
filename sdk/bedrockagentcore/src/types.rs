@@ -23,6 +23,8 @@ pub use crate::types::_invoke_harness_stream_output::InvokeHarnessStreamOutput;
 
 pub use crate::types::_web_search_filters::WebSearchFilters;
 
+pub use crate::types::_web_search_user_location::WebSearchUserLocation;
+
 pub use crate::types::_invoke_agent_runtime_command_request_body::InvokeAgentRuntimeCommandRequestBody;
 
 pub use crate::types::_invoke_agent_runtime_command_stream_output::InvokeAgentRuntimeCommandStreamOutput;
@@ -1506,6 +1508,8 @@ mod _view_port;
 mod _web_search_filters;
 
 mod _web_search_result;
+
+mod _web_search_user_location;
 
 /// Builders
 pub mod builders;

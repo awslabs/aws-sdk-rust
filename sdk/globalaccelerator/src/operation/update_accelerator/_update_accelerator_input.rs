@@ -9,7 +9,9 @@ pub struct UpdateAcceleratorInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
@@ -28,7 +30,9 @@ impl UpdateAcceleratorInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
     pub fn ip_addresses(&self) -> &[::std::string::String] {
@@ -105,19 +109,25 @@ impl UpdateAcceleratorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.ip_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
     }

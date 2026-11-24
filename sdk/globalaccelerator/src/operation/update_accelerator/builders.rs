@@ -168,17 +168,23 @@ impl UpdateAcceleratorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_addresses(input.into());
         self
     }
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ip_addresses(input);
         self
     }
-    /// <p>The IP addresses for an accelerator.</p>
+    /// <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do not include the /32 suffix.</p>
+    /// <p>You can update IP addresses only for an accelerator that you created with at least one BYOIP address. You can't update an accelerator that has only IP addresses provided by Global Accelerator to use BYOIP addresses. Instead, create a new accelerator with your BYOIP addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ip_addresses()
     }

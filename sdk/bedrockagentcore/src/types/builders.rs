@@ -3,6 +3,8 @@ pub use crate::types::_tool_arguments::ToolArgumentsBuilder;
 
 pub use crate::types::_web_search_filters::WebSearchFiltersBuilder;
 
+pub use crate::types::_web_search_user_location::WebSearchUserLocationBuilder;
+
 pub use crate::types::_invoke_agent_runtime_command_request_body::InvokeAgentRuntimeCommandRequestBodyBuilder;
 
 pub use crate::types::_view_port::ViewPortBuilder;

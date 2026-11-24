@@ -19,7 +19,7 @@ pub enum Error {
     ByoipCidrNotFoundException(crate::types::error::ByoipCidrNotFoundException),
     /// <p>You can't use both of those options.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The endpoint that you specified doesn't exist.</p>
+    /// <p>The endpoint that you specified already exists.</p>
     EndpointAlreadyExistsException(crate::types::error::EndpointAlreadyExistsException),
     /// <p>The endpoint group that you specified already exists.</p>
     EndpointGroupAlreadyExistsException(crate::types::error::EndpointGroupAlreadyExistsException),

@@ -12,6 +12,9 @@ pub struct InvokeWebSearchInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filters to apply to the search results.</p>
     pub filters: ::std::option::Option<crate::types::WebSearchFilters>,
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub user_location: ::std::option::Option<crate::types::WebSearchUserLocation>,
 }
 impl InvokeWebSearchInput {
     /// <p>The identifier of the web search tool to invoke. The Amazon Web Services-managed web search tool is <code>web-search.v1</code>.</p>
@@ -30,6 +33,11 @@ impl InvokeWebSearchInput {
     pub fn filters(&self) -> ::std::option::Option<&crate::types::WebSearchFilters> {
         self.filters.as_ref()
     }
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub fn user_location(&self) -> ::std::option::Option<&crate::types::WebSearchUserLocation> {
+        self.user_location.as_ref()
+    }
 }
 impl InvokeWebSearchInput {
     /// Creates a new builder-style object to manufacture [`InvokeWebSearchInput`](crate::operation::invoke_web_search::InvokeWebSearchInput).
@@ -46,6 +54,7 @@ pub struct InvokeWebSearchInputBuilder {
     pub(crate) search_query: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<crate::types::WebSearchFilters>,
+    pub(crate) user_location: ::std::option::Option<crate::types::WebSearchUserLocation>,
 }
 impl InvokeWebSearchInputBuilder {
     /// <p>The identifier of the web search tool to invoke. The Amazon Web Services-managed web search tool is <code>web-search.v1</code>.</p>
@@ -106,6 +115,23 @@ impl InvokeWebSearchInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::WebSearchFilters> {
         &self.filters
     }
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub fn user_location(mut self, input: crate::types::WebSearchUserLocation) -> Self {
+        self.user_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub fn set_user_location(mut self, input: ::std::option::Option<crate::types::WebSearchUserLocation>) -> Self {
+        self.user_location = input;
+        self
+    }
+    /// <p><code>userLocation</code> may allow for Web Search results to be refined for that location. This is done by supplying a <code>country</code>. The field is optional.</p>
+    /// <p>The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and user-assigned codes such as <code>UK</code> and <code>XK</code>, empty or whitespace-only values are rejected. An omitted value is treated as absent. Without location, as a fallback Web Search may use your query to localize results or default to <code>en_US</code>.</p>
+    pub fn get_user_location(&self) -> &::std::option::Option<crate::types::WebSearchUserLocation> {
+        &self.user_location
+    }
     /// Consumes the builder and constructs a [`InvokeWebSearchInput`](crate::operation::invoke_web_search::InvokeWebSearchInput).
     pub fn build(
         self,
@@ -115,6 +141,7 @@ impl InvokeWebSearchInputBuilder {
             search_query: self.search_query,
             max_results: self.max_results,
             filters: self.filters,
+            user_location: self.user_location,
         })
     }
 }
