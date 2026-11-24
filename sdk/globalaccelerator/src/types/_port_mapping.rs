@@ -8,7 +8,7 @@ pub struct PortMapping {
     pub accelerator_port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address of the VPC subnet (the subnet ID).</p>
+    /// <p>The ID of the virtual private cloud (VPC) subnet.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
     pub destination_socket_address: ::std::option::Option<crate::types::SocketAddress>,
@@ -26,7 +26,7 @@ impl PortMapping {
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
     }
-    /// <p>The IP address of the VPC subnet (the subnet ID).</p>
+    /// <p>The ID of the virtual private cloud (VPC) subnet.</p>
     pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
@@ -92,17 +92,17 @@ impl PortMappingBuilder {
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_group_arn
     }
-    /// <p>The IP address of the VPC subnet (the subnet ID).</p>
+    /// <p>The ID of the virtual private cloud (VPC) subnet.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP address of the VPC subnet (the subnet ID).</p>
+    /// <p>The ID of the virtual private cloud (VPC) subnet.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_id = input;
         self
     }
-    /// <p>The IP address of the VPC subnet (the subnet ID).</p>
+    /// <p>The ID of the virtual private cloud (VPC) subnet.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_id
     }

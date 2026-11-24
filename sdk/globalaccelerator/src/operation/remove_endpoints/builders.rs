@@ -23,7 +23,7 @@ impl crate::operation::remove_endpoints::builders::RemoveEndpointsInputBuilder {
 /// Fluent builder constructing a request to `RemoveEndpoints`.
 ///
 /// <p>Remove endpoints from an endpoint group.</p>
-/// <p>The <code>RemoveEndpoints</code> API operation is the recommended option for removing endpoints. The alternative is to remove endpoints by updating an endpoint group by using the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a> API operation. There are two advantages to using <code>AddEndpoints</code> to remove endpoints instead:</p>
+/// <p>The <code>RemoveEndpoints</code> API operation is the recommended option for removing endpoints. The alternative is to remove endpoints by updating an endpoint group by using the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a> API operation. There are two advantages to using <code>RemoveEndpoints</code> to remove endpoints instead:</p>
 /// <ul>
 /// <li>
 /// <p>It's more convenient, because you only need to specify the endpoints that you want to remove. With the <code>UpdateEndpointGroup</code> API operation, you must specify all of the endpoints in the endpoint group except the ones that you want to remove from the group.</p></li>

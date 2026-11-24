@@ -547,6 +547,8 @@ pub(crate) mod shape_web_search_filters;
 
 pub(crate) mod shape_web_search_result_list;
 
+pub(crate) mod shape_web_search_user_location;
+
 pub(crate) mod shape_ab_test_summary;
 
 pub(crate) mod shape_actor_summary;

@@ -18,5 +18,11 @@ pub fn ser_invoke_web_search_input_input(
     if let Some(var_4) = &input.search_query {
         object.key("searchQuery").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.user_location {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("userLocation").start_object();
+        crate::protocol_serde::shape_web_search_user_location::ser_web_search_user_location(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
