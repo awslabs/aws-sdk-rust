@@ -15,6 +15,7 @@ aws-smithy-types-convert = { version = "VERSION", features = ["convert-chrono"] 
 Currently, the following conversions are supported:
 
 * `convert-chrono`: Conversions between `DateTime` and [chrono](https://docs.rs/chrono/latest/chrono/).
+* `convert-jiff-1-x`: Conversions between `DateTime` and [jiff](https://docs.rs/jiff/latest/jiff/).
 * `convert-time`: Conversions between `DateTime` and [time](https://docs.rs/time/latest/time/).
 
 _Note:_ Conversions to and from [`SystemTime`](https://doc.rust-lang.org/std/time/struct.SystemTime.html) are built

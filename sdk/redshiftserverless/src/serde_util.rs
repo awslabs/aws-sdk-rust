@@ -265,25 +265,3 @@ pub(crate) fn update_workgroup_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn create_snapshot_schedule_action_parameters_correct_errors(
-    mut builder: crate::types::builders::CreateSnapshotScheduleActionParametersBuilder,
-) -> crate::types::builders::CreateSnapshotScheduleActionParametersBuilder {
-    if builder.namespace_name.is_none() {
-        builder.namespace_name = Some(Default::default())
-    }
-    if builder.snapshot_name_prefix.is_none() {
-        builder.snapshot_name_prefix = Some(Default::default())
-    }
-    builder
-}

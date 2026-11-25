@@ -40,26 +40,3 @@ pub(crate) fn environment_member_correct_errors(
     }
     builder
 }
-
-pub(crate) fn environment_correct_errors(mut builder: crate::types::builders::EnvironmentBuilder) -> crate::types::builders::EnvironmentBuilder {
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::EnvironmentType>().ok()
-    }
-    if builder.arn.is_none() {
-        builder.arn = Some(Default::default())
-    }
-    if builder.owner_arn.is_none() {
-        builder.owner_arn = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    builder
-}

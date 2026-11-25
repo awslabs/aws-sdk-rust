@@ -7,10 +7,3 @@ pub(crate) fn throttling_exception_correct_errors(
     }
     builder
 }
-
-pub(crate) fn target_correct_errors(mut builder: crate::types::builders::TargetBuilder) -> crate::types::builders::TargetBuilder {
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::TargetType>().ok()
-    }
-    builder
-}

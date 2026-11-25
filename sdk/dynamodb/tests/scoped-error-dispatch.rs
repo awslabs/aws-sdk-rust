@@ -18,20 +18,13 @@
 //! in the service-wide error registry (it is modeled on `PutItem`).
 //!
 //! This behavior only exists on the schema-serde path, which is generated for
-//! DynamoDB only while its protocol is on `SchemaSerdeAllowlist`. The tests
-//! therefore compile and run only while that protocol is enabled (it currently
-//! is not, the allowlist being empty, so they are **disabled**).
+//! DynamoDB only while it is on `SchemaSerdeAllowlist`. If DynamoDB is removed
+//! from the allowlist, gate this file with `#![cfg(any())]` until it returns.
 //!
 //! Note these tests would still *compile* on the legacy path — they reference
 //! only ordinary generated types — but the registry-backed `Error::source()`
 //! enrichment they assert does not exist there, so they would fail rather than
 //! fail to build.
-//!
-//! TODO(schema-serde): Rust cannot query the codegen allowlist, so this gating
-//! is manual — remove the `#![cfg(any())]` below to re-enable these tests when
-//! awsJson1_0 (or DynamoDB specifically) is re-added to the allowlist.
-
-#![cfg(any())]
 
 use aws_sdk_dynamodb::config::{
     BehaviorVersion, Credentials, Region, StalledStreamProtectionConfig,

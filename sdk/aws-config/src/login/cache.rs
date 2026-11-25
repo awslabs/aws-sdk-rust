@@ -15,6 +15,7 @@ use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
 use aws_types::os_shim_internal::Env;
 use aws_types::os_shim_internal::Fs;
+use aws_types::region::Region;
 use sha2::Digest;
 use sha2::Sha256;
 use std::path::Path;
@@ -119,6 +120,9 @@ pub(super) async fn save_cached_token(
     }
     writer.key("clientId").string(&token.client_id);
     writer.key("dpopKey").string(token.dpop_key.as_str());
+    if let Some(region) = &token.sign_in_region {
+        writer.key("signInRegion").string(region.as_ref());
+    }
     writer.finish();
 
     fs.write(&path, out.as_bytes())
@@ -148,7 +152,8 @@ fn parse_cached_token(cached_token_file_contents: &[u8]) -> Result<LoginToken, L
           "refreshToken": "<opaque string>",
           "idToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.EkN-DOsnsuRjRO6BxXemmJDm3HbxrbRzXglbN2S4sOkopdU4IsDxTI8jO19W_A4K8ZPJijNLis4EZsHeY559a4DFOd50_OqgHs3UjpbCqhpuU5K_TGOj3pY-TJXSw",
           "clientId": "arn:aws:signin:::devtools/same-device",
-          "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIFDZHUzOG1Pzq+6F0mjMlOSp1syN9LRPBuHMoCFXTcXhoAoGCCqGSM49\nAwEHoUQDQgAE9qhj+KtcdHj1kVgwxWWWw++tqoh7H7UHs7oXh8jBbgF47rrYGC+t\ndjiIaHK3dBvvdE7MGj5HsepzLm3Kj91bqA==\n-----END EC PRIVATE KEY-----\n"
+          "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIFDZHUzOG1Pzq+6F0mjMlOSp1syN9LRPBuHMoCFXTcXhoAoGCCqGSM49\nAwEHoUQDQgAE9qhj+KtcdHj1kVgwxWWWw++tqoh7H7UHs7oXh8jBbgF47rrYGC+t\ndjiIaHK3dBvvdE7MGj5HsepzLm3Kj91bqA==\n-----END EC PRIVATE KEY-----\n",
+          "signInRegion": "us-west-2"
         }
     */
 
@@ -162,6 +167,7 @@ fn parse_cached_token(cached_token_file_contents: &[u8]) -> Result<LoginToken, L
     let mut identity_token = None;
     let mut client_id = None;
     let mut dpop_key = None;
+    let mut sign_in_region = None;
 
     let mut tokens = json_token_iter(cached_token_file_contents).peekable();
     if !matches!(tokens.next().transpose()?, Some(Token::StartObject { .. })) {
@@ -257,6 +263,23 @@ fn parse_cached_token(cached_token_file_contents: &[u8]) -> Result<LoginToken, L
                             dpop_key =
                                 Some(Zeroizing::new(value.to_unescaped()?.replace("\\n", "\n")));
                         }
+                        (k, Token::ValueString { value, .. })
+                            if k.eq_ignore_ascii_case("signInRegion") =>
+                        {
+                            let value = value.to_unescaped()?;
+                            let trimmed = value.trim();
+                            sign_in_region = if is_valid_region(trimmed) {
+                                Some(Region::new(trimmed.to_owned()))
+                            } else {
+                                if !trimmed.is_empty() {
+                                    tracing::warn!(
+                                        sign_in_region = ?trimmed,
+                                        "ignoring `signInRegion` in the cached Login token because it is not a valid region"
+                                    );
+                                }
+                                None
+                            };
+                        }
                         _ => {}
                     }
                 }
@@ -296,6 +319,20 @@ fn parse_cached_token(cached_token_file_contents: &[u8]) -> Result<LoginToken, L
         refresh_token,
         client_id,
         dpop_key,
+        sign_in_region,
+    })
+}
+
+/// Whether `region` can be sent as the Sign-In `Region` endpoint parameter. The generated
+/// endpoint parameter validation rejects a region that is not a valid host label (dots
+/// allowed), even when an endpoint override picks the host.
+fn is_valid_region(region: &str) -> bool {
+    region.split('.').all(|label| {
+        (1..=63).contains(&label.len())
+            && !label.starts_with('-')
+            && label
+                .bytes()
+                .all(|b| b.is_ascii_alphanumeric() || b == b'-')
     })
 }
 
@@ -364,6 +401,84 @@ mod tests {
             "-----BEGIN EC PRIVATE KEY-----\ntest\n-----END EC PRIVATE KEY-----\n",
             token.dpop_key.as_str()
         );
+    }
+
+    /// Build a valid token file with `extra` inserted as additional top-level members
+    fn token_with(extra: &str) -> String {
+        format!(
+            r#"{{
+            "accessToken": {{
+                "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+                "secretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+                "sessionToken": "session-token",
+                "accountId": "012345678901",
+                "expiresAt": "2021-12-25T21:30:00Z"
+            }},
+            "tokenType": "aws_sigv4",
+            "refreshToken": "refresh-token-value",
+            "clientId": "arn:aws:signin:::devtools/same-device",
+            {extra}
+            "dpopKey": "-----BEGIN EC PRIVATE KEY-----\ntest\n-----END EC PRIVATE KEY-----\n"
+        }}"#
+        )
+    }
+
+    #[test]
+    fn parse_sign_in_region() {
+        let region = |extra: &str| {
+            parse_cached_token(token_with(extra).as_bytes())
+                .expect("success")
+                .sign_in_region
+        };
+        assert_eq!(
+            Some(Region::from_static("eu-west-1")),
+            region(r#""signInRegion": "eu-west-1","#)
+        );
+        assert_eq!(
+            Some(Region::from_static("eu-west-1")),
+            region(r#""signInRegion": " eu-west-1 ","#)
+        );
+        assert_eq!(None, region(""));
+        assert_eq!(None, region(r#""signInRegion": "","#));
+        assert_eq!(None, region(r#""signInRegion": "   ","#));
+        assert_eq!(None, region(r#""signInRegion": null,"#));
+        assert_eq!(None, region(r#""signInRegion": 5,"#));
+        // Not a valid host label, so it can't be sent as the `Region` endpoint parameter
+        assert_eq!(None, region(r#""signInRegion": "bad region!","#));
+        assert_eq!(None, region(r#""signInRegion": "-eu-west-1","#));
+        assert_eq!(None, region(r#""signInRegion": "eu-west-1.","#));
+    }
+
+    #[tokio::test]
+    async fn save_round_trips_sign_in_region() {
+        use std::collections::HashMap;
+        let env = Env::from_slice(&[("HOME", "/home/user")]);
+        let session = "arn:aws:iam::0123456789012:user/Admin";
+        let path = "/home/user/.aws/login/cache/36db1d138ff460920374e4c3d8e01f53f9f73537e89c88d639f68393df0e2726.json";
+
+        for (extra, expected) in [
+            (r#""signInRegion": "eu-west-1","#, Some("eu-west-1")),
+            ("", None),
+        ] {
+            let fs = Fs::from_map(HashMap::<String, Vec<u8>>::new());
+            let token = parse_cached_token(token_with(extra).as_bytes()).expect("success");
+            save_cached_token(&env, &fs, session, &token)
+                .await
+                .expect("saved");
+
+            let saved = fs.read_to_end(path).await.expect("cache file exists");
+            let json: serde_json::Value = serde_json::from_slice(&saved).expect("valid json");
+            assert_eq!(
+                expected,
+                json.as_object()
+                    .unwrap()
+                    .get("signInRegion")
+                    .map(|v| v.as_str().expect("string"))
+            );
+
+            let reparsed = parse_cached_token(&saved).expect("success");
+            assert_eq!(expected.map(Region::from_static), reparsed.sign_in_region);
+        }
     }
 
     #[test]

@@ -118,6 +118,8 @@ impl GetWebACLForResourceFluentBuilder {
     /// <li>
     /// <p>For an Application Load Balancer: <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code></p></li>
     /// <li>
+    /// <p>For an Elastic Load Balancing for Envoy proxy: <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:proxy/<i>proxy-name</i>:<i>proxy-id</i> </code></p></li>
+    /// <li>
     /// <p>For an Amazon API Gateway REST API: <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code></p></li>
     /// <li>
     /// <p>For an AppSync GraphQL API: <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code></p></li>
@@ -142,6 +144,8 @@ impl GetWebACLForResourceFluentBuilder {
     /// <li>
     /// <p>For an Application Load Balancer: <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code></p></li>
     /// <li>
+    /// <p>For an Elastic Load Balancing for Envoy proxy: <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:proxy/<i>proxy-name</i>:<i>proxy-id</i> </code></p></li>
+    /// <li>
     /// <p>For an Amazon API Gateway REST API: <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code></p></li>
     /// <li>
     /// <p>For an AppSync GraphQL API: <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code></p></li>
@@ -165,6 +169,8 @@ impl GetWebACLForResourceFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>For an Application Load Balancer: <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code></p></li>
+    /// <li>
+    /// <p>For an Elastic Load Balancing for Envoy proxy: <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:proxy/<i>proxy-name</i>:<i>proxy-id</i> </code></p></li>
     /// <li>
     /// <p>For an Amazon API Gateway REST API: <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code></p></li>
     /// <li>

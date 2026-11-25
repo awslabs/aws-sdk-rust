@@ -4,7 +4,8 @@
  */
 
 //! Conversions from [`DateTime`] to the types in the
-//! [`time`](https://crates.io/crates/time) or
+//! [`jiff`](https://crates.io/crates/jiff),
+//! [`time`](https://crates.io/crates/time), or
 //! [`chrono`](https://crates.io/crates/chrono)
 //! crates.
 
@@ -53,8 +54,31 @@ impl fmt::Display for Error {
     }
 }
 
-/// Adds functions to [`DateTime`] to convert it to `time` or `chrono` types.
+/// Adds functions to [`DateTime`] to convert it to `jiff`, `time`, or `chrono` types.
 ///
+#[cfg_attr(
+    feature = "convert-jiff-1-x",
+    doc = r##"
+# Example with `jiff`
+
+Make sure your `Cargo.toml` enables the `convert-jiff-1-x` feature:
+```toml
+[dependencies]
+aws-smithy-types-convert = { version = "VERSION", features = ["convert-jiff-1-x"] }
+```
+
+Then import [`DateTimeExt`] to use the conversions:
+```rust
+# use aws_smithy_types::DateTime;
+use aws_smithy_types_convert::date_time::DateTimeExt;
+use jiff::Timestamp;
+
+let timestamp: Timestamp = DateTime::from_secs(5).to_jiff()?;
+let date_time: DateTime = DateTime::from_jiff(timestamp);
+# Ok::<(), aws_smithy_types_convert::date_time::Error>(())
+```
+"##
+)]
 #[cfg_attr(
     feature = "convert-time",
     doc = r##"
@@ -103,6 +127,18 @@ let date_time: DateTime = DateTime::from_chrono_utc(chrono_date_time);
 "##
 )]
 pub trait DateTimeExt {
+    /// Converts a [`DateTime`] to a [`jiff::Timestamp`].
+    ///
+    /// Returns an [`Error`] if the time is after [`jiff::Timestamp::MAX`]
+    /// (`9999-12-30T22:00:00.999999999Z`) or before [`jiff::Timestamp::MIN`]
+    /// (`-009999-01-02T01:59:59Z`).
+    #[cfg(feature = "convert-jiff-1-x")]
+    fn to_jiff(&self) -> Result<jiff::Timestamp, Error>;
+
+    /// Converts a [`jiff::Timestamp`] to a [`DateTime`].
+    #[cfg(feature = "convert-jiff-1-x")]
+    fn from_jiff(timestamp: jiff::Timestamp) -> DateTime;
+
     /// Converts a [`DateTime`] to a [`chrono::DateTime`] with timezone UTC.
     #[cfg(feature = "convert-chrono")]
     fn to_chrono_utc(&self) -> Result<chrono::DateTime<chrono::Utc>, Error>;
@@ -128,6 +164,17 @@ pub trait DateTimeExt {
 }
 
 impl DateTimeExt for DateTime {
+    #[cfg(feature = "convert-jiff-1-x")]
+    fn to_jiff(&self) -> Result<jiff::Timestamp, Error> {
+        jiff::Timestamp::from_nanosecond(self.as_nanos()).map_err(Error::out_of_range)
+    }
+
+    #[cfg(feature = "convert-jiff-1-x")]
+    fn from_jiff(timestamp: jiff::Timestamp) -> DateTime {
+        DateTime::from_nanos(timestamp.as_nanosecond())
+            .expect("DateTime supports a greater range than Timestamp")
+    }
+
     #[cfg(feature = "convert-chrono")]
     fn to_chrono_utc(&self) -> Result<chrono::DateTime<chrono::Utc>, Error> {
         match chrono::DateTime::from_timestamp(self.secs(), self.subsec_nanos()) {
@@ -164,14 +211,94 @@ impl DateTimeExt for DateTime {
     }
 }
 
-#[cfg(all(test, any(feature = "convert-chrono", feature = "convert-time")))]
+#[cfg(all(
+    test,
+    any(
+        feature = "convert-chrono",
+        feature = "convert-jiff-1-x",
+        feature = "convert-time"
+    )
+))]
 mod test {
     use super::DateTimeExt;
     use aws_smithy_types::date_time::{DateTime, Format};
+    #[cfg(feature = "convert-chrono")]
     use chrono::Timelike;
 
-    #[cfg(feature = "convert-time")]
+    #[cfg(any(feature = "convert-jiff-1-x", feature = "convert-time"))]
     use super::{Error, ErrorKind};
+
+    #[test]
+    #[cfg(feature = "convert-jiff-1-x")]
+    fn from_jiff() {
+        use jiff::Timestamp;
+
+        let timestamp: Timestamp = "2039-07-08T09:03:11.123Z".parse().unwrap();
+        let expected = DateTime::from_str("2039-07-08T09:03:11.123Z", Format::DateTime).unwrap();
+        assert_eq!(expected, DateTime::from_jiff(timestamp));
+
+        let timestamp: Timestamp = "1000-07-08T09:03:11.456Z".parse().unwrap();
+        let expected = DateTime::from_str("1000-07-08T09:03:11.456Z", Format::DateTime).unwrap();
+        assert_eq!(expected, DateTime::from_jiff(timestamp));
+
+        // Before the epoch, with subsecond precision
+        let timestamp = Timestamp::new(-2, 500_000_000).unwrap();
+        assert_eq!(
+            DateTime::from_secs_and_nanos(-2, 500_000_000),
+            DateTime::from_jiff(timestamp)
+        );
+
+        for timestamp in [Timestamp::MIN, Timestamp::MAX] {
+            assert_eq!(timestamp, DateTime::from_jiff(timestamp).to_jiff().unwrap());
+        }
+    }
+
+    #[test]
+    #[cfg(feature = "convert-jiff-1-x")]
+    fn to_jiff() {
+        use jiff::Timestamp;
+
+        let date_time = DateTime::from_str("2039-07-08T09:03:11.123Z", Format::DateTime).unwrap();
+        let expected: Timestamp = "2039-07-08T09:03:11.123Z".parse().unwrap();
+        assert_eq!(expected, date_time.to_jiff().unwrap());
+
+        let date_time = DateTime::from_str("1000-07-08T09:03:11.456Z", Format::DateTime).unwrap();
+        let expected: Timestamp = "1000-07-08T09:03:11.456Z".parse().unwrap();
+        assert_eq!(expected, date_time.to_jiff().unwrap());
+
+        let date_time = DateTime::from_secs_and_nanos(-2, 500_000_000);
+        assert_eq!(
+            Timestamp::new(-2, 500_000_000).unwrap(),
+            date_time.to_jiff().unwrap()
+        );
+
+        // `set_subsec_nanos` doesn't limit the nanos to less than one second
+        let mut date_time = DateTime::from_secs(10);
+        date_time.set_subsec_nanos(u32::MAX);
+        assert_eq!(
+            Timestamp::new(14, 294_967_295).unwrap(),
+            date_time.to_jiff().unwrap()
+        );
+
+        // The limits named in the docs of `to_jiff`
+        assert_eq!("9999-12-30T22:00:00.999999999Z", Timestamp::MAX.to_string());
+        assert_eq!("-009999-01-02T01:59:59Z", Timestamp::MIN.to_string());
+
+        for out_of_range in [
+            DateTime::from_secs(i64::MAX),
+            DateTime::from_secs(i64::MIN),
+            DateTime::from_nanos(Timestamp::MAX.as_nanosecond() + 1).unwrap(),
+            DateTime::from_nanos(Timestamp::MIN.as_nanosecond() - 1).unwrap(),
+        ] {
+            let date_time = out_of_range;
+            assert!(matches!(
+                date_time.to_jiff(),
+                Err(Error {
+                    kind: ErrorKind::OutOfRange(_)
+                })
+            ));
+        }
+    }
 
     #[test]
     #[cfg(feature = "convert-chrono")]

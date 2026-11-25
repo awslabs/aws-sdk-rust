@@ -18,6 +18,7 @@
 ///     AssociatedResourceType::AppRunnerService => { /* ... */ },
 ///     AssociatedResourceType::Cloudfront => { /* ... */ },
 ///     AssociatedResourceType::CognitoUserPool => { /* ... */ },
+///     AssociatedResourceType::ElbProxy => { /* ... */ },
 ///     AssociatedResourceType::VerifiedAccessInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum AssociatedResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CognitoUserPool,
     #[allow(missing_docs)] // documentation missing in model
+    ElbProxy,
+    #[allow(missing_docs)] // documentation missing in model
     VerifiedAccessInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for AssociatedResourceType {
             "APP_RUNNER_SERVICE" => AssociatedResourceType::AppRunnerService,
             "CLOUDFRONT" => AssociatedResourceType::Cloudfront,
             "COGNITO_USER_POOL" => AssociatedResourceType::CognitoUserPool,
+            "ELB_PROXY" => AssociatedResourceType::ElbProxy,
             "VERIFIED_ACCESS_INSTANCE" => AssociatedResourceType::VerifiedAccessInstance,
             other => AssociatedResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -96,6 +100,7 @@ impl AssociatedResourceType {
             AssociatedResourceType::AppRunnerService => "APP_RUNNER_SERVICE",
             AssociatedResourceType::Cloudfront => "CLOUDFRONT",
             AssociatedResourceType::CognitoUserPool => "COGNITO_USER_POOL",
+            AssociatedResourceType::ElbProxy => "ELB_PROXY",
             AssociatedResourceType::VerifiedAccessInstance => "VERIFIED_ACCESS_INSTANCE",
             AssociatedResourceType::Unknown(value) => value.as_str(),
         }
@@ -109,6 +114,7 @@ impl AssociatedResourceType {
             "APP_RUNNER_SERVICE",
             "CLOUDFRONT",
             "COGNITO_USER_POOL",
+            "ELB_PROXY",
             "VERIFIED_ACCESS_INSTANCE",
         ]
     }
@@ -139,6 +145,7 @@ impl ::std::fmt::Display for AssociatedResourceType {
             AssociatedResourceType::AppRunnerService => write!(f, "APP_RUNNER_SERVICE"),
             AssociatedResourceType::Cloudfront => write!(f, "CLOUDFRONT"),
             AssociatedResourceType::CognitoUserPool => write!(f, "COGNITO_USER_POOL"),
+            AssociatedResourceType::ElbProxy => write!(f, "ELB_PROXY"),
             AssociatedResourceType::VerifiedAccessInstance => write!(f, "VERIFIED_ACCESS_INSTANCE"),
             AssociatedResourceType::Unknown(value) => write!(f, "{value}"),
         }

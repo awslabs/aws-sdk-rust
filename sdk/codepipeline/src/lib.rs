@@ -93,7 +93,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-codepipeline = "1.135.0"
+//! aws-sdk-codepipeline = "1.136.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -235,8 +235,6 @@ pub mod error;
 
 mod error_meta;
 
-mod error_type_registry;
-
 /// Information about this crate.
 pub mod meta;
 
@@ -245,8 +243,6 @@ pub mod operation;
 
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
-
-mod type_registry;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
@@ -257,15 +253,19 @@ mod idempotency_token;
 
 mod observability_feature;
 
+pub(crate) mod protocol_serde;
+
 mod sdk_feature_tracker;
 
-mod serde_util;
+mod serialization_settings;
+
+mod cbor_errors;
 
 mod endpoint_lib;
 
 mod lens;
 
-pub(crate) mod schema_serde;
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

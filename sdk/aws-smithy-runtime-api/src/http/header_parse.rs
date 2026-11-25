@@ -417,9 +417,11 @@ mod parse_multi_header {
     /// Reads a header value that is surrounded by quotation marks and may have escaped
     /// quotes inside of it.
     fn read_quoted_value(input: &[u8]) -> Result<(Cow<'_, str>, &[u8]), ParseError> {
+        let mut escaped = false;
         for index in 0..input.len() {
             match input[index] {
-                b'"' if index == 0 || input[index - 1] != b'\\' => {
+                b'\\' if !escaped => escaped = true,
+                b'"' if !escaped => {
                     let mut inner = Cow::Borrowed(
                         std::str::from_utf8(&input[0..index])
                             .map_err(|_| ParseError::new(super::NON_UTF8_HEADER))?,
@@ -429,7 +431,7 @@ mod parse_multi_header {
                     let rest = then_comma(&input[(index + 1)..])?;
                     return Ok((inner, rest));
                 }
-                _ => {}
+                _ => escaped = false,
             }
         }
         Err(ParseError::new(
@@ -466,7 +468,7 @@ mod test {
     use super::{
         headers_for_prefix, many_dates, many_dates_bytes, one_date_or_none_bytes,
         one_from_str_or_none_bytes, one_or_none, one_or_none_bytes, one_primitive_or_none_bytes,
-        read_many_from_str, read_many_from_str_bytes, read_many_primitive,
+        quote_header_value, read_many_from_str, read_many_from_str_bytes, read_many_primitive,
         read_many_primitive_bytes, ParseError,
     };
     use aws_smithy_types::error::display::DisplayErrorContext;
@@ -594,6 +596,20 @@ mod test {
             err.to_string()
                 .contains("expected a single value but found multiple"),
             "{err}"
+        );
+    }
+
+    #[test]
+    fn quoted_values_ending_in_backslash_round_trip() {
+        let values = ["a,\\", ",b", "c\\", "x\\\"y", "\\\\,"];
+        let header = values
+            .iter()
+            .map(|v| quote_header_value(*v))
+            .collect::<Vec<_>>()
+            .join(",");
+        assert_eq!(
+            read_many_from_str::<String>([header.as_str()].into_iter()).unwrap(),
+            values
         );
     }
 

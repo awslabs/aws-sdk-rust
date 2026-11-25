@@ -42,7 +42,7 @@ pub struct UpdateWebAclInput {
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
+    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, or Elastic Load Balancing for Envoy resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
@@ -136,7 +136,7 @@ impl UpdateWebAclInput {
         self.token_domains.as_deref().unwrap_or_default()
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
+    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, or Elastic Load Balancing for Envoy resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
@@ -447,7 +447,7 @@ impl UpdateWebAclInputBuilder {
         &self.token_domains
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
+    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, or Elastic Load Balancing for Envoy resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
@@ -457,7 +457,7 @@ impl UpdateWebAclInputBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
+    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, or Elastic Load Balancing for Envoy resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
@@ -467,7 +467,7 @@ impl UpdateWebAclInputBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
+    /// <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for Application Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, or Elastic Load Balancing for Envoy resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>

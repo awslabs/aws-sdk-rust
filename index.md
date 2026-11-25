@@ -404,6 +404,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Elastic Disaster Recovery Service | [aws-sdk-drs](https://crates.io/crates/aws-sdk-drs) ([docs](https://docs.rs/aws-sdk-drs)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancing](https://crates.io/crates/aws-sdk-elasticloadbalancing) ([docs](https://docs.rs/aws-sdk-elasticloadbalancing)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancingv2](https://crates.io/crates/aws-sdk-elasticloadbalancingv2) ([docs](https://docs.rs/aws-sdk-elasticloadbalancingv2)) |
+| Elastic Load Balancing for Envoy | [aws-sdk-elbproxy](https://crates.io/crates/aws-sdk-elbproxy) ([docs](https://docs.rs/aws-sdk-elbproxy)) |
 | Firewall Management Service | [aws-sdk-fms](https://crates.io/crates/aws-sdk-fms) ([docs](https://docs.rs/aws-sdk-fms)) |
 | IAM Roles Anywhere | [aws-sdk-rolesanywhere](https://crates.io/crates/aws-sdk-rolesanywhere) ([docs](https://docs.rs/aws-sdk-rolesanywhere)) |
 | IAM Toolbox (Preview) | [aws-sdk-iamtoolbox](https://crates.io/crates/aws-sdk-iamtoolbox) ([docs](https://docs.rs/aws-sdk-iamtoolbox)) |

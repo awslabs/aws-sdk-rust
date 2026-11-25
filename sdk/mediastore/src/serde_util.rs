@@ -65,32 +65,3 @@ pub(crate) fn metric_policy_correct_errors(mut builder: crate::types::builders::
     }
     builder
 }
-
-pub(crate) fn cors_rule_correct_errors(mut builder: crate::types::builders::CorsRuleBuilder) -> crate::types::builders::CorsRuleBuilder {
-    if builder.allowed_origins.is_none() {
-        builder.allowed_origins = Some(Default::default())
-    }
-    if builder.allowed_headers.is_none() {
-        builder.allowed_headers = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn metric_policy_rule_correct_errors(
-    mut builder: crate::types::builders::MetricPolicyRuleBuilder,
-) -> crate::types::builders::MetricPolicyRuleBuilder {
-    if builder.object_group.is_none() {
-        builder.object_group = Some(Default::default())
-    }
-    if builder.object_group_name.is_none() {
-        builder.object_group_name = Some(Default::default())
-    }
-    builder
-}

@@ -519,7 +519,11 @@ impl AggregatedBytes {
 
     /// Convert this buffer into a `Vec<u8>`
     pub fn to_vec(self) -> Vec<u8> {
-        self.0.into_inner().into_iter().flatten().collect()
+        let mut out = Vec::with_capacity(self.0.remaining());
+        for segment in self.0.into_inner() {
+            out.extend_from_slice(&segment);
+        }
+        out
     }
 }
 
@@ -604,6 +608,17 @@ mod tests {
                 .into_bytes(),
             Bytes::from("a simple body")
         );
+    }
+
+    #[test]
+    fn aggregated_bytes_to_vec() {
+        let mut buf = bytes_utils::SegmentedBuf::new();
+        buf.push(Bytes::from_static(b"hello "));
+        buf.push(Bytes::new());
+        buf.push(Bytes::from_static(b"world"));
+        let vec = super::AggregatedBytes(buf).to_vec();
+        assert_eq!(vec, b"hello world");
+        assert_eq!(vec.capacity(), 11);
     }
 
     #[tokio::test]

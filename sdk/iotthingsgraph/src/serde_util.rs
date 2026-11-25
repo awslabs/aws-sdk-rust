@@ -34,25 +34,3 @@ pub(crate) fn upload_entity_definitions_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn definition_document_correct_errors(
-    mut builder: crate::types::builders::DefinitionDocumentBuilder,
-) -> crate::types::builders::DefinitionDocumentBuilder {
-    if builder.language.is_none() {
-        builder.language = "no value was set".parse::<crate::types::DefinitionLanguage>().ok()
-    }
-    if builder.text.is_none() {
-        builder.text = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    builder
-}

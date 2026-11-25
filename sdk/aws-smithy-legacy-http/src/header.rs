@@ -304,9 +304,11 @@ mod parse_multi_header {
     /// Reads a header value that is surrounded by quotation marks and may have escaped
     /// quotes inside of it.
     fn read_quoted_value(input: &[u8]) -> Result<(Cow<'_, str>, &[u8]), ParseError> {
+        let mut escaped = false;
         for index in 0..input.len() {
             match input[index] {
-                b'"' if index == 0 || input[index - 1] != b'\\' => {
+                b'\\' if !escaped => escaped = true,
+                b'"' if !escaped => {
                     let mut inner = Cow::Borrowed(
                         std::str::from_utf8(&input[0..index])
                             .map_err(|_| ParseError::new(super::NON_UTF8_HEADER))?,
@@ -316,7 +318,7 @@ mod parse_multi_header {
                     let rest = then_comma(&input[(index + 1)..])?;
                     return Ok((inner, rest));
                 }
-                _ => {}
+                _ => escaped = false,
             }
         }
         Err(ParseError::new(
@@ -528,6 +530,20 @@ mod test {
                 DateTime::from_secs_and_nanos(1234, 567_800_000),
                 DateTime::from_secs_and_nanos(9012, 345_600_000)
             ]
+        );
+    }
+
+    #[test]
+    fn quoted_values_ending_in_backslash_round_trip() {
+        let values = ["a,\\", ",b", "c\\", "x\\\"y", "\\\\,"];
+        let header = values
+            .iter()
+            .map(|v| quote_header_value(*v))
+            .collect::<Vec<_>>()
+            .join(",");
+        assert_eq!(
+            read_many_from_str::<String>([header.as_str()].into_iter()).unwrap(),
+            values
         );
     }
 

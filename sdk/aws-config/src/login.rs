@@ -141,7 +141,12 @@ impl LoginCredentialsProvider {
         now: SystemTime,
     ) -> Result<LoginToken, LoginTokenError> {
         let dpop_auth_scheme = dpop::DPoPAuthScheme::new(&cached_token.dpop_key)?;
-        let client_config = SignInClientConfigBuilder::from(&inner.sdk_config)
+        let mut config_builder = SignInClientConfigBuilder::from(&inner.sdk_config);
+        if let Some(region) = &cached_token.sign_in_region {
+            tracing::debug!(region = %region, "using signInRegion from cached Login token for refresh");
+            config_builder.set_region(Some(region.clone()));
+        }
+        let client_config = config_builder
             .auth_scheme_resolver(dpop::DPoPAuthSchemeOptionResolver)
             .push_auth_scheme(dpop_auth_scheme)
             .build();
@@ -305,6 +310,8 @@ mod test {
         response: Option<MockResponse>,
         #[serde(default)]
         response_code: Option<u16>,
+        #[serde(default)]
+        expected_request_uri: Option<String>,
     }
 
     #[derive(Deserialize, Debug, Clone)]
@@ -384,11 +391,13 @@ mod test {
             let env = Env::from_slice(&[("HOME", "/home/user")]);
 
             // Setup mock HTTP client
+            let captured_requests: CapturedRequests = Default::default();
             let http_client = if self.mock_api_calls.is_empty() {
                 crate::test_case::no_traffic_client()
             } else {
                 aws_smithy_runtime_api::client::http::SharedHttpClient::new(TestHttpClient::new(
                     &self.mock_api_calls,
+                    captured_requests.clone(),
                 ))
             };
 
@@ -406,6 +415,35 @@ mod test {
 
             // Call provider once and validate result against all outcomes
             let result = dbg!(provider.provide_credentials().await);
+
+            // Validate the request URI and the DPoP proof's `htu` claim
+            let captured = captured_requests.lock().unwrap().clone();
+            for (idx, mock) in self.mock_api_calls.iter().enumerate() {
+                let Some(expected_uri) = &mock.expected_request_uri else {
+                    continue;
+                };
+                let (uri, dpop) = captured
+                    .get(idx)
+                    .unwrap_or_else(|| panic!("no request captured for mock call {idx}"));
+                assert_eq!(
+                    expected_uri, uri,
+                    "request URI mismatch for mock call {idx}"
+                );
+                let dpop = dpop
+                    .as_ref()
+                    .unwrap_or_else(|| panic!("no DPoP header on request {idx}"));
+                let payload_b64 = dpop.split('.').nth(1).expect("DPoP JWT has a payload");
+                let payload = base64_simd::URL_SAFE_NO_PAD
+                    .decode_to_vec(payload_b64)
+                    .expect("valid base64url DPoP payload");
+                let payload: serde_json::Value =
+                    serde_json::from_slice(&payload).expect("valid JSON DPoP payload");
+                assert_eq!(
+                    Some(expected_uri.as_str()),
+                    payload["htu"].as_str(),
+                    "DPoP htu mismatch for mock call {idx}"
+                );
+            }
 
             for outcome in &self.outcomes {
                 match outcome {
@@ -445,6 +483,12 @@ mod test {
                                 "refreshToken mismatch for {}",
                                 filename
                             );
+                            assert_eq!(
+                                expected.get("signInRegion"),
+                                actual.get("signInRegion"),
+                                "signInRegion mismatch for {}",
+                                filename
+                            );
                         }
                     }
                 }
@@ -452,16 +496,20 @@ mod test {
         }
     }
 
+    /// Request URI and `DPoP` header of each request the test connector received
+    type CapturedRequests = Arc<Mutex<Vec<(String, Option<String>)>>>;
+
     #[derive(Debug, Clone)]
     struct TestHttpClient {
         inner: SharedHttpConnector,
     }
 
     impl TestHttpClient {
-        fn new(mock_calls: &[MockApiCall]) -> Self {
+        fn new(mock_calls: &[MockApiCall], requests: CapturedRequests) -> Self {
             Self {
                 inner: SharedHttpConnector::new(TestHttpConnector {
                     mock_calls: mock_calls.to_vec(),
+                    requests,
                 }),
             }
         }
@@ -480,10 +528,15 @@ mod test {
     #[derive(Debug, Clone)]
     struct TestHttpConnector {
         mock_calls: Vec<MockApiCall>,
+        requests: CapturedRequests,
     }
 
     impl HttpConnector for TestHttpConnector {
-        fn call(&self, _request: HttpRequest) -> HttpConnectorFuture {
+        fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
+            self.requests.lock().unwrap().push((
+                request.uri().to_string(),
+                request.headers().get("dpop").map(str::to_owned),
+            ));
             if let Some(mock) = self.mock_calls.first() {
                 if let Some(code) = mock.response_code {
                     return HttpConnectorFuture::ready(Ok(HttpResponse::new(
@@ -531,6 +584,79 @@ mod test {
             test.check().await;
         }
         Ok(())
+    }
+
+    /// With a Sign-In endpoint override, the region does not pick the host, so a
+    /// `signInRegion` that is not a valid host label must not stop the refresh.
+    #[tokio::test]
+    async fn endpoint_override_with_malformed_sign_in_region_refreshes() {
+        let session_arn = "arn:aws:sts::012345678910:assumed-role/Admin/admin";
+        let cache_path = "/home/user/.aws/login/cache/4b0ba8f99f075c0633e122fd73346ce203a3faf18ea0310eb2d29df1bab2e255.json";
+        let cached_token = serde_json::json!({
+            "accessToken": {
+                "accessKeyId": "OLDEXPIREDKEY",
+                "secretAccessKey": "oldExpiredSecretKey",
+                "sessionToken": "oldExpiredSessionToken",
+                "accountId": "012345678901",
+                "expiresAt": "2020-01-01T00:00:00Z"
+            },
+            "tokenType": "aws_sigv4",
+            "clientId": "arn:aws:signin:::devtools/same-device",
+            "refreshToken": "valid_refresh_token",
+            "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIPt/u8InPLpQeQLJTvVX+sNDzni8vMDMt3Liu+nMBigfoAoGCCqGSM49\nAwEHoUQDQgAEILkGG7rNOnxiIJlMgimY1UPP8eDMFP0DAY6WGjngP4bvTAiUCQ/I\nffut2379uP+OBCm2ovGpBOJRgrl1RspUOQ==\n-----END EC PRIVATE KEY-----\n",
+            "signInRegion": "bad region!"
+        });
+        let fs = Fs::from_map(HashMap::from([(
+            cache_path.to_string(),
+            serde_json::to_vec(&cached_token).unwrap(),
+        )]));
+        let env = Env::from_slice(&[
+            ("HOME", "/home/user"),
+            (
+                "AWS_ENDPOINT_URL_SIGNIN",
+                "https://signin-proxy.example.com",
+            ),
+        ]);
+        let mock: MockApiCall = serde_json::from_value(serde_json::json!({
+            "response": {
+                "tokenOutput": {
+                    "accessToken": {
+                        "accessKeyId": "NEWREFRESHEDKEY",
+                        "secretAccessKey": "newRefreshedSecretKey",
+                        "sessionToken": "newRefreshedSessionToken"
+                    },
+                    "refreshToken": "new_refresh_token",
+                    "expiresIn": 900
+                }
+            }
+        }))
+        .unwrap();
+        let requests = CapturedRequests::default();
+        // 2025-11-19T00:00:00Z, the same fixed time as the SEP test cases
+        let now = UNIX_EPOCH + Duration::from_secs(1763510400);
+        let provider_config = ProviderConfig::empty()
+            .with_env(env)
+            .with_fs(fs)
+            .with_http_client(TestHttpClient::new(&[mock], requests.clone()))
+            .with_region(Some(Region::from_static("us-east-2")))
+            .with_sleep_impl(TokioSleep::new())
+            .with_time_source(SharedTimeSource::new(StaticTimeSource::new(now)));
+        let provider = LoginCredentialsProvider::builder(session_arn)
+            .configure(&provider_config)
+            .build();
+
+        let creds = provider
+            .provide_credentials()
+            .await
+            .expect("the endpoint override picks the host, so the refresh succeeds");
+        assert_eq!("NEWREFRESHEDKEY", creds.access_key_id());
+        let uris: Vec<_> = requests
+            .lock()
+            .unwrap()
+            .iter()
+            .map(|(uri, _)| uri.clone())
+            .collect();
+        assert_eq!(vec!["https://signin-proxy.example.com/v1/token"], uris);
     }
 
     /// How the first `CreateOAuth2Token` attempt fails before the retry succeeds

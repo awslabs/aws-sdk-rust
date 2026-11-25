@@ -9,6 +9,7 @@ use aws_credential_types::Credentials;
 use aws_sdk_signin::types::CreateOAuth2TokenResponseBody;
 use aws_smithy_json::deserialize::EscapeError;
 use aws_smithy_runtime_api::client::identity::Identity;
+use aws_types::region::Region;
 use std::error::Error as StdError;
 use std::fmt;
 use std::path::PathBuf;
@@ -24,6 +25,9 @@ pub(super) struct LoginToken {
     pub(super) refresh_token: Zeroizing<String>,
     pub(super) client_id: String,
     pub(super) dpop_key: Zeroizing<String>,
+    /// Region the session was created in (`signInRegion`). When present, it is
+    /// trimmed and a valid host label.
+    pub(super) sign_in_region: Option<Region>,
 }
 
 impl LoginToken {
@@ -58,6 +62,7 @@ impl LoginToken {
             refresh_token: Zeroizing::new(resp.refresh_token().to_string()),
             client_id: old_token.client_id.clone(),
             dpop_key: old_token.dpop_key.clone(),
+            sign_in_region: old_token.sign_in_region.clone(),
         }
     }
 }
@@ -71,6 +76,7 @@ impl fmt::Debug for LoginToken {
             .field("refresh_token", &self.refresh_token)
             .field("client_id", &self.client_id)
             .field("dpop_key", &"** redacted **")
+            .field("sign_in_region", &self.sign_in_region)
             .finish()
     }
 }

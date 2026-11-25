@@ -145,6 +145,7 @@
     },
     "mockApiCalls": [
       {
+        "expectedRequestUri": "https://us-east-2.signin.aws.amazon.com/v1/token",
         "request": {
           "tokenInput": {
             "clientId": "arn:aws:signin:::devtools/same-device",
@@ -225,6 +226,175 @@
     "outcomes": [
       {
         "result": "error"
+      }
+    ]
+  },
+  {
+    "documentation": "Success - Expired token refresh uses signInRegion from cache",
+    "configContents": "[profile signin]\nlogin_session = arn:aws:sts::012345678910:assumed-role/Admin/admin\n",
+    "cacheContents": {
+      "4b0ba8f99f075c0633e122fd73346ce203a3faf18ea0310eb2d29df1bab2e255.json": {
+        "accessToken": {
+          "accessKeyId": "OLDEXPIREDKEY",
+          "secretAccessKey": "oldExpiredSecretKey",
+          "sessionToken": "oldExpiredSessionToken",
+          "accountId": "012345678901",
+          "expiresAt": "2020-01-01T00:00:00Z"
+        },
+        "clientId": "arn:aws:signin:::devtools/same-device",
+        "refreshToken": "valid_refresh_token",
+        "idToken": "eyJraWQiOiI1MzYxMjY2ZS1mNjI5LTQ0ZGQtOTA1My1jYzJkNTM1OTJiOTIiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzM4NCJ9.eyJzdWIiOiJhcm46YXdzOnN0czo6NzIxNzgxNjAzNzU1OmFzc3VtZWQtcm9sZVwvQWRtaW5cL3Nob3ZsaWEtSXNlbmdhcmQiLCJhdWQiOiJhcm46YXdzOnNpZ25pbjo6OmNsaVwvc2FtZS1kZXZpY2UiLCJpc3MiOiJodHRwczpcL1wvc2lnbmluLmF3cy5hbWF6b24uY29tXC9zaWduaW4iLCJzZXNzaW9uX2FybiI6ImFybjphd3M6c3RzOjo3MjE3ODE2MDM3NTU6YXNzdW1lZC1yb2xlXC9BZG1pblwvc2hvdmxpYS1Jc2VuZ2FyZCIsImV4cCI6MTc2MTE2Nzk0NiwiaWF0IjoxNzYxMTY3MDQ2fQ.EzySTg0K11hwQtIYtcBcnNMmX33F6XrVqXsk8WyTWjYcMQxaMnqXebLwBQBCRZha05hZiIZ5xPVCBIt7hZGyymurSfOL72cz69xHUH6u7rwu8vn10UKLHfyKLneKBlmJ",
+        "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIPt/u8InPLpQeQLJTvVX+sNDzni8vMDMt3Liu+nMBigfoAoGCCqGSM49\nAwEHoUQDQgAEILkGG7rNOnxiIJlMgimY1UPP8eDMFP0DAY6WGjngP4bvTAiUCQ/I\nffut2379uP+OBCm2ovGpBOJRgrl1RspUOQ==\n-----END EC PRIVATE KEY-----\n",
+        "signInRegion": "eu-west-1"
+      }
+    },
+    "mockApiCalls": [
+      {
+        "expectedRequestUri": "https://eu-west-1.signin.aws.amazon.com/v1/token",
+        "request": {
+          "tokenInput": {
+            "clientId": "arn:aws:signin:::devtools/same-device",
+            "refreshToken": "valid_refresh_token",
+            "grantType": "refresh_token"
+          }
+        },
+        "response": {
+          "tokenOutput": {
+            "accessToken": {
+              "accessKeyId": "NEWREFRESHEDKEY",
+              "secretAccessKey": "newRefreshedSecretKey",
+              "sessionToken": "newRefreshedSessionToken"
+            },
+            "refreshToken": "new_refresh_token",
+            "expiresIn": 900
+          }
+        }
+      }
+    ],
+    "outcomes": [
+      {
+        "result": "credentials",
+        "accessKeyId": "NEWREFRESHEDKEY",
+        "secretAccessKey": "newRefreshedSecretKey",
+        "sessionToken": "newRefreshedSessionToken",
+        "accountId": "012345678901",
+        "expiresAt": "2025-11-19T00:15:00Z"
+      },
+      {
+        "result": "cacheContents",
+        "4b0ba8f99f075c0633e122fd73346ce203a3faf18ea0310eb2d29df1bab2e255.json": {
+          "accessToken": {
+            "accessKeyId": "NEWREFRESHEDKEY",
+            "secretAccessKey": "newRefreshedSecretKey",
+            "sessionToken": "newRefreshedSessionToken",
+            "accountId": "012345678901",
+            "expiresAt": "2025-11-19T00:15:00Z"
+          },
+          "clientId": "arn:aws:signin:::devtools/same-device",
+          "refreshToken": "new_refresh_token",
+          "idToken": "eyJraWQiOiI1MzYxMjY2ZS1mNjI5LTQ0ZGQtOTA1My1jYzJkNTM1OTJiOTIiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzM4NCJ9.eyJzdWIiOiJhcm46YXdzOnN0czo6NzIxNzgxNjAzNzU1OmFzc3VtZWQtcm9sZVwvQWRtaW5cL3Nob3ZsaWEtSXNlbmdhcmQiLCJhdWQiOiJhcm46YXdzOnNpZ25pbjo6OmNsaVwvc2FtZS1kZXZpY2UiLCJpc3MiOiJodHRwczpcL1wvc2lnbmluLmF3cy5hbWF6b24uY29tXC9zaWduaW4iLCJzZXNzaW9uX2FybiI6ImFybjphd3M6c3RzOjo3MjE3ODE2MDM3NTU6YXNzdW1lZC1yb2xlXC9BZG1pblwvc2hvdmxpYS1Jc2VuZ2FyZCIsImV4cCI6MTc2MTE2Nzk0NiwiaWF0IjoxNzYxMTY3MDQ2fQ.EzySTg0K11hwQtIYtcBcnNMmX33F6XrVqXsk8WyTWjYcMQxaMnqXebLwBQBCRZha05hZiIZ5xPVCBIt7hZGyymurSfOL72cz69xHUH6u7rwu8vn10UKLHfyKLneKBlmJ",
+          "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIPt/u8InPLpQeQLJTvVX+sNDzni8vMDMt3Liu+nMBigfoAoGCCqGSM49\nAwEHoUQDQgAEILkGG7rNOnxiIJlMgimY1UPP8eDMFP0DAY6WGjngP4bvTAiUCQ/I\nffut2379uP+OBCm2ovGpBOJRgrl1RspUOQ==\n-----END EC PRIVATE KEY-----\n",
+          "signInRegion": "eu-west-1"
+        }
+      }
+    ]
+  },
+  {
+    "documentation": "Success - Empty signInRegion falls back to configured region",
+    "configContents": "[profile signin]\nlogin_session = arn:aws:sts::012345678910:assumed-role/Admin/admin\n",
+    "cacheContents": {
+      "4b0ba8f99f075c0633e122fd73346ce203a3faf18ea0310eb2d29df1bab2e255.json": {
+        "accessToken": {
+          "accessKeyId": "OLDEXPIREDKEY",
+          "secretAccessKey": "oldExpiredSecretKey",
+          "sessionToken": "oldExpiredSessionToken",
+          "accountId": "012345678901",
+          "expiresAt": "2020-01-01T00:00:00Z"
+        },
+        "clientId": "arn:aws:signin:::devtools/same-device",
+        "refreshToken": "valid_refresh_token",
+        "idToken": "eyJraWQiOiI1MzYxMjY2ZS1mNjI5LTQ0ZGQtOTA1My1jYzJkNTM1OTJiOTIiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzM4NCJ9.eyJzdWIiOiJhcm46YXdzOnN0czo6NzIxNzgxNjAzNzU1OmFzc3VtZWQtcm9sZVwvQWRtaW5cL3Nob3ZsaWEtSXNlbmdhcmQiLCJhdWQiOiJhcm46YXdzOnNpZ25pbjo6OmNsaVwvc2FtZS1kZXZpY2UiLCJpc3MiOiJodHRwczpcL1wvc2lnbmluLmF3cy5hbWF6b24uY29tXC9zaWduaW4iLCJzZXNzaW9uX2FybiI6ImFybjphd3M6c3RzOjo3MjE3ODE2MDM3NTU6YXNzdW1lZC1yb2xlXC9BZG1pblwvc2hvdmxpYS1Jc2VuZ2FyZCIsImV4cCI6MTc2MTE2Nzk0NiwiaWF0IjoxNzYxMTY3MDQ2fQ.EzySTg0K11hwQtIYtcBcnNMmX33F6XrVqXsk8WyTWjYcMQxaMnqXebLwBQBCRZha05hZiIZ5xPVCBIt7hZGyymurSfOL72cz69xHUH6u7rwu8vn10UKLHfyKLneKBlmJ",
+        "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIPt/u8InPLpQeQLJTvVX+sNDzni8vMDMt3Liu+nMBigfoAoGCCqGSM49\nAwEHoUQDQgAEILkGG7rNOnxiIJlMgimY1UPP8eDMFP0DAY6WGjngP4bvTAiUCQ/I\nffut2379uP+OBCm2ovGpBOJRgrl1RspUOQ==\n-----END EC PRIVATE KEY-----\n",
+        "signInRegion": ""
+      }
+    },
+    "mockApiCalls": [
+      {
+        "expectedRequestUri": "https://us-east-2.signin.aws.amazon.com/v1/token",
+        "request": {
+          "tokenInput": {
+            "clientId": "arn:aws:signin:::devtools/same-device",
+            "refreshToken": "valid_refresh_token",
+            "grantType": "refresh_token"
+          }
+        },
+        "response": {
+          "tokenOutput": {
+            "accessToken": {
+              "accessKeyId": "NEWREFRESHEDKEY",
+              "secretAccessKey": "newRefreshedSecretKey",
+              "sessionToken": "newRefreshedSessionToken"
+            },
+            "refreshToken": "new_refresh_token",
+            "expiresIn": 900
+          }
+        }
+      }
+    ],
+    "outcomes": [
+      {
+        "result": "credentials",
+        "accessKeyId": "NEWREFRESHEDKEY",
+        "secretAccessKey": "newRefreshedSecretKey",
+        "sessionToken": "newRefreshedSessionToken",
+        "accountId": "012345678901",
+        "expiresAt": "2025-11-19T00:15:00Z"
+      },
+      {
+        "result": "cacheContents",
+        "4b0ba8f99f075c0633e122fd73346ce203a3faf18ea0310eb2d29df1bab2e255.json": {
+          "accessToken": {
+            "accessKeyId": "NEWREFRESHEDKEY",
+            "secretAccessKey": "newRefreshedSecretKey",
+            "sessionToken": "newRefreshedSessionToken",
+            "accountId": "012345678901",
+            "expiresAt": "2025-11-19T00:15:00Z"
+          },
+          "clientId": "arn:aws:signin:::devtools/same-device",
+          "refreshToken": "new_refresh_token",
+          "idToken": "eyJraWQiOiI1MzYxMjY2ZS1mNjI5LTQ0ZGQtOTA1My1jYzJkNTM1OTJiOTIiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzM4NCJ9.eyJzdWIiOiJhcm46YXdzOnN0czo6NzIxNzgxNjAzNzU1OmFzc3VtZWQtcm9sZVwvQWRtaW5cL3Nob3ZsaWEtSXNlbmdhcmQiLCJhdWQiOiJhcm46YXdzOnNpZ25pbjo6OmNsaVwvc2FtZS1kZXZpY2UiLCJpc3MiOiJodHRwczpcL1wvc2lnbmluLmF3cy5hbWF6b24uY29tXC9zaWduaW4iLCJzZXNzaW9uX2FybiI6ImFybjphd3M6c3RzOjo3MjE3ODE2MDM3NTU6YXNzdW1lZC1yb2xlXC9BZG1pblwvc2hvdmxpYS1Jc2VuZ2FyZCIsImV4cCI6MTc2MTE2Nzk0NiwiaWF0IjoxNzYxMTY3MDQ2fQ.EzySTg0K11hwQtIYtcBcnNMmX33F6XrVqXsk8WyTWjYcMQxaMnqXebLwBQBCRZha05hZiIZ5xPVCBIt7hZGyymurSfOL72cz69xHUH6u7rwu8vn10UKLHfyKLneKBlmJ",
+          "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIPt/u8InPLpQeQLJTvVX+sNDzni8vMDMt3Liu+nMBigfoAoGCCqGSM49\nAwEHoUQDQgAEILkGG7rNOnxiIJlMgimY1UPP8eDMFP0DAY6WGjngP4bvTAiUCQ/I\nffut2379uP+OBCm2ovGpBOJRgrl1RspUOQ==\n-----END EC PRIVATE KEY-----\n"
+        }
+      }
+    ]
+  },
+  {
+    "documentation": "Success - Valid credentials with signInRegion are returned immediately",
+    "configContents": "[profile signin]\nlogin_session = arn:aws:sts::012345678910:assumed-role/Admin/admin\n",
+    "cacheContents": {
+      "4b0ba8f99f075c0633e122fd73346ce203a3faf18ea0310eb2d29df1bab2e255.json": {
+        "accessToken": {
+          "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+          "secretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+          "sessionToken": "AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE1OPTgk5TthT+FvwqnKwRcOIfrRh3c/LTo6UDdyJwOOvEVPvLXCrrrUtdnniCEXAMPLE/IvU1dYUg2RVAJBanLiHb4IgRmpRV3zrkuWJOgQs8IZZaIv2BXIa2R4OlgkBN9bkUDNCJiBeb/AXlzBBko7b15fjrBs2+cTQtpZ3CYWFXG8C5zqx37wnOE49mRl/+OtkIKGO7fAE",
+          "accountId": "012345678901",
+          "expiresAt": "3025-09-14T04:05:45Z"
+        },
+        "clientId": "arn:aws:signin:::devtools/same-device",
+        "refreshToken": "refresh_token",
+        "idToken": "eyJraWQiOiI1MzYxMjY2ZS1mNjI5LTQ0ZGQtOTA1My1jYzJkNTM1OTJiOTIiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzM4NCJ9.eyJzdWIiOiJhcm46YXdzOnN0czo6NzIxNzgxNjAzNzU1OmFzc3VtZWQtcm9sZVwvQWRtaW5cL3Nob3ZsaWEtSXNlbmdhcmQiLCJhdWQiOiJhcm46YXdzOnNpZ25pbjo6OmNsaVwvc2FtZS1kZXZpY2UiLCJpc3MiOiJodHRwczpcL1wvc2lnbmluLmF3cy5hbWF6b24uY29tXC9zaWduaW4iLCJzZXNzaW9uX2FybiI6ImFybjphd3M6c3RzOjo3MjE3ODE2MDM3NTU6YXNzdW1lZC1yb2xlXC9BZG1pblwvc2hvdmxpYS1Jc2VuZ2FyZCIsImV4cCI6MTc2MTE2Nzk0NiwiaWF0IjoxNzYxMTY3MDQ2fQ.EzySTg0K11hwQtIYtcBcnNMmX33F6XrVqXsk8WyTWjYcMQxaMnqXebLwBQBCRZha05hZiIZ5xPVCBIt7hZGyymurSfOL72cz69xHUH6u7rwu8vn10UKLHfyKLneKBlmJ",
+        "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIPt/u8InPLpQeQLJTvVX+sNDzni8vMDMt3Liu+nMBigfoAoGCCqGSM49\nAwEHoUQDQgAEILkGG7rNOnxiIJlMgimY1UPP8eDMFP0DAY6WGjngP4bvTAiUCQ/I\nffut2379uP+OBCm2ovGpBOJRgrl1RspUOQ==\n-----END EC PRIVATE KEY-----\n",
+        "signInRegion": "eu-west-1"
+      }
+    },
+    "outcomes": [
+      {
+        "result": "credentials",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "secretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+        "sessionToken": "AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE1OPTgk5TthT+FvwqnKwRcOIfrRh3c/LTo6UDdyJwOOvEVPvLXCrrrUtdnniCEXAMPLE/IvU1dYUg2RVAJBanLiHb4IgRmpRV3zrkuWJOgQs8IZZaIv2BXIa2R4OlgkBN9bkUDNCJiBeb/AXlzBBko7b15fjrBs2+cTQtpZ3CYWFXG8C5zqx37wnOE49mRl/+OtkIKGO7fAE",
+        "accountId": "012345678901",
+        "expiresAt": "3025-09-14T04:05:45Z"
       }
     ]
   }

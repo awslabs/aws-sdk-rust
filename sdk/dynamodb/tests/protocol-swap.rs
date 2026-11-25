@@ -5,21 +5,19 @@
 
 //! Tests that protocols can be swapped at runtime via the `protocol()` config setter.
 //!
-//! TODO(schema-serde): Re-enable these tests when schema-serde codegen is
-//! active for DynamoDB (awsJson1_0). The runtime protocol swap feature
-//! requires the generated `config::Builder::protocol(...)` setter, which is
-//! only emitted by `SchemaProtocolConfigCustomization` when the service is on
-//! `SchemaSerdeAllowlist`. With the allowlist empty on main, DynamoDB's
-//! config builder does not expose `protocol(...)` and these tests cannot
-//! compile. Once awsJson1_0 (or DynamoDB specifically) is re-added to the
-//! allowlist, uncomment the blocks below.
-//! See: codegen-client/.../customizations/SchemaDecorator.kt
+//! The generated `config::Builder::protocol(...)` setter is only emitted by
+//! `SchemaProtocolConfigCustomization` while DynamoDB is on `SchemaSerdeAllowlist`
+//! (see codegen-client/.../customizations/SchemaDecorator.kt). If DynamoDB is
+//! removed from the allowlist, these tests no longer compile; gate this file with
+//! `#![cfg(any())]` until it returns.
 
-// --- BEGIN schema-serde protocol-swap tests (disabled) ---
-/*
-use aws_sdk_dynamodb::config::{Credentials, Region, StalledStreamProtectionConfig};
+use aws_sdk_dynamodb::config::{
+    BehaviorVersion, Credentials, Region, StalledStreamProtectionConfig,
+};
 use aws_sdk_dynamodb::types::AttributeValue;
-use aws_smithy_http_client::test_util::capture_request;
+use aws_smithy_http_client::test_util::{capture_request, ReplayEvent, StaticReplayClient};
+use aws_smithy_runtime_api::client::result::SdkError;
+use aws_smithy_types::body::SdkBody;
 
 fn base_config() -> aws_sdk_dynamodb::config::Builder {
     aws_sdk_dynamodb::config::Builder::new()
@@ -69,9 +67,8 @@ async fn default_protocol_serializes_correctly() {
 #[tokio::test]
 async fn swapped_protocol_changes_content_type() {
     let (http_client, rx) = capture_request(None);
-    let custom_protocol = aws_smithy_json::protocol::aws_json_rpc::AwsJsonRpcProtocol::aws_json_1_1(
-        "DynamoDB_20120810",
-    );
+    let custom_protocol =
+        aws_smithy_json::protocol::aws_json_rpc::AwsJsonRpcProtocol::aws_json_1_1();
     let conf = base_config()
         .http_client(http_client)
         .protocol(custom_protocol)
@@ -149,26 +146,12 @@ async fn swap_to_rest_json_protocol() {
     assert_eq!(parsed["TableName"], "TestTable");
     assert!(parsed["Item"]["pk"]["S"].as_str().is_some());
 }
-*/
-// --- END schema-serde protocol-swap tests (disabled) ---
 
-// --- BEGIN XML protocol swap test (disabled) ---
 // Cross-family swap (JSON RPC → XML REST) is the strongest demonstration of
 // the SEP's serialization-from-shape decoupling. Generated DynamoDB code
 // emits `Schema` statics + `SerializableStruct` impls and defers wire-format
 // choice to whatever `ClientProtocol` is in the config bag. Plugging in
 // `AwsRestXmlProtocol` walks those same shapes through XML serialization.
-//
-// Disabled for the same reason as the block above: the runtime `protocol(...)`
-// setter is only generated while DynamoDB is on the schema-serde allowlist.
-// With the allowlist empty the setter is absent, so this test cannot compile.
-// Re-enable it together with the block above once awsJson1_0 returns to the
-// allowlist.
-/*
-use aws_sdk_dynamodb::config::{
-    BehaviorVersion, Credentials, Region, StalledStreamProtectionConfig,
-};
-use aws_smithy_http_client::test_util::capture_request;
 
 fn xml_swap_base_config() -> aws_sdk_dynamodb::config::Builder {
     aws_sdk_dynamodb::config::Builder::new()
@@ -243,10 +226,7 @@ async fn swap_to_rest_xml_protocol() {
         "expected Limit element in body: {body}"
     );
 }
-*/
-// --- END XML protocol swap test (disabled) ---
 
-// --- BEGIN XML protocol swap error-path test (disabled) ---
 // The success-path test above proves request-side decoupling. This test
 // proves the *response-side* (error path) decoupling: a restXml error
 // envelope is parsed, the typed error variant dispatches by shape name,
@@ -261,11 +241,6 @@ async fn swap_to_rest_xml_protocol() {
 //   3. Codegen `match error_code` resolves `"InternalServerError"` to the
 //      `ListTablesError::InternalServerError(_)` variant (shape-name keys
 //      are uniform across all schema-serde-allowlisted protocols).
-
-/*
-use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
-use aws_smithy_runtime_api::client::result::SdkError;
-use aws_smithy_types::body::SdkBody;
 
 #[tokio::test]
 async fn swap_to_rest_xml_protocol_error_response() {
@@ -335,5 +310,3 @@ async fn swap_to_rest_xml_protocol_error_response() {
          typed variant's field"
     );
 }
-*/
-// --- END XML protocol swap error-path test (disabled) ---

@@ -16,22 +16,3 @@ pub(crate) fn invoke_data_automation_async_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn output_configuration_correct_errors(
-    mut builder: crate::types::builders::OutputConfigurationBuilder,
-) -> crate::types::builders::OutputConfigurationBuilder {
-    if builder.s3_uri.is_none() {
-        builder.s3_uri = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    builder
-}

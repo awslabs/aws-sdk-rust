@@ -16,7 +16,11 @@
     rust_2018_idioms
 )]
 
-#[cfg(any(feature = "convert-time", feature = "convert-chrono"))]
+#[cfg(any(
+    feature = "convert-chrono",
+    feature = "convert-jiff-1-x",
+    feature = "convert-time"
+))]
 pub mod date_time;
 
 #[cfg(feature = "convert-streams")]

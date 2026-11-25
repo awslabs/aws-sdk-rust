@@ -34,7 +34,7 @@ pub struct JsonBody {
     /// <li>
     /// <p>For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can change the limit in the web ACL <code>AssociationConfig</code>.</p></li>
     /// <li>
-    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
     /// <li>
     /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
@@ -84,7 +84,7 @@ impl JsonBody {
     /// <li>
     /// <p>For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can change the limit in the web ACL <code>AssociationConfig</code>.</p></li>
     /// <li>
-    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
     /// <li>
     /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
@@ -208,7 +208,7 @@ impl JsonBodyBuilder {
     /// <li>
     /// <p>For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can change the limit in the web ACL <code>AssociationConfig</code>.</p></li>
     /// <li>
-    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
     /// <li>
     /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
@@ -235,7 +235,7 @@ impl JsonBodyBuilder {
     /// <li>
     /// <p>For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can change the limit in the web ACL <code>AssociationConfig</code>.</p></li>
     /// <li>
-    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
     /// <li>
     /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
@@ -262,7 +262,7 @@ impl JsonBodyBuilder {
     /// <li>
     /// <p>For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can change the limit in the web ACL <code>AssociationConfig</code>.</p></li>
     /// <li>
-    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
     /// <li>
     /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>

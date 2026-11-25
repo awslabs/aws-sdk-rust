@@ -12,15 +12,8 @@
 //! concrete type to assert field values round-tripped correctly.
 //!
 //! `Client::registry()` and `Client::error_registry()` are only generated when
-//! DynamoDB's protocol is on `SchemaSerdeAllowlist`, so this test compiles and
-//! runs only while that protocol is enabled there. It is currently **disabled**
-//! because the allowlist is empty.
-//!
-//! TODO(schema-serde): Rust cannot query the codegen allowlist, so this gating
-//! is manual — remove the `#![cfg(any())]` below to re-enable this test when
-//! awsJson1_0 (or DynamoDB specifically) is re-added to the allowlist.
-
-#![cfg(any())]
+//! DynamoDB is on `SchemaSerdeAllowlist`. If DynamoDB is removed from the
+//! allowlist, gate this file with `#![cfg(any())]` until it returns.
 
 use aws_sdk_dynamodb::types::Capacity;
 use aws_sdk_dynamodb::Client;
