@@ -44,6 +44,8 @@ pub struct ElasticsearchDomainStatus {
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Log publishing options for the given domain.</p>
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    /// <p>The catalog options for the given domain.</p>
+    pub catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     /// <p>The current status of the Elasticsearch domain's service software.</p>
     pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     /// <p>The current status of the Elasticsearch domain's endpoint options.</p>
@@ -153,6 +155,10 @@ impl ElasticsearchDomainStatus {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.log_publishing_options.as_ref()
     }
+    /// <p>The catalog options for the given domain.</p>
+    pub fn catalog_options(&self) -> ::std::option::Option<&crate::types::CatalogOptions> {
+        self.catalog_options.as_ref()
+    }
     /// <p>The current status of the Elasticsearch domain's service software.</p>
     pub fn service_software_options(&self) -> ::std::option::Option<&crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
@@ -231,6 +237,7 @@ pub struct ElasticsearchDomainStatusBuilder {
     pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    pub(crate) catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     pub(crate) service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
@@ -558,6 +565,20 @@ impl ElasticsearchDomainStatusBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         &self.log_publishing_options
     }
+    /// <p>The catalog options for the given domain.</p>
+    pub fn catalog_options(mut self, input: crate::types::CatalogOptions) -> Self {
+        self.catalog_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The catalog options for the given domain.</p>
+    pub fn set_catalog_options(mut self, input: ::std::option::Option<crate::types::CatalogOptions>) -> Self {
+        self.catalog_options = input;
+        self
+    }
+    /// <p>The catalog options for the given domain.</p>
+    pub fn get_catalog_options(&self) -> &::std::option::Option<crate::types::CatalogOptions> {
+        &self.catalog_options
+    }
     /// <p>The current status of the Elasticsearch domain's service software.</p>
     pub fn service_software_options(mut self, input: crate::types::ServiceSoftwareOptions) -> Self {
         self.service_software_options = ::std::option::Option::Some(input);
@@ -760,6 +781,7 @@ impl ElasticsearchDomainStatusBuilder {
             node_to_node_encryption_options: self.node_to_node_encryption_options,
             advanced_options: self.advanced_options,
             log_publishing_options: self.log_publishing_options,
+            catalog_options: self.catalog_options,
             service_software_options: self.service_software_options,
             domain_endpoint_options: self.domain_endpoint_options,
             advanced_security_options: self.advanced_security_options,

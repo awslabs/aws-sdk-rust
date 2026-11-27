@@ -41,6 +41,16 @@ static STARTOTELENRICHMENTINPUT_MEMBER_EXCLUDE_FILTERS: ::aws_smithy_schema::Sch
     1,
 )
 .with_list_member(&STARTOTELENRICHMENTINPUT_MEMBER_EXCLUDE_FILTERS_MEMBER);
+static STARTOTELENRICHMENTINPUT_MEMBER_ENABLE_TAG_ENRICHMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudwatch.synthetic#StartOTelEnrichmentInput$EnableTagEnrichment",
+        "com.amazonaws.cloudwatch.synthetic",
+        "StartOTelEnrichmentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableTagEnrichment",
+    2,
+);
 static STARTOTELENRICHMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cloudwatch.synthetic#StartOTelEnrichmentInput",
@@ -51,6 +61,7 @@ static STARTOTELENRICHMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = :
     &[
         &STARTOTELENRICHMENTINPUT_MEMBER_INCLUDE_FILTERS,
         &STARTOTELENRICHMENTINPUT_MEMBER_EXCLUDE_FILTERS,
+        &STARTOTELENRICHMENTINPUT_MEMBER_ENABLE_TAG_ENRICHMENT,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -90,6 +101,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::start_
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.enable_tag_enrichment {
+            ser.write_boolean(&STARTOTELENRICHMENTINPUT_MEMBER_ENABLE_TAG_ENRICHMENT, *val)?;
         }
         Ok(())
     }
@@ -134,6 +148,13 @@ impl crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentInpu
                             })?;
                             container
                         });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_tag_enrichment = Some(deser.read_boolean(member)?);
                     }
                 }
                 _ => {}

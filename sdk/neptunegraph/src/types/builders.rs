@@ -11,6 +11,10 @@ pub use crate::types::_import_task_details::ImportTaskDetailsBuilder;
 
 pub use crate::types::_query_summary::QuerySummaryBuilder;
 
+pub use crate::types::_provisioned_graph_configuration::ProvisionedGraphConfigurationBuilder;
+
+pub use crate::types::_graph_session_configuration::GraphSessionConfigurationBuilder;
+
 pub use crate::types::_graph_summary::GraphSummaryBuilder;
 
 pub use crate::types::_private_graph_endpoint_summary::PrivateGraphEndpointSummaryBuilder;

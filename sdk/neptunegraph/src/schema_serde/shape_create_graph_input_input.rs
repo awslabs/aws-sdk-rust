@@ -92,6 +92,16 @@ static CREATEGRAPHINPUT_MEMBER_PROVISIONED_MEMORY: ::aws_smithy_schema::Schema<'
     "provisionedMemory",
     7,
 );
+static CREATEGRAPHINPUT_MEMBER_COMPUTE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.neptunegraph.synthetic#CreateGraphInput$computeConfiguration",
+        "com.amazonaws.neptunegraph.synthetic",
+        "CreateGraphInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "computeConfiguration",
+    8,
+);
 static CREATEGRAPHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.neptunegraph.synthetic#CreateGraphInput",
@@ -108,6 +118,7 @@ static CREATEGRAPHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &CREATEGRAPHINPUT_MEMBER_REPLICA_COUNT,
         &CREATEGRAPHINPUT_MEMBER_DELETION_PROTECTION,
         &CREATEGRAPHINPUT_MEMBER_PROVISIONED_MEMORY,
+        &CREATEGRAPHINPUT_MEMBER_COMPUTE_CONFIGURATION,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/graphs", Some(201)))
@@ -159,6 +170,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.provisioned_memory {
             ser.write_integer(&CREATEGRAPHINPUT_MEMBER_PROVISIONED_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.compute_configuration {
+            ser.write_struct(&CREATEGRAPHINPUT_MEMBER_COMPUTE_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -233,6 +247,13 @@ impl crate::operation::create_graph::builders::CreateGraphInputBuilder {
                         self.provisioned_memory = Some(deser.read_integer(member)?);
                     }
                 }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_configuration = Some(crate::types::ComputeConfiguration::deserialize(deser)?);
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -248,7 +269,6 @@ impl crate::operation::create_graph::CreateGraphInput {
         let mut builder = Self::builder();
         builder.deserialize_members(deserializer)?;
         builder.graph_name = builder.graph_name.or(Some(String::new()));
-        builder.provisioned_memory = builder.provisioned_memory.or(Some(0i32));
         builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
     }
 }

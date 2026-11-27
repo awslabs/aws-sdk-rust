@@ -30,6 +30,27 @@ pub struct DeleteDbClusterInput {
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted, unless the Amazon Web Services Backup policy specifies a point-in-time restore rule.</p>
     pub delete_automated_backups: ::std::option::Option<bool>,
+    /// <p>Specifies whether to delete all DB instances in the DB cluster together with the DB cluster. If you set this value to <code>true</code>, RDS deletes every DB instance in the DB cluster and then deletes the DB cluster. You don't need to call <code>DeleteDBInstance</code> for each DB instance first. If you set this value to <code>false</code> or don't specify it, RDS deletes the DB cluster only after you delete each of its DB instances.</p>
+    /// <p>You must have permission to call <code>DeleteDBInstance</code> on every DB instance in the DB cluster. If RDS can't delete a DB instance in the DB cluster, the request fails and RDS doesn't delete the DB cluster or any of its DB instances.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify this parameter for a DB cluster that is a member of an Aurora global database. Remove the DB cluster from the global database first.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter for an Aurora Limitless Database DB cluster.</p></li>
+    /// <li>
+    /// <p>Deletion protection must be turned off for the DB cluster.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be in the <code>deleting</code> state or be switching over, be the blue DB instance of an active blue/green deployment, or have an active zero-ETL integration.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be the source of an Aurora read replica DB cluster, or have a read replica that is being created or a cross-Region read replica that is being restored.</p></li>
+    /// <li>
+    /// <p>The DB cluster can't be in the <code>stopping</code> state.</p></li>
+    /// </ul>
+    /// <p>If the DB cluster doesn't contain any DB instances, RDS deletes the DB cluster the same way as when you don't specify this parameter.</p>
+    /// <p>Default: <code>false</code></p>
+    /// <p>Valid for Cluster Type: Aurora MySQL and Aurora PostgreSQL DB clusters only</p>
+    pub delete_db_instances: ::std::option::Option<bool>,
 }
 impl DeleteDbClusterInput {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
@@ -66,6 +87,29 @@ impl DeleteDbClusterInput {
     pub fn delete_automated_backups(&self) -> ::std::option::Option<bool> {
         self.delete_automated_backups
     }
+    /// <p>Specifies whether to delete all DB instances in the DB cluster together with the DB cluster. If you set this value to <code>true</code>, RDS deletes every DB instance in the DB cluster and then deletes the DB cluster. You don't need to call <code>DeleteDBInstance</code> for each DB instance first. If you set this value to <code>false</code> or don't specify it, RDS deletes the DB cluster only after you delete each of its DB instances.</p>
+    /// <p>You must have permission to call <code>DeleteDBInstance</code> on every DB instance in the DB cluster. If RDS can't delete a DB instance in the DB cluster, the request fails and RDS doesn't delete the DB cluster or any of its DB instances.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify this parameter for a DB cluster that is a member of an Aurora global database. Remove the DB cluster from the global database first.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter for an Aurora Limitless Database DB cluster.</p></li>
+    /// <li>
+    /// <p>Deletion protection must be turned off for the DB cluster.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be in the <code>deleting</code> state or be switching over, be the blue DB instance of an active blue/green deployment, or have an active zero-ETL integration.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be the source of an Aurora read replica DB cluster, or have a read replica that is being created or a cross-Region read replica that is being restored.</p></li>
+    /// <li>
+    /// <p>The DB cluster can't be in the <code>stopping</code> state.</p></li>
+    /// </ul>
+    /// <p>If the DB cluster doesn't contain any DB instances, RDS deletes the DB cluster the same way as when you don't specify this parameter.</p>
+    /// <p>Default: <code>false</code></p>
+    /// <p>Valid for Cluster Type: Aurora MySQL and Aurora PostgreSQL DB clusters only</p>
+    pub fn delete_db_instances(&self) -> ::std::option::Option<bool> {
+        self.delete_db_instances
+    }
 }
 impl DeleteDbClusterInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterInput`](crate::operation::delete_db_cluster::DeleteDbClusterInput).
@@ -82,6 +126,7 @@ pub struct DeleteDbClusterInputBuilder {
     pub(crate) skip_final_snapshot: ::std::option::Option<bool>,
     pub(crate) final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) delete_automated_backups: ::std::option::Option<bool>,
+    pub(crate) delete_db_instances: ::std::option::Option<bool>,
 }
 impl DeleteDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
@@ -195,6 +240,77 @@ impl DeleteDbClusterInputBuilder {
     pub fn get_delete_automated_backups(&self) -> &::std::option::Option<bool> {
         &self.delete_automated_backups
     }
+    /// <p>Specifies whether to delete all DB instances in the DB cluster together with the DB cluster. If you set this value to <code>true</code>, RDS deletes every DB instance in the DB cluster and then deletes the DB cluster. You don't need to call <code>DeleteDBInstance</code> for each DB instance first. If you set this value to <code>false</code> or don't specify it, RDS deletes the DB cluster only after you delete each of its DB instances.</p>
+    /// <p>You must have permission to call <code>DeleteDBInstance</code> on every DB instance in the DB cluster. If RDS can't delete a DB instance in the DB cluster, the request fails and RDS doesn't delete the DB cluster or any of its DB instances.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify this parameter for a DB cluster that is a member of an Aurora global database. Remove the DB cluster from the global database first.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter for an Aurora Limitless Database DB cluster.</p></li>
+    /// <li>
+    /// <p>Deletion protection must be turned off for the DB cluster.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be in the <code>deleting</code> state or be switching over, be the blue DB instance of an active blue/green deployment, or have an active zero-ETL integration.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be the source of an Aurora read replica DB cluster, or have a read replica that is being created or a cross-Region read replica that is being restored.</p></li>
+    /// <li>
+    /// <p>The DB cluster can't be in the <code>stopping</code> state.</p></li>
+    /// </ul>
+    /// <p>If the DB cluster doesn't contain any DB instances, RDS deletes the DB cluster the same way as when you don't specify this parameter.</p>
+    /// <p>Default: <code>false</code></p>
+    /// <p>Valid for Cluster Type: Aurora MySQL and Aurora PostgreSQL DB clusters only</p>
+    pub fn delete_db_instances(mut self, input: bool) -> Self {
+        self.delete_db_instances = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to delete all DB instances in the DB cluster together with the DB cluster. If you set this value to <code>true</code>, RDS deletes every DB instance in the DB cluster and then deletes the DB cluster. You don't need to call <code>DeleteDBInstance</code> for each DB instance first. If you set this value to <code>false</code> or don't specify it, RDS deletes the DB cluster only after you delete each of its DB instances.</p>
+    /// <p>You must have permission to call <code>DeleteDBInstance</code> on every DB instance in the DB cluster. If RDS can't delete a DB instance in the DB cluster, the request fails and RDS doesn't delete the DB cluster or any of its DB instances.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify this parameter for a DB cluster that is a member of an Aurora global database. Remove the DB cluster from the global database first.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter for an Aurora Limitless Database DB cluster.</p></li>
+    /// <li>
+    /// <p>Deletion protection must be turned off for the DB cluster.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be in the <code>deleting</code> state or be switching over, be the blue DB instance of an active blue/green deployment, or have an active zero-ETL integration.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be the source of an Aurora read replica DB cluster, or have a read replica that is being created or a cross-Region read replica that is being restored.</p></li>
+    /// <li>
+    /// <p>The DB cluster can't be in the <code>stopping</code> state.</p></li>
+    /// </ul>
+    /// <p>If the DB cluster doesn't contain any DB instances, RDS deletes the DB cluster the same way as when you don't specify this parameter.</p>
+    /// <p>Default: <code>false</code></p>
+    /// <p>Valid for Cluster Type: Aurora MySQL and Aurora PostgreSQL DB clusters only</p>
+    pub fn set_delete_db_instances(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_db_instances = input;
+        self
+    }
+    /// <p>Specifies whether to delete all DB instances in the DB cluster together with the DB cluster. If you set this value to <code>true</code>, RDS deletes every DB instance in the DB cluster and then deletes the DB cluster. You don't need to call <code>DeleteDBInstance</code> for each DB instance first. If you set this value to <code>false</code> or don't specify it, RDS deletes the DB cluster only after you delete each of its DB instances.</p>
+    /// <p>You must have permission to call <code>DeleteDBInstance</code> on every DB instance in the DB cluster. If RDS can't delete a DB instance in the DB cluster, the request fails and RDS doesn't delete the DB cluster or any of its DB instances.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify this parameter for a DB cluster that is a member of an Aurora global database. Remove the DB cluster from the global database first.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter for an Aurora Limitless Database DB cluster.</p></li>
+    /// <li>
+    /// <p>Deletion protection must be turned off for the DB cluster.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be in the <code>deleting</code> state or be switching over, be the blue DB instance of an active blue/green deployment, or have an active zero-ETL integration.</p></li>
+    /// <li>
+    /// <p>No DB instance in the DB cluster can be the source of an Aurora read replica DB cluster, or have a read replica that is being created or a cross-Region read replica that is being restored.</p></li>
+    /// <li>
+    /// <p>The DB cluster can't be in the <code>stopping</code> state.</p></li>
+    /// </ul>
+    /// <p>If the DB cluster doesn't contain any DB instances, RDS deletes the DB cluster the same way as when you don't specify this parameter.</p>
+    /// <p>Default: <code>false</code></p>
+    /// <p>Valid for Cluster Type: Aurora MySQL and Aurora PostgreSQL DB clusters only</p>
+    pub fn get_delete_db_instances(&self) -> &::std::option::Option<bool> {
+        &self.delete_db_instances
+    }
     /// Consumes the builder and constructs a [`DeleteDbClusterInput`](crate::operation::delete_db_cluster::DeleteDbClusterInput).
     pub fn build(
         self,
@@ -204,6 +320,7 @@ impl DeleteDbClusterInputBuilder {
             skip_final_snapshot: self.skip_final_snapshot,
             final_db_snapshot_identifier: self.final_db_snapshot_identifier,
             delete_automated_backups: self.delete_automated_backups,
+            delete_db_instances: self.delete_db_instances,
         })
     }
 }

@@ -65,6 +65,12 @@ pub(crate) mod shape_cancel_elasticsearch_service_software_update_output_output;
 
 pub(crate) mod shape_cancelled_change_property;
 
+pub(crate) mod shape_catalog_configuration;
+
+pub(crate) mod shape_catalog_options;
+
+pub(crate) mod shape_catalog_options_status;
+
 pub(crate) mod shape_change_progress_details;
 
 pub(crate) mod shape_change_progress_stage;
@@ -353,6 +359,8 @@ pub(crate) mod shape_revoke_vpc_endpoint_access_input_input;
 
 pub(crate) mod shape_revoke_vpc_endpoint_access_output_output;
 
+pub(crate) mod shape_s3_tables_encryption_configuration;
+
 pub(crate) mod shape_saml_idp;
 
 pub(crate) mod shape_saml_options_input;
@@ -360,6 +368,8 @@ pub(crate) mod shape_saml_options_input;
 pub(crate) mod shape_saml_options_output;
 
 pub(crate) mod shape_scheduled_auto_tune_details;
+
+pub(crate) mod shape_service_managed_s3_tables_catalog;
 
 pub(crate) mod shape_service_software_options;
 

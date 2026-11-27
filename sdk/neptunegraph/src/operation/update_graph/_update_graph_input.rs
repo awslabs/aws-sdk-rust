@@ -8,8 +8,13 @@ pub struct UpdateGraphInput {
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub public_connectivity: ::std::option::Option<bool>,
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub provisioned_memory: ::std::option::Option<i32>,
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
 }
@@ -23,9 +28,16 @@ impl UpdateGraphInput {
         self.public_connectivity
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
+    }
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.compute_configuration.as_ref()
     }
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -46,6 +58,7 @@ pub struct UpdateGraphInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) public_connectivity: ::std::option::Option<bool>,
     pub(crate) provisioned_memory: ::std::option::Option<i32>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl UpdateGraphInputBuilder {
@@ -79,21 +92,44 @@ impl UpdateGraphInputBuilder {
         &self.public_connectivity
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
+    }
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.compute_configuration
     }
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -115,6 +151,7 @@ impl UpdateGraphInputBuilder {
             graph_identifier: self.graph_identifier,
             public_connectivity: self.public_connectivity,
             provisioned_memory: self.provisioned_memory,
+            compute_configuration: self.compute_configuration,
             deletion_protection: self.deletion_protection,
         })
     }

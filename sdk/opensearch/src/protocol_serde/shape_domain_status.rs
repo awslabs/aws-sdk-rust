@@ -156,6 +156,13 @@ where
                                 crate::protocol_serde::shape_log_publishing_options::de_log_publishing_options(tokens, _value, depth + 1)?,
                             );
                         }
+                        "CatalogOptions" => {
+                            builder = builder.set_catalog_options(crate::protocol_serde::shape_catalog_options::de_catalog_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "ServiceSoftwareOptions" => {
                             builder = builder.set_service_software_options(
                                 crate::protocol_serde::shape_service_software_options::de_service_software_options(tokens, _value, depth + 1)?,

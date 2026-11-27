@@ -243,6 +243,8 @@ pub use crate::types::_caller_identity::CallerIdentity;
 
 pub use crate::types::_approver::Approver;
 
+pub use crate::types::_regional_price::RegionalPrice;
+
 pub use crate::types::_email_approver::EmailApprover;
 
 pub use crate::types::_procurement_tool_approver::ProcurementToolApprover;
@@ -450,6 +452,8 @@ mod _purchase_order;
 mod _rate_card_item;
 
 mod _recurring_payment_term;
+
+mod _regional_price;
 
 mod _renewal_summary;
 

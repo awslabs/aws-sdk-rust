@@ -8,6 +8,8 @@ pub struct RateCardItem {
     pub dimension_key: ::std::option::Option<::std::string::String>,
     /// <p>Per unit price for the product dimension that's used for calculating the amount to be charged.</p>
     pub price: ::std::option::Option<::std::string::String>,
+    /// <p>The per-Region price overrides for the product dimension. When a Regional price is present for an AWS Region, it replaces the default <code>price</code>. This field is absent when the offer doesn't define regional price overrides.</p>
+    pub regional_prices: ::std::option::Option<::std::vec::Vec<crate::types::RegionalPrice>>,
 }
 impl RateCardItem {
     /// <p>Dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
@@ -17,6 +19,12 @@ impl RateCardItem {
     /// <p>Per unit price for the product dimension that's used for calculating the amount to be charged.</p>
     pub fn price(&self) -> ::std::option::Option<&str> {
         self.price.as_deref()
+    }
+    /// <p>The per-Region price overrides for the product dimension. When a Regional price is present for an AWS Region, it replaces the default <code>price</code>. This field is absent when the offer doesn't define regional price overrides.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regional_prices.is_none()`.
+    pub fn regional_prices(&self) -> &[crate::types::RegionalPrice] {
+        self.regional_prices.as_deref().unwrap_or_default()
     }
 }
 impl RateCardItem {
@@ -32,6 +40,7 @@ impl RateCardItem {
 pub struct RateCardItemBuilder {
     pub(crate) dimension_key: ::std::option::Option<::std::string::String>,
     pub(crate) price: ::std::option::Option<::std::string::String>,
+    pub(crate) regional_prices: ::std::option::Option<::std::vec::Vec<crate::types::RegionalPrice>>,
 }
 impl RateCardItemBuilder {
     /// <p>Dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
@@ -62,11 +71,32 @@ impl RateCardItemBuilder {
     pub fn get_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.price
     }
+    /// Appends an item to `regional_prices`.
+    ///
+    /// To override the contents of this collection use [`set_regional_prices`](Self::set_regional_prices).
+    ///
+    /// <p>The per-Region price overrides for the product dimension. When a Regional price is present for an AWS Region, it replaces the default <code>price</code>. This field is absent when the offer doesn't define regional price overrides.</p>
+    pub fn regional_prices(mut self, input: crate::types::RegionalPrice) -> Self {
+        let mut v = self.regional_prices.unwrap_or_default();
+        v.push(input);
+        self.regional_prices = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The per-Region price overrides for the product dimension. When a Regional price is present for an AWS Region, it replaces the default <code>price</code>. This field is absent when the offer doesn't define regional price overrides.</p>
+    pub fn set_regional_prices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionalPrice>>) -> Self {
+        self.regional_prices = input;
+        self
+    }
+    /// <p>The per-Region price overrides for the product dimension. When a Regional price is present for an AWS Region, it replaces the default <code>price</code>. This field is absent when the offer doesn't define regional price overrides.</p>
+    pub fn get_regional_prices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionalPrice>> {
+        &self.regional_prices
+    }
     /// Consumes the builder and constructs a [`RateCardItem`](crate::types::RateCardItem).
     pub fn build(self) -> crate::types::RateCardItem {
         crate::types::RateCardItem {
             dimension_key: self.dimension_key,
             price: self.price,
+            regional_prices: self.regional_prices,
         }
     }
 }

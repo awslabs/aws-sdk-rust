@@ -181,18 +181,21 @@ impl ListMetricsFluentBuilder {
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 50 minutes more than the specified time interval.</p>
+    /// <p>A namespace can contain many metrics that published data in the past two weeks but not in the past three hours. In this case, a page of results can contain few or no metrics and still include a <code>NextToken</code>. You need to continue making calls with the returned <code>NextToken</code> until no token is returned. If you need a continuous feed of active metrics across namespaces, use metric streams. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html">Use metric streams</a>.</p>
     pub fn recently_active(mut self, input: crate::types::RecentlyActive) -> Self {
         self.inner = self.inner.recently_active(input);
         self
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 50 minutes more than the specified time interval.</p>
+    /// <p>A namespace can contain many metrics that published data in the past two weeks but not in the past three hours. In this case, a page of results can contain few or no metrics and still include a <code>NextToken</code>. You need to continue making calls with the returned <code>NextToken</code> until no token is returned. If you need a continuous feed of active metrics across namespaces, use metric streams. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html">Use metric streams</a>.</p>
     pub fn set_recently_active(mut self, input: ::std::option::Option<crate::types::RecentlyActive>) -> Self {
         self.inner = self.inner.set_recently_active(input);
         self
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 50 minutes more than the specified time interval.</p>
+    /// <p>A namespace can contain many metrics that published data in the past two weeks but not in the past three hours. In this case, a page of results can contain few or no metrics and still include a <code>NextToken</code>. You need to continue making calls with the returned <code>NextToken</code> until no token is returned. If you need a continuous feed of active metrics across namespaces, use metric streams. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html">Use metric streams</a>.</p>
     pub fn get_recently_active(&self) -> &::std::option::Option<crate::types::RecentlyActive> {
         self.inner.get_recently_active()
     }

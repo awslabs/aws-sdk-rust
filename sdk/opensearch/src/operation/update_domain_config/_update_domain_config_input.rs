@@ -33,6 +33,8 @@ pub struct UpdateDomainConfigInput {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     /// <p>Encryption at rest options for the domain.</p>
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
@@ -126,6 +128,10 @@ impl UpdateDomainConfigInput {
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.log_publishing_options.as_ref()
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn catalog_options(&self) -> ::std::option::Option<&crate::types::CatalogOptions> {
+        self.catalog_options.as_ref()
     }
     /// <p>Encryption at rest options for the domain.</p>
     pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
@@ -224,6 +230,7 @@ pub struct UpdateDomainConfigInputBuilder {
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    pub(crate) catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
@@ -433,6 +440,20 @@ impl UpdateDomainConfigInputBuilder {
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         &self.log_publishing_options
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn catalog_options(mut self, input: crate::types::CatalogOptions) -> Self {
+        self.catalog_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn set_catalog_options(mut self, input: ::std::option::Option<crate::types::CatalogOptions>) -> Self {
+        self.catalog_options = input;
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn get_catalog_options(&self) -> &::std::option::Option<crate::types::CatalogOptions> {
+        &self.catalog_options
     }
     /// <p>Encryption at rest options for the domain.</p>
     pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
@@ -707,6 +728,7 @@ impl UpdateDomainConfigInputBuilder {
             access_policies: self.access_policies,
             ip_address_type: self.ip_address_type,
             log_publishing_options: self.log_publishing_options,
+            catalog_options: self.catalog_options,
             encryption_at_rest_options: self.encryption_at_rest_options,
             domain_endpoint_options: self.domain_endpoint_options,
             node_to_node_encryption_options: self.node_to_node_encryption_options,

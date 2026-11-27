@@ -256,6 +256,20 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.inner.get_log_publishing_options()
     }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn catalog_options(mut self, input: crate::types::CatalogOptions) -> Self {
+        self.inner = self.inner.catalog_options(input);
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn set_catalog_options(mut self, input: ::std::option::Option<crate::types::CatalogOptions>) -> Self {
+        self.inner = self.inner.set_catalog_options(input);
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn get_catalog_options(&self) -> &::std::option::Option<crate::types::CatalogOptions> {
+        self.inner.get_catalog_options()
+    }
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
         self.inner = self.inner.domain_endpoint_options(input);

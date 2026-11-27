@@ -95,6 +95,16 @@ static GRAPHSUMMARY_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema<'sta
     "deletionProtection",
     9,
 );
+static GRAPHSUMMARY_MEMBER_COMPUTE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.neptunegraph#GraphSummary$computeConfiguration",
+        "com.amazonaws.neptunegraph",
+        "GraphSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "computeConfiguration",
+    10,
+);
 static GRAPHSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.neptunegraph#GraphSummary", "com.amazonaws.neptunegraph", "GraphSummary"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -109,6 +119,7 @@ static GRAPHSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_
         &GRAPHSUMMARY_MEMBER_REPLICA_COUNT,
         &GRAPHSUMMARY_MEMBER_KMS_KEY_IDENTIFIER,
         &GRAPHSUMMARY_MEMBER_DELETION_PROTECTION,
+        &GRAPHSUMMARY_MEMBER_COMPUTE_CONFIGURATION,
     ],
 );
 impl crate::types::GraphSummary {
@@ -157,6 +168,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::GraphSumma
         }
         if let Some(ref val) = self.deletion_protection {
             ser.write_boolean(&GRAPHSUMMARY_MEMBER_DELETION_PROTECTION, *val)?;
+        }
+        if let Some(ref val) = self.compute_configuration {
+            ser.write_struct(&GRAPHSUMMARY_MEMBER_COMPUTE_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -231,6 +245,13 @@ impl crate::types::builders::GraphSummaryBuilder {
                         deser.read_null()?;
                     } else {
                         self.deletion_protection = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_configuration = Some(crate::types::ComputeConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

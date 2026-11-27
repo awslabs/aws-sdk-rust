@@ -22,7 +22,9 @@ impl crate::operation::start_graph::builders::StartGraphInputBuilder {
 }
 /// Fluent builder constructing a request to `StartGraph`.
 ///
-/// <p>Starts the specific graph.</p>
+/// <p>Starts the specific graph.</p><note>
+/// <p>Graph sessions are started automatically when a query is sent to the graph. While this API is supported for graph sessions, it isn't required.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartGraphFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

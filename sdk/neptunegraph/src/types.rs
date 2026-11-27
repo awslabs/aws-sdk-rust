@@ -21,6 +21,8 @@ pub use crate::types::_query_state_input::QueryStateInput;
 
 pub use crate::types::_vector_search_configuration::VectorSearchConfiguration;
 
+pub use crate::types::_compute_configuration::ComputeConfiguration;
+
 pub use crate::types::_graph_status::GraphStatus;
 
 pub use crate::types::_private_graph_endpoint_status::PrivateGraphEndpointStatus;
@@ -49,6 +51,10 @@ pub use crate::types::_import_task_details::ImportTaskDetails;
 
 pub use crate::types::_query_summary::QuerySummary;
 
+pub use crate::types::_provisioned_graph_configuration::ProvisionedGraphConfiguration;
+
+pub use crate::types::_graph_session_configuration::GraphSessionConfiguration;
+
 pub use crate::types::_graph_summary::GraphSummary;
 
 pub use crate::types::_private_graph_endpoint_summary::PrivateGraphEndpointSummary;
@@ -73,6 +79,8 @@ pub use crate::types::_multi_value_handling_type::MultiValueHandlingType;
 
 mod _blank_node_handling;
 
+mod _compute_configuration;
+
 mod _conflict_exception_reason;
 
 mod _edge_structure;
@@ -96,6 +104,8 @@ mod _export_task_summary;
 mod _format;
 
 mod _graph_data_summary;
+
+mod _graph_session_configuration;
 
 mod _graph_snapshot_summary;
 
@@ -126,6 +136,8 @@ mod _plan_cache_type;
 mod _private_graph_endpoint_status;
 
 mod _private_graph_endpoint_summary;
+
+mod _provisioned_graph_configuration;
 
 mod _query_language;
 

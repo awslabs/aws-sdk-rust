@@ -11,6 +11,8 @@ pub struct UpdateOTelEnrichmentOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the enrichment configuration for the account was last stored.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether enriched metrics include resource tag labels for the account after the update. If the request omits <code>EnableTagEnrichment</code>, this is the value that was already stored.</p>
+    pub enable_tag_enrichment: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateOTelEnrichmentOutput {
@@ -34,6 +36,10 @@ impl UpdateOTelEnrichmentOutput {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>Specifies whether enriched metrics include resource tag labels for the account after the update. If the request omits <code>EnableTagEnrichment</code>, this is the value that was already stored.</p>
+    pub fn enable_tag_enrichment(&self) -> ::std::option::Option<bool> {
+        self.enable_tag_enrichment
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateOTelEnrichmentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -55,6 +61,7 @@ pub struct UpdateOTelEnrichmentOutputBuilder {
     pub(crate) exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) enable_tag_enrichment: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateOTelEnrichmentOutputBuilder {
@@ -126,6 +133,20 @@ impl UpdateOTelEnrichmentOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Specifies whether enriched metrics include resource tag labels for the account after the update. If the request omits <code>EnableTagEnrichment</code>, this is the value that was already stored.</p>
+    pub fn enable_tag_enrichment(mut self, input: bool) -> Self {
+        self.enable_tag_enrichment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels for the account after the update. If the request omits <code>EnableTagEnrichment</code>, this is the value that was already stored.</p>
+    pub fn set_enable_tag_enrichment(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_tag_enrichment = input;
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels for the account after the update. If the request omits <code>EnableTagEnrichment</code>, this is the value that was already stored.</p>
+    pub fn get_enable_tag_enrichment(&self) -> &::std::option::Option<bool> {
+        &self.enable_tag_enrichment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -142,6 +163,7 @@ impl UpdateOTelEnrichmentOutputBuilder {
             exclude_filters: self.exclude_filters,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            enable_tag_enrichment: self.enable_tag_enrichment,
             _request_id: self._request_id,
         }
     }

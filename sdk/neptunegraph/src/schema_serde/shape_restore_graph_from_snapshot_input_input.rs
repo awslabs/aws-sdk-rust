@@ -30,6 +30,16 @@ static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_PROVISIONED_MEMORY: ::aws_smithy_sch
     "provisionedMemory",
     2,
 );
+static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_COMPUTE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.neptunegraph.synthetic#RestoreGraphFromSnapshotInput$computeConfiguration",
+        "com.amazonaws.neptunegraph.synthetic",
+        "RestoreGraphFromSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "computeConfiguration",
+    3,
+);
 static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.neptunegraph.synthetic#RestoreGraphFromSnapshotInput$deletionProtection",
@@ -38,7 +48,7 @@ static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "deletionProtection",
-    3,
+    4,
 );
 static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.neptunegraph#TagMap$key", "com.amazonaws.neptunegraph", "TagMap"),
@@ -60,7 +70,7 @@ static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::Map,
     "tags",
-    4,
+    5,
 )
 .with_map_members(
     &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_TAGS_KEY,
@@ -74,7 +84,7 @@ static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_REPLICA_COUNT: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "replicaCount",
-    5,
+    6,
 );
 static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_PUBLIC_CONNECTIVITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -84,7 +94,7 @@ static RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_PUBLIC_CONNECTIVITY: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "publicConnectivity",
-    6,
+    7,
 );
 static RESTOREGRAPHFROMSNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -97,6 +107,7 @@ static RESTOREGRAPHFROMSNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static
         &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_SNAPSHOT_IDENTIFIER,
         &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_GRAPH_NAME,
         &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_PROVISIONED_MEMORY,
+        &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_COMPUTE_CONFIGURATION,
         &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_DELETION_PROTECTION,
         &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_TAGS,
         &RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_REPLICA_COUNT,
@@ -132,6 +143,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::restor
         }
         if let Some(ref val) = self.provisioned_memory {
             ser.write_integer(&RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_PROVISIONED_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.compute_configuration {
+            ser.write_struct(&RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_COMPUTE_CONFIGURATION, val)?;
         }
         if let Some(ref val) = self.deletion_protection {
             ser.write_boolean(&RESTOREGRAPHFROMSNAPSHOTINPUT_MEMBER_DELETION_PROTECTION, *val)?;
@@ -196,24 +210,31 @@ impl crate::operation::restore_graph_from_snapshot::builders::RestoreGraphFromSn
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.deletion_protection = Some(deser.read_boolean(member)?);
+                        self.compute_configuration = Some(crate::types::ComputeConfiguration::deserialize(deser)?);
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.tags = Some(deser.read_string_string_map(member)?);
+                        self.deletion_protection = Some(deser.read_boolean(member)?);
                     }
                 }
                 Some(5) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.replica_count = Some(deser.read_integer(member)?);
+                        self.tags = Some(deser.read_string_string_map(member)?);
                     }
                 }
                 Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.replica_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

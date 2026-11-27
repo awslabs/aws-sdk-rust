@@ -25,6 +25,11 @@ pub fn ser_delete_db_cluster_input_input_input(
     if let Some(var_8) = &input.delete_automated_backups {
         scope_7.boolean(*var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("DeleteDBInstances");
+    if let Some(var_10) = &input.delete_db_instances {
+        scope_9.boolean(*var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

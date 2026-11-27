@@ -22,9 +22,9 @@ impl crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentInpu
 }
 /// Fluent builder constructing a request to `StartOTelEnrichment`.
 ///
-/// <p>Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported Amazon Web Services resources</a> in the account. Once enabled, metrics that contain a resource identifier dimension (for example, EC2 <code>CPUUtilization</code> with an <code>InstanceId</code> dimension) are enriched with resource ARN and resource tag labels and become queryable using PromQL.</p>
-/// <p>Before calling this operation, you must enable resource tags on telemetry for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable resource tags on telemetry</a>.</p>
-/// <p>Optionally, <code>IncludeFilters</code> and <code>ExcludeFilters</code> limit enrichment to a subset of the account's metrics. These filters are stored only when this operation starts enrichment. Calling <code>StartOTelEnrichment</code> for an account where enrichment is already running has no effect and does not modify the filters that are applied. To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.</p>
+/// <p>Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported Amazon Web Services resources</a> in the account. Once enabled, metrics that contain a resource identifier dimension (for example, EC2 <code>CPUUtilization</code> with an <code>InstanceId</code> dimension) are enriched with resource ARN labels and, optionally, resource tag labels, and become queryable using PromQL.</p>
+/// <p>To include resource tag labels, you must also enable resource tags on telemetry for the account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable resource tags on telemetry</a>. If <code>EnableTagEnrichment</code> is <code>false</code>, enrichment reads no resource tags, so it does not require resource tags on telemetry.</p>
+/// <p>Optionally, <code>IncludeFilters</code> and <code>ExcludeFilters</code> limit enrichment to a subset of the account's metrics, and <code>EnableTagEnrichment</code> controls whether enriched metrics include resource tag labels. These settings are stored only when this operation starts enrichment. Calling <code>StartOTelEnrichment</code> for an account where enrichment is already running has no effect and does not modify the filters or the tag enrichment setting that are applied. To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartOTelEnrichmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,5 +156,22 @@ impl StartOTelEnrichmentFluentBuilder {
     /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
     pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>> {
         self.inner.get_exclude_filters()
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the default is <code>true</code>.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn enable_tag_enrichment(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_tag_enrichment(input);
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the default is <code>true</code>.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn set_enable_tag_enrichment(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_tag_enrichment(input);
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the default is <code>true</code>.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn get_enable_tag_enrichment(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_tag_enrichment()
     }
 }

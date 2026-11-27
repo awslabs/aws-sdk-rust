@@ -429,11 +429,15 @@ pub(crate) mod shape_payment_schedule_entry;
 
 pub(crate) mod shape_procurement_tool_approver_outcome;
 
+pub(crate) mod shape_regional_price_list;
+
 pub(crate) mod shape_agreement_approval_purchase_orders;
 
 pub(crate) mod shape_approver;
 
 pub(crate) mod shape_caller_identity;
+
+pub(crate) mod shape_regional_price;
 
 pub(crate) mod shape_aws_organization_admin_approver;
 

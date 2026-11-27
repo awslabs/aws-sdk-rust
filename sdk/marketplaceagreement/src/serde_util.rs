@@ -523,6 +523,18 @@ pub(crate) fn caller_identity_correct_errors(
     builder
 }
 
+pub(crate) fn regional_price_correct_errors(
+    mut builder: crate::types::builders::RegionalPriceBuilder,
+) -> crate::types::builders::RegionalPriceBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.price.is_none() {
+        builder.price = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn agreement_approval_purchase_order_correct_errors(
     mut builder: crate::types::builders::AgreementApprovalPurchaseOrderBuilder,
 ) -> crate::types::builders::AgreementApprovalPurchaseOrderBuilder {

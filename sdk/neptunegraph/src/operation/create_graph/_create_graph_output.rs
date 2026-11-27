@@ -17,8 +17,13 @@ pub struct CreateGraphOutput {
     /// <p>The time when the graph was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub provisioned_memory: ::std::option::Option<i32>,
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     /// <p>The graph endpoint.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p><note>
@@ -70,9 +75,16 @@ impl CreateGraphOutput {
         self.create_time.as_ref()
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.compute_configuration.as_ref()
     }
     /// <p>The graph endpoint.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
@@ -133,6 +145,7 @@ pub struct CreateGraphOutputBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) provisioned_memory: ::std::option::Option<i32>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) public_connectivity: ::std::option::Option<bool>,
     pub(crate) vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
@@ -235,21 +248,44 @@ impl CreateGraphOutputBuilder {
         &self.create_time
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.compute_configuration
     }
     /// <p>The graph endpoint.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -410,6 +446,7 @@ impl CreateGraphOutputBuilder {
             status_reason: self.status_reason,
             create_time: self.create_time,
             provisioned_memory: self.provisioned_memory,
+            compute_configuration: self.compute_configuration,
             endpoint: self.endpoint,
             public_connectivity: self.public_connectivity,
             vector_search_configuration: self.vector_search_configuration,

@@ -56,6 +56,8 @@ pub struct DomainStatus {
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Log publishing options for the domain.</p>
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    /// <p>The catalog options for the domain.</p>
+    pub catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     /// <p>The current status of the domain's service software.</p>
     pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
@@ -191,6 +193,10 @@ impl DomainStatus {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.log_publishing_options.as_ref()
     }
+    /// <p>The catalog options for the domain.</p>
+    pub fn catalog_options(&self) -> ::std::option::Option<&crate::types::CatalogOptions> {
+        self.catalog_options.as_ref()
+    }
     /// <p>The current status of the domain's service software.</p>
     pub fn service_software_options(&self) -> ::std::option::Option<&crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
@@ -288,6 +294,7 @@ pub struct DomainStatusBuilder {
     pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    pub(crate) catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     pub(crate) service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
@@ -679,6 +686,20 @@ impl DomainStatusBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         &self.log_publishing_options
     }
+    /// <p>The catalog options for the domain.</p>
+    pub fn catalog_options(mut self, input: crate::types::CatalogOptions) -> Self {
+        self.catalog_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The catalog options for the domain.</p>
+    pub fn set_catalog_options(mut self, input: ::std::option::Option<crate::types::CatalogOptions>) -> Self {
+        self.catalog_options = input;
+        self
+    }
+    /// <p>The catalog options for the domain.</p>
+    pub fn get_catalog_options(&self) -> &::std::option::Option<crate::types::CatalogOptions> {
+        &self.catalog_options
+    }
     /// <p>The current status of the domain's service software.</p>
     pub fn service_software_options(mut self, input: crate::types::ServiceSoftwareOptions) -> Self {
         self.service_software_options = ::std::option::Option::Some(input);
@@ -940,6 +961,7 @@ impl DomainStatusBuilder {
             node_to_node_encryption_options: self.node_to_node_encryption_options,
             advanced_options: self.advanced_options,
             log_publishing_options: self.log_publishing_options,
+            catalog_options: self.catalog_options,
             service_software_options: self.service_software_options,
             domain_endpoint_options: self.domain_endpoint_options,
             advanced_security_options: self.advanced_security_options,

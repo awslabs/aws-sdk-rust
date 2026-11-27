@@ -156,4 +156,21 @@ impl UpdateOTelEnrichmentFluentBuilder {
     pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>> {
         self.inner.get_exclude_filters()
     }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn enable_tag_enrichment(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_tag_enrichment(input);
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn set_enable_tag_enrichment(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_tag_enrichment(input);
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn get_enable_tag_enrichment(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_tag_enrichment()
+    }
 }

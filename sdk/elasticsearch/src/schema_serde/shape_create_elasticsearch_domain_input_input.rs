@@ -172,6 +172,16 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_LOG_PUBLISHING_OPTIONS: ::aws_smith
     &CREATEELASTICSEARCHDOMAININPUT_MEMBER_LOG_PUBLISHING_OPTIONS_KEY,
     &CREATEELASTICSEARCHDOMAININPUT_MEMBER_LOG_PUBLISHING_OPTIONS_VALUE,
 );
+static CREATEELASTICSEARCHDOMAININPUT_MEMBER_CATALOG_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.elasticsearchservice.synthetic#CreateElasticsearchDomainInput$CatalogOptions",
+        "com.amazonaws.elasticsearchservice.synthetic",
+        "CreateElasticsearchDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CatalogOptions",
+    12,
+);
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.elasticsearchservice.synthetic#CreateElasticsearchDomainInput$DomainEndpointOptions",
@@ -180,7 +190,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS: ::aws_smit
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "DomainEndpointOptions",
-    12,
+    13,
 );
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_ADVANCED_SECURITY_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -191,7 +201,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_ADVANCED_SECURITY_OPTIONS: ::aws_sm
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "AdvancedSecurityOptions",
-        13,
+        14,
     );
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_AUTO_TUNE_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -201,7 +211,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_AUTO_TUNE_OPTIONS: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "AutoTuneOptions",
-    14,
+    15,
 );
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_TAG_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -221,7 +231,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_TAG_LIST: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::List,
     "TagList",
-    15,
+    16,
 )
 .with_list_member(&CREATEELASTICSEARCHDOMAININPUT_MEMBER_TAG_LIST_MEMBER);
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_DEPLOYMENT_STRATEGY_OPTIONS: ::aws_smithy_schema::Schema<'static> =
@@ -233,7 +243,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_DEPLOYMENT_STRATEGY_OPTIONS: ::aws_
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "DeploymentStrategyOptions",
-        16,
+        17,
     );
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_AUTOMATED_SNAPSHOT_PAUSE_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -244,7 +254,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_AUTOMATED_SNAPSHOT_PAUSE_OPTIONS: :
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "AutomatedSnapshotPauseOptions",
-        17,
+        18,
     );
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_USE_CASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -254,7 +264,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_USE_CASE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseCase",
-    18,
+    19,
 );
 static CREATEELASTICSEARCHDOMAININPUT_MEMBER_ENGINE_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -264,7 +274,7 @@ static CREATEELASTICSEARCHDOMAININPUT_MEMBER_ENGINE_MODE: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "EngineMode",
-    19,
+    20,
 );
 static CREATEELASTICSEARCHDOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -286,6 +296,7 @@ static CREATEELASTICSEARCHDOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'stati
         &CREATEELASTICSEARCHDOMAININPUT_MEMBER_NODE_TO_NODE_ENCRYPTION_OPTIONS,
         &CREATEELASTICSEARCHDOMAININPUT_MEMBER_ADVANCED_OPTIONS,
         &CREATEELASTICSEARCHDOMAININPUT_MEMBER_LOG_PUBLISHING_OPTIONS,
+        &CREATEELASTICSEARCHDOMAININPUT_MEMBER_CATALOG_OPTIONS,
         &CREATEELASTICSEARCHDOMAININPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS,
         &CREATEELASTICSEARCHDOMAININPUT_MEMBER_ADVANCED_SECURITY_OPTIONS,
         &CREATEELASTICSEARCHDOMAININPUT_MEMBER_AUTO_TUNE_OPTIONS,
@@ -366,6 +377,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.catalog_options {
+            ser.write_struct(&CREATEELASTICSEARCHDOMAININPUT_MEMBER_CATALOG_OPTIONS, val)?;
         }
         if let Some(ref val) = self.domain_endpoint_options {
             ser.write_struct(&CREATEELASTICSEARCHDOMAININPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS, val)?;
@@ -514,24 +528,31 @@ impl crate::operation::create_elasticsearch_domain::builders::CreateElasticsearc
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.domain_endpoint_options = Some(crate::types::DomainEndpointOptions::deserialize(deser)?);
+                        self.catalog_options = Some(crate::types::CatalogOptions::deserialize(deser)?);
                     }
                 }
                 Some(13) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.advanced_security_options = Some(crate::types::AdvancedSecurityOptionsInput::deserialize(deser)?);
+                        self.domain_endpoint_options = Some(crate::types::DomainEndpointOptions::deserialize(deser)?);
                     }
                 }
                 Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.auto_tune_options = Some(crate::types::AutoTuneOptionsInput::deserialize(deser)?);
+                        self.advanced_security_options = Some(crate::types::AdvancedSecurityOptionsInput::deserialize(deser)?);
                     }
                 }
                 Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_tune_options = Some(crate::types::AutoTuneOptionsInput::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -545,28 +566,28 @@ impl crate::operation::create_elasticsearch_domain::builders::CreateElasticsearc
                         });
                     }
                 }
-                Some(16) => {
+                Some(17) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.deployment_strategy_options = Some(crate::types::DeploymentStrategyOptions::deserialize(deser)?);
                     }
                 }
-                Some(17) => {
+                Some(18) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.automated_snapshot_pause_options = Some(crate::types::AutomatedSnapshotPauseRequestOptions::deserialize(deser)?);
                     }
                 }
-                Some(18) => {
+                Some(19) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.use_case = Some(crate::types::DomainUseCase::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(19) => {
+                Some(20) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

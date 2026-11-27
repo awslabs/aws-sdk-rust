@@ -137,21 +137,44 @@ impl UpdateGraphFluentBuilder {
         self.inner.get_public_connectivity()
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.inner = self.inner.provisioned_memory(input);
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_provisioned_memory(input);
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         self.inner.get_provisioned_memory()
+    }
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.inner = self.inner.compute_configuration(input);
+        self
+    }
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.inner = self.inner.set_compute_configuration(input);
+        self
+    }
+    /// <p>The updated compute configuration for the graph. A graph session can be scaled up to a provisioned graph, and a provisioned graph can be scaled down to a graph session, as long as the data in the graph fits within the graph session.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        self.inner.get_compute_configuration()
     }
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {

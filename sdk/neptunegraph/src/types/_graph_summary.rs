@@ -12,7 +12,10 @@ pub struct GraphSummary {
     pub arn: ::std::string::String,
     /// <p>The status of the graph.</p>
     pub status: ::std::option::Option<crate::types::GraphStatus>,
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub provisioned_memory: ::std::option::Option<i32>,
     /// <p>If <code>true</code>, the graph has a public endpoint, otherwise not.</p>
     pub public_connectivity: ::std::option::Option<bool>,
@@ -24,6 +27,8 @@ pub struct GraphSummary {
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, deletion protection is enabled for the graph.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl GraphSummary {
     /// <p>The unique identifier of the graph.</p>
@@ -45,7 +50,10 @@ impl GraphSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::GraphStatus> {
         self.status.as_ref()
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
     }
@@ -69,6 +77,10 @@ impl GraphSummary {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.compute_configuration.as_ref()
+    }
 }
 impl GraphSummary {
     /// Creates a new builder-style object to manufacture [`GraphSummary`](crate::types::GraphSummary).
@@ -91,6 +103,7 @@ pub struct GraphSummaryBuilder {
     pub(crate) replica_count: ::std::option::Option<i32>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl GraphSummaryBuilder {
     /// <p>The unique identifier of the graph.</p>
@@ -152,17 +165,26 @@ impl GraphSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GraphStatus> {
         &self.status
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
     }
@@ -236,6 +258,20 @@ impl GraphSummaryBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.compute_configuration
+    }
     /// Consumes the builder and constructs a [`GraphSummary`](crate::types::GraphSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::GraphSummaryBuilder::id)
@@ -268,6 +304,7 @@ impl GraphSummaryBuilder {
             replica_count: self.replica_count,
             kms_key_identifier: self.kms_key_identifier,
             deletion_protection: self.deletion_protection,
+            compute_configuration: self.compute_configuration,
         })
     }
 }

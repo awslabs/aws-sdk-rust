@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the problem.</p>
     pub message: ::std::string::String,
     /// <p>The identifier of the resource that exceeded quota.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -80,18 +80,18 @@ pub struct ServiceQuotaExceededExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceQuotaExceededExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the problem.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the problem.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the problem.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

@@ -23,6 +23,14 @@ pub(crate) fn de_rate_card_item(
                 "price" => {
                     ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_price(Some(decoder.string()?))))?
                 }
+                "regionalPrices" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(
+                        builder.set_regional_prices(Some(crate::protocol_serde::shape_regional_price_list::de_regional_price_list(
+                            decoder,
+                            depth + 1,
+                        )?)),
+                    )
+                })?,
                 _ => {
                     decoder.skip()?;
                     builder

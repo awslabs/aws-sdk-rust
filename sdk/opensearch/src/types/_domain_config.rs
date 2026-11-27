@@ -28,6 +28,8 @@ pub struct DomainConfig {
     pub advanced_options: ::std::option::Option<crate::types::AdvancedOptionsStatus>,
     /// <p>Key-value pairs to configure log publishing.</p>
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
+    /// <p>The catalog options configured for the domain and their current status.</p>
+    pub catalog_options: ::std::option::Option<crate::types::CatalogOptionsStatus>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     /// <p>Container for fine-grained access control settings for the domain.</p>
@@ -103,6 +105,10 @@ impl DomainConfig {
     /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::LogPublishingOptionsStatus> {
         self.log_publishing_options.as_ref()
+    }
+    /// <p>The catalog options configured for the domain and their current status.</p>
+    pub fn catalog_options(&self) -> ::std::option::Option<&crate::types::CatalogOptionsStatus> {
+        self.catalog_options.as_ref()
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptionsStatus> {
@@ -182,6 +188,7 @@ pub struct DomainConfigBuilder {
     pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
     pub(crate) advanced_options: ::std::option::Option<crate::types::AdvancedOptionsStatus>,
     pub(crate) log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
+    pub(crate) catalog_options: ::std::option::Option<crate::types::CatalogOptionsStatus>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
     pub(crate) identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptionsStatus>,
@@ -364,6 +371,20 @@ impl DomainConfigBuilder {
     /// <p>Key-value pairs to configure log publishing.</p>
     pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::LogPublishingOptionsStatus> {
         &self.log_publishing_options
+    }
+    /// <p>The catalog options configured for the domain and their current status.</p>
+    pub fn catalog_options(mut self, input: crate::types::CatalogOptionsStatus) -> Self {
+        self.catalog_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The catalog options configured for the domain and their current status.</p>
+    pub fn set_catalog_options(mut self, input: ::std::option::Option<crate::types::CatalogOptionsStatus>) -> Self {
+        self.catalog_options = input;
+        self
+    }
+    /// <p>The catalog options configured for the domain and their current status.</p>
+    pub fn get_catalog_options(&self) -> &::std::option::Option<crate::types::CatalogOptionsStatus> {
+        &self.catalog_options
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptionsStatus) -> Self {
@@ -568,6 +589,7 @@ impl DomainConfigBuilder {
             node_to_node_encryption_options: self.node_to_node_encryption_options,
             advanced_options: self.advanced_options,
             log_publishing_options: self.log_publishing_options,
+            catalog_options: self.catalog_options,
             domain_endpoint_options: self.domain_endpoint_options,
             advanced_security_options: self.advanced_security_options,
             identity_center_options: self.identity_center_options,

@@ -20,8 +20,13 @@ pub struct CreateGraphInput {
     pub replica_count: ::std::option::Option<i32>,
     /// <p>Indicates whether or not to enable deletion protection on the graph. The graph can’t be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).</p>
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub provisioned_memory: ::std::option::Option<i32>,
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl CreateGraphInput {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
@@ -55,9 +60,16 @@ impl CreateGraphInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
+    }
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.compute_configuration.as_ref()
     }
 }
 impl CreateGraphInput {
@@ -79,6 +91,7 @@ pub struct CreateGraphInputBuilder {
     pub(crate) replica_count: ::std::option::Option<i32>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) provisioned_memory: ::std::option::Option<i32>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl CreateGraphInputBuilder {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
@@ -195,20 +208,42 @@ impl CreateGraphInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
-    /// This field is required.
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
+    }
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.compute_configuration
     }
     /// Consumes the builder and constructs a [`CreateGraphInput`](crate::operation::create_graph::CreateGraphInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_graph::CreateGraphInput, ::aws_smithy_types::error::operation::BuildError> {
@@ -221,6 +256,7 @@ impl CreateGraphInputBuilder {
             replica_count: self.replica_count,
             deletion_protection: self.deletion_protection,
             provisioned_memory: self.provisioned_memory,
+            compute_configuration: self.compute_configuration,
         })
     }
 }

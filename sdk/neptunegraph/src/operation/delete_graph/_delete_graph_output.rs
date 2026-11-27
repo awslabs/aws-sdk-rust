@@ -15,13 +15,18 @@ pub struct DeleteGraphOutput {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the graph was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub provisioned_memory: ::std::option::Option<i32>,
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     /// <p>The graph endpoint.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the graph has a public endpoint, otherwise not.</p>
     pub public_connectivity: ::std::option::Option<bool>,
-    /// <p>Specifies the number of dimensions for vector embeddings loaded into the graph. Max = 65535</p>
+    /// <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     pub vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
     /// <p>The number of replicas for the graph.</p>
     pub replica_count: ::std::option::Option<i32>,
@@ -63,9 +68,16 @@ impl DeleteGraphOutput {
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.compute_configuration.as_ref()
     }
     /// <p>The graph endpoint.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
@@ -75,7 +87,7 @@ impl DeleteGraphOutput {
     pub fn public_connectivity(&self) -> ::std::option::Option<bool> {
         self.public_connectivity
     }
-    /// <p>Specifies the number of dimensions for vector embeddings loaded into the graph. Max = 65535</p>
+    /// <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     pub fn vector_search_configuration(&self) -> ::std::option::Option<&crate::types::VectorSearchConfiguration> {
         self.vector_search_configuration.as_ref()
     }
@@ -123,6 +135,7 @@ pub struct DeleteGraphOutputBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) provisioned_memory: ::std::option::Option<i32>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) public_connectivity: ::std::option::Option<bool>,
     pub(crate) vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
@@ -221,19 +234,42 @@ impl DeleteGraphOutputBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
-    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    /// <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>
+    /// <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.compute_configuration
     }
     /// <p>The graph endpoint.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -263,17 +299,17 @@ impl DeleteGraphOutputBuilder {
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         &self.public_connectivity
     }
-    /// <p>Specifies the number of dimensions for vector embeddings loaded into the graph. Max = 65535</p>
+    /// <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     pub fn vector_search_configuration(mut self, input: crate::types::VectorSearchConfiguration) -> Self {
         self.vector_search_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the number of dimensions for vector embeddings loaded into the graph. Max = 65535</p>
+    /// <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     pub fn set_vector_search_configuration(mut self, input: ::std::option::Option<crate::types::VectorSearchConfiguration>) -> Self {
         self.vector_search_configuration = input;
         self
     }
-    /// <p>Specifies the number of dimensions for vector embeddings loaded into the graph. Max = 65535</p>
+    /// <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchConfiguration> {
         &self.vector_search_configuration
     }
@@ -385,6 +421,7 @@ impl DeleteGraphOutputBuilder {
             status_reason: self.status_reason,
             create_time: self.create_time,
             provisioned_memory: self.provisioned_memory,
+            compute_configuration: self.compute_configuration,
             endpoint: self.endpoint,
             public_connectivity: self.public_connectivity,
             vector_search_configuration: self.vector_search_configuration,

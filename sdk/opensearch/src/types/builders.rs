@@ -31,6 +31,8 @@ pub use crate::types::_encryption_at_rest_options::EncryptionAtRestOptionsBuilde
 
 pub use crate::types::_node_to_node_encryption_options::NodeToNodeEncryptionOptionsBuilder;
 
+pub use crate::types::_catalog_options::CatalogOptionsBuilder;
+
 pub use crate::types::_domain_endpoint_options::DomainEndpointOptionsBuilder;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInputBuilder;
@@ -205,6 +207,8 @@ pub use crate::types::_advanced_options_status::AdvancedOptionsStatusBuilder;
 
 pub use crate::types::_log_publishing_options_status::LogPublishingOptionsStatusBuilder;
 
+pub use crate::types::_catalog_options_status::CatalogOptionsStatusBuilder;
+
 pub use crate::types::_domain_endpoint_options_status::DomainEndpointOptionsStatusBuilder;
 
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatusBuilder;
@@ -287,6 +291,8 @@ pub use crate::types::_diff_items::DiffItemsBuilder;
 
 pub use crate::types::_node_option::NodeOptionBuilder;
 
+pub use crate::types::_service_managed_s3_tables_catalog::ServiceManagedS3TablesCatalogBuilder;
+
 pub use crate::types::_saml_idp::SamlIdpBuilder;
 
 pub use crate::types::_auto_tune_maintenance_schedule::AutoTuneMaintenanceScheduleBuilder;
@@ -318,6 +324,8 @@ pub use crate::types::_auto_tune_status::AutoTuneStatusBuilder;
 pub use crate::types::_instance_limits::InstanceLimitsBuilder;
 
 pub use crate::types::_node_config::NodeConfigBuilder;
+
+pub use crate::types::_s3_tables_encryption_configuration::S3TablesEncryptionConfigurationBuilder;
 
 pub use crate::types::_duration::DurationBuilder;
 

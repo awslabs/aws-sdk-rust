@@ -22,6 +22,8 @@ pub struct UpdateElasticsearchDomainConfigInput {
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Specifies advanced security options.</p>
@@ -84,6 +86,10 @@ impl UpdateElasticsearchDomainConfigInput {
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.log_publishing_options.as_ref()
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn catalog_options(&self) -> ::std::option::Option<&crate::types::CatalogOptions> {
+        self.catalog_options.as_ref()
     }
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
     pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
@@ -149,6 +155,7 @@ pub struct UpdateElasticsearchDomainConfigInputBuilder {
     pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,
     pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    pub(crate) catalog_options: ::std::option::Option<crate::types::CatalogOptions>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
@@ -311,6 +318,20 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         &self.log_publishing_options
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn catalog_options(mut self, input: crate::types::CatalogOptions) -> Self {
+        self.catalog_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn set_catalog_options(mut self, input: ::std::option::Option<crate::types::CatalogOptions>) -> Self {
+        self.catalog_options = input;
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn get_catalog_options(&self) -> &::std::option::Option<crate::types::CatalogOptions> {
+        &self.catalog_options
     }
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
@@ -479,6 +500,7 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
                 advanced_options: self.advanced_options,
                 access_policies: self.access_policies,
                 log_publishing_options: self.log_publishing_options,
+                catalog_options: self.catalog_options,
                 domain_endpoint_options: self.domain_endpoint_options,
                 advanced_security_options: self.advanced_security_options,
                 node_to_node_encryption_options: self.node_to_node_encryption_options,

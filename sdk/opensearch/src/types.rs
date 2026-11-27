@@ -43,6 +43,8 @@ pub use crate::types::_encryption_at_rest_options::EncryptionAtRestOptions;
 
 pub use crate::types::_node_to_node_encryption_options::NodeToNodeEncryptionOptions;
 
+pub use crate::types::_catalog_options::CatalogOptions;
+
 pub use crate::types::_domain_endpoint_options::DomainEndpointOptions;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInput;
@@ -227,6 +229,8 @@ pub use crate::types::_log_type::LogType;
 
 pub use crate::types::_log_publishing_option::LogPublishingOption;
 
+pub use crate::types::_catalog_configuration::CatalogConfiguration;
+
 pub use crate::types::_tls_security_policy::TlsSecurityPolicy;
 
 pub use crate::types::_master_user_options::MasterUserOptions;
@@ -314,6 +318,8 @@ pub use crate::types::_node_to_node_encryption_options_status::NodeToNodeEncrypt
 pub use crate::types::_advanced_options_status::AdvancedOptionsStatus;
 
 pub use crate::types::_log_publishing_options_status::LogPublishingOptionsStatus;
+
+pub use crate::types::_catalog_options_status::CatalogOptionsStatus;
 
 pub use crate::types::_domain_endpoint_options_status::DomainEndpointOptionsStatus;
 
@@ -427,6 +433,8 @@ pub use crate::types::_app_config_type::AppConfigType;
 
 pub use crate::types::_node_option::NodeOption;
 
+pub use crate::types::_service_managed_s3_tables_catalog::ServiceManagedS3TablesCatalog;
+
 pub use crate::types::_saml_idp::SamlIdp;
 
 pub use crate::types::_auto_tune_maintenance_schedule::AutoTuneMaintenanceSchedule;
@@ -490,6 +498,8 @@ pub use crate::types::_insight_status::InsightStatus;
 pub use crate::types::_node_options_node_type::NodeOptionsNodeType;
 
 pub use crate::types::_node_config::NodeConfig;
+
+pub use crate::types::_s3_tables_encryption_configuration::S3TablesEncryptionConfiguration;
 
 pub use crate::types::_duration::Duration;
 
@@ -618,6 +628,12 @@ mod _capability_failure;
 mod _capability_failure_reason;
 
 mod _capability_status;
+
+mod _catalog_configuration;
+
+mod _catalog_options;
+
+mod _catalog_options_status;
 
 mod _category_diff_result;
 
@@ -967,6 +983,8 @@ mod _rollback_service_software_options;
 
 mod _s3_glue_data_catalog;
 
+mod _s3_tables_encryption_configuration;
+
 mod _s3_vectors_engine;
 
 mod _saml_idp;
@@ -992,6 +1010,8 @@ mod _scheduled_by;
 mod _security_lake_direct_query_data_source;
 
 mod _serverless_vector_acceleration;
+
+mod _service_managed_s3_tables_catalog;
 
 mod _service_options;
 

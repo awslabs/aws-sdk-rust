@@ -13,6 +13,8 @@ pub(crate) mod shape_cancel_query_input_input;
 
 pub(crate) mod shape_cancel_query_output_output;
 
+pub(crate) mod shape_compute_configuration;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_graph_input_input;
@@ -89,6 +91,8 @@ pub(crate) mod shape_get_query_output_output;
 
 pub(crate) mod shape_graph_data_summary;
 
+pub(crate) mod shape_graph_session_configuration;
+
 pub(crate) mod shape_graph_snapshot_summary;
 
 pub(crate) mod shape_graph_summary;
@@ -134,6 +138,8 @@ pub(crate) mod shape_neptune_import_options;
 pub(crate) mod shape_node_structure;
 
 pub(crate) mod shape_private_graph_endpoint_summary;
+
+pub(crate) mod shape_provisioned_graph_configuration;
 
 pub(crate) mod shape_query_summary;
 

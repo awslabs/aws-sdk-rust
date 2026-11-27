@@ -69,6 +69,16 @@ static UPDATEGRAPHOUTPUT_MEMBER_PROVISIONED_MEMORY: ::aws_smithy_schema::Schema<
     "provisionedMemory",
     6,
 );
+static UPDATEGRAPHOUTPUT_MEMBER_COMPUTE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.neptunegraph.synthetic#UpdateGraphOutput$computeConfiguration",
+        "com.amazonaws.neptunegraph.synthetic",
+        "UpdateGraphOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "computeConfiguration",
+    7,
+);
 static UPDATEGRAPHOUTPUT_MEMBER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.neptunegraph.synthetic#UpdateGraphOutput$endpoint",
@@ -77,7 +87,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_ENDPOINT: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::String,
     "endpoint",
-    7,
+    8,
 );
 static UPDATEGRAPHOUTPUT_MEMBER_PUBLIC_CONNECTIVITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -87,7 +97,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_PUBLIC_CONNECTIVITY: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "publicConnectivity",
-    8,
+    9,
 );
 static UPDATEGRAPHOUTPUT_MEMBER_VECTOR_SEARCH_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -97,7 +107,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_VECTOR_SEARCH_CONFIGURATION: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "vectorSearchConfiguration",
-    9,
+    10,
 );
 static UPDATEGRAPHOUTPUT_MEMBER_REPLICA_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -107,7 +117,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_REPLICA_COUNT: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "replicaCount",
-    10,
+    11,
 );
 static UPDATEGRAPHOUTPUT_MEMBER_KMS_KEY_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -117,7 +127,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_KMS_KEY_IDENTIFIER: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "kmsKeyIdentifier",
-    11,
+    12,
 );
 static UPDATEGRAPHOUTPUT_MEMBER_SOURCE_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -127,7 +137,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_SOURCE_SNAPSHOT_ID: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "sourceSnapshotId",
-    12,
+    13,
 );
 static UPDATEGRAPHOUTPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -137,7 +147,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "deletionProtection",
-    13,
+    14,
 );
 static UPDATEGRAPHOUTPUT_MEMBER_BUILD_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -147,7 +157,7 @@ static UPDATEGRAPHOUTPUT_MEMBER_BUILD_NUMBER: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "buildNumber",
-    14,
+    15,
 );
 static UPDATEGRAPHOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -164,6 +174,7 @@ static UPDATEGRAPHOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
         &UPDATEGRAPHOUTPUT_MEMBER_STATUS_REASON,
         &UPDATEGRAPHOUTPUT_MEMBER_CREATE_TIME,
         &UPDATEGRAPHOUTPUT_MEMBER_PROVISIONED_MEMORY,
+        &UPDATEGRAPHOUTPUT_MEMBER_COMPUTE_CONFIGURATION,
         &UPDATEGRAPHOUTPUT_MEMBER_ENDPOINT,
         &UPDATEGRAPHOUTPUT_MEMBER_PUBLIC_CONNECTIVITY,
         &UPDATEGRAPHOUTPUT_MEMBER_VECTOR_SEARCH_CONFIGURATION,
@@ -212,6 +223,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.provisioned_memory {
             ser.write_integer(&UPDATEGRAPHOUTPUT_MEMBER_PROVISIONED_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.compute_configuration {
+            ser.write_struct(&UPDATEGRAPHOUTPUT_MEMBER_COMPUTE_CONFIGURATION, val)?;
         }
         if let Some(ref val) = self.endpoint {
             ser.write_string(&UPDATEGRAPHOUTPUT_MEMBER_ENDPOINT, val)?;
@@ -295,52 +309,59 @@ impl crate::operation::update_graph::builders::UpdateGraphOutputBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.endpoint = Some(deser.read_string(member)?);
+                        self.compute_configuration = Some(crate::types::ComputeConfiguration::deserialize(deser)?);
                     }
                 }
                 Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.public_connectivity = Some(deser.read_boolean(member)?);
+                        self.endpoint = Some(deser.read_string(member)?);
                     }
                 }
                 Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.vector_search_configuration = Some(crate::types::VectorSearchConfiguration::deserialize(deser)?);
+                        self.public_connectivity = Some(deser.read_boolean(member)?);
                     }
                 }
                 Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.replica_count = Some(deser.read_integer(member)?);
+                        self.vector_search_configuration = Some(crate::types::VectorSearchConfiguration::deserialize(deser)?);
                     }
                 }
                 Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.kms_key_identifier = Some(deser.read_string(member)?);
+                        self.replica_count = Some(deser.read_integer(member)?);
                     }
                 }
                 Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.source_snapshot_id = Some(deser.read_string(member)?);
+                        self.kms_key_identifier = Some(deser.read_string(member)?);
                     }
                 }
                 Some(13) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.deletion_protection = Some(deser.read_boolean(member)?);
+                        self.source_snapshot_id = Some(deser.read_string(member)?);
                     }
                 }
                 Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deletion_protection = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

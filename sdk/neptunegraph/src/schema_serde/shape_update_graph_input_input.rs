@@ -30,6 +30,16 @@ static UPDATEGRAPHINPUT_MEMBER_PROVISIONED_MEMORY: ::aws_smithy_schema::Schema<'
     "provisionedMemory",
     2,
 );
+static UPDATEGRAPHINPUT_MEMBER_COMPUTE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.neptunegraph.synthetic#UpdateGraphInput$computeConfiguration",
+        "com.amazonaws.neptunegraph.synthetic",
+        "UpdateGraphInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "computeConfiguration",
+    3,
+);
 static UPDATEGRAPHINPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.neptunegraph.synthetic#UpdateGraphInput$deletionProtection",
@@ -38,7 +48,7 @@ static UPDATEGRAPHINPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "deletionProtection",
-    3,
+    4,
 );
 static UPDATEGRAPHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -51,6 +61,7 @@ static UPDATEGRAPHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &UPDATEGRAPHINPUT_MEMBER_GRAPH_IDENTIFIER,
         &UPDATEGRAPHINPUT_MEMBER_PUBLIC_CONNECTIVITY,
         &UPDATEGRAPHINPUT_MEMBER_PROVISIONED_MEMORY,
+        &UPDATEGRAPHINPUT_MEMBER_COMPUTE_CONFIGURATION,
         &UPDATEGRAPHINPUT_MEMBER_DELETION_PROTECTION,
     ],
 )
@@ -79,6 +90,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.provisioned_memory {
             ser.write_integer(&UPDATEGRAPHINPUT_MEMBER_PROVISIONED_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.compute_configuration {
+            ser.write_struct(&UPDATEGRAPHINPUT_MEMBER_COMPUTE_CONFIGURATION, val)?;
         }
         if let Some(ref val) = self.deletion_protection {
             ser.write_boolean(&UPDATEGRAPHINPUT_MEMBER_DELETION_PROTECTION, *val)?;
@@ -122,6 +136,13 @@ impl crate::operation::update_graph::builders::UpdateGraphInputBuilder {
                     }
                 }
                 Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_configuration = Some(crate::types::ComputeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

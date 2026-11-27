@@ -61,6 +61,16 @@ static UPDATEOTELENRICHMENTOUTPUT_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema
     "UpdatedAt",
     3,
 );
+static UPDATEOTELENRICHMENTOUTPUT_MEMBER_ENABLE_TAG_ENRICHMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudwatch.synthetic#UpdateOTelEnrichmentOutput$EnableTagEnrichment",
+        "com.amazonaws.cloudwatch.synthetic",
+        "UpdateOTelEnrichmentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableTagEnrichment",
+    4,
+);
 static UPDATEOTELENRICHMENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cloudwatch.synthetic#UpdateOTelEnrichmentOutput",
@@ -73,6 +83,7 @@ static UPDATEOTELENRICHMENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> =
         &UPDATEOTELENRICHMENTOUTPUT_MEMBER_EXCLUDE_FILTERS,
         &UPDATEOTELENRICHMENTOUTPUT_MEMBER_CREATED_AT,
         &UPDATEOTELENRICHMENTOUTPUT_MEMBER_UPDATED_AT,
+        &UPDATEOTELENRICHMENTOUTPUT_MEMBER_ENABLE_TAG_ENRICHMENT,
     ],
 )
 .with_original_name("UpdateOTelEnrichmentOutput");
@@ -117,6 +128,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.updated_at {
             ser.write_timestamp(&UPDATEOTELENRICHMENTOUTPUT_MEMBER_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.enable_tag_enrichment {
+            ser.write_boolean(&UPDATEOTELENRICHMENTOUTPUT_MEMBER_ENABLE_TAG_ENRICHMENT, *val)?;
         }
         Ok(())
     }
@@ -175,6 +189,13 @@ impl crate::operation::update_o_tel_enrichment::builders::UpdateOTelEnrichmentOu
                         deser.read_null()?;
                     } else {
                         self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_tag_enrichment = Some(deser.read_boolean(member)?);
                     }
                 }
                 _ => {}

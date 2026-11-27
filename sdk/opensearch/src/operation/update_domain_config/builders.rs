@@ -297,6 +297,20 @@ impl UpdateDomainConfigFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.inner.get_log_publishing_options()
     }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn catalog_options(mut self, input: crate::types::CatalogOptions) -> Self {
+        self.inner = self.inner.catalog_options(input);
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn set_catalog_options(mut self, input: ::std::option::Option<crate::types::CatalogOptions>) -> Self {
+        self.inner = self.inner.set_catalog_options(input);
+        self
+    }
+    /// <p>Options for publishing the domain's data to a data catalog, such as a service-managed Amazon S3 Tables catalog.</p>
+    pub fn get_catalog_options(&self) -> &::std::option::Option<crate::types::CatalogOptions> {
+        self.inner.get_catalog_options()
+    }
     /// <p>Encryption at rest options for the domain.</p>
     pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
         self.inner = self.inner.encryption_at_rest_options(input);

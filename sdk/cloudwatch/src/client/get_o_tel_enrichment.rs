@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`exclude_filters(Option<Vec::<OTelEnrichmentMetricSelector>>)`](crate::operation::get_o_tel_enrichment::GetOTelEnrichmentOutput::exclude_filters): <p>The metric namespaces, and the metric names, that are left unenriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no exclude filters, which means that nothing is excluded.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_o_tel_enrichment::GetOTelEnrichmentOutput::created_at): <p>The date and time that enrichment started for the account. This parameter is omitted when enrichment is stopped.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_o_tel_enrichment::GetOTelEnrichmentOutput::updated_at): <p>The date and time that the enrichment configuration for the account was last stored.</p>
+    ///   - [`enable_tag_enrichment(Option<bool>)`](crate::operation::get_o_tel_enrichment::GetOTelEnrichmentOutput::enable_tag_enrichment): <p>Specifies whether enriched metrics include resource tag labels for the account. This parameter is omitted when enrichment is stopped.</p>
     /// - On failure, responds with [`SdkError<GetOTelEnrichmentError>`](crate::operation::get_o_tel_enrichment::GetOTelEnrichmentError)
     pub fn get_o_tel_enrichment(&self) -> crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentFluentBuilder {
         crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentFluentBuilder::new(self.handle.clone())

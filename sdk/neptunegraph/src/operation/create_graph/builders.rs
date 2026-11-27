@@ -23,6 +23,13 @@ impl crate::operation::create_graph::builders::CreateGraphInputBuilder {
 /// Fluent builder constructing a request to `CreateGraph`.
 ///
 /// <p>Creates a new Neptune Analytics graph.</p>
+/// <p>Neptune Analytics supports two types of graphs, selected using <code>computeConfiguration</code>:</p>
+/// <ul>
+/// <li>
+/// <p><i>Provisioned graphs</i> use dedicated compute that is always available. Use provisioned graphs for workloads that require higher memory or predictable latency.</p></li>
+/// <li>
+/// <p><i>Graph sessions</i> use ephemeral compute that is bootstrapped when a query is sent to the graph. The compute is automatically stopped after a few minutes with no traffic. The next query sent to the graph bootstraps the compute again, so queries that bootstrap the compute are subject to cold start latency.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGraphFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -220,18 +227,41 @@ impl CreateGraphFluentBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.inner = self.inner.provisioned_memory(input);
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_provisioned_memory(input);
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         self.inner.get_provisioned_memory()
+    }
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.inner = self.inner.compute_configuration(input);
+        self
+    }
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.inner = self.inner.set_compute_configuration(input);
+        self
+    }
+    /// <p>The compute configuration for the new graph. Specify <code>provisionedGraph</code> to create a provisioned graph with dedicated, always-available compute, or <code>graphSession</code> to create a graph session that uses ephemeral compute bootstrapped on demand when a query is sent, and is subject to cold start latency.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        self.inner.get_compute_configuration()
     }
 }

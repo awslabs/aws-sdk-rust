@@ -22,7 +22,9 @@ impl crate::operation::start_import_task::builders::StartImportTaskInputBuilder 
 }
 /// Fluent builder constructing a request to `StartImportTask`.
 ///
-/// <p>Import data into existing Neptune Analytics graph from Amazon Simple Storage Service (S3). The graph needs to be empty and in the AVAILABLE state.</p>
+/// <p>Import data into existing Neptune Analytics graph from Amazon Simple Storage Service (S3). The graph needs to be empty and in the AVAILABLE state.</p><note>
+/// <p>Graph sessions don't support this API. Use <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load CALL procedure</a> to load data into the Graph Session instead.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartImportTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +110,17 @@ impl StartImportTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn import_options(mut self, input: crate::types::ImportOptions) -> Self {
         self.inner = self.inner.import_options(input);
         self
     }
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn set_import_options(mut self, input: ::std::option::Option<crate::types::ImportOptions>) -> Self {
         self.inner = self.inner.set_import_options(input);
         self
     }
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn get_import_options(&self) -> &::std::option::Option<crate::types::ImportOptions> {
         self.inner.get_import_options()
     }

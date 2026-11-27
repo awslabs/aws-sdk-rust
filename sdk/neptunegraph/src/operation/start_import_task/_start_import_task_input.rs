@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportTaskInput {
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub import_options: ::std::option::Option<crate::types::ImportOptions>,
     /// <p>If set to true, the task halts when an import error is encountered. If set to false, the task skips the data that caused the error and continues if possible.</p>
     pub fail_on_error: ::std::option::Option<bool>,
@@ -21,7 +21,7 @@ pub struct StartImportTaskInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartImportTaskInput {
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn import_options(&self) -> ::std::option::Option<&crate::types::ImportOptions> {
         self.import_options.as_ref()
     }
@@ -75,17 +75,17 @@ pub struct StartImportTaskInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartImportTaskInputBuilder {
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn import_options(mut self, input: crate::types::ImportOptions) -> Self {
         self.import_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn set_import_options(mut self, input: ::std::option::Option<crate::types::ImportOptions>) -> Self {
         self.import_options = input;
         self
     }
-    /// <p>Options for how to perform an import.</p>
+    /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn get_import_options(&self) -> &::std::option::Option<crate::types::ImportOptions> {
         &self.import_options
     }

@@ -102,6 +102,11 @@ where
                                     )?,
                                 );
                             }
+                            "CatalogOptions" => {
+                                builder = builder.set_catalog_options(
+                                    crate::protocol_serde::shape_catalog_options_status::de_catalog_options_status(tokens, _value, depth + 1)?,
+                                );
+                            }
                             "DomainEndpointOptions" => {
                                 builder = builder.set_domain_endpoint_options(
                                     crate::protocol_serde::shape_domain_endpoint_options_status::de_domain_endpoint_options_status(

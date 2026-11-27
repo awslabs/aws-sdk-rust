@@ -144,6 +144,16 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_LOG_PUBLISHING_OPTIONS: ::aws
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_LOG_PUBLISHING_OPTIONS_KEY,
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_LOG_PUBLISHING_OPTIONS_VALUE,
     );
+static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_CATALOG_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.elasticsearchservice.synthetic#UpdateElasticsearchDomainConfigInput$CatalogOptions",
+        "com.amazonaws.elasticsearchservice.synthetic",
+        "UpdateElasticsearchDomainConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CatalogOptions",
+    9,
+);
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
         ::aws_smithy_schema::ShapeId::from_parts(
@@ -153,7 +163,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS: ::aw
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "DomainEndpointOptions",
-        9,
+        10,
     );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ADVANCED_SECURITY_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -164,7 +174,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ADVANCED_SECURITY_OPTIONS: ::
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "AdvancedSecurityOptions",
-        10,
+        11,
     );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_NODE_TO_NODE_ENCRYPTION_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -175,7 +185,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_NODE_TO_NODE_ENCRYPTION_OPTIO
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "NodeToNodeEncryptionOptions",
-        11,
+        12,
     );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ENCRYPTION_AT_REST_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -186,7 +196,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ENCRYPTION_AT_REST_OPTIONS: :
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "EncryptionAtRestOptions",
-        12,
+        13,
     );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_AUTO_TUNE_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -196,7 +206,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_AUTO_TUNE_OPTIONS: ::aws_smit
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "AutoTuneOptions",
-    13,
+    14,
 );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DRY_RUN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -206,7 +216,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DRY_RUN: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "DryRun",
-    14,
+    15,
 );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DEPLOYMENT_STRATEGY_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -217,7 +227,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DEPLOYMENT_STRATEGY_OPTIONS: 
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "DeploymentStrategyOptions",
-        15,
+        16,
     );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_AUTOMATED_SNAPSHOT_PAUSE_OPTIONS: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -228,7 +238,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_AUTOMATED_SNAPSHOT_PAUSE_OPTI
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "AutomatedSnapshotPauseOptions",
-        16,
+        17,
     );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_USE_CASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -238,7 +248,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_USE_CASE: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UseCase",
-    17,
+    18,
 );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ENGINE_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -248,7 +258,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ENGINE_MODE: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "EngineMode",
-    18,
+    19,
 );
 static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -267,6 +277,7 @@ static UPDATEELASTICSEARCHDOMAINCONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ADVANCED_OPTIONS,
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ACCESS_POLICIES,
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_LOG_PUBLISHING_OPTIONS,
+        &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_CATALOG_OPTIONS,
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS,
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_ADVANCED_SECURITY_OPTIONS,
         &UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_NODE_TO_NODE_ENCRYPTION_OPTIONS,
@@ -344,6 +355,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.catalog_options {
+            ser.write_struct(&UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_CATALOG_OPTIONS, val)?;
         }
         if let Some(ref val) = self.domain_endpoint_options {
             ser.write_struct(&UPDATEELASTICSEARCHDOMAINCONFIGINPUT_MEMBER_DOMAIN_ENDPOINT_OPTIONS, val)?;
@@ -469,66 +483,73 @@ impl crate::operation::update_elasticsearch_domain_config::builders::UpdateElast
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.domain_endpoint_options = Some(crate::types::DomainEndpointOptions::deserialize(deser)?);
+                        self.catalog_options = Some(crate::types::CatalogOptions::deserialize(deser)?);
                     }
                 }
                 Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.advanced_security_options = Some(crate::types::AdvancedSecurityOptionsInput::deserialize(deser)?);
+                        self.domain_endpoint_options = Some(crate::types::DomainEndpointOptions::deserialize(deser)?);
                     }
                 }
                 Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.node_to_node_encryption_options = Some(crate::types::NodeToNodeEncryptionOptions::deserialize(deser)?);
+                        self.advanced_security_options = Some(crate::types::AdvancedSecurityOptionsInput::deserialize(deser)?);
                     }
                 }
                 Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.encryption_at_rest_options = Some(crate::types::EncryptionAtRestOptions::deserialize(deser)?);
+                        self.node_to_node_encryption_options = Some(crate::types::NodeToNodeEncryptionOptions::deserialize(deser)?);
                     }
                 }
                 Some(13) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.auto_tune_options = Some(crate::types::AutoTuneOptions::deserialize(deser)?);
+                        self.encryption_at_rest_options = Some(crate::types::EncryptionAtRestOptions::deserialize(deser)?);
                     }
                 }
                 Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.dry_run = Some(deser.read_boolean(member)?);
+                        self.auto_tune_options = Some(crate::types::AutoTuneOptions::deserialize(deser)?);
                     }
                 }
                 Some(15) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.deployment_strategy_options = Some(crate::types::DeploymentStrategyOptions::deserialize(deser)?);
+                        self.dry_run = Some(deser.read_boolean(member)?);
                     }
                 }
                 Some(16) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.automated_snapshot_pause_options = Some(crate::types::AutomatedSnapshotPauseRequestOptions::deserialize(deser)?);
+                        self.deployment_strategy_options = Some(crate::types::DeploymentStrategyOptions::deserialize(deser)?);
                     }
                 }
                 Some(17) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.use_case = Some(crate::types::DomainUseCase::from(deser.read_string(member)?.as_str()));
+                        self.automated_snapshot_pause_options = Some(crate::types::AutomatedSnapshotPauseRequestOptions::deserialize(deser)?);
                     }
                 }
                 Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.use_case = Some(crate::types::DomainUseCase::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(19) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

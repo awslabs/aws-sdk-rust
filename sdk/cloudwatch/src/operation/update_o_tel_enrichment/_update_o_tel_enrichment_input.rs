@@ -10,6 +10,9 @@ pub struct UpdateOTelEnrichmentInput {
     /// <p>Amazon CloudWatch applies <code>ExcludeFilters</code> after <code>IncludeFilters</code>, so a metric that both parameters match is not enriched.</p>
     /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
     pub exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub enable_tag_enrichment: ::std::option::Option<bool>,
 }
 impl UpdateOTelEnrichmentInput {
     /// <p>The metric namespaces, and the metric names, to enrich. If this parameter is omitted, every namespace that Amazon CloudWatch supports for enrichment is in scope.</p>
@@ -27,6 +30,11 @@ impl UpdateOTelEnrichmentInput {
     pub fn exclude_filters(&self) -> &[crate::types::OTelEnrichmentMetricSelector] {
         self.exclude_filters.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn enable_tag_enrichment(&self) -> ::std::option::Option<bool> {
+        self.enable_tag_enrichment
+    }
 }
 impl UpdateOTelEnrichmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateOTelEnrichmentInput`](crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentInput).
@@ -41,6 +49,7 @@ impl UpdateOTelEnrichmentInput {
 pub struct UpdateOTelEnrichmentInputBuilder {
     pub(crate) include_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
     pub(crate) exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    pub(crate) enable_tag_enrichment: ::std::option::Option<bool>,
 }
 impl UpdateOTelEnrichmentInputBuilder {
     /// Appends an item to `include_filters`.
@@ -92,6 +101,23 @@ impl UpdateOTelEnrichmentInputBuilder {
     pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>> {
         &self.exclude_filters
     }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn enable_tag_enrichment(mut self, input: bool) -> Self {
+        self.enable_tag_enrichment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn set_enable_tag_enrichment(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_tag_enrichment = input;
+        self
+    }
+    /// <p>Specifies whether enriched metrics include resource tag labels. If <code>true</code>, enriched metrics include resource tag labels. If <code>false</code>, they include resource ARN labels but no resource tag labels. If you omit this parameter, the stored value is not changed. The operation also replaces the stored filters, so to change only this setting, specify the current <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same request.</p>
+    /// <p>When <code>EnableTagEnrichment</code> is <code>true</code>, enriched metrics that carry resource tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    pub fn get_enable_tag_enrichment(&self) -> &::std::option::Option<bool> {
+        &self.enable_tag_enrichment
+    }
     /// Consumes the builder and constructs a [`UpdateOTelEnrichmentInput`](crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentInput).
     pub fn build(
         self,
@@ -100,6 +126,7 @@ impl UpdateOTelEnrichmentInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentInput {
             include_filters: self.include_filters,
             exclude_filters: self.exclude_filters,
+            enable_tag_enrichment: self.enable_tag_enrichment,
         })
     }
 }

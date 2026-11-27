@@ -387,6 +387,15 @@ pub(crate) fn aws_domain_information_correct_errors(
     builder
 }
 
+pub(crate) fn catalog_options_correct_errors(
+    mut builder: crate::types::builders::CatalogOptionsBuilder,
+) -> crate::types::builders::CatalogOptionsBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cloud_watch_direct_query_data_source_correct_errors(
     mut builder: crate::types::builders::CloudWatchDirectQueryDataSourceBuilder,
 ) -> crate::types::builders::CloudWatchDirectQueryDataSourceBuilder {

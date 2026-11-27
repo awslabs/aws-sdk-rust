@@ -11,10 +11,11 @@ impl super::Client {
     ///   - [`status(Option<GraphStatus>)`](crate::operation::get_graph::GetGraphOutput::status): <p>The status of the graph.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_graph::GetGraphOutput::status_reason): <p>The reason that the graph has this status.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::get_graph::GetGraphOutput::create_time): <p>The time at which the graph was created.</p>
-    ///   - [`provisioned_memory(Option<i32>)`](crate::operation::get_graph::GetGraphOutput::provisioned_memory): <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>
+    ///   - [`provisioned_memory(Option<i32>)`](crate::operation::get_graph::GetGraphOutput::provisioned_memory): <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p><note>  <p>This field is deprecated. For backward compatibility, it returns <code>memory</code> for a <code>provisionedGraph</code> and <code>minMemory</code> for a <code>graphSession</code>. Use <code>computeConfiguration</code> instead.</p> </note>
+    ///   - [`compute_configuration(Option<ComputeConfiguration>)`](crate::operation::get_graph::GetGraphOutput::compute_configuration): <p>The compute configuration of the graph: either a provisioned graph or a graph session.</p>
     ///   - [`endpoint(Option<String>)`](crate::operation::get_graph::GetGraphOutput::endpoint): <p>The graph endpoint.</p>
     ///   - [`public_connectivity(Option<bool>)`](crate::operation::get_graph::GetGraphOutput::public_connectivity): <p>If <code>true</code>, the graph has a public endpoint, otherwise not.</p>
-    ///   - [`vector_search_configuration(Option<VectorSearchConfiguration>)`](crate::operation::get_graph::GetGraphOutput::vector_search_configuration): <p>Specifies the number of dimensions for vector embeddings loaded into the graph. Max = 65535</p>
+    ///   - [`vector_search_configuration(Option<VectorSearchConfiguration>)`](crate::operation::get_graph::GetGraphOutput::vector_search_configuration): <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     ///   - [`replica_count(Option<i32>)`](crate::operation::get_graph::GetGraphOutput::replica_count): <p>The number of replicas for the graph.</p>
     ///   - [`kms_key_identifier(Option<String>)`](crate::operation::get_graph::GetGraphOutput::kms_key_identifier): <p>The ID of the KMS key used to encrypt and decrypt graph data.</p>
     ///   - [`source_snapshot_id(Option<String>)`](crate::operation::get_graph::GetGraphOutput::source_snapshot_id): <p>The ID of the snapshot from which the graph was created, if it was created from a snapshot.</p>

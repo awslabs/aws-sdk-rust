@@ -22,7 +22,9 @@ impl crate::operation::stop_graph::builders::StopGraphInputBuilder {
 }
 /// Fluent builder constructing a request to `StopGraph`.
 ///
-/// <p>Stops the specific graph.</p>
+/// <p>Stops the specific graph.</p><note>
+/// <p>Graph sessions are stopped automatically after a few minutes with no traffic. While this API is supported for graph sessions, it isn't required.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopGraphFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

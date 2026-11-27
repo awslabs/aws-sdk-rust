@@ -21,6 +21,8 @@ pub use crate::types::_encryption_at_rest_options::EncryptionAtRestOptions;
 
 pub use crate::types::_node_to_node_encryption_options::NodeToNodeEncryptionOptions;
 
+pub use crate::types::_catalog_options::CatalogOptions;
+
 pub use crate::types::_domain_endpoint_options::DomainEndpointOptions;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInput;
@@ -109,6 +111,8 @@ pub use crate::types::_log_type::LogType;
 
 pub use crate::types::_log_publishing_option::LogPublishingOption;
 
+pub use crate::types::_catalog_configuration::CatalogConfiguration;
+
 pub use crate::types::_tls_security_policy::TlsSecurityPolicy;
 
 pub use crate::types::_master_user_options::MasterUserOptions;
@@ -167,6 +171,8 @@ pub use crate::types::_advanced_options_status::AdvancedOptionsStatus;
 
 pub use crate::types::_log_publishing_options_status::LogPublishingOptionsStatus;
 
+pub use crate::types::_catalog_options_status::CatalogOptionsStatus;
+
 pub use crate::types::_domain_endpoint_options_status::DomainEndpointOptionsStatus;
 
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatus;
@@ -221,6 +227,8 @@ pub use crate::types::_cloned_blue_green_options::ClonedBlueGreenOptions;
 
 pub use crate::types::_inbound_cross_cluster_search_connection_status_code::InboundCrossClusterSearchConnectionStatusCode;
 
+pub use crate::types::_service_managed_s3_tables_catalog::ServiceManagedS3TablesCatalog;
+
 pub use crate::types::_saml_idp::SamlIdp;
 
 pub use crate::types::_auto_tune_maintenance_schedule::AutoTuneMaintenanceSchedule;
@@ -252,6 +260,8 @@ pub use crate::types::_describe_packages_filter_name::DescribePackagesFilterName
 pub use crate::types::_reserved_elasticsearch_instance_payment_option::ReservedElasticsearchInstancePaymentOption;
 
 pub use crate::types::_vpc_endpoint_error_code::VpcEndpointErrorCode;
+
+pub use crate::types::_s3_tables_encryption_configuration::S3TablesEncryptionConfiguration;
 
 pub use crate::types::_duration::Duration;
 
@@ -324,6 +334,12 @@ mod _automated_snapshot_pause_options_status;
 mod _automated_snapshot_pause_request_options;
 
 mod _cancelled_change_property;
+
+mod _catalog_configuration;
+
+mod _catalog_options;
+
+mod _catalog_options_status;
 
 mod _change_progress_details;
 
@@ -495,6 +511,8 @@ mod _retention_options;
 
 mod _rollback_on_disable;
 
+mod _s3_tables_encryption_configuration;
+
 mod _saml_idp;
 
 mod _saml_options_input;
@@ -506,6 +524,8 @@ mod _scheduled_auto_tune_action_type;
 mod _scheduled_auto_tune_details;
 
 mod _scheduled_auto_tune_severity_type;
+
+mod _service_managed_s3_tables_catalog;
 
 mod _service_software_options;
 

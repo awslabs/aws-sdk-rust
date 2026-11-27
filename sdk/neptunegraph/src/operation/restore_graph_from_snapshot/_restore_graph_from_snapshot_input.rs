@@ -9,8 +9,13 @@ pub struct RestoreGraphFromSnapshotInput {
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub graph_name: ::std::option::Option<::std::string::String>,
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub provisioned_memory: ::std::option::Option<i32>,
+    /// <p>The compute configuration for the restored graph. A snapshot can be restored into either a provisioned graph or a graph session, regardless of the compute type of the source graph. A snapshot taken from a provisioned graph can be restored into a graph session as long as the data in the snapshot fits within the graph session.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Adds metadata tags to the snapshot. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
@@ -33,9 +38,16 @@ impl RestoreGraphFromSnapshotInput {
         self.graph_name.as_deref()
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
+    }
+    /// <p>The compute configuration for the restored graph. A snapshot can be restored into either a provisioned graph or a graph session, regardless of the compute type of the source graph. A snapshot taken from a provisioned graph can be restored into a graph session as long as the data in the snapshot fits within the graph session.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.compute_configuration.as_ref()
     }
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -70,6 +82,7 @@ pub struct RestoreGraphFromSnapshotInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) graph_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_memory: ::std::option::Option<i32>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) replica_count: ::std::option::Option<i32>,
@@ -110,21 +123,44 @@ impl RestoreGraphFromSnapshotInputBuilder {
         &self.graph_name
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 16</p>
+    /// <p>Min = 16</p><note>
+    /// <p>This field is deprecated. We recommend using <code>computeConfiguration</code> instead.</p>
+    /// </note>
+    #[deprecated(note = "ProvisionedMemory is deprecated. Use ComputeConfiguration instead.", since = "2026-11-25")]
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
+    }
+    /// <p>The compute configuration for the restored graph. A snapshot can be restored into either a provisioned graph or a graph session, regardless of the compute type of the source graph. A snapshot taken from a provisioned graph can be restored into a graph session as long as the data in the snapshot fits within the graph session.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration for the restored graph. A snapshot can be restored into either a provisioned graph or a graph session, regardless of the compute type of the source graph. A snapshot taken from a provisioned graph can be restored into a graph session as long as the data in the snapshot fits within the graph session.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration for the restored graph. A snapshot can be restored into either a provisioned graph or a graph session, regardless of the compute type of the source graph. A snapshot taken from a provisioned graph can be restored into a graph session as long as the data in the snapshot fits within the graph session.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.compute_configuration
     }
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -205,6 +241,7 @@ impl RestoreGraphFromSnapshotInputBuilder {
             snapshot_identifier: self.snapshot_identifier,
             graph_name: self.graph_name,
             provisioned_memory: self.provisioned_memory,
+            compute_configuration: self.compute_configuration,
             deletion_protection: self.deletion_protection,
             tags: self.tags,
             replica_count: self.replica_count,

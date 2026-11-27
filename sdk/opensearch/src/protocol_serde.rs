@@ -405,6 +405,8 @@ pub(crate) mod shape_capability_extended_response_config;
 
 pub(crate) mod shape_capability_failures;
 
+pub(crate) mod shape_catalog_options;
+
 pub(crate) mod shape_change_progress_details;
 
 pub(crate) mod shape_change_progress_status_details;
@@ -629,6 +631,10 @@ pub(crate) mod shape_cancelled_change_property;
 
 pub(crate) mod shape_capability_failure;
 
+pub(crate) mod shape_catalog_configuration;
+
+pub(crate) mod shape_catalog_options_status;
+
 pub(crate) mod shape_category_diff_result;
 
 pub(crate) mod shape_change_progress_stage_list;
@@ -817,6 +823,8 @@ pub(crate) mod shape_saml_options_output;
 
 pub(crate) mod shape_saved_object_identifier;
 
+pub(crate) mod shape_service_managed_s3_tables_catalog;
+
 pub(crate) mod shape_storage_type_list;
 
 pub(crate) mod shape_upgrade_steps_list;
@@ -838,6 +846,8 @@ pub(crate) mod shape_divergent_item_list;
 pub(crate) mod shape_instance_count_limits;
 
 pub(crate) mod shape_recurring_charge;
+
+pub(crate) mod shape_s3_tables_encryption_configuration;
 
 pub(crate) mod shape_scheduled_auto_tune_details;
 

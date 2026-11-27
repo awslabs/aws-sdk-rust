@@ -167,6 +167,8 @@ pub use crate::types::_payment_schedule_entry::PaymentScheduleEntryBuilder;
 
 pub use crate::types::_caller_identity::CallerIdentityBuilder;
 
+pub use crate::types::_regional_price::RegionalPriceBuilder;
+
 pub use crate::types::_email_approver::EmailApproverBuilder;
 
 pub use crate::types::_procurement_tool_approver::ProcurementToolApproverBuilder;
