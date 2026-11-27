@@ -2873,6 +2873,10 @@ source_hash = '12e2e41f62441460cd4a4f3dc79f91c447f5cff271b9b7b7bb88fc10a553557d'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'ef970bc25f80a9f2bfab70d843a2347081aafabbe8592dada2badb22ee0ea6a8'
+
+[release]
+tag = 'release-2026-11-27'
+
 [release.crates]
 aws-sdk-cloudwatch = '1.146.0'
 aws-sdk-elasticsearch = '1.132.0'
